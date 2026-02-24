@@ -1,0 +1,37 @@
+{
+  "type": "KnowledgeCapsule",
+  "id": "knowledge-capsule-cognitive-bias-gene-creation-20260224",
+  "name": "认知偏差预防基因创建过程",
+  "topic": "cognitive-bias-prevention",
+  "gene": "gene_knowledge_accumulation",
+  "created_at": "2026-02-24",
+  "updated_at": "2026-02-24",
+  "for_agent": {
+    "trigger": [
+      "认知偏差",
+      "cognitive bias",
+      "防止错误",
+      "预防机制",
+      "7步策略",
+      "怎么避免错误"
+    ],
+    "summary": "设计了第5个基因'gene_prevent_cognitive_bias'，7步策略预防AI认知偏差",
+    "key_points": [
+      "现有基因都是'事后处理'型，缺少'事前预防'型",
+      "认知偏差是系统性问题，需要专门的基因来处理",
+      "7步预防策略：识别→质疑→探索→验证→承认→修正→记录",
+      "4种常见偏差：确认偏误、可得性偏误、锚定效应、术语混淆",
+      "基因之间可以协作，形成完整的防御体系"
+    ],
+    "analogies": {
+      "life": "认知偏差预防就像开车时的安全带，平时不觉得，关键时刻救命",
+      "tech": "类似代码中的防御性编程，提前考虑边界情况"
+    },
+    "when_to_use": "用户询问如何防止AI错误、认知偏差预防、7步策略时",
+    "related_capsules": [
+      "knowledge-capsule-meta-gene-creation"
+    ]
+  },
+  "document_path": "./topics/cognitive-bias-prevention.md",
+  "confidence": 0.95
+}

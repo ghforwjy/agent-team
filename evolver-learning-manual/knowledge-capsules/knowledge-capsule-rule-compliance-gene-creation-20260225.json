@@ -1,0 +1,38 @@
+{
+  "type": "KnowledgeCapsule",
+  "id": "knowledge-capsule-rule-compliance-gene-creation-20260225",
+  "name": "规则遵循基因创建过程",
+  "topic": "rule-compliance",
+  "gene": "gene_gene_creation_protocol",
+  "created_at": "2026-02-25",
+  "updated_at": "2026-02-25",
+  "for_agent": {
+    "trigger": [
+      "规则遵循",
+      "rule compliance",
+      "知道规则但不执行",
+      "知行分离",
+      "自动调用",
+      "检查点机制"
+    ],
+    "summary": "设计了第7个基因'gene_rule_compliance'，解决'知道规则但不执行'的问题",
+    "key_points": [
+      "规则遵循失败是典型的'知行分离'问题",
+      "需要建立检查点机制，在回复结束前自检",
+      "区分规则优先级：P0强制 > P1高 > P2中 > P3低",
+      "基因创建需遵循6步流程：设计→索引→验证→测试→记录→胶囊",
+      "基因之间协作：rule_compliance + cognitive_bias + repair_from_errors"
+    ],
+    "analogies": {
+      "life": "规则遵循就像闹钟，知道要起床但需要提醒才能执行",
+      "tech": "类似CI/CD中的pre-commit hook，强制执行检查"
+    },
+    "when_to_use": "用户询问规则执行、自动调用、检查点机制、知行分离问题时",
+    "related_capsules": [
+      "knowledge-capsule-cognitive-bias-gene-creation",
+      "knowledge-capsule-meta-gene-creation"
+    ]
+  },
+  "document_path": "./topics/rule-compliance.md",
+  "confidence": 0.95
+}

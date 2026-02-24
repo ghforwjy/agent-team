@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trae MCP Server 配置助手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .success-icon {
+            color: #4caf50;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+            text-align: center;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .status {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .config-section {
+            margin-bottom: 30px;
+        }
+        .config-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .json-box {
+            background: #263238;
+            color: #aed581;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 15px;
+        }
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .copy-btn:hover {
+            background: #5568d3;
+        }
+        .copy-btn.copied {
+            background: #4caf50;
+        }
+        .steps {
+            margin-top: 30px;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-content h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        .step-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .tip {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #e65100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✅</div>
+        <h1>Evolver MCP Server 已启动</h1>
+        <p class="subtitle">Trae Agent 自我进化系统就绪</p>
+        
+        <div class="status">
+            <strong>🟢 服务状态:</strong> MCP Server 正在运行<br>
+            <strong>📍 服务地址:</strong> stdio (本地进程)<br>
+            <strong>🔧 配置文件:</strong> 已生成
+        </div>
+
+        <div class="config-section">
+            <h2>📋 Trae MCP 配置 JSON</h2>
+            <div class="json-box" id="configJson">{
+  "mcpServers": {
+    "evolver": {
+      "command": "node",
+      "args": [
+        "f:/mycode/垂直领域工具类/agent-team/evolver/mcp-server.js"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}</div>
+            <button class="copy-btn" id="copyBtn" onclick="copyConfig()">📋 复制完整配置 JSON</button>
+        </div>
+
+        <div class="steps">
+            <h2>🚀 配置步骤</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>打开 Trae 设置</h3>
+                    <p>点击左下角 ⚙️ 设置图标，或按 Ctrl+,</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>找到 MCP Server 设置</h3>
+                    <p>在设置中搜索 "MCP" 或找到 "智能体/MCP Server" 选项</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>粘贴配置</h3>
+                    <p>点击 "编辑配置" 或 "打开配置文件"，将上面复制的 JSON 粘贴进去</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>保存并重启</h3>
+                    <p>保存配置文件，重启 Trae IDE 使配置生效</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip">
+            <strong>💡 提示:</strong> 配置完成后，在 Trae 的 Chat/Builder 模式中选择 <strong>Evolver-Enhanced Coder</strong> Agent 即可开始使用自我进化功能！
+        </div>
+    </div>
+
+    <script>
+        function copyConfig() {
+            const configText = document.getElementById('configJson').textContent;
+            const copyBtn = document.getElementById('copyBtn');
+            
+            navigator.clipboard.writeText(configText).then(() => {
+                copyBtn.textContent = '✅ 已复制到剪贴板';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 复制完整配置 JSON';
+                    copyBtn.classList.remove('copied');
+                }, 3000);
+            }).catch(err => {
+                // 降级方案
+                const textArea = document.createElement('textarea');
+                textArea.value = configText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                copyBtn.textContent = '✅ 已复制到剪贴板';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 复制完整配置 JSON';
+                    copyBtn.classList.remove('copied');
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>

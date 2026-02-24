@@ -1,0 +1,38 @@
+{
+  "type": "KnowledgeCapsule",
+  "id": "knowledge-capsule-gene-capsule-concept-20260224",
+  "name": "Gene 与 Capsule 概念理解",
+  "topic": "gene-and-capsule",
+  "gene": "gene_knowledge_accumulation",
+  "created_at": "2026-02-24",
+  "updated_at": "2026-02-24",
+  "for_agent": {
+    "trigger": [
+      "gene",
+      "capsule",
+      "什么是基因",
+      "什么是胶囊",
+      "gene vs capsule",
+      "gene 和 capsule 区别",
+      "evolver 核心概念",
+      "evolver 基础"
+    ],
+    "summary": "Gene 是策略模板，定义处理流程；Capsule 是成功案例，记录解决结果",
+    "key_points": [
+      "Gene 是策略模板，定义处理流程",
+      "Capsule 是成功案例，记录解决结果",
+      "Gene 指导行动，Capsule 加速复用",
+      "两者配合实现知识积累和传承"
+    ],
+    "analogies": {
+      "life": "Gene=菜谱，Capsule=成品菜照片",
+      "tech": "Gene=设计模式，Capsule=代码片段"
+    },
+    "when_to_use": "用户询问 Gene 或 Capsule 概念、两者区别、Evolver 核心组件时",
+    "related_capsules": [
+      "knowledge-capsule-architecture-understanding"
+    ]
+  },
+  "document_path": "./topics/gene-and-capsule.md",
+  "confidence": 0.95
+}

@@ -1,0 +1,46 @@
+{
+  "type": "KnowledgeCapsule",
+  "id": "knowledge-capsule-gene-selection-elimination-20260225",
+  "created_at": "2026-02-25",
+  "topic": "gene-selection-and-elimination",
+  "for_agent": {
+    "trigger": [
+      "优胜劣汰",
+      "自然选择",
+      "基因筛选",
+      "淘汰机制",
+      "表观遗传",
+      "epigenetic",
+      "ban",
+      "封禁",
+      "success_streak",
+      "金丝雀检查",
+      "canary",
+      "伦理审查",
+      "ethics"
+    ],
+    "summary": "Evolver的6层优胜劣汰机制：信号匹配、失败封禁、风险评估、硬约束检查、表观遗传标记、成功率追踪",
+    "key_points": [
+      "第1层-信号匹配：匹配度为0的基因直接淘汰",
+      "第2层-失败封禁：连续失败2次的基因被封禁",
+      "第3层-风险评估：高风险个性禁止创新，强制降级",
+      "第4层-硬约束：文件>60/行数>20000/伦理违规直接淘汰",
+      "第5层-表观遗传：成功+0.05 boost，失败-0.1 boost，90天衰减",
+      "第6层-成功率追踪：连续成功≥2次才能广播到Hub"
+    ],
+    "analogies": {
+      "life": "企业人才管理：简历筛选→试用期→绩效考核→末位淘汰→能力沉淀",
+      "tech": "生物自然选择：环境压力→变异→自然选择→适者生存→遗传强化"
+    },
+    "when_to_use": "用户询问基因优胜劣汰、自然选择机制、表观遗传、失败封禁、伦理审查、金丝雀检查相关问题时",
+    "related_capsules": [
+      "knowledge-capsule-gene-capsule-concept-20260224",
+      "knowledge-capsule-matching-mechanism-20260224",
+      "knowledge-capsule-evolver-hub-network-20260225"
+    ]
+  },
+  "for_human": {
+    "document_path": "./topics/gene-selection-and-elimination.md",
+    "brief": "详细讲解Evolver的6层优胜劣汰机制，包括信号匹配、失败封禁、风险评估、硬约束检查、表观遗传标记、成功率追踪"
+  }
+}
