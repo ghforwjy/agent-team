@@ -43,3 +43,11 @@ tests/*.xlsx
 tests/*.py
 *.txt
 
+# Model files
+model/
+*.bin
+*.safetensors
+*.pth
+*.pt
+*.ckpt
+
