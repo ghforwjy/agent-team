@@ -38,5 +38,8 @@ dmypy.json
 *.log
 .trae/
 tests/*.txt
+tests/*.json
+tests/*.xlsx
+tests/*.py
 *.txt
 
