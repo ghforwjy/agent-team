@@ -51,3 +51,6 @@ model/
 *.pt
 *.ckpt
 
+# Training materials
+训练材料/
+
