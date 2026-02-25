@@ -1,0 +1,26 @@
+{
+  "name": "Evolver-Enhanced Coder",
+  "description": "具备自我进化能力的编程助手",
+  "version": "1.0.0",
+  "mcpServers": {
+    "evolver": {
+      "command": "node",
+      "args": [
+        "f:/mycode/垂直领域工具类/agent-team/evolver/mcp-server.js"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  },
+  "systemPrompt": {
+    "role": "system",
+    "content": "你是具备自我进化能力的编程助手。每次完成任务后，你会自动分析会话历史，识别改进点，并应用最佳实践。"
+  },
+  "evolution": {
+    "enabled": true,
+    "autoAnalyze": true,
+    "reviewMode": true,
+    "shareKnowledge": true
+  }
+}

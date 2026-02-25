@@ -1,0 +1,95 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-25T22:48:39.476828",
+  "source_file": "",
+  "summary": {
+    "total_new_items": 4,
+    "total_existing_items": 4,
+    "suggested_new_items": 0,
+    "suggested_merge_items": 2,
+    "pending_review": 2
+  },
+  "merge_suggestions": [
+    {
+      "suggestion_id": "M001",
+      "new_item": {
+        "title": "公司是否建立IT治理委员会",
+        "dimension": "信息技术治理",
+        "procedure": "查阅IT治理委员会成立发文"
+      },
+      "match_result": {
+        "existing_item_id": "IT-GOV-0015",
+        "existing_title": "是否设立IT治理委员会",
+        "similarity": 0.93,
+        "action": "merge"
+      },
+      "procedure_match": {
+        "existing_procedure": "查阅公司是否制定IT治理委员会成立文件",
+        "similarity": 0.86,
+        "action": "merge_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M002",
+      "new_item": {
+        "title": "IT治理委员会是否有效运作",
+        "dimension": "信息技术治理",
+        "procedure": "查阅IT治理委员会会议记录"
+      },
+      "match_result": {
+        "existing_item_id": "IT-GOV-0015",
+        "existing_title": "是否设立IT治理委员会",
+        "similarity": 0.87,
+        "action": "merge"
+      },
+      "procedure_match": {
+        "existing_procedure": "查阅公司是否制定IT治理委员会成立文件",
+        "similarity": 0.72,
+        "action": "new_procedure"
+      },
+      "vector_confidence": "medium"
+    }
+  ],
+  "pending_review": [
+    {
+      "suggestion_id": "P001",
+      "new_item": {
+        "title": "是否制定数据分类分级管理制度",
+        "dimension": "数据安全",
+        "procedure": "查阅数据分类分级管理制度文件"
+      },
+      "candidates": [
+        {
+          "existing_item_id": "IT-DS-0008",
+          "existing_title": "是否建立数据安全管理制度",
+          "similarity": 0.75
+        }
+      ],
+      "vector_confidence": "low",
+      "note": "相似度中等，需人工判断"
+    },
+    {
+      "suggestion_id": "P002",
+      "new_item": {
+        "title": "是否定期开展网络安全培训",
+        "dimension": "安全管理",
+        "procedure": "查阅培训记录"
+      },
+      "candidates": [
+        {
+          "existing_item_id": "IT-SEC-0023",
+          "existing_title": "是否制定安全培训计划",
+          "similarity": 0.84
+        },
+        {
+          "existing_item_id": "IT-SEC-0045",
+          "existing_title": "员工是否接受安全意识教育",
+          "similarity": 0.74
+        }
+      ],
+      "vector_confidence": "low",
+      "note": "相似度中等，需人工判断"
+    }
+  ]
+}

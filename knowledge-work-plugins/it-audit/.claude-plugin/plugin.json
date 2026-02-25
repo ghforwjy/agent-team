@@ -1,0 +1,15 @@
+{
+  "name": "it-audit",
+  "version": "1.0.0",
+  "description": "IT审计专家Agent - 支持审计项收集、审计执行、报告生成",
+  "commands": [
+    "collect-audit-items",
+    "run-audit",
+    "generate-report"
+  ],
+  "skills": [
+    "audit-item-collector",
+    "audit-executor",
+    "report-generator"
+  ]
+}

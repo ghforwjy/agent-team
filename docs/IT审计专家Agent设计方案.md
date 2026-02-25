@@ -1,7 +1,8 @@
 # IT审计专家Agent设计方案
 
-> 版本: v2.0
+> 版本: v2.3
 > 创建日期: 2026-02-25
+> 最后更新: 2026-02-25
 > 状态: 设计中
 
 ---
@@ -130,28 +131,62 @@ INSERT INTO audit_dimensions (code, name, parent_id, level, display_order)
 SELECT 'ITGC-OPS', 'IT运维', id, 2, 3 FROM audit_dimensions WHERE code = 'ITGC';
 ```
 
-#### 2.2.2 检查项表 (audit_items)
+#### 2.2.2 审计项表 (audit_items)
+
+> **设计说明**: 审计项是核心实体，只存储审计问题本身。审计程序/动作单独存储在 audit_procedures 表中，支持一对多关系。
 
 ```sql
 CREATE TABLE audit_items (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_code VARCHAR(30) UNIQUE NOT NULL, -- 检查项编码：IT-GOV-001, ITGC-AC-001
     dimension_id INTEGER NOT NULL,         -- 关联维度ID
-    title VARCHAR(200) NOT NULL,           -- 检查项标题
-    description TEXT,                       -- 检查内容描述
-    audit_procedure TEXT,                   -- 审计程序/检查方法
+    title VARCHAR(500) NOT NULL,           -- 检查项标题（核心匹配字段）
+    title_vector BLOB,                     -- 标题语义向量（用于相似度匹配）
+    description TEXT,                      -- 检查内容描述
     criteria TEXT,                         -- 判断标准
     severity VARCHAR(10),                  -- 严重程度：高/中/低
     evidence_required TEXT,                -- 所需证据（JSON数组）
     status VARCHAR(20) DEFAULT 'active',   -- 状态：active/deprecated
-    version VARCHAR(20) DEFAULT 'v1',     -- 版本号
+    version VARCHAR(20) DEFAULT 'v1',      -- 版本号
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (dimension_id) REFERENCES audit_dimensions(id)
 );
 ```
 
-#### 2.2.3 法规依据表 (regulatory_basis)
+#### 2.2.3 审计动作表 (audit_procedures) 【新增】
+
+> **设计说明**: 一个审计项可以有多个审计动作，来自不同来源的底稿。通过语义匹配去重，逐步积累。
+
+```sql
+CREATE TABLE audit_procedures (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER NOT NULL,              -- 关联审计项ID
+    procedure_text TEXT NOT NULL,          -- 审计程序/检查方法内容
+    procedure_type VARCHAR(50),            -- 动作类型：查阅/访谈/测试/观察/分析
+    procedure_vector BLOB,                 -- 审计程序语义向量
+    source_id INTEGER,                     -- 关联来源记录ID
+    is_primary BOOLEAN DEFAULT 0,          -- 是否为主要动作
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (item_id) REFERENCES audit_items(id) ON DELETE CASCADE,
+    FOREIGN KEY (source_id) REFERENCES audit_item_sources(id)
+);
+
+-- 索引
+CREATE INDEX idx_procedures_item ON audit_procedures(item_id);
+CREATE INDEX idx_procedures_type ON audit_procedures(procedure_type);
+```
+
+**数据关系示意**:
+```
+audit_items (审计项)
+├── "公司是否建立IT治理委员会"
+│   └── audit_procedures (审计动作)
+│       ├── "查阅IT治理委员会成立发文" (来源: 2021底稿)
+│       └── "检查公司是否制定IT治理委员会成立文件" (来源: 2022底稿)
+```
+
+#### 2.2.4 法规依据表 (regulatory_basis)
 
 ```sql
 CREATE TABLE regulatory_basis (
@@ -276,56 +311,396 @@ CREATE INDEX idx_results_status ON audit_results(status);
 #### 3.1.1 功能概述
 
 - 输入：各种格式的检查底稿Excel
-- 处理：解析Excel → 列名映射 → 数据清洗 → 冲突检测 → 入库
-- 输出：标准检查项库（SQLite）
+- 处理：解析Excel → 列名映射 → **语义清洗** → 入库
+- 输出：标准审计项库 + 审计动作库（SQLite）
 
-#### 3.1.2 处理流程
+**核心目标**：将各种来源的审计底稿清洗合并，形成统一的审计知识库：
+- 相同审计项合并，不重复存储
+- 不同审计动作积累到同一审计项下
+- 支持语义相似度匹配，识别同义不同词的审计项
+
+#### 3.1.2 清洗流程（详细设计）
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│ 1. Excel解析                                                     │
-│    ├─ 读取Excel文件                                             │
-│    ├─ 识别Sheet结构                                              │
-│    └─ 提取原始数据                                               │
+│ 步骤1: Excel解析                                                 │
+│    ├─ 读取Excel文件                                              │
+│    ├─ 智能识别表头位置（扫描前10行）                             │
+│    ├─ 列名映射到标准字段                                         │
+│    └─ 过滤审计结果字段（检查结论、证据清单等不导入）             │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ 2. 列名映射配置                                                  │
-│    ├─ 系统预设标准列名                                           │
-│    ├─ 用户自定义映射规则                                         │
-│    └─ 映射示例：                                                 │
-│       原始列名 "存在问题" ──▶ 标准字段 "description"             │
-│       原始列名 "问题序号" ──▶ 标准字段 "item_code"              │
+│ 步骤2: 数据提取                                                  │
+│    ├─ 提取字段：维度、审计项标题、审计程序                       │
+│    ├─ 标题标准化：去除空格、标点、统一格式                       │
+│    └─ 记录原始数据用于追溯                                       │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ 3. 数据标准化                                                    │
-│    ├─ 字段提取与映射                                             │
-│    ├─ 数据类型校验                                               │
-│    └─ 必填字段检查                                               │
+│ 步骤3: 审计项语义匹配 【核心】                                   │
+│    ├─ 计算新审计项标题的语义向量                                 │
+│    ├─ 与数据库中已有审计项进行语义相似度匹配                     │
+│    └─ 阈值判断：                                                 │
+│        > 0.85: 高相似 → 视为同一审计项，进入步骤4                │
+│        0.60-0.85: 中相似 → 人工确认                             │
+│        < 0.60: 低相似 → 视为新审计项，进入步骤5A                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ 4. 冲突检测与处理                                               │
-│    ├─ 完全重复检测                                               │
-│    ├─ 相似度检测                                                 │
-│    └─ 维度冲突检测                                               │
+│ 步骤4: 审计动作匹配（审计项已存在时）                            │
+│    ├─ 计算新审计程序的语义向量                                   │
+│    ├─ 与该审计项下已有审计动作进行相似度匹配                     │
+│    └─ 判断结果：                                                 │
+│        > 0.80: 动作相似 → 跳过，只记录来源                       │
+│        < 0.80: 动作不同 → 新增审计动作，进入步骤5B               │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ 5. 入库                                                          │
-│    ├─ 写入检查项表                                               │
-│    ├─ 写入法规依据表                                             │
-│    ├─ 写入来源追溯表                                             │
-│    └─ 生成导入批次号                                             │
+│ 步骤5A: 新建审计项                                               │
+│    ├─ 写入 audit_items 表                                        │
+│    ├─ 缓存标题语义向量                                           │
+│    ├─ 创建审计动作记录                                           │
+│    └─ 记录来源追溯                                               │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 步骤5B: 新增审计动作                                             │
+│    ├─ 写入 audit_procedures 表                                   │
+│    ├─ 缓存动作语义向量                                           │
+│    └─ 记录来源追溯                                               │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-#### 3.1.3 列名映射配置
+#### 3.1.3 语义匹配详细设计
+
+**性能优化策略**:
+
+> **核心问题**: 200条新 × 600条已有 = 120,000次比较，如果每次都调用LLM，成本和时间不可接受。
+> 
+> **解决方案**: 向量模型做初筛，LLM只校验候选结果。
+
+**两阶段匹配流程**:
+
+```
+阶段1: 向量模型初筛（快速、低成本）
+┌─────────────────────────────────────────────────────────────────┐
+│ 输入: 200条新审计项 + 600条已有审计项                            │
+│ 处理: 批量计算向量，矩阵乘法求相似度                             │
+│ 输出: 每条新审计项的Top-K候选（K=3）                             │
+│ 耗时: 约10秒（本地模型）                                         │
+│ 成本: 0元                                                        │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+阶段2: LLM校验（仅对候选结果）
+┌─────────────────────────────────────────────────────────────────┐
+│ 输入: 约20-50条需要校验的候选对                                  │
+│ 处理: 批量LLM校验（一次调用处理多个）                            │
+│ 输出: 最终合并决策                                               │
+│ 耗时: 约30秒                                                     │
+│ 成本: 约0.1-0.5元                                                │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**向量模型批量匹配算法**:
+
+```python
+import numpy as np
+from sentence_transformers import SentenceTransformer
+
+def batch_match_items(new_titles: List[str], existing_items: List[dict], top_k: int = 3) -> Dict:
+    """
+    批量匹配审计项（向量模型）
+    
+    性能: 200条 × 600条 ≈ 10秒（本地模型）
+    """
+    model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+    
+    # 批量计算新审计项向量
+    new_vectors = model.encode(new_titles, batch_size=32, show_progress_bar=True)
+    
+    # 获取已有审计项向量（优先使用缓存）
+    existing_vectors = np.array([
+        item.get('title_vector') or model.encode(item['title'])
+        for item in existing_items
+    ])
+    
+    # 矩阵乘法计算相似度（一次计算所有配对）
+    similarity_matrix = np.dot(new_vectors, existing_vectors.T)
+    
+    # 为每条新审计项找到Top-K候选
+    results = {}
+    for i, new_title in enumerate(new_titles):
+        top_indices = np.argsort(similarity_matrix[i])[-top_k:][::-1]
+        results[new_title] = [
+            {
+                'item': existing_items[idx],
+                'similarity': float(similarity_matrix[i][idx])
+            }
+            for idx in top_indices
+            if similarity_matrix[i][idx] > 0.60  # 只保留相似度>0.60的
+        ]
+    
+    return results
+```
+
+**LLM批量校验算法**:
+
+```python
+def batch_llm_verify(candidates: List[Dict], batch_size: int = 10) -> List[Dict]:
+    """
+    批量LLM校验（减少API调用次数）
+    
+    将多个校验任务合并到一个prompt中
+    """
+    results = []
+    
+    for i in range(0, len(candidates), batch_size):
+        batch = candidates[i:i+batch_size]
+        
+        prompt = f"""
+你是一个IT审计专家。请判断以下{len(batch)}对审计项是否应该合并。
+
+{format_candidates_for_prompt(batch)}
+
+请以JSON数组格式输出，每项包含：
+- index: 序号
+- should_merge: true/false
+- reason: 简短理由（20字内）
+"""
+        
+        response = llm.call(prompt)
+        batch_results = parse_llm_response(response)
+        results.extend(batch_results)
+    
+    return results
+```
+
+**调用次数估算**:
+
+| 场景 | 向量比较次数 | LLM调用次数 | 说明 |
+|------|-------------|-------------|------|
+| 200条新，600条已有 | 120,000次 | 约5-10次 | 只对相似度>0.85的调用LLM |
+| 预计高相似匹配 | - | 约20-50条 | 合并成5-10次批量调用 |
+| 总成本 | 0元 | 约0.1-0.5元 | 本地向量模型免费 |
+
+**审计项匹配算法（优化后）**:
+
+```python
+def match_audit_item(new_title: str, db_items: List[dict]) -> MatchResult:
+    """
+    审计项语义匹配
+    
+    Returns:
+        MatchResult:
+            - type: 'exact' | 'high_similar' | 'medium_similar' | 'new'
+            - matched_item: 匹配到的审计项（如有）
+            - similarity: 相似度分数 (0-1)
+    """
+    # 1. 完全匹配（标准化后字符串相同）
+    normalized_new = normalize_text(new_title)
+    for item in db_items:
+        if normalize_text(item['title']) == normalized_new:
+            return MatchResult('exact', item, 1.0)
+    
+    # 2. 语义相似度计算
+    new_vector = model.encode(new_title)
+    
+    best_match = None
+    best_score = 0.0
+    
+    for item in db_items:
+        # 使用缓存的向量或重新计算
+        item_vector = item.get('title_vector') or model.encode(item['title'])
+        score = cosine_similarity(new_vector, item_vector)
+        
+        if score > best_score:
+            best_score = score
+            best_match = item
+    
+    # 3. 阈值判断
+    if best_score > 0.85:
+        return MatchResult('high_similar', best_match, best_score)
+    elif best_score > 0.60:
+        return MatchResult('medium_similar', best_match, best_score)
+    else:
+        return MatchResult('new', None, best_score)
+```
+
+**审计动作匹配算法**:
+
+```python
+def match_audit_procedure(new_procedure: str, existing_procedures: List[dict]) -> MatchResult:
+    """
+    审计动作语义匹配
+    
+    阈值说明：审计动作的相似度阈值比审计项更宽松
+    因为同一审计项的不同动作可能有细微差异
+    """
+    if not existing_procedures:
+        return MatchResult('new', None, 0.0)
+    
+    new_vector = model.encode(new_procedure)
+    
+    best_match = None
+    best_score = 0.0
+    
+    for proc in existing_procedures:
+        proc_vector = proc.get('procedure_vector') or model.encode(proc['procedure_text'])
+        score = cosine_similarity(new_vector, proc_vector)
+        
+        if score > best_score:
+            best_score = score
+            best_match = proc
+    
+    # 审计动作阈值：0.80
+    if best_score > 0.80:
+        return MatchResult('similar', best_match, best_score)
+    else:
+        return MatchResult('new', None, best_score)
+```
+
+**相似度阈值配置**:
+
+| 匹配对象 | 高相似阈值 | 中相似阈值 | 处理方式 |
+|----------|-----------|-----------|----------|
+| 审计项 | 0.85 | 0.60 | 高相似自动合并，中相似人工确认 |
+| 审计动作 | 0.80 | - | 高相似跳过，低相似新增 |
+
+#### 3.1.4 LLM校验设计
+
+> **设计目的**: 向量模型只能计算语义相似度，无法进行逻辑判断。需要LLM对清洗结果进行二次校验，避免错误合并。
+
+**校验时机**: 在语义匹配完成后、入库之前
+
+**校验场景**:
+
+| 场景 | 触发条件 | 校验目的 |
+|------|----------|----------|
+| 审计项合并校验 | 语义相似度 > 0.85 时 | 确认是否真的是同一检查项 |
+| 审计动作合并校验 | 语义相似度 > 0.80 时 | 确认检查方法是否真的相同 |
+| 维度一致性校验 | 新增审计项时 | 确认维度分类是否合理 |
+
+**LLM校验Prompt模板**:
+
+```python
+LLM_VERIFY_PROMPT = """
+你是一个IT审计专家，负责审核审计项的合并决策是否正确。
+
+## 待审核内容
+
+**已有审计项**:
+- 标题: {existing_title}
+- 维度: {existing_dimension}
+- 审计动作: {existing_procedures}
+
+**新导入审计项**:
+- 标题: {new_title}
+- 维度: {new_dimension}
+- 审计程序: {new_procedure}
+- 语义相似度: {similarity_score}
+
+## 审核要点
+
+请判断以下问题：
+
+1. **是否同一审计项？**
+   - 检查重点是否相同？
+   - 检查对象是否相同？
+   - 是否存在包含关系（一个是另一个的子项）？
+
+2. **维度是否一致？**
+   - 如果维度不同，是否合理？
+   - 是否应该调整维度？
+
+3. **审计动作是否相同？**
+   - 检查方法是否相同？
+   - 检查对象是否相同？
+   - 是否需要保留为不同动作？
+
+## 输出格式
+
+请以JSON格式输出审核结果：
+{
+    "is_same_item": true/false,
+    "item_merge_decision": "merge"/"keep_separate",
+    "item_reason": "判断理由",
+    "is_same_procedure": true/false,
+    "procedure_merge_decision": "merge"/"keep_separate", 
+    "procedure_reason": "判断理由",
+    "dimension_adjustment": null 或建议的维度,
+    "confidence": "high"/"medium"/"low"
+}
+"""
+```
+
+**校验结果处理**:
+
+| LLM判断 | 处理方式 |
+|---------|----------|
+| is_same_item=true, confidence=high | 执行合并 |
+| is_same_item=true, confidence=low | 标记待人工确认 |
+| is_same_item=false | 保持分离，不合并 |
+| 维度需要调整 | 更新维度后入库 |
+
+**校验流程图**:
+
+```
+语义匹配结果
+    │
+    ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ LLM校验                                                         │
+│   ├─ 审计项合并校验                                             │
+│   ├─ 审计动作合并校验                                           │
+│   └─ 维度一致性校验                                             │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ 校验结果处理                                                    │
+│   ├─ 确认合并 → 执行入库                                        │
+│   ├─ 确认分离 → 创建新记录                                      │
+│   ├─ 低置信度 → 标记待人工确认                                  │
+│   └─ 维度调整 → 更新后入库                                      │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**典型错误案例**:
+
+```
+案例1: 假阳性合并
+- 审计项A: "是否建立IT治理委员会"
+- 审计项B: "IT治理委员会是否有效运作"
+- 语义相似度: 0.88 (高相似)
+- LLM判断: 不是同一审计项
+  - A检查的是"有没有建立"
+  - B检查的是"运作是否有效"
+  - 检查重点不同，应保持分离
+
+案例2: 动作误合并
+- 动作A: "查阅IT治理委员会成立发文"
+- 动作B: "查阅IT治理委员会会议记录"
+- 语义相似度: 0.82 (高相似)
+- LLM判断: 不是同一动作
+  - A检查的是"成立文件"
+  - B检查的是"会议记录"
+  - 检查对象不同，应保留两个动作
+
+案例3: 维度错配
+- 审计项: "是否制定网络安全应急预案"
+- 自动归类维度: "IT运维"
+- LLM判断: 应归入"事件与应急管理"
+  - 该审计项更符合应急管理维度
+```
+
+#### 3.1.5 列名映射配置
 
 ```python
 # 列名映射规则（可配置）
@@ -835,6 +1210,9 @@ USER_COLUMN_MAPPING = {
 
 | 版本 | 日期 | 修改内容 |
 |------|------|----------|
+| v2.3 | 2026-02-25 | **性能优化**：向量模型批量初筛 + LLM批量校验，大幅降低成本和时间 |
+| v2.2 | 2026-02-25 | **LLM校验设计**：新增LLM二次校验机制，防止向量模型的假阳性合并 |
+| v2.1 | 2026-02-25 | **模块一详细设计**：新增audit_procedures表，审计项与审计动作分离；完善语义清洗流程设计 |
 | v2.0 | 2026-02-25 | 重新设计，采用SQLite数据库，三模块架构 |
 | v1.0 | 2026-02-25 | 初始版本（已废弃） |
 
