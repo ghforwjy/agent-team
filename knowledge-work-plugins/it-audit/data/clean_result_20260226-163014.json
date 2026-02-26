@@ -1,0 +1,4516 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-26T16:30:20.347724",
+  "source_file": "audit_items_2021.xlsx",
+  "summary": {
+    "total_new_items": 224,
+    "total_existing_items": 224,
+    "suggested_new_items": 0,
+    "suggested_reuse_items": 224,
+    "pending_review": 0
+  },
+  "merge_suggestions": [
+    {
+      "suggestion_id": "M001",
+      "new_item": {
+        "title": "是否制定相关的网络安全保障方案。",
+        "dimension": "XC建党100周年网络安全保障专项工作情况",
+        "procedure": "检查公司是否制定专门的建党100年网络安全保障方案。"
+      },
+      "match_result": {
+        "existing_item_id": 1,
+        "existing_title": "是否制定相关的网络安全保障方案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M002",
+      "new_item": {
+        "title": "是否按照建党100年网络保障要求开展网络安全风险排查。",
+        "dimension": "XC建党100周年网络安全保障专项工作情况",
+        "procedure": "a)检查公司是否制定建党100年网络保障自查清单。b)查看检查记录，确认公司是否根据清单对网络安全进行排查。"
+      },
+      "match_result": {
+        "existing_item_id": 2,
+        "existing_title": "是否按照建党100年网络保障要求开展网络安全风险排查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M003",
+      "new_item": {
+        "title": "是否对网络安全风险排查所发现的问题进行整改。",
+        "dimension": "XC建党100周年网络安全保障专项工作情况",
+        "procedure": "检查记录，确认公司是否对建党100年网络保障自查所发现的问题进行整改。"
+      },
+      "match_result": {
+        "existing_item_id": 3,
+        "existing_title": "是否对网络安全风险排查所发现的问题进行整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M004",
+      "new_item": {
+        "title": "公司是否建立IT治理委员会。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅IT治理委员会成立发文。"
+      },
+      "match_result": {
+        "existing_item_id": 4,
+        "existing_title": "公司是否建立IT治理委员会。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M005",
+      "new_item": {
+        "title": "IT治理委员会是否由公司主要负责人、相关高级管理人员及相关部门负责人组成。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅IT治理委员会成立发文。"
+      },
+      "match_result": {
+        "existing_item_id": 5,
+        "existing_title": "IT治理委员会是否由公司主要负责人、相关高级管理人员及相关部门负责人组成。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M006",
+      "new_item": {
+        "title": "是否明确公司IT治理委员会工作职责，制定公司IT治理委员会议事规则，IT治理委员会审议内容是否全面。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅IT治理委员会成立发文或相关信息科技管理制度，了解IT治理委员职责和议事规则，确认其中是否包含拟订公司IT治理目标和IT治理工作计划，审议公司IT发展规划，审议公司年度IT工作计划和IT预算，审议..."
+      },
+      "match_result": {
+        "existing_item_id": 6,
+        "existing_title": "是否明确公司IT治理委员会工作职责，制定公司IT治理委员会议事规则，IT治理委员会审议内容是否全面。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M007",
+      "new_item": {
+        "title": "是否定期召开会议决策信息技术治理重大事项",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅IT治理委员会会议记录。"
+      },
+      "match_result": {
+        "existing_item_id": 7,
+        "existing_title": "是否定期召开会议决策信息技术治理重大事项",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M008",
+      "new_item": {
+        "title": "公司是否设置首席信息官岗位。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅公司人员岗位设置情况。"
+      },
+      "match_result": {
+        "existing_item_id": 8,
+        "existing_title": "公司是否设置首席信息官岗位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M009",
+      "new_item": {
+        "title": "首席信息官是否满足任职资格要求。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查看首席信息官简历，确认首席信息官具有相关学习背景或工作经验。"
+      },
+      "match_result": {
+        "existing_item_id": 9,
+        "existing_title": "首席信息官是否满足任职资格要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M010",
+      "new_item": {
+        "title": "分管IT的高管人员是否有IT专业背景或工作经验",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅公司员工名录，取得IT部门及风险管理部门、合规管理部门员工职责分工表及员工简历，确认分管IT的高管人员是否有IT专业背景或工作经验。"
+      },
+      "match_result": {
+        "existing_item_id": 10,
+        "existing_title": "分管IT的高管人员是否有IT专业背景或工作经验",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M011",
+      "new_item": {
+        "title": "公司是否设立信息技术内部审计岗，配备专职信息技术审计人员。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅公司员工名录，取得公司内部审计部门岗位职责分工表。"
+      },
+      "match_result": {
+        "existing_item_id": 11,
+        "existing_title": "公司是否设立信息技术内部审计岗，配备专职信息技术审计人员。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M012",
+      "new_item": {
+        "title": "信息技术审计人员是否有信息技术相关专业学历或工作经验。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅公司员工名录，取得公司内部审计部门岗位职责分工表。"
+      },
+      "match_result": {
+        "existing_item_id": 12,
+        "existing_title": "信息技术审计人员是否有信息技术相关专业学历或工作经验。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M013",
+      "new_item": {
+        "title": "公司是否设立信息技术合规及风险管理部门及岗位。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅公司员工名录，取得IT部门及风险管理部门、合规管理部门员工职责分工表及员工简历。"
+      },
+      "match_result": {
+        "existing_item_id": 13,
+        "existing_title": "公司是否设立信息技术合规及风险管理部门及岗位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M014",
+      "new_item": {
+        "title": "信息技术合规及风险管理岗位人员是否具有信息技术专业背景或相关IT工作经验。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅公司员工名录，取得IT部门及风险管理部门、合规管理部门员工职责分工表及员工简历，确认信息技术合规及风险管理岗位人员是否有IT专业背景或工作经验。"
+      },
+      "match_result": {
+        "existing_item_id": 14,
+        "existing_title": "信息技术合规及风险管理岗位人员是否具有信息技术专业背景或相关IT工作经验。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M015",
+      "new_item": {
+        "title": "是否设立信息安全管理工作的职能部门，设立安全主管、安全管理各个方面的负责人岗位，并定义各负责人的职责。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否设立信息安全管理工作的职能部门、安全主管、安全管理各个方面的负责人岗位；b)检查岗位职责文档，查看文档是否明确设置安全主管、安全管理各个方面的负责人、各个岗位的职责范围是否清..."
+      },
+      "match_result": {
+        "existing_item_id": 15,
+        "existing_title": "是否设立信息安全管理工作的职能部门，设立安全主管、安全管理各个方面的负责人岗位，并定义各负责人的职责。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M016",
+      "new_item": {
+        "title": "机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位是否设置主备岗。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)检查“表L.1-按岗位人员情况”，检查运维岗位分工及岗位职责说明，机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位是否设置主备岗；b)访谈机房管理员、网络管理员、系统管理员、..."
+      },
+      "match_result": {
+        "existing_item_id": 16,
+        "existing_title": "机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位是否设置主备岗。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M017",
+      "new_item": {
+        "title": "关键岗位是否进行分离，兼岗时是否满足岗位相互制约的要求。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查运维岗位分工及岗位职责说明，机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位的职责范围是否清晰、明确，有相互制约的要求。"
+      },
+      "match_result": {
+        "existing_item_id": 17,
+        "existing_title": "关键岗位是否进行分离，兼岗时是否满足岗位相互制约的要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M018",
+      "new_item": {
+        "title": "公司是否配备足够的信息技术人员，公司的IT工作人员总数不少于公司员工总人数的6%。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)检查“表O.1-人员基本情况”、技术部门员工的情况说明，应包括总部技术部门人员名单及占比情况计算；b)检查正式员工花名册及员工人数统计（以与公司签订劳动合同，且具有从业资格为准）；c)检查技术部门..."
+      },
+      "match_result": {
+        "existing_item_id": 18,
+        "existing_title": "公司是否配备足够的信息技术人员，公司的IT工作人员总数不少于公司员工总人数的6%。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M019",
+      "new_item": {
+        "title": "是否建立信息技术管理制度和操作流程的制定、发布、维护和更新的机制。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查制度和操作流程维护相关办法，是否有关于制定、发布、维护和更新的规定。"
+      },
+      "match_result": {
+        "existing_item_id": 19,
+        "existing_title": "是否建立信息技术管理制度和操作流程的制定、发布、维护和更新的机制。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M020",
+      "new_item": {
+        "title": "是否至少每年一次评审、修订信息技术管理制度和操作流程。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查评审、修订信息技术管理制度和操作流程的记录，是否每年对制度和操作流程进行了评审、修订。"
+      },
+      "match_result": {
+        "existing_item_id": 20,
+        "existing_title": "是否至少每年一次评审、修订信息技术管理制度和操作流程。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M021",
+      "new_item": {
+        "title": "是否制定软件开发管理制度。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查是否有软件开发方面的管理制度。"
+      },
+      "match_result": {
+        "existing_item_id": 21,
+        "existing_title": "是否制定软件开发管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M022",
+      "new_item": {
+        "title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查看开发管理制度是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。"
+      },
+      "match_result": {
+        "existing_item_id": 22,
+        "existing_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M023",
+      "new_item": {
+        "title": "是否建立运维管理制度。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查运维管理制度。"
+      },
+      "match_result": {
+        "existing_item_id": 23,
+        "existing_title": "是否建立运维管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M024",
+      "new_item": {
+        "title": "运维管理制度是否对日常操作、监控管理、事件处理、问题处理、数据和介质管理、机房管理、安全管理、应急处置进行规范。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查运维管理制度，判断是否对日常操作、监控管理、事件处理、问题处理、数据和介质管理、机房管理、安全管理、应急处置进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 24,
+        "existing_title": "运维管理制度是否对日常操作、监控管理、事件处理、问题处理、数据和介质管理、机房管理、安全管理、应急处置进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M025",
+      "new_item": {
+        "title": "是否建立变更管理制度。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)文档审阅，是否建立变更管理制度。"
+      },
+      "match_result": {
+        "existing_item_id": 25,
+        "existing_title": "是否建立变更管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M026",
+      "new_item": {
+        "title": "变更管理制度是否包含系统发生变更前，向主管领导申请，变更和变更方案经过评审、审批后方可实施变更，并在实施后将变更情况向相关人员通告。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查变更管理制度，系统发生变更前，是否向主管领导申请； c)变更和变更方案是否经过评审、审批后方可实施变更，并在实施后将变更情况向相关人员通告。"
+      },
+      "match_result": {
+        "existing_item_id": 26,
+        "existing_title": "变更管理制度是否包含系统发生变更前，向主管领导申请，变更和变更方案经过评审、审批后方可实施变更，并在实施后将变更情况向相关人员通告。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M027",
+      "new_item": {
+        "title": "是否建立IT审计制度或在公司审计制度内对IT审计进行要求。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查IT审计制度或公司审计制度。"
+      },
+      "match_result": {
+        "existing_item_id": 27,
+        "existing_title": "是否建立IT审计制度或在公司审计制度内对IT审计进行要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M028",
+      "new_item": {
+        "title": "是否建立备份与恢复管理相关的安全管理制度。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查是否建立备份与恢复管理相关的安全管理制度。"
+      },
+      "match_result": {
+        "existing_item_id": 28,
+        "existing_title": "是否建立备份与恢复管理相关的安全管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M029",
+      "new_item": {
+        "title": "备份与恢复管理相关的安全管理制度只是否对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查备份与恢复管理相关的安全管理制度是否对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 29,
+        "existing_title": "备份与恢复管理相关的安全管理制度只是否对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M030",
+      "new_item": {
+        "title": "是否建立信息安全事件相关管理制度。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查是否建立信息安全事件相关管理制度。"
+      },
+      "match_result": {
+        "existing_item_id": 30,
+        "existing_title": "是否建立信息安全事件相关管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M031",
+      "new_item": {
+        "title": "信息安全事件相关管理制度中是否制定安全事件报告和响应处理程序，确定事件的报告流程，响应和处置的范围、程度，以及处理方法等。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查信息安全事件相关管理制度是否细化了不同安全事件的处理和报告程序，是否明确具体报告方式、报告内容、报告人等方面内容，造成系统中断和造成信息泄密的重大安全事件是否采用了不同于其他的处理程序和报告程序。"
+      },
+      "match_result": {
+        "existing_item_id": 31,
+        "existing_title": "信息安全事件相关管理制度中是否制定安全事件报告和响应处理程序，确定事件的报告流程，响应和处置的范围、程度，以及处理方法等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M032",
+      "new_item": {
+        "title": "公司是否制定IT合规及风险管理策略和制度。",
+        "dimension": "XC信息技术治理",
+        "procedure": "查阅公司合规及风险管理制度，是否包括IT 相关内容。"
+      },
+      "match_result": {
+        "existing_item_id": 32,
+        "existing_title": "公司是否制定IT合规及风险管理策略和制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M033",
+      "new_item": {
+        "title": "是否建立供应商管理制度。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查供应商管理制度。"
+      },
+      "match_result": {
+        "existing_item_id": 33,
+        "existing_title": "是否建立供应商管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M034",
+      "new_item": {
+        "title": "是否对年度安全教育和培训进行书面规定，针对运维人员等不同岗位制定不同的培训计划，对信息安全基础知识、岗位操作规程、机房消防及相关应急内容等进行培训，并留存培训记录。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)检查安全教育和培训计划文档，查看计划是否明确了培训方式、培训对象、培训内容、培训时间和地点等，培训内容是否包含信息安全基础知识、岗位操作规程、机房消防及相关应急内容等；b)检查安全教育和培训记录，..."
+      },
+      "match_result": {
+        "existing_item_id": 34,
+        "existing_title": "是否对年度安全教育和培训进行书面规定，针对运维人员等不同岗位制定不同的培训计划，对信息安全基础知识、岗位操作规程、机房消防及相关应急内容等进行培训，并留存培训记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M035",
+      "new_item": {
+        "title": "安全教育培训是否覆盖全体员工。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查安全教育和培训计划文档，确认安全教育培训是否覆盖全体员工。"
+      },
+      "match_result": {
+        "existing_item_id": 35,
+        "existing_title": "安全教育培训是否覆盖全体员工。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M036",
+      "new_item": {
+        "title": "安全教育培训是否每年进行一次。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查安全教育和培训计划文档，确认安全教育培训是否至少每年进行一次。"
+      },
+      "match_result": {
+        "existing_item_id": 36,
+        "existing_title": "安全教育培训是否每年进行一次。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M037",
+      "new_item": {
+        "title": "安全教育培训是否包含网络攻击防范以及员工邮件安全意识教育，提高员工对网络攻击尤其是钓鱼邮件、仿冒邮件的辨识能力。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查安全教育和培训计划和安全教育和培训记录，查看记录是否有网络攻击防范相关内容，是否有员工邮件安全意识教育相关内容。"
+      },
+      "match_result": {
+        "existing_item_id": 37,
+        "existing_title": "安全教育培训是否包含网络攻击防范以及员工邮件安全意识教育，提高员工对网络攻击尤其是钓鱼邮件、仿冒邮件的辨识能力。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M038",
+      "new_item": {
+        "title": "是否对各个岗位的人员至少每年一次进行安全技能及安全认知的考核。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否定期对各个岗位人员进行安全技能及安全知识的考核；_x000b_b)检查相关岗位的安全技能和安全认知的考核记录，查验安全技能和安全认知的考核是否至少每年一次。"
+      },
+      "match_result": {
+        "existing_item_id": 38,
+        "existing_title": "是否对各个岗位的人员至少每年一次进行安全技能及安全认知的考核。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M039",
+      "new_item": {
+        "title": "是否对安全技能及安全认知考核结果进行记录并保存。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)检查是否对岗位人员的安全技能及安全认知考核结果进行记录；_x000b_b)记录是否得到妥善保存。"
+      },
+      "match_result": {
+        "existing_item_id": 39,
+        "existing_title": "是否对安全技能及安全认知考核结果进行记录并保存。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M040",
+      "new_item": {
+        "title": "安全技能和安全认知考核是否覆盖所有岗位。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查考核记录，查看考核人员是否包括各个岗位的人员。"
+      },
+      "match_result": {
+        "existing_item_id": 40,
+        "existing_title": "安全技能和安全认知考核是否覆盖所有岗位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M041",
+      "new_item": {
+        "title": "安全技能和安全认知考核覆盖内容是否全面。",
+        "dimension": "XC信息技术治理",
+        "procedure": "检查考核记录，查看考核内容是否包含安全知识、安全技能等。"
+      },
+      "match_result": {
+        "existing_item_id": 41,
+        "existing_title": "安全技能和安全认知考核覆盖内容是否全面。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M042",
+      "new_item": {
+        "title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员，并对违反违背安全策略和规定的人员进行惩戒。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a)检查安全责任和惩戒措施管理文档，查看是否包含具体的安全责任和惩戒措施；b)检查安全责任惩戒记录，是否对违反安全策略和规定的人员进行惩戒。"
+      },
+      "match_result": {
+        "existing_item_id": 42,
+        "existing_title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员，并对违反违背安全策略和规定的人员进行惩戒。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M043",
+      "new_item": {
+        "title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "dimension": "XC信息技术治理",
+        "procedure": "a）检查是否建立信息系统数据管理制度；b）数据管理制度是否对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 43,
+        "existing_title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M044",
+      "new_item": {
+        "title": "是否按照最小化原则配置防火墙访问控制策略。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看防火墙访问控制策略。"
+      },
+      "match_result": {
+        "existing_item_id": 44,
+        "existing_title": "是否按照最小化原则配置防火墙访问控制策略。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M045",
+      "new_item": {
+        "title": "应对远程接入内部网络的行为进行严格限制。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "调阅运维网络远程接入管理相关制度，确认是否建立远程运维网络渠道使用的申请和审批流程，对于远程运维使用白名单方式严格控制。"
+      },
+      "match_result": {
+        "existing_item_id": 45,
+        "existing_title": "应对远程接入内部网络的行为进行严格限制。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M046",
+      "new_item": {
+        "title": "是否在网络边界处部署防病毒网关等设备对恶意代码进行检测和清除。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看网络安全规划文档和访谈网络安全管理员，检查网络边界恶意代码防护策略，检查在网络边界及核心业务网段处是否有相应的防恶意代码措施。"
+      },
+      "match_result": {
+        "existing_item_id": 46,
+        "existing_title": "是否在网络边界处部署防病毒网关等设备对恶意代码进行检测和清除。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M047",
+      "new_item": {
+        "title": "是否定期检查防病毒网关和邮件防病毒网关的恶意代码库的升级情况并进行记录。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)询问安全管理员，防病毒网关和邮件防病毒网关的恶意代码库的升级机制； b)检查恶意代码库的升级记录，判断是否定期。"
+      },
+      "match_result": {
+        "existing_item_id": 47,
+        "existing_title": "是否定期检查防病毒网关和邮件防病毒网关的恶意代码库的升级情况并进行记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M048",
+      "new_item": {
+        "title": "是否对截获的危险病毒或恶意代码进行及时分析处理，并形成书面的报表和总结汇报。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查恶意代码分析报告，确认对防病毒网关和邮件防病毒网关上截获的危险病毒或恶意代码进行了及时分析处理。"
+      },
+      "match_result": {
+        "existing_item_id": 48,
+        "existing_title": "是否对截获的危险病毒或恶意代码进行及时分析处理，并形成书面的报表和总结汇报。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M049",
+      "new_item": {
+        "title": "是否综合运用入侵检测等安全设备，保护网络与系统；是否正确设置安全设备的接口参数和过滤规则。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)访谈网络管理员安全访问控制策略；_x000b_b)审阅网络拓扑图，查看入侵检测等安全设备的配备情况；_x000b_c)查看安全设备的接口参数、过滤规则等相关文档资料；_x000b_d)查看安全测试..."
+      },
+      "match_result": {
+        "existing_item_id": 49,
+        "existing_title": "是否综合运用入侵检测等安全设备，保护网络与系统；是否正确设置安全设备的接口参数和过滤规则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M050",
+      "new_item": {
+        "title": "是否在网络边界处监视以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)检查“表L.3-该机房的网络安全检查情况”、网络入侵防范设备，查看是否能检测以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击、网络蠕虫攻击等；_x000b..."
+      },
+      "match_result": {
+        "existing_item_id": 50,
+        "existing_title": "是否在网络边界处监视以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M051",
+      "new_item": {
+        "title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查网络入侵防范设备的入侵报警记录，查看记录中是否包括入侵的源IP、攻击的类型、攻击的目的、攻击的时间等。"
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M052",
+      "new_item": {
+        "title": "是否使用堡垒机对操作系统、数据库、网络设备进行管控。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查是否使用堡垒机。"
+      },
+      "match_result": {
+        "existing_item_id": 52,
+        "existing_title": "是否使用堡垒机对操作系统、数据库、网络设备进行管控。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M053",
+      "new_item": {
+        "title": "操作系统、数据库、网络设备、堡垒机应设置密码安全策略。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "调阅操作系统、数据库、网络设备、堡垒机用户管理或访问控制相关制度，明确是否对密码最小长度、密码复杂度、历史密码进行要求。"
+      },
+      "match_result": {
+        "existing_item_id": 53,
+        "existing_title": "操作系统、数据库、网络设备、堡垒机应设置密码安全策略。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M054",
+      "new_item": {
+        "title": "应建立用户认证和访问控制流程。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "调阅操作系统、数据库、堡垒机用户管理或访问控制相关制度，明确是否制定了用户权限申请、审批、更新、注销流程。"
+      },
+      "match_result": {
+        "existing_item_id": 54,
+        "existing_title": "应建立用户认证和访问控制流程。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M055",
+      "new_item": {
+        "title": "是否建立补丁管理流程，持续跟踪厂商提供的系统升级更新情况，在经过充分的测试评估后对必要的系统补丁进行及时更新。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "调阅相关制度，确认是否建立补丁管理流程。"
+      },
+      "match_result": {
+        "existing_item_id": 55,
+        "existing_title": "是否建立补丁管理流程，持续跟踪厂商提供的系统升级更新情况，在经过充分的测试评估后对必要的系统补丁进行及时更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M056",
+      "new_item": {
+        "title": "是否通过设置升级服务器等方式保持系统补丁及时得到更新。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看是否设置升级服务器。"
+      },
+      "match_result": {
+        "existing_item_id": 56,
+        "existing_title": "是否通过设置升级服务器等方式保持系统补丁及时得到更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M057",
+      "new_item": {
+        "title": "在安装系统补丁前是否对重要文件进行备份，在测试环境中测试通过再安装。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查按照补丁前是否对重要文件进行备份，在测试环境中测试。"
+      },
+      "match_result": {
+        "existing_item_id": 57,
+        "existing_title": "在安装系统补丁前是否对重要文件进行备份，在测试环境中测试通过再安装。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M058",
+      "new_item": {
+        "title": "是否对所有服务器安装防木马、病毒等防恶意代码软件，定期进行全面检查，并及时更新防恶意代码软件版本和恶意代码库。a)原则上所有主机应安装防恶意代码软件，系统不支持该要求的除外；b)未安装防恶意代码软件的主机，应采取有效措施进行恶意代码防范。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看“表L.3-该机房的病毒木马防护软件情况”，检查关键服务器的恶意代码防范策略，对支持安装防恶意代码软件的主机操作系统，查看是否安装了实时检测与查杀恶意代码的软件产品，并且及时更新了软件版本和恶意代..."
+      },
+      "match_result": {
+        "existing_item_id": 58,
+        "existing_title": "是否对所有服务器安装防木马、病毒等防恶意代码软件，定期进行全面检查，并及时更新防恶意代码软件版本和恶意代码库。a)原则上所有主机应安装防恶意代码软件，系统不支持该要求的除外；b)未安装防恶意代码软件的主机，应采取有效措施进行恶意代码防范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M059",
+      "new_item": {
+        "title": "是否对终端软件安装进行限制和管理。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看终端，确认终端是否安装终端管理系统，确认终端管理系统是否能够对终端软件安装进行限制。"
+      },
+      "match_result": {
+        "existing_item_id": 59,
+        "existing_title": "是否对终端软件安装进行限制和管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M060",
+      "new_item": {
+        "title": "是否对所有终端安装防木马、病毒等防恶意代码软件。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查办公、生产、开发测试终端的恶意代码防范策略。"
+      },
+      "match_result": {
+        "existing_item_id": 60,
+        "existing_title": "是否对所有终端安装防木马、病毒等防恶意代码软件。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M061",
+      "new_item": {
+        "title": "是否设置专人负责室外LED大屏的安全管理。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "询问是否设置专人负责室外LED大屏的安全管理，检查岗位职责说明书等相关文档。"
+      },
+      "match_result": {
+        "existing_item_id": 61,
+        "existing_title": "是否设置专人负责室外LED大屏的安全管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M062",
+      "new_item": {
+        "title": "是否配置LED屏幕播放内容监控设备。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查确认配置LED屏幕播放内容监控设备"
+      },
+      "match_result": {
+        "existing_item_id": 62,
+        "existing_title": "是否配置LED屏幕播放内容监控设备。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M063",
+      "new_item": {
+        "title": "是否对LED屏幕操作权限进行控制。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "如果能通过远程方式管理LED屏幕，确认使用了高强度口令，并修改了默认口令。"
+      },
+      "match_result": {
+        "existing_item_id": 63,
+        "existing_title": "是否对LED屏幕操作权限进行控制。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M064",
+      "new_item": {
+        "title": "是否建立安全管理中心，对设备状态、恶意代码、补丁升级、安全审计等安全相关事项进行集中管理。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "访谈系统运维负责人，询问是否对通信线路、主机、网络设备和应用软件的运行状况，对设备状态、恶意代码、网络流量、补丁升级、安全审计等安全相关事项进行集中管理，是否形成监测记录文档，是否组织人员对监测记录进..."
+      },
+      "match_result": {
+        "existing_item_id": 64,
+        "existing_title": "是否建立安全管理中心，对设备状态、恶意代码、补丁升级、安全审计等安全相关事项进行集中管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M065",
+      "new_item": {
+        "title": "是否对系统大流量数据异常外传、非授权传输等数据访问情况进行监测。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查是否对系统大流量数据异常外传、非授权传输等数据访问情况进行监测。"
+      },
+      "match_result": {
+        "existing_item_id": 65,
+        "existing_title": "是否对系统大流量数据异常外传、非授权传输等数据访问情况进行监测。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M066",
+      "new_item": {
+        "title": "是否对网站进行安全监测。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "监测是否定时扫描网页、文件、链接，监测网站页面篡改、域名劫持、被插入暗链、跳转代码等安全事件。"
+      },
+      "match_result": {
+        "existing_item_id": 66,
+        "existing_title": "是否对网站进行安全监测。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M067",
+      "new_item": {
+        "title": "是否与CDN服务提供商、基础电信系运营企业联动，抵御DDOS攻击。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查是否与CDN服务提供商、基础电信系运营企业联动，抵御DDOS攻击。"
+      },
+      "match_result": {
+        "existing_item_id": 67,
+        "existing_title": "是否与CDN服务提供商、基础电信系运营企业联动，抵御DDOS攻击。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M068",
+      "new_item": {
+        "title": "是否根据数据完整性、保密性、可用性等安全属性遭到破坏后的影响对象和影响程度综合对数据进行分级。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "调阅数据安全相关制度，确认是否对按照数据的敏感程度对数据进行分类分级。"
+      },
+      "match_result": {
+        "existing_item_id": 68,
+        "existing_title": "是否根据数据完整性、保密性、可用性等安全属性遭到破坏后的影响对象和影响程度综合对数据进行分级。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M069",
+      "new_item": {
+        "title": "是否建立不同等级敏感数据保护流程。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "调阅数据安全相关制度，确认是否明确不同级别敏感信息的管理要求包括数据的采集、处理、存贮、传输、加密、备份、恢复、清理和销毁等。"
+      },
+      "match_result": {
+        "existing_item_id": 69,
+        "existing_title": "是否建立不同等级敏感数据保护流程。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M070",
+      "new_item": {
+        "title": "是否采取技术手段防止内部人员将系统架构、开发代码等内部数据泄露。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查开发终端上是否使用技术手段防止开发人员泄露源代码。"
+      },
+      "match_result": {
+        "existing_item_id": 70,
+        "existing_title": "是否采取技术手段防止内部人员将系统架构、开发代码等内部数据泄露。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M071",
+      "new_item": {
+        "title": "在线数据和离线数据用于非生产环境时，是否进行脱敏处理；用于模拟测试时如无法进行脱敏处理，测试环境应采取与生产环境相当的安全措施。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "访谈安全管理员，在线数据和离线数据用于非生产环境时，是否进行脱敏处理；用于模拟测试时如无法进行脱敏处理，测试环境的与生产环境安全措施是否相当。"
+      },
+      "match_result": {
+        "existing_item_id": 71,
+        "existing_title": "在线数据和离线数据用于非生产环境时，是否进行脱敏处理；用于模拟测试时如无法进行脱敏处理，测试环境应采取与生产环境相当的安全措施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M072",
+      "new_item": {
+        "title": "是否建立离线数据的调阅、复制、传输、查询和登记流程。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查离线数据维护记录，查看对离线数据的调阅、复制、传输、查询的授权审批记录。"
+      },
+      "match_result": {
+        "existing_item_id": 72,
+        "existing_title": "是否建立离线数据的调阅、复制、传输、查询和登记流程。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M073",
+      "new_item": {
+        "title": "离线数据存储介质入库前的调阅、复制、传输、查询是否进行了登记。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看登记记录，检查确认离线数据存储介质入库前的调阅、复制、传输、查询进行了登记。"
+      },
+      "match_result": {
+        "existing_item_id": 73,
+        "existing_title": "离线数据存储介质入库前的调阅、复制、传输、查询是否进行了登记。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M074",
+      "new_item": {
+        "title": "离线数据存储介质入库后的调阅、复制、传输、查询是否进行了登记。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看登记记录，检查确认离线数据存储介质入库后的调阅、复制、传输、查询进行了登记。"
+      },
+      "match_result": {
+        "existing_item_id": 74,
+        "existing_title": "离线数据存储介质入库后的调阅、复制、传输、查询是否进行了登记。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M075",
+      "new_item": {
+        "title": "是否建立至少每季度扫描并修补漏洞的工作机制，定义扫描检测的内容和程序，明确漏洞扫描工具和扫描频率，记录扫描结果及处理情况。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)访谈系统管理员，询问是否定期对系统进行漏洞扫描，扫描周期多长； b)检查是否至少每季进行一次漏洞扫描。"
+      },
+      "match_result": {
+        "existing_item_id": 75,
+        "existing_title": "是否建立至少每季度扫描并修补漏洞的工作机制，定义扫描检测的内容和程序，明确漏洞扫描工具和扫描频率，记录扫描结果及处理情况。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M076",
+      "new_item": {
+        "title": "是否对新上线的设备在接入运行网络前进行全面的安全检查。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)访谈安全管理员，了解设备上线前的安全检查流程； b)查看设备上线前的漏洞扫描、渗透测试、病毒扫描、木马检测等扫描报告。"
+      },
+      "match_result": {
+        "existing_item_id": 76,
+        "existing_title": "是否对新上线的设备在接入运行网络前进行全面的安全检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M077",
+      "new_item": {
+        "title": "是否对漏洞风险持续跟踪，在经过充分的验证测试后对必要的漏洞开展修补工作。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查漏洞修补（变更）报告，确认对发现的网络系统安全漏洞进行了风险评估并及时修补，完成修补工作后进行了验证测试。"
+      },
+      "match_result": {
+        "existing_item_id": 77,
+        "existing_title": "是否对漏洞风险持续跟踪，在经过充分的验证测试后对必要的漏洞开展修补工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M078",
+      "new_item": {
+        "title": "是否在漏洞扫描或漏洞修补后进行验证测试，以保证网络系统的正常运行。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)访谈网络管理员，询问是否在漏洞扫描或漏洞修补后应进行验证测试； b)查看漏洞修补（变更）记录，是否有验证测试记录。"
+      },
+      "match_result": {
+        "existing_item_id": 78,
+        "existing_title": "是否在漏洞扫描或漏洞修补后进行验证测试，以保证网络系统的正常运行。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M079",
+      "new_item": {
+        "title": "是否对网上信息系统进行渗透测试，并出具安全性测试报告。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查是否具有网上信息系统的渗透测试报告。"
+      },
+      "match_result": {
+        "existing_item_id": 79,
+        "existing_title": "是否对网上信息系统进行渗透测试，并出具安全性测试报告。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M080",
+      "new_item": {
+        "title": "是否定期对服务器和终端进行全面病毒扫描。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)查看防病毒软件策略，确认是否成功部署了定期全面扫描。\nb)查看病毒扫描记录，判断是否定期对服务器和终端进行全面病毒扫描。"
+      },
+      "match_result": {
+        "existing_item_id": 80,
+        "existing_title": "是否定期对服务器和终端进行全面病毒扫描。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M081",
+      "new_item": {
+        "title": "全面病毒扫描不得在交易时段内进行。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "检查病毒扫描时间，确认未在交易时段内进行。"
+      },
+      "match_result": {
+        "existing_item_id": 81,
+        "existing_title": "全面病毒扫描不得在交易时段内进行。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M082",
+      "new_item": {
+        "title": "是否由内部人员每年进行一次全面安全检查。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录，判断全面安全检查是否至少每年一次"
+      },
+      "match_result": {
+        "existing_item_id": 82,
+        "existing_title": "是否由内部人员每年进行一次全面安全检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M083",
+      "new_item": {
+        "title": "是否对安全区域隔离情况进行检查。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 83,
+        "existing_title": "是否对安全区域隔离情况进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M084",
+      "new_item": {
+        "title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M085",
+      "new_item": {
+        "title": "是否对系统中高危漏洞进行检查。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 85,
+        "existing_title": "是否对系统中高危漏洞进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M086",
+      "new_item": {
+        "title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M087",
+      "new_item": {
+        "title": "是否对基础软件和通用软件的更新情况进行检查。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 87,
+        "existing_title": "是否对基础软件和通用软件的更新情况进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M088",
+      "new_item": {
+        "title": "是否对系统密码策略进行检查，对账户尝试登陆次数进行限制。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 88,
+        "existing_title": "是否对系统密码策略进行检查，对账户尝试登陆次数进行限制。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M089",
+      "new_item": {
+        "title": "是否对系统互联网出入口和无线接入点进行检查，关闭不必要的链接。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 89,
+        "existing_title": "是否对系统互联网出入口和无线接入点进行检查，关闭不必要的链接。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M090",
+      "new_item": {
+        "title": "是否对共享访问和远程桌面连接进行检查。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 90,
+        "existing_title": "是否对共享访问和远程桌面连接进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M091",
+      "new_item": {
+        "title": "检查发现的问题是否及时整改。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "查看安全检查记录"
+      },
+      "match_result": {
+        "existing_item_id": 91,
+        "existing_title": "检查发现的问题是否及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M092",
+      "new_item": {
+        "title": "二级及以上信息系统是否每年开展一次自查，对于不符合证券期货业信息安全等级保护基本要求（试行）的内容，是否及时整改。",
+        "dimension": "XC网络安全管理与防护",
+        "procedure": "a)二级信息系统本年度是否开展自查工作；b)检查二级信息系统的自查报告，是否每年开展一次自查；c)检查二级信息系统的整改报告，对于不符合证券期货业信息安全等级保护基本要求（试行）的内容，是否及时整改。"
+      },
+      "match_result": {
+        "existing_item_id": 92,
+        "existing_title": "二级及以上信息系统是否每年开展一次自查，对于不符合证券期货业信息安全等级保护基本要求（试行）的内容，是否及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M093",
+      "new_item": {
+        "title": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等。"
+      },
+      "match_result": {
+        "existing_item_id": 93,
+        "existing_title": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M094",
+      "new_item": {
+        "title": "业务系统开发项目前是否将信息安全要求纳入系统设计。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "抽查核心业务系统开发审批记录，抽查开发相关材料，关注系统开发设计中的安全要求。"
+      },
+      "match_result": {
+        "existing_item_id": 94,
+        "existing_title": "业务系统开发项目前是否将信息安全要求纳入系统设计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M095",
+      "new_item": {
+        "title": "是否制定代码编写规范，要求开发人员参照规范编写代码。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)访谈软件开发人员，询问其是否了解软件开发管理制度，是否了解代码编写规范，是否按照代码编写规范进行软件开发；_x000b_b)检查代码编写规范，查看规范中是否明确代码编写规则，应抽样部分源代码，检查..."
+      },
+      "match_result": {
+        "existing_item_id": 95,
+        "existing_title": "是否制定代码编写规范，要求开发人员参照规范编写代码。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M096",
+      "new_item": {
+        "title": "是否建立完整、规范的系统测试操作流程，对测试工作的计划、实施及总结做出详细的规定。对于在生产系统上进行的测试工作，必须制定详细的系统及数据备份、测试环境搭建、测试后系统及数据恢复、生产系统审核等计划，确保生产系统的安全。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查系统测试操作流程，是否对系统上线前进行的模拟环境测试和生产环境测试进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 96,
+        "existing_title": "是否建立完整、规范的系统测试操作流程，对测试工作的计划、实施及总结做出详细的规定。对于在生产系统上进行的测试工作，必须制定详细的系统及数据备份、测试环境搭建、测试后系统及数据恢复、生产系统审核等计划，确保生产系统的安全。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M097",
+      "new_item": {
+        "title": "是否根据系统上线要求制定测试方案，确定采用的测试方法和测试流程。测试方案及测试用例覆盖功能、性能、容量、安全性、稳定性等方面。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)访谈开发负责人，询问是否根据系统上线要求制定测试方案，确定采用的测试方法和测试流程； b)检查是否具有测试方案，是否包括覆盖功能、性能、容量、安全性、稳定性等方面。"
+      },
+      "match_result": {
+        "existing_item_id": 97,
+        "existing_title": "是否根据系统上线要求制定测试方案，确定采用的测试方法和测试流程。测试方案及测试用例覆盖功能、性能、容量、安全性、稳定性等方面。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M098",
+      "new_item": {
+        "title": "生产环境测试前是否备份当前系统的数据和配置。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)检查系统测试管理制度和操作流程，查看数据和配置备份要求； b)抽查在生产系统上进行测试的工作记录，检查是否做好数据备份。"
+      },
+      "match_result": {
+        "existing_item_id": 98,
+        "existing_title": "生产环境测试前是否备份当前系统的数据和配置。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M099",
+      "new_item": {
+        "title": "是否为系统测试配备必要的人员和设备资源。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "访谈开发负责人，询问是否为系统测试配备必要的人员和设备资源。"
+      },
+      "match_result": {
+        "existing_item_id": 99,
+        "existing_title": "是否为系统测试配备必要的人员和设备资源。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M100",
+      "new_item": {
+        "title": "涉及核心交易业务系统的上线测试，是否组织全市场或全公司各相关部门测试。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)访谈开发负责人，询问涉及核心交易业务系统的上线测试，是否组织全市场或全公司各相关部门测试； b)抽查核心系统上线测试方案、测试记录，是否体现参测机构及部门。"
+      },
+      "match_result": {
+        "existing_item_id": 100,
+        "existing_title": "涉及核心交易业务系统的上线测试，是否组织全市场或全公司各相关部门测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M101",
+      "new_item": {
+        "title": "是否禁止交易时段使用生产环境进行测试。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)访谈开发负责人，询问是否交易时段不得使用生产环境进行测试；_x000b_b)抽查测试方案、测试记录、测试报告，查看是否在交易时段测试。"
+      },
+      "match_result": {
+        "existing_item_id": 101,
+        "existing_title": "是否禁止交易时段使用生产环境进行测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M102",
+      "new_item": {
+        "title": "是否测试完成后对测试结果进行分析评估，并给出测试报告。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查近期上线系统的测试报告。"
+      },
+      "match_result": {
+        "existing_item_id": 102,
+        "existing_title": "是否测试完成后对测试结果进行分析评估，并给出测试报告。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M103",
+      "new_item": {
+        "title": "是否根据需要，要求生产系统运维人员和业务部门组织业务人员参与模拟环境测试。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)访谈开发负责人，询问是否根据需要，要求生产系统运维人员和业务部门组织业务人员参与模拟环境测试；_x000b_b)查看测试通知或记录，是否有生产系统运维人员和业务部门组织业务人员参与。"
+      },
+      "match_result": {
+        "existing_item_id": 103,
+        "existing_title": "是否根据需要，要求生产系统运维人员和业务部门组织业务人员参与模拟环境测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M104",
+      "new_item": {
+        "title": "是否指定或授权专门的部门负责系统测试验收的管理，并按照管理规定的要求完成系统测试验收工作。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "访谈系统建设负责人，询问是否有专门的部门负责测试验收工作，由何部门负责。"
+      },
+      "match_result": {
+        "existing_item_id": 104,
+        "existing_title": "是否指定或授权专门的部门负责系统测试验收的管理，并按照管理规定的要求完成系统测试验收工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M105",
+      "new_item": {
+        "title": "是否在系统上线验收前经过安全测试。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查近期上线系统的测试报告，确认是否进行了安全测试。"
+      },
+      "match_result": {
+        "existing_item_id": 105,
+        "existing_title": "是否在系统上线验收前经过安全测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M106",
+      "new_item": {
+        "title": "是否根据生产环境测试的结果设计系统升级过程及应急预案。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)访谈开发负责人，询问是否根据生产环境测试的结果设计系统升级过程及应急预案； b)抽查一次生产环境测试报告和系统变更方案。"
+      },
+      "match_result": {
+        "existing_item_id": 106,
+        "existing_title": "是否根据生产环境测试的结果设计系统升级过程及应急预案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M107",
+      "new_item": {
+        "title": "是否针对系统制定应急操作手册。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "抽查信息系统，确认是否针对各系统制定了应急操作手册。"
+      },
+      "match_result": {
+        "existing_item_id": 107,
+        "existing_title": "是否针对系统制定应急操作手册。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M108",
+      "new_item": {
+        "title": "是否对信息系统进行投产及变更的风险评估工作。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看应用系统上线或变更前的风险评估报告。"
+      },
+      "match_result": {
+        "existing_item_id": 108,
+        "existing_title": "是否对信息系统进行投产及变更的风险评估工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M109",
+      "new_item": {
+        "title": "是否定期对系统容量进行检查和评估，形成评估报告。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查系统容量评估报告，是否定期对系统容量进行检查和评估。"
+      },
+      "match_result": {
+        "existing_item_id": 109,
+        "existing_title": "是否定期对系统容量进行检查和评估，形成评估报告。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M110",
+      "new_item": {
+        "title": "是否建立配置库，对交易业务系统的服务器、存储、网络、安全设备，操作系统、应用软件、数据库等进行管理。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查配置库文档，是否包括对交易业务系统的服务器、存储、网络、安全设备，操作系统、应用软件、数据库等配置清单。"
+      },
+      "match_result": {
+        "existing_item_id": 110,
+        "existing_title": "是否建立配置库，对交易业务系统的服务器、存储、网络、安全设备，操作系统、应用软件、数据库等进行管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M111",
+      "new_item": {
+        "title": "配置项属性至少包括编号、名称、描述、维护责任人、运行状态、关联关系等。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查配置库文档，配置项属性是否至少包括编号、名称、描述、维护责任人、运行状态、关联关系等。"
+      },
+      "match_result": {
+        "existing_item_id": 111,
+        "existing_title": "配置项属性至少包括编号、名称、描述、维护责任人、运行状态、关联关系等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M112",
+      "new_item": {
+        "title": "是否对所有事件响应、处理、结束等过程进行跟踪、督促及检查。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看运维事件处理记录，是否对所有事件响应、处理、结束等过程进行跟踪、督促及检查。"
+      },
+      "match_result": {
+        "existing_item_id": 112,
+        "existing_title": "是否对所有事件响应、处理、结束等过程进行跟踪、督促及检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M113",
+      "new_item": {
+        "title": "事件记录中事件处理情况，是否包括事件暴露出的问题及采取的整改措施，责任追究情况。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查事件记录，事件处理情况是否包括事件暴露出的问题及采取的整改措施，责任追究情况。"
+      },
+      "match_result": {
+        "existing_item_id": 113,
+        "existing_title": "事件记录中事件处理情况，是否包括事件暴露出的问题及采取的整改措施，责任追究情况。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M114",
+      "new_item": {
+        "title": "是否将监控、分析、自查、检查、测评、评估和事件处理中发现的问题进行汇总，并纳入问题库。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看问题库，是否将监控、分析、自查、检查、测评、评估和事件处理中发现的问题进行汇总，并纳入问题库。"
+      },
+      "match_result": {
+        "existing_item_id": 114,
+        "existing_title": "是否将监控、分析、自查、检查、测评、评估和事件处理中发现的问题进行汇总，并纳入问题库。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M115",
+      "new_item": {
+        "title": "是否组织对问题进行分析、提出解决方案、通过变更管理审批后部署实施。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看问题库，是否对问题进行分析、提出解决方案、通过变更管理审批后部署实施。"
+      },
+      "match_result": {
+        "existing_item_id": 115,
+        "existing_title": "是否组织对问题进行分析、提出解决方案、通过变更管理审批后部署实施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M116",
+      "new_item": {
+        "title": "是否建立系统，对公司事件和问题管理流程进行线上化管理。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看运维管理相关系统，确认是否将事件和问题管理流程进行线上化管理。"
+      },
+      "match_result": {
+        "existing_item_id": 116,
+        "existing_title": "是否建立系统，对公司事件和问题管理流程进行线上化管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M117",
+      "new_item": {
+        "title": "是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控。交易时段应指定人员对交易业务系统进行监控，交易时段以外如无法做到人工监控，是否开启自动监控系统和自动报警系统。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "访谈运维负责人，询问是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控。"
+      },
+      "match_result": {
+        "existing_item_id": 117,
+        "existing_title": "是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控。交易时段应指定人员对交易业务系统进行监控，交易时段以外如无法做到人工监控，是否开启自动监控系统和自动报警系统。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M118",
+      "new_item": {
+        "title": "是否建立辅助的人工巡检流程，规定巡检内容、频度、人员等。巡检内容应覆盖电力、空调、消防、安防等机房设施，主机、网络、通信、安全等设备的运行状况。巡检结果应及时记录，如遇异常应及时处理，并按规定要求进行报告。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查IT运维管理相关管理制度或工作手册，查看是否包括人工巡检方面的内容，是否明确巡检内容、频度、人员、报告等要求，巡检内容是否覆盖巡检内容应覆盖电力、空调、消防、安防等机房设施，主机、网络、通信、安全..."
+      },
+      "match_result": {
+        "existing_item_id": 118,
+        "existing_title": "是否建立辅助的人工巡检流程，规定巡检内容、频度、人员等。巡检内容应覆盖电力、空调、消防、安防等机房设施，主机、网络、通信、安全等设备的运行状况。巡检结果应及时记录，如遇异常应及时处理，并按规定要求进行报告。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M119",
+      "new_item": {
+        "title": "是否指定运维值班负责人。运维值班负责人负责日常操作的部署、检查、风险控制、业务衔接等工作。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)查阅运维值班负责人及备岗人员名单；b)访谈运维值班负责人及备岗人员，询问是否知悉其职责范围包括：日常操作的部署、检查、风险控制、业务衔接等工作。"
+      },
+      "match_result": {
+        "existing_item_id": 119,
+        "existing_title": "是否指定运维值班负责人。运维值班负责人负责日常操作的部署、检查、风险控制、业务衔接等工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M120",
+      "new_item": {
+        "title": "运维值班负责人是否有备岗，主备岗是否不得同时离岗。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看运维值班负责人及备岗人员值班记录，判断是否没有同时离岗。"
+      },
+      "match_result": {
+        "existing_item_id": 120,
+        "existing_title": "运维值班负责人是否有备岗，主备岗是否不得同时离岗。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M121",
+      "new_item": {
+        "title": "是否每日分析核心交易业务系统监控日志及巡检记录，形成评估记录，跟踪处理日志分析中发现的异常事件。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看评估记录，是否每日分析核心交易业务系统监控日志及巡检记录，并跟踪处理日志分析中发现的异常事件。"
+      },
+      "match_result": {
+        "existing_item_id": 121,
+        "existing_title": "是否每日分析核心交易业务系统监控日志及巡检记录，形成评估记录，跟踪处理日志分析中发现的异常事件。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M122",
+      "new_item": {
+        "title": "是否建立变更管理流程，对重要变更、一般变更、紧急变更进行定义，并建立不同的管理流程。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看变更管理制度，确认其中是否对重要变更、一般变更、紧急变更进行了定义，并建立了不同的申请、审批流程。"
+      },
+      "match_result": {
+        "existing_item_id": 122,
+        "existing_title": "是否建立变更管理流程，对重要变更、一般变更、紧急变更进行定义，并建立不同的管理流程。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M123",
+      "new_item": {
+        "title": "是否明确信息技术部门、风控、合规及相关业务部门角色在变更管理中的审核责任，进行事前审查、事中确认及事后跟踪。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "根据公司提供的核心业务系统变更清单，抽查变更评审记录，确认变更前经信息技术部门、风控合规部门、业务部门审批。"
+      },
+      "match_result": {
+        "existing_item_id": 123,
+        "existing_title": "是否明确信息技术部门、风控、合规及相关业务部门角色在变更管理中的审核责任，进行事前审查、事中确认及事后跟踪。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M124",
+      "new_item": {
+        "title": "变更后是否经业务部门确认。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "根据公司提供的核心业务系统变更清单，抽查变更评审记录，确认变更后，业务部门进行了确认。"
+      },
+      "match_result": {
+        "existing_item_id": 124,
+        "existing_title": "变更后是否经业务部门确认。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M125",
+      "new_item": {
+        "title": "是否利用软件工具或管理平台记录重要变更操作，并实时存档和备份功能。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "抽查核心业务系统变更的历史记录。"
+      },
+      "match_result": {
+        "existing_item_id": 125,
+        "existing_title": "是否利用软件工具或管理平台记录重要变更操作，并实时存档和备份功能。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M126",
+      "new_item": {
+        "title": "是否在设备和软件投入使用前进行必要的验证性测试，并保留测试记录。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查看测试记录，是否在设备和软件投入使用前进行必要的验证性测试。"
+      },
+      "match_result": {
+        "existing_item_id": 126,
+        "existing_title": "是否在设备和软件投入使用前进行必要的验证性测试，并保留测试记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M127",
+      "new_item": {
+        "title": "是否禁止在交易时段对交易业务网的网络设备、安全设备、系统设备进行更换或变更配置。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)查看机房管理制度或变更管理制度，是否规定了原则上禁止交易时段对交易业务网的网络设备、安全设备、系统设备进行更换或变更配置； b)抽查变更记录，是否做到原则上不在交易时段对交易业务网的网络设备、安全..."
+      },
+      "match_result": {
+        "existing_item_id": 127,
+        "existing_title": "是否禁止在交易时段对交易业务网的网络设备、安全设备、系统设备进行更换或变更配置。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M128",
+      "new_item": {
+        "title": "邮件系统是否设置密码策略。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查邮件系统，确认是否设置密码策略，包括密码复杂度、密码有效期等。"
+      },
+      "match_result": {
+        "existing_item_id": 128,
+        "existing_title": "邮件系统是否设置密码策略。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M129",
+      "new_item": {
+        "title": "是否对批量下载邮件、异常时段登陆的行为进行监控。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查是否有人员对批量下载邮件、异常时段登陆的行为进行监控。"
+      },
+      "match_result": {
+        "existing_item_id": 129,
+        "existing_title": "是否对批量下载邮件、异常时段登陆的行为进行监控。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M130",
+      "new_item": {
+        "title": "网上交易客户端是否提供可靠的身份认证机制，支持多种方式与服务端完成身份认证。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)检查供网上交易系统的身份认证说明；_x000b_b)检查网上交易系统是否支持多种身份认证方式；_x000b_c)访谈网上交易系统的身份验证方式和措施。"
+      },
+      "match_result": {
+        "existing_item_id": 130,
+        "existing_title": "网上交易客户端是否提供可靠的身份认证机制，支持多种方式与服务端完成身份认证。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M131",
+      "new_item": {
+        "title": "客户进行资金交易时，根据客户意愿，可采取认证强度与交易额度相匹配的技术措施，提高交易的安全性。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "APP、系统"
+      },
+      "match_result": {
+        "existing_item_id": 131,
+        "existing_title": "客户进行资金交易时，根据客户意愿，可采取认证强度与交易额度相匹配的技术措施，提高交易的安全性。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M132",
+      "new_item": {
+        "title": "在交易环节，依据对用户IP、个人终端IMME等标识信息采取异常行为监控措施防范盗买盗卖。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "APP、系统"
+      },
+      "match_result": {
+        "existing_item_id": 132,
+        "existing_title": "在交易环节，依据对用户IP、个人终端IMME等标识信息采取异常行为监控措施防范盗买盗卖。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M133",
+      "new_item": {
+        "title": "应具有防网络钓鱼的功能，例如，显示客户预留信息、使用预留信息卡、客户自定义个性化界面等。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "APP、系统"
+      },
+      "match_result": {
+        "existing_item_id": 133,
+        "existing_title": "应具有防网络钓鱼的功能，例如，显示客户预留信息、使用预留信息卡、客户自定义个性化界面等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M134",
+      "new_item": {
+        "title": "对于客户账号、手机号码、证件类识别标识或其他识别标识信息等可以直接或组合后确定个人金融信息主体的信息应进行屏蔽展示，或由用户选择是否屏蔽展示，如需完整展示，应进行用户身份验证，并做好此类信息管理，防范此类信息泄露风险。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "APP、系统"
+      },
+      "match_result": {
+        "existing_item_id": 134,
+        "existing_title": "对于客户账号、手机号码、证件类识别标识或其他识别标识信息等可以直接或组合后确定个人金融信息主体的信息应进行屏蔽展示，或由用户选择是否屏蔽展示，如需完整展示，应进行用户身份验证，并做好此类信息管理，防范此类信息泄露风险。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M135",
+      "new_item": {
+        "title": "三级系统是否至少每年对系统进行一次等级测评，发现不符合相应等级保护标准要求的及时整改。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)检查等级测评报告，检查是否每年对三级系统进行测评；b)检查测评报告是否覆盖所有三级系统；c)检查整改报告，对发现的问题是否及时整改。"
+      },
+      "match_result": {
+        "existing_item_id": 135,
+        "existing_title": "三级系统是否至少每年对系统进行一次等级测评，发现不符合相应等级保护标准要求的及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M136",
+      "new_item": {
+        "title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "a)检查系统变更记录，了解系统是否发生重大变更；b)检查系统评测记录，如果系统发生重大变更是否及时对系统进行登记测评；c)检查安全整改报告，发现级别发生变化的，是否及时调整级别并进行安全改造，发现不符..."
+      },
+      "match_result": {
+        "existing_item_id": 136,
+        "existing_title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M137",
+      "new_item": {
+        "title": "是否组织相关部门和有关安全技术专家对信息系统定级结果的合理性和正确性进行论证和审定。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查会议纪要或者论证报告等文档，是否组织有关部门及技术专家对信息系统定级结果的合理性和正确性进行论证和审定。"
+      },
+      "match_result": {
+        "existing_item_id": 137,
+        "existing_title": "是否组织相关部门和有关安全技术专家对信息系统定级结果的合理性和正确性进行论证和审定。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M138",
+      "new_item": {
+        "title": "是否授予不同账户为完成各自承担任务所需的最小权限。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查应用系统的用户角色或权限的分配情况，查看是否仅授予不同帐户为完成各自承担任务所需的最小权限。"
+      },
+      "match_result": {
+        "existing_item_id": 138,
+        "existing_title": "是否授予不同账户为完成各自承担任务所需的最小权限。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M139",
+      "new_item": {
+        "title": "不同账户是否形成相互制约的关系。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查应用系统的用户角色或权限的分配情况，查看权限之间是否相互制约，如系统管理员不能进行审计操作、审计员不能进行系统管理操作等。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M140",
+      "new_item": {
+        "title": "是否存在共用账号。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查应用系统的用户角色或权限，访谈了解账号的使用人员，检查是否存在多人共用同一账号的情况。"
+      },
+      "match_result": {
+        "existing_item_id": 140,
+        "existing_title": "是否存在共用账号。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M141",
+      "new_item": {
+        "title": "是否中止离职人员访问权限。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "调阅在职员工人员名单，检查应用系统用户列表，确认系统用户在在职人员名单中。"
+      },
+      "match_result": {
+        "existing_item_id": 141,
+        "existing_title": "是否中止离职人员访问权限。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M142",
+      "new_item": {
+        "title": "是否建立信息系统用户认证和访问控制流程。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "调阅应用系统用户管理或访问控制相关制度，明确是否制定了用户权限申请、审批、更新、注销流程。"
+      },
+      "match_result": {
+        "existing_item_id": 142,
+        "existing_title": "是否建立信息系统用户认证和访问控制流程。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M143",
+      "new_item": {
+        "title": "是否能够对单个账户的多重并发会话进行限制。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "测试主要应用系统，可通过对系统进行超过规定的单个帐户的多重并发会话数进行连接，验证系统是否能够正确地限制单个帐户的多重并发会话数。"
+      },
+      "match_result": {
+        "existing_item_id": 143,
+        "existing_title": "是否能够对单个账户的多重并发会话进行限制。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M144",
+      "new_item": {
+        "title": "是否能够对一个时间段内可能的并发会话连接数进行限制。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查主要应用系统的配置参数，查看是否提供对最大并发会话连接数进行限制。"
+      },
+      "match_result": {
+        "existing_item_id": 144,
+        "existing_title": "是否能够对一个时间段内可能的并发会话连接数进行限制。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M145",
+      "new_item": {
+        "title": "是否能够对一个访问账户或一个请求进程占用的资源分配最大限额和最小限额。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查主要应用系统设计和验收文档，查看是否对一个访问帐户或一个请求进程占用的资源分配最大限额和最小限额。"
+      },
+      "match_result": {
+        "existing_item_id": 145,
+        "existing_title": "是否能够对一个访问账户或一个请求进程占用的资源分配最大限额和最小限额。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M146",
+      "new_item": {
+        "title": "公司核心业务系统备份是否符合《证券期货经营机构信息系统备份能力标准规范》的相关要求。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "查阅公司核心业务系统故障应对能力达标证明材料（包括：备份系统建设情况、备份策略、应急演练记录等），确认集中交易系统（含第三方存管）、融资融券系统、网上交易系统、电话委托系统、移动证券系统等核心业务系统..."
+      },
+      "match_result": {
+        "existing_item_id": 146,
+        "existing_title": "公司核心业务系统备份是否符合《证券期货经营机构信息系统备份能力标准规范》的相关要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M147",
+      "new_item": {
+        "title": "是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。",
+        "dimension": "XC重要信息系统管理",
+        "procedure": "检查是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。"
+      },
+      "match_result": {
+        "existing_item_id": 147,
+        "existing_title": "是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M148",
+      "new_item": {
+        "title": "是否对网络安全事件进行记录。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查安全事件处理记录，查看其是否对网络安全事件进行记录，记录内容包括安全事件的原因、事件处理过程等。"
+      },
+      "match_result": {
+        "existing_item_id": 148,
+        "existing_title": "是否对网络安全事件进行记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M149",
+      "new_item": {
+        "title": "是否在安全事件报告和响应处理过程中，分析和鉴定事件产生的原因，收集证据，记录处理过程，总结经验教训，制定防止再次发生的补救措施。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查安全事件处理记录，查看其是否记录引发安全事件的原因，是否记录事件处理过程，是否与管理规定的处理要求一致等。"
+      },
+      "match_result": {
+        "existing_item_id": 149,
+        "existing_title": "是否在安全事件报告和响应处理过程中，分析和鉴定事件产生的原因，收集证据，记录处理过程，总结经验教训，制定防止再次发生的补救措施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M150",
+      "new_item": {
+        "title": "合规部门、风险管理部门或岗位是否参与信息技术安全事故处理工作。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "抽查检查期间公司信息安全事件处理流程及相关审批文件，检查合规部门、风险管理部门是否参与相关工作。"
+      },
+      "match_result": {
+        "existing_item_id": 150,
+        "existing_title": "合规部门、风险管理部门或岗位是否参与信息技术安全事故处理工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M151",
+      "new_item": {
+        "title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "a)审阅应急预案，是否规定在网络与信息安全事件发生后，报告要素有哪些，如何报告事件情况，并保持持续报告，直至系统恢复正常运行；_x000b_b)检查事件报告记录，判断是否及时、准确，没有迟报、漏报、谎..."
+      },
+      "match_result": {
+        "existing_item_id": 151,
+        "existing_title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M152",
+      "new_item": {
+        "title": "接到中国证监会及其派出机构关于系统漏洞、安全隐患、产品缺陷的信息安全通报书后，是否立即核实情况，采取必要的处置措施，并根据要求进行事件总结报告。事件总结报告内容应当包括：事件基本情况，可能或者已经造成的影响范围和后果，已采取的防范措施及相关建议。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "a)检查监管部门信息安全通报记录，对系统漏洞、安全隐患、产品缺陷等，是否立即核实情况，采取必要的处置措施； b)检查信息安全通报事件总结报告，内容是否包括：事件基本情况，可能或者已经造成的影响范围和后..."
+      },
+      "match_result": {
+        "existing_item_id": 152,
+        "existing_title": "接到中国证监会及其派出机构关于系统漏洞、安全隐患、产品缺陷的信息安全通报书后，是否立即核实情况，采取必要的处置措施，并根据要求进行事件总结报告。事件总结报告内容应当包括：事件基本情况，可能或者已经造成的影响范围和后果，已采取的防范措施及相关建议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M153",
+      "new_item": {
+        "title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查安全责任和惩戒措施管理文档，查看是否包含具体的安全责任和惩戒措施，"
+      },
+      "match_result": {
+        "existing_item_id": 153,
+        "existing_title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M154",
+      "new_item": {
+        "title": "是否按照安全责任和惩戒措施规定对违反违背安全策略和规定的人员进行惩戒。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查安全责任惩戒记录，是否对违反安全策略和规定的人员进行惩戒。"
+      },
+      "match_result": {
+        "existing_item_id": 154,
+        "existing_title": "是否按照安全责任和惩戒措施规定对违反违背安全策略和规定的人员进行惩戒。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M155",
+      "new_item": {
+        "title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查是否建立健全网络与信息安全事件应急处置组织体系，是否明确应急指挥决策机构由主要领导负责，成员包括但不限于业务、技术、风险控制、结算、财务、客服及综合等有关部门负责人。"
+      },
+      "match_result": {
+        "existing_item_id": 155,
+        "existing_title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M156",
+      "new_item": {
+        "title": "合规部门、风险管理部门或岗位是否参与应急演练工作。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "抽查检查期间公司的重要业务系统应急演练流程及相关审批文件，检查合规部门、风险管理部门是否参与相关工作。"
+      },
+      "match_result": {
+        "existing_item_id": 156,
+        "existing_title": "合规部门、风险管理部门或岗位是否参与应急演练工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M157",
+      "new_item": {
+        "title": "是否在统一的网络与信息安全事件应急预案框架下制定不同事件的应急预案，应急预案框架应包括处置应对责任机制、指挥机制、响应流程、临机处置权限等内容。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "a)检查应急预案框架，查看其内容是否覆盖处置应对责任机制、指挥机制、响应流程、临机处置权限等内容。_x000b_b)检查是否具有根据应急预案框架制定的不同事件的应急预案。"
+      },
+      "match_result": {
+        "existing_item_id": 157,
+        "existing_title": "是否在统一的网络与信息安全事件应急预案框架下制定不同事件的应急预案，应急预案框架应包括处置应对责任机制、指挥机制、响应流程、临机处置权限等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M158",
+      "new_item": {
+        "title": "应将网络攻击场景纳入应急预案。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急预案，确认是否将网络攻击场景纳入应急预案。"
+      },
+      "match_result": {
+        "existing_item_id": 158,
+        "existing_title": "应将网络攻击场景纳入应急预案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M159",
+      "new_item": {
+        "title": "应制定外包服务意外终止的应急措施。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急预案，确认是否制定了外包服务意外终止的应急措施。"
+      },
+      "match_result": {
+        "existing_item_id": 159,
+        "existing_title": "应制定外包服务意外终止的应急措施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M160",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急预案评估报告，判断是否根据应急演练的情况进行评估和更新。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M161",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件处置的具体方案。"
+      },
+      "match_result": {
+        "existing_item_id": 161,
+        "existing_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M162",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件内部调查处理以及分析总结的要求。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件内部调查处理以及分析总结的要求。"
+      },
+      "match_result": {
+        "existing_item_id": 162,
+        "existing_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件内部调查处理以及分析总结的要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M163",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件的报告流程。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件的报告流程。"
+      },
+      "match_result": {
+        "existing_item_id": 163,
+        "existing_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件的报告流程。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M164",
+      "new_item": {
+        "title": "是否制定应急处置联络手册。应急处置联络手册是否至少包括应急处置组织体系及相关关联单位的应急联络方式。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "审阅应急处置联络手册，是否至少包括应急处置组织体系及相关关联单位的应急联络方式，且联络方式必须明确详细。"
+      },
+      "match_result": {
+        "existing_item_id": 164,
+        "existing_title": "是否制定应急处置联络手册。应急处置联络手册是否至少包括应急处置组织体系及相关关联单位的应急联络方式。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M165",
+      "new_item": {
+        "title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "a)查看应急处置联络手册，确认指定了通报联络人，至少包括信息技术负责人及其备岗；确认通报人联络方式至少包括应急值守电话与传真；b)访谈通报联络人，询问是否知悉其职责范围；"
+      },
+      "match_result": {
+        "existing_item_id": 165,
+        "existing_title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M166",
+      "new_item": {
+        "title": "应急处置联络手册是否及时更新。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "抽查应急处置联络手册中的相关信息是否真实、有效、可用。"
+      },
+      "match_result": {
+        "existing_item_id": 166,
+        "existing_title": "应急处置联络手册是否及时更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M167",
+      "new_item": {
+        "title": "是否向证监会报备应急联络信息，并在发生变化时及时通知相关单位。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "查阅通报联络人正式发文，确认将通报联络人及其联络方式及时通知了监管部门、行业协会和相关单位。"
+      },
+      "match_result": {
+        "existing_item_id": 167,
+        "existing_title": "是否向证监会报备应急联络信息，并在发生变化时及时通知相关单位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M168",
+      "new_item": {
+        "title": "是否对系统相关的人员进行应急预案培训，应急预案的培训是否至少每年举办一次。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "a)访谈系统运维负责人，询问是否对系统相关人员进行应急预案培训，多长时间举办一次；_x000b_b)检查应急培训记录，判断系统相关人员是否参加、是否每年至少一次。"
+      },
+      "match_result": {
+        "existing_item_id": 168,
+        "existing_title": "是否对系统相关的人员进行应急预案培训，应急预案的培训是否至少每年举办一次。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M169",
+      "new_item": {
+        "title": "是否根据应急预案的内容，制定详细的应急演练计划。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急演练计划，确是否制定了正式的应急演练计划。"
+      },
+      "match_result": {
+        "existing_item_id": 169,
+        "existing_title": "是否根据应急预案的内容，制定详细的应急演练计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M170",
+      "new_item": {
+        "title": "应急演练计划是否至少包括演练的目的、内容、时间、参与方、方式、前期准备情况、统计与记录要求、系统恢复与验证要求等内容。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查应急演练计划，是否至少包括目的、内容、时间、参与方、方式、前期准备情况、统计与记录要求、系统恢复与验证要求等内容。"
+      },
+      "match_result": {
+        "existing_item_id": 170,
+        "existing_title": "应急演练计划是否至少包括演练的目的、内容、时间、参与方、方式、前期准备情况、统计与记录要求、系统恢复与验证要求等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M171",
+      "new_item": {
+        "title": "公司应急演练是否覆盖公司核心交易业务系统，是否覆盖其他场景应急演练覆盖情况，包括但不限于网络、通信、灾难、突发事件等方面的应急演练情况。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "查阅公司应急演练计划及相关报告。"
+      },
+      "match_result": {
+        "existing_item_id": 171,
+        "existing_title": "公司应急演练是否覆盖公司核心交易业务系统，是否覆盖其他场景应急演练覆盖情况，包括但不限于网络、通信、灾难、突发事件等方面的应急演练情况。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M172",
+      "new_item": {
+        "title": "是否与银行等外部关联机构开展过联合应急演练，包括银证转账系统、银期转账系统、基金估值系统等。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "查阅公司应急演练计划及相关报告。"
+      },
+      "match_result": {
+        "existing_item_id": 172,
+        "existing_title": "是否与银行等外部关联机构开展过联合应急演练，包括银证转账系统、银期转账系统、基金估值系统等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M173",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "XC事件与应急管理情况",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 173,
+        "existing_title": "是否对演练中发现的问题进行改进。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M174",
+      "new_item": {
+        "title": "是否定期或不定期开展信息技术风险评估活动，或聘请外部有资质的机构定期进行信息技术风险评估",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查看信息技术风险评估报告"
+      },
+      "match_result": {
+        "existing_item_id": 174,
+        "existing_title": "是否定期或不定期开展信息技术风险评估活动，或聘请外部有资质的机构定期进行信息技术风险评估",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M175",
+      "new_item": {
+        "title": "信息技术风险评估结果是否经IT治理委员会审定后，向公司总经理汇报，并向业务、合规、审计等部门传达",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查信息技术风险评估报告审批流转流程"
+      },
+      "match_result": {
+        "existing_item_id": 175,
+        "existing_title": "信息技术风险评估结果是否经IT治理委员会审定后，向公司总经理汇报，并向业务、合规、审计等部门传达",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M176",
+      "new_item": {
+        "title": "公司是否定期开展风险监测机制及执行情况的有效性评估。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查阅公司评估报告或其他公文材料，检查是否对风险监测和评估执行情况进行有效性评估。"
+      },
+      "match_result": {
+        "existing_item_id": 176,
+        "existing_title": "公司是否定期开展风险监测机制及执行情况的有效性评估。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M177",
+      "new_item": {
+        "title": "公司风险监测机制及执行情况的有效性评估报告是否报送公司管理层。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查阅公司评估报告或其他公文材料，检查有效性评估报告是否报送公司管理层。"
+      },
+      "match_result": {
+        "existing_item_id": 177,
+        "existing_title": "公司风险监测机制及执行情况的有效性评估报告是否报送公司管理层。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M178",
+      "new_item": {
+        "title": "是否制定审计计划，审计计划是否保证3年内完成IT全面审计。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查阅审计计划"
+      },
+      "match_result": {
+        "existing_item_id": 178,
+        "existing_title": "是否制定审计计划，审计计划是否保证3年内完成IT全面审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M179",
+      "new_item": {
+        "title": "是否对公司进行专项IT审计。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查阅公司内部专项审计报告、审批、流转流程，确认是否进行了专项IT审计。"
+      },
+      "match_result": {
+        "existing_item_id": 179,
+        "existing_title": "是否对公司进行专项IT审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M180",
+      "new_item": {
+        "title": "在发生较大以上级别信息安全事件或频繁发生安全事件时，内部审计部门或合规风控部门是否对信息技术系统开展专项审计。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查阅公司内部专项审计报告、审批、流转流程，确认是否对重大信息安全事件开展专项审计。"
+      },
+      "match_result": {
+        "existing_item_id": 180,
+        "existing_title": "在发生较大以上级别信息安全事件或频繁发生安全事件时，内部审计部门或合规风控部门是否对信息技术系统开展专项审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M181",
+      "new_item": {
+        "title": "是否每年对运维制度的执行情况和运维工作开展情况定期进行检查和审计。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查审计期内的IT检查和审计记录，确认审计内容是否包含对IT 运维工作流程的审计。"
+      },
+      "match_result": {
+        "existing_item_id": 181,
+        "existing_title": "是否每年对运维制度的执行情况和运维工作开展情况定期进行检查和审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M182",
+      "new_item": {
+        "title": "信息系统运维管理工作审计范围是否至少包括对运维管理制度和操作流程的合理性和完整性进行评估，对运维管理制度和操作流程的执行情况进行评估，对文档、配置、数据的有效性进行评估，对整体安全状况进行评估，对运维人员履职能力进行评估等。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查信息系统运维管理工作审计报告，确定信息系统运维管理工作审计范围至少包括对运维管理制度和操作流程的合理性和完整性进行评估，对运维管理制度和操作流程的执行情况进行评估，对文档、配置、数据的有效性进行评..."
+      },
+      "match_result": {
+        "existing_item_id": 182,
+        "existing_title": "信息系统运维管理工作审计范围是否至少包括对运维管理制度和操作流程的合理性和完整性进行评估，对运维管理制度和操作流程的执行情况进行评估，对文档、配置、数据的有效性进行评估，对整体安全状况进行评估，对运维人员履职能力进行评估等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M183",
+      "new_item": {
+        "title": "是否对审计发现的问题进行整改。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查阅公司内部专项审计报告，确认公司是否根据审计意见进行整改。"
+      },
+      "match_result": {
+        "existing_item_id": 183,
+        "existing_title": "是否对审计发现的问题进行整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M184",
+      "new_item": {
+        "title": "应在保证系统运行安全和效率的前提下，启用系统审计或采用第三方安全审计产品，对服务器和重要客户端上的每个操作系统用户进行审计。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查主要服务器操作系统、重要终端操作系统和主要数据库管理系统的安全审计策略或第三方审计产品（如堡垒机）的配置，确认是否将服务器和重要客户端纳入审计范围。"
+      },
+      "match_result": {
+        "existing_item_id": 184,
+        "existing_title": "应在保证系统运行安全和效率的前提下，启用系统审计或采用第三方安全审计产品，对服务器和重要客户端上的每个操作系统用户进行审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M185",
+      "new_item": {
+        "title": "是否记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，留存日志应满足审计的需要。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查是否记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，以满足审计的需要。"
+      },
+      "match_result": {
+        "existing_item_id": 185,
+        "existing_title": "是否记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，留存日志应满足审计的需要。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M186",
+      "new_item": {
+        "title": "审计记录是否包含重要的安全相关信息。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "查看安全审计配置是否包括系统内重要用户行为、系统资源的异常和重要系统命令的使用等重要的安全相关信息。"
+      },
+      "match_result": {
+        "existing_item_id": 186,
+        "existing_title": "审计记录是否包含重要的安全相关信息。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M187",
+      "new_item": {
+        "title": "审计记录是否至少保存6个月。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查审计记录是否至少保存6个月。"
+      },
+      "match_result": {
+        "existing_item_id": 187,
+        "existing_title": "审计记录是否至少保存6个月。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M188",
+      "new_item": {
+        "title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查了解是否采取了措施保护审计记录避免受到未预期的删除、修改或覆盖。"
+      },
+      "match_result": {
+        "existing_item_id": 188,
+        "existing_title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M189",
+      "new_item": {
+        "title": "是否能够根据记录数据进行分析，并生成审计报表。",
+        "dimension": "XC信息技术风险评估与审计",
+        "procedure": "检查主要服务器操作系统、数据库或第三方安全审计产品（如堡垒机）的安全审计策略，查看是否为授权用户提供浏览和分析审计记录的功能，是否可以根据需要自动生成不同格式的审计报表，该功能是否已启用。"
+      },
+      "match_result": {
+        "existing_item_id": 189,
+        "existing_title": "是否能够根据记录数据进行分析，并生成审计报表。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M190",
+      "new_item": {
+        "title": "是否制定信息系统备份能力建设工作计划。",
+        "dimension": "XC业务连续性",
+        "procedure": "检查信息技术部门是否编制了信息系统备份能力建设工作计划。"
+      },
+      "match_result": {
+        "existing_item_id": 190,
+        "existing_title": "是否制定信息系统备份能力建设工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M191",
+      "new_item": {
+        "title": "是否已建立故障备份设施和同城灾备中心（灾备机房），至少可保障核心交易业务系统应用级备份。",
+        "dimension": "XC业务连续性",
+        "procedure": "1.约谈机房负责人有关故障备份设施和同城灾备中心（灾备机房）和异地灾备中心的建设情况；\n2.查阅机房部署图和逻辑图。\n3.确认同城灾备能力达到1:1"
+      },
+      "match_result": {
+        "existing_item_id": 191,
+        "existing_title": "是否已建立故障备份设施和同城灾备中心（灾备机房），至少可保障核心交易业务系统应用级备份。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M192",
+      "new_item": {
+        "title": "公司是否根据自身业务性质、规模和复杂程度制定适当的业务连续性计划；业务连续性计划内容是否包括业务应急措施、业务恢复或替代机制、应急联系方式、与客户的沟通方式、与相关单位通报机制、向监管部门报告机制、业务连续性计划披露及更新机制、备份数据恢复机制、备份信息技术系统恢复机制、技术替代方式。",
+        "dimension": "XC业务连续性",
+        "procedure": "1.确认公司是否制定正式的业务连续性计划；\n2.查阅公司业务连续性计划，分析其完整性及是否根据公司自身业务性质、规模和复杂程度进行编制；\n3.查阅公司业务连续性计划内容是否涵盖业务应急措施、业务恢复或..."
+      },
+      "match_result": {
+        "existing_item_id": 192,
+        "existing_title": "公司是否根据自身业务性质、规模和复杂程度制定适当的业务连续性计划；业务连续性计划内容是否包括业务应急措施、业务恢复或替代机制、应急联系方式、与客户的沟通方式、与相关单位通报机制、向监管部门报告机制、业务连续性计划披露及更新机制、备份数据恢复机制、备份信息技术系统恢复机制、技术替代方式。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M193",
+      "new_item": {
+        "title": "公司制订的业务连续性计划是否考虑以下情况，包括但不限于：因自然灾害等原因导致机房不可用、机房电力中断；网络、通信中断或拥堵至不可用；重要业务信息技术系统软硬件故障；重要业务信息数据损毁或遭到破坏；与经营机构建立业务连接的其他机构信息技术系统中断或严重故障；信息技术服务商的重大变更、公司核心信息技术团队发生重大变动等。",
+        "dimension": "XC业务连续性",
+        "procedure": "1.查阅公司业务连续性计划中场景是否考虑以下情况，包括但不限于：因自然灾害等原因导致机房不可用、机房电力中断；网络、通信中断或拥堵至不可用；重要业务信息技术系统软硬件故障；重要业务信息数据损毁或遭到破..."
+      },
+      "match_result": {
+        "existing_item_id": 193,
+        "existing_title": "公司制订的业务连续性计划是否考虑以下情况，包括但不限于：因自然灾害等原因导致机房不可用、机房电力中断；网络、通信中断或拥堵至不可用；重要业务信息技术系统软硬件故障；重要业务信息数据损毁或遭到破坏；与经营机构建立业务连接的其他机构信息技术系统中断或严重故障；信息技术服务商的重大变更、公司核心信息技术团队发生重大变动等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M194",
+      "new_item": {
+        "title": "电力供应是否有优先保证承载核心交易业务系统的关键设备供电的措施。",
+        "dimension": "XC业务连续性",
+        "procedure": "检查机房用电管理规定，查看是否具有重点保障核心交易业务系统用电安全的措施。"
+      },
+      "match_result": {
+        "existing_item_id": 194,
+        "existing_title": "电力供应是否有优先保证承载核心交易业务系统的关键设备供电的措施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M195",
+      "new_item": {
+        "title": "【二类】是否具有双路市电供电，双路供电能实现自动切换，或在单路供电情况下，备用供电措施能提供超过4小时的供电时间。",
+        "dimension": "XC业务连续性",
+        "procedure": "a)检查公司提供的市电供电、UPS和应急供电情况说明；b)如果具有双路市电供电，应当说明双路供电的来源；c)如果没有双路市电供电，则UPS和后备发电设施的供电时间和在保证业务支撑时间的前提下，持续供电..."
+      },
+      "match_result": {
+        "existing_item_id": 195,
+        "existing_title": "【二类】是否具有双路市电供电，双路供电能实现自动切换，或在单路供电情况下，备用供电措施能提供超过4小时的供电时间。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M196",
+      "new_item": {
+        "title": "【三类以上（含）】是否采用双路市电，双路市电应能实现自动切换。",
+        "dimension": "XC业务连续性",
+        "procedure": "a)访谈机房管理员，询问机房是否采用了双路市电；_x000b_b)检查双路市电线路切换记录或供电部门相关协议，查看双路市电是否能够自动切换。"
+      },
+      "match_result": {
+        "existing_item_id": 196,
+        "existing_title": "【三类以上（含）】是否采用双路市电，双路市电应能实现自动切换。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M197",
+      "new_item": {
+        "title": "机房是否配备单独的配电柜。",
+        "dimension": "XC业务连续性",
+        "procedure": "访谈机房管理员，询问机房是否配备单独的配电柜。"
+      },
+      "match_result": {
+        "existing_item_id": 197,
+        "existing_title": "机房是否配备单独的配电柜。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M198",
+      "new_item": {
+        "title": "机房是否有独立于一般照明电的专用供配电线路。",
+        "dimension": "XC业务连续性",
+        "procedure": "检查机房供电线路图，是否有独立于一般照明电的专用供配电线路。"
+      },
+      "match_result": {
+        "existing_item_id": 198,
+        "existing_title": "机房是否有独立于一般照明电的专用供配电线路。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M199",
+      "new_item": {
+        "title": "是否在机房供电线路上配置稳压器和过电压防护设备。",
+        "dimension": "XC业务连续性",
+        "procedure": "a)检查机房供电系统图及相关说明材料，机房供电线路上是否设置了稳压器和过电压防护设备；_x000b_b)检查机房维护记录，稳压器和过电压防护设备是否正常运行。"
+      },
+      "match_result": {
+        "existing_item_id": 199,
+        "existing_title": "是否在机房供电线路上配置稳压器和过电压防护设备。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M200",
+      "new_item": {
+        "title": "【三类以上（含）】机房是否配备双UPS供电。",
+        "dimension": "XC业务连续性",
+        "procedure": "a)检查公司提供的UPS设施情况说明；b)检查所有生产环境的双电源设备分别连接到不同的UPS；c)检查所有生产环境的单电源设备都分别连接到不同的UPS。"
+      },
+      "match_result": {
+        "existing_item_id": 200,
+        "existing_title": "【三类以上（含）】机房是否配备双UPS供电。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M201",
+      "new_item": {
+        "title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "dimension": "XC业务连续性",
+        "procedure": "a)现场检查UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上；_x000b_b)检查UPS设备运行记录、定期检查和维护记录。"
+      },
+      "match_result": {
+        "existing_item_id": 201,
+        "existing_title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M202",
+      "new_item": {
+        "title": "UPS是否存放在独立封闭区域。",
+        "dimension": "XC业务连续性",
+        "procedure": "检查机房的在线UPS设施，UPS应与计算机、网络设备在不同的独立封闭区域。"
+      },
+      "match_result": {
+        "existing_item_id": 202,
+        "existing_title": "UPS是否存放在独立封闭区域。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M203",
+      "new_item": {
+        "title": "【三类以上（含）】机房是否自备或租用发电机，能够保障持续供电。",
+        "dimension": "XC业务连续性",
+        "procedure": "a)现场检查是否配备了发电机，检查发电机储油是否能够确保发电机持续供电，是否采取了有效措施确保发电机用油的及时补充；_x000b_b)如果是租用发电机，检查租用发电机的合同或相关证明材料；该合同或相关..."
+      },
+      "match_result": {
+        "existing_item_id": 203,
+        "existing_title": "【三类以上（含）】机房是否自备或租用发电机，能够保障持续供电。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M204",
+      "new_item": {
+        "title": "如有发电机，是否定期对发电机进行开机测试。",
+        "dimension": "XC业务连续性",
+        "procedure": "公司提供一年内发电机开机测试记录，应包括测试时间，测试结果等内容。"
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M205",
+      "new_item": {
+        "title": "【三类以上（含）】是否定期进行电力设施实时切换演练。",
+        "dimension": "XC业务连续性",
+        "procedure": "a)检查公司提供的电力设施实时切换演练制度；b)检查公司近两年内电力设施实时切换演练记录；实时切换应当做到模拟一路市电中断、一路UPS完全失效和一路电源开关发生故障的情况下，所有的生产环境设备不需要任..."
+      },
+      "match_result": {
+        "existing_item_id": 205,
+        "existing_title": "【三类以上（含）】是否定期进行电力设施实时切换演练。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M206",
+      "new_item": {
+        "title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "dimension": "XC外包管理",
+        "procedure": "检查与供应商签订的合同，查看是否明确其应承担的责任、义务，并约定服务要求和范围等内容。"
+      },
+      "match_result": {
+        "existing_item_id": 206,
+        "existing_title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M207",
+      "new_item": {
+        "title": "是否与选定的安全服务商签订与安全相关的协议，对合作方服务人员提出明确的信息安全要求。",
+        "dimension": "XC外包管理",
+        "procedure": "检查与安全服务商签订的安全责任合同书或保密协议等文档，查看其内容是否包含保密范围、安全责任、违约责任、协议的有效期限和责任人的签字等。"
+      },
+      "match_result": {
+        "existing_item_id": 207,
+        "existing_title": "是否与选定的安全服务商签订与安全相关的协议，对合作方服务人员提出明确的信息安全要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M208",
+      "new_item": {
+        "title": "是否要求供应商签署承诺书，承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。",
+        "dimension": "XC外包管理",
+        "procedure": "检查供应商签署的承诺书，查看供应商是否承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。"
+      },
+      "match_result": {
+        "existing_item_id": 208,
+        "existing_title": "是否要求供应商签署承诺书，承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M209",
+      "new_item": {
+        "title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "dimension": "XC外包管理",
+        "procedure": "检查托管服务合同和相关文档，确认其中包含应急服务响应和支持条款。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M210",
+      "new_item": {
+        "title": "信息系统托管中，受托方是否为委托方提供7×24小时支持服务，是否在5分钟内响应委托方提出的服务请求，并在30分钟内到场服务。遇到突发事件，是否积极配合委托方共同开展应急处置工作。（本项适用于：三+系统托管）",
+        "dimension": "XC外包管理",
+        "procedure": "a)查看委托合同和应急预案，是否明确要求7×24小时支持服务制度；b)检查应急事件报告书，查看受托方是否在5分钟内响应委托方的服务请求，并在30分钟内到场服务。"
+      },
+      "match_result": {
+        "existing_item_id": 210,
+        "existing_title": "信息系统托管中，受托方是否为委托方提供7×24小时支持服务，是否在5分钟内响应委托方提出的服务请求，并在30分钟内到场服务。遇到突发事件，是否积极配合委托方共同开展应急处置工作。（本项适用于：三+系统托管）",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M211",
+      "new_item": {
+        "title": "是否建立供应商列表，定期收集、更新供应商信息。",
+        "dimension": "XC外包管理",
+        "procedure": "检查供应商列表，访谈信息技术负责人，判断是否定期收集、更新供应商信息。"
+      },
+      "match_result": {
+        "existing_item_id": 211,
+        "existing_title": "是否建立供应商列表，定期收集、更新供应商信息。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M212",
+      "new_item": {
+        "title": "是否组织对供应商的服务质量、合同履行情况、人员工作情况等内容进行评价，形成评价报告，并跟踪和记录供应商改进情况。",
+        "dimension": "XC外包管理",
+        "procedure": "检查供应商评价报告，判断是否定期组织对供应商的服务质量、合同履行情况、人员工作情况等内容进行评价，并跟踪和记录供应商改进情况。"
+      },
+      "match_result": {
+        "existing_item_id": 212,
+        "existing_title": "是否组织对供应商的服务质量、合同履行情况、人员工作情况等内容进行评价，形成评价报告，并跟踪和记录供应商改进情况。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M213",
+      "new_item": {
+        "title": "信息技术外包管理制度中是否明确驻场外包人员入场、离场的管理要求。",
+        "dimension": "XC外包管理",
+        "procedure": "查看信息技术外包管理制度，确认是否明确驻场外包人员入场的管理要求。"
+      },
+      "match_result": {
+        "existing_item_id": 213,
+        "existing_title": "信息技术外包管理制度中是否明确驻场外包人员入场、离场的管理要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M214",
+      "new_item": {
+        "title": "是否对驻场外包人员的入场和离场进行管理。",
+        "dimension": "XC外包管理",
+        "procedure": "查阅公司提供的驻场外包人员的入场和离场记录。"
+      },
+      "match_result": {
+        "existing_item_id": 214,
+        "existing_title": "是否对驻场外包人员的入场和离场进行管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M215",
+      "new_item": {
+        "title": "是否明确界定外包人员的工作职责、活动范围、操作权限。",
+        "dimension": "XC外包管理",
+        "procedure": "检查与外包公司签订的合同，确认合同中明确了明确界定外包人员的工作职责、活动范围、操作权限。"
+      },
+      "match_result": {
+        "existing_item_id": 215,
+        "existing_title": "是否明确界定外包人员的工作职责、活动范围、操作权限。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M216",
+      "new_item": {
+        "title": "是否建立软件资产管理制度，或将软件资产纳入本单位资产管理体系，对软件采购、安装、升级等工作流程有严格管理。",
+        "dimension": "XC软件正版化",
+        "procedure": "访谈信息技术负责人，是否将软件资产纳入资产管理体系，并对软件采购、安装、升级等流程进行管理；检查固定资产管理办法，是否包含软件购置、安装、升级等流程。"
+      },
+      "match_result": {
+        "existing_item_id": 216,
+        "existing_title": "是否建立软件资产管理制度，或将软件资产纳入本单位资产管理体系，对软件采购、安装、升级等工作流程有严格管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M217",
+      "new_item": {
+        "title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "dimension": "XC软件正版化",
+        "procedure": "访谈软件正版化相关人员，是否制定了相关制度，制定专人负责软件正版化工作，同时软件正版化负责人是否明确其岗位职责。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M218",
+      "new_item": {
+        "title": "是否制定了软件正版化工作计划。",
+        "dimension": "XC软件正版化",
+        "procedure": "a)访谈软件正版化工作人员，是否制定了软件正版化计划；b)检查软件正版化计划，是否对通用软件和专业软件制定正版化计划。"
+      },
+      "match_result": {
+        "existing_item_id": 218,
+        "existing_title": "是否制定了软件正版化工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M219",
+      "new_item": {
+        "title": "是否每年对软件正版化情况开展自查。",
+        "dimension": "XC软件正版化",
+        "procedure": "a)访谈软件正版化人员，是否对公司使用的软件正版化情况每年进行自查，对检查情况进行记录；b)检查软件正版化自查记录。"
+      },
+      "match_result": {
+        "existing_item_id": 219,
+        "existing_title": "是否每年对软件正版化情况开展自查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M220",
+      "new_item": {
+        "title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "dimension": "XC软件正版化",
+        "procedure": "a)访谈文档管理员，是否对软件采购合同、授权书等资料进行管理；b)检查文档清单，是否包含软件购置合同及授权许可。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M221",
+      "new_item": {
+        "title": "是否编制软件清单，主要包括软件名称、软件编号、入库时间、软件版本，授权和许可情况、软件序列号、软件状态、软件维护期、软件安装设备、用途和使用责任人等内容，并保留软件启用、转移、升级、报废等过程的记录。",
+        "dimension": "XC软件正版化",
+        "procedure": "检查软件清单，是否包括软件名称、软件编号、入库时间、软件版本，授权和许可情况、软件序列号、软件状态、软件维护期、软件安装设备、用途和使用责任人等内容，并保留软件启用、转移、升级、报废等过程的记录。"
+      },
+      "match_result": {
+        "existing_item_id": 221,
+        "existing_title": "是否编制软件清单，主要包括软件名称、软件编号、入库时间、软件版本，授权和许可情况、软件序列号、软件状态、软件维护期、软件安装设备、用途和使用责任人等内容，并保留软件启用、转移、升级、报废等过程的记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M222",
+      "new_item": {
+        "title": "软件清单记录是否完整。",
+        "dimension": "XC软件正版化",
+        "procedure": "检查软件清单，确认是否记录所有软件信息。"
+      },
+      "match_result": {
+        "existing_item_id": 222,
+        "existing_title": "软件清单记录是否完整。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M223",
+      "new_item": {
+        "title": "是否使用技术软件检测办公电脑软件安装情况。",
+        "dimension": "XC软件正版化",
+        "procedure": "上机检查技术检测软件安装情况和检测记录"
+      },
+      "match_result": {
+        "existing_item_id": 223,
+        "existing_title": "是否使用技术软件检测办公电脑软件安装情况。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M224",
+      "new_item": {
+        "title": "是否使用正版软件并保存软件授权证书和许可协议。",
+        "dimension": "XC软件正版化",
+        "procedure": "检查软件授权证书和许可协议，确认软件有授权，同时授权未过期；上机查看技术检测结果，对比软件安装实际情况和软件授权情况是否一致。"
+      },
+      "match_result": {
+        "existing_item_id": 224,
+        "existing_title": "是否使用正版软件并保存软件授权证书和许可协议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    }
+  ],
+  "pending_review": [],
+  "review": {
+    "review_status": "confirmed",
+    "review_round": 1,
+    "total_items": 0,
+    "confirmed_items": 0,
+    "adjusted_items": 0,
+    "details": [],
+    "review_id": "R001"
+  },
+  "verified": true,
+  "review_history": [
+    {
+      "review_status": "confirmed",
+      "review_round": 1,
+      "total_items": 0,
+      "confirmed_items": 0,
+      "adjusted_items": 0,
+      "details": [],
+      "review_id": "R001"
+    }
+  ]
+}

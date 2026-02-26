@@ -69,9 +69,22 @@ class SemanticMatcher:
     
     def compute_similarity_matrix(self, new_vectors: np.ndarray, existing_vectors: np.ndarray) -> np.ndarray:
         """计算相似度矩阵"""
-        new_vectors = new_vectors / np.linalg.norm(new_vectors, axis=1, keepdims=True)
-        existing_vectors = existing_vectors / np.linalg.norm(existing_vectors, axis=1, keepdims=True)
-        return np.dot(new_vectors, existing_vectors.T)
+        # 归一化（使用副本避免修改原始数组）
+        new_norms = np.linalg.norm(new_vectors, axis=1, keepdims=True)
+        existing_norms = np.linalg.norm(existing_vectors, axis=1, keepdims=True)
+        
+        # 检查是否有零向量
+        if np.any(new_norms == 0):
+            print("警告: new_vectors 包含零向量!")
+            new_norms[new_norms == 0] = 1  # 避免除以零
+        if np.any(existing_norms == 0):
+            print("警告: existing_vectors 包含零向量!")
+            existing_norms[existing_norms == 0] = 1
+        
+        new_vectors_norm = new_vectors / new_norms
+        existing_vectors_norm = existing_vectors / existing_norms
+        
+        return np.dot(new_vectors_norm, existing_vectors_norm.T)
     
     def batch_match(self, new_items: List[Dict], existing_items: List[Dict]) -> Dict[str, Any]:
         """

@@ -9,6 +9,13 @@ import re
 from datetime import datetime
 from typing import Dict, List, Any, Optional
 
+# 加载环境变量（如果存在 .env 文件）
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 
 class LLMVerifier:
     """LLM校验器 - 对向量模型的匹配结果进行逻辑校验"""
@@ -74,9 +81,10 @@ class LLMVerifier:
 {json_content}"""
     
     def __init__(self, api_base: str = None, api_key: str = None, model: str = None):
-        self.api_base = api_base or os.environ.get('LLM_API_BASE', '')
-        self.api_key = api_key or os.environ.get('LLM_API_KEY', '')
-        self.model = model or os.environ.get('LLM_MODEL', 'gpt-3.5-turbo')
+        # 支持两种环境变量命名：Agent框架使用的 ARK_* 和传统的 LLM_*
+        self.api_base = api_base or os.environ.get('ARK_BASE_URL') or os.environ.get('LLM_API_BASE', '')
+        self.api_key = api_key or os.environ.get('ARK_API_KEY') or os.environ.get('LLM_API_KEY', '')
+        self.model = model or os.environ.get('ARK_CHAT_MODEL') or os.environ.get('LLM_MODEL', 'gpt-3.5-turbo')
         self.review_counter = 1
     
     def verify_merge_suggestions(self, merge_result: Dict[str, Any]) -> Dict[str, Any]:
