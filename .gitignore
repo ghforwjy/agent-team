@@ -44,12 +44,12 @@ tests/*.py
 *.txt
 
 # Model files
-model/
 *.bin
 *.safetensors
 *.pth
 *.pt
 *.ckpt
+model/*.safetensors
 
 # Training materials
 训练材料/
