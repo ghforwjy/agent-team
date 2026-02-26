@@ -124,7 +124,12 @@ class AuditItemCleaner:
         
         print(f"\n应用清洗结果到数据库...")
         
+        # 从 result 中获取 source_file，并传递给每个 suggestion
+        source_file = result.get('source_file', '')
+        
         for suggestion in result.get('merge_suggestions', []):
+            # 将 source_file 添加到 suggestion 中
+            suggestion['source_file'] = source_file
             new_item = suggestion['new_item']
             match_result = suggestion['match_result']
 
@@ -150,16 +155,8 @@ class AuditItemCleaner:
             'description': ''
         })
         
-        # 支持两种字段名: procedure 或 audit_procedure
-        procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
-        if procedure_text:
-            self.db.insert_procedure({
-                'item_id': item_id,
-                'procedure_text': procedure_text,
-                'is_primary': 1
-            })
-        
-        self.db.insert_item_source({
+        # 先插入来源记录，获取 source_id
+        source_id = self.db.insert_item_source({
             'item_id': item_id,
             'source_type': 'excel',
             'source_file': suggestion.get('source_file', ''),
@@ -167,12 +164,31 @@ class AuditItemCleaner:
             'import_batch': self.import_batch
         })
         
+        # 支持两种字段名: procedure 或 audit_procedure
+        procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
+        if procedure_text:
+            self.db.insert_procedure({
+                'item_id': item_id,
+                'procedure_text': procedure_text,
+                'is_primary': 1,
+                'source_id': source_id  # 关联来源
+            })
+        
         print(f"  新建: {new_item['title'][:40]}...")
     
     def _merge_to_existing(self, new_item: Dict, match_result: Dict, suggestion: Dict):
         existing_id = match_result.get('existing_item_id')
         if not existing_id:
             return
+
+        # 先插入来源记录，获取 source_id
+        source_id = self.db.insert_item_source({
+            'item_id': existing_id,
+            'source_type': 'excel',
+            'source_file': suggestion.get('source_file', ''),
+            'raw_title': new_item['title'],
+            'import_batch': self.import_batch
+        })
 
         # 支持两种字段名: procedure 或 audit_procedure
         procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
@@ -184,19 +200,12 @@ class AuditItemCleaner:
                 self.db.insert_procedure({
                     'item_id': existing_id,
                     'procedure_text': procedure_text,
-                    'is_primary': 0
+                    'is_primary': 0,
+                    'source_id': source_id  # 关联来源
                 })
                 print(f"  新增动作到 [{existing_id}]: {procedure_text[:30]}...")
             else:
                 print(f"  跳过重复程序 [{existing_id}]: {procedure_text[:30]}...")
-
-        self.db.insert_item_source({
-            'item_id': existing_id,
-            'source_type': 'excel',
-            'source_file': suggestion.get('source_file', ''),
-            'raw_title': new_item['title'],
-            'import_batch': self.import_batch
-        })
 
 
 def main():

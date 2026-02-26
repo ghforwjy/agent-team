@@ -309,34 +309,63 @@ class HtmlReporter:
             </tr>
             """
         
+        # 准备来源数据用于JavaScript
+        sources_data_js = []
+        source_id_map = {}  # source_id -> source_info 映射
+        for item in result.items:
+            item_sources = []
+            for source in item.sources:
+                # 使用 source_file，如果为空则使用 source_type
+                source_name = source.source_file if source.source_file else (source.source_type or '未知来源')
+                item_sources.append({
+                    'source_file': source_name,
+                    'raw_title': source.raw_title or ''
+                })
+                # 构建 source_id 映射
+                source_id_map[source.id] = {'source_file': source_name, 'raw_title': source.raw_title or ''}
+            sources_data_js.append({'item_id': item.id, 'sources': item_sources})
+        
         # 生成审计项和程序的对应表格 - 全部数据
         item_proc_rows = ""
         for item in result.items:
+            # 生成来源角标
+            source_badges = ""
+            if item.sources:
+                source_badges = f'<span class="source-badge" onclick="showSources({item.id})">{len(item.sources)}</span>'
+            
             # 审计项基本信息行
             item_proc_rows += f"""
             <tr class="item-header">
                 <td rowspan="{max(1, len(item.procedures))}">{item.id}</td>
                 <td rowspan="{max(1, len(item.procedures))}">{item.item_code}</td>
                 <td rowspan="{max(1, len(item.procedures))}">{item.dimension}</td>
-                <td rowspan="{max(1, len(item.procedures))}" class="item-title">{item.title}</td>
+                <td rowspan="{max(1, len(item.procedures))}" class="item-title">{item.title} {source_badges}</td>
             """
             
             if item.procedures:
                 # 第一个程序
                 proc = item.procedures[0]
                 primary_badge = '<span class="badge primary">主</span>' if proc.is_primary else ''
+                # 生成程序的来源角标
+                proc_source_badge = ""
+                if proc.source_id and proc.source_id in source_id_map:
+                    proc_source_badge = f'<span class="source-badge" onclick="showProcSource({proc.source_id})">1</span>'
                 item_proc_rows += f"""
                 <td>{proc.id}</td>
-                <td class="procedure-text">{primary_badge} {proc.procedure_text}</td>
+                <td class="procedure-text">{primary_badge} {proc.procedure_text} {proc_source_badge}</td>
             </tr>
                 """
                 # 后续程序
                 for proc in item.procedures[1:]:
                     primary_badge = '<span class="badge primary">主</span>' if proc.is_primary else ''
+                    # 生成程序的来源角标
+                    proc_source_badge = ""
+                    if proc.source_id and proc.source_id in source_id_map:
+                        proc_source_badge = f'<span class="source-badge" onclick="showProcSource({proc.source_id})">1</span>'
                     item_proc_rows += f"""
             <tr class="procedure-row">
                 <td>{proc.id}</td>
-                <td class="procedure-text">{primary_badge} {proc.procedure_text}</td>
+                <td class="procedure-text">{primary_badge} {proc.procedure_text} {proc_source_badge}</td>
             </tr>
                     """
             else:
@@ -374,270 +403,416 @@ class HtmlReporter:
             </tr>
             """
 
-        return f"""<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>审计项清洗结果分析报告</title>
-    <style>
-        * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-            padding: 20px;
-        }}
-        .container {{
-            max-width: 1600px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }}
-        h1 {{
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #3498db;
-        }}
-        h2 {{
-            color: #34495e;
-            margin: 30px 0 15px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #ecf0f1;
-        }}
-        .stats-grid {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }}
-        .stat-card {{
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }}
-        .stat-card h3 {{
-            font-size: 14px;
-            font-weight: normal;
-            opacity: 0.9;
-            margin-bottom: 10px;
-        }}
-        .stat-card .number {{
-            font-size: 36px;
-            font-weight: bold;
-        }}
-        table {{
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            font-size: 13px;
-        }}
-        th, td {{
-            padding: 10px 12px;
-            text-align: left;
-            border: 1px solid #e0e0e0;
-            vertical-align: top;
-        }}
-        th {{
-            background: #3498db;
-            color: white;
-            font-weight: 600;
-            position: sticky;
-            top: 0;
-        }}
-        tr:hover {{
-            background: #f5f5f5;
-        }}
-        .item-header {{
-            background: #e8f4f8;
-        }}
-        .item-header:hover {{
-            background: #d0e8f0;
-        }}
-        .procedure-row {{
-            background: white;
-        }}
-        .procedure-row:hover {{
-            background: #fafafa;
-        }}
-        .item-title {{
-            font-weight: 500;
-            color: #2c3e50;
-            max-width: 400px;
-        }}
-        .procedure-text {{
-            color: #555;
-            line-height: 1.5;
-            max-width: 600px;
-        }}
-        .no-procedure {{
-            color: #999;
-            font-style: italic;
-        }}
-        .badge {{
-            display: inline-block;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 11px;
-            font-weight: bold;
-            margin-right: 5px;
-        }}
-        .badge.primary {{
-            background: #e74c3c;
-            color: white;
-        }}
-        .section {{
-            margin-bottom: 40px;
-        }}
-        .info {{
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px;
-            margin: 20px 0;
-        }}
-        .timestamp {{
-            color: #7f8c8d;
-            font-size: 12px;
-            text-align: right;
-            margin-top: 30px;
-        }}
-        .scroll-container {{
-            max-height: 800px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }}
-        .count-badge {{
-            background: #3498db;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 12px;
-            margin-left: 10px;
-        }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>审计项清洗结果分析报告</h1>
-
-        <div class="section">
-            <h2>基础统计</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>审计项总数</h3>
-                    <div class="number">{result.total_items}</div>
-                </div>
-                <div class="stat-card">
-                    <h3>审计程序总数</h3>
-                    <div class="number">{result.total_procedures}</div>
-                </div>
-                <div class="stat-card">
-                    <h3>来源记录总数</h3>
-                    <div class="number">{result.total_sources}</div>
-                </div>
-                <div class="stat-card">
-                    <h3>维度总数</h3>
-                    <div class="number">{result.total_dimensions}</div>
-                </div>
-            </div>
-
-            <div class="info">
-                <strong>平均值：</strong>
-                平均程序数/项: {result.avg_procedures_per_item:.2f} |
-                平均来源数/项: {result.avg_sources_per_item:.2f} |
-                多程序审计项: {result.items_with_multiple_procedures} |
-                最大程序数: {result.max_procedures_count}
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>维度分布</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>维度名称</th>
-                        <th>审计项数</th>
-                        <th>审计程序数</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {dim_rows}
-                </tbody>
-            </table>
-        </div>
-
-        <div class="section">
-            <h2>审计项与审计程序对应关系表 <span class="count-badge">共{result.total_items}项</span></h2>
-            <div class="scroll-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 50px;">项ID</th>
-                            <th style="width: 120px;">代码</th>
-                            <th style="width: 150px;">维度</th>
-                            <th style="width: 350px;">审计项标题</th>
-                            <th style="width: 60px;">程序ID</th>
-                            <th>审计程序内容</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {item_proc_rows}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>审计项列表 <span class="count-badge">共{result.total_items}项</span></h2>
-            <div class="scroll-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>代码</th>
-                            <th>维度</th>
-                            <th>标题</th>
-                            <th>程序数</th>
-                            <th>来源数</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {item_rows}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>审计程序列表 <span class="count-badge">共{result.total_procedures}条</span></h2>
-            <div class="scroll-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>程序ID</th>
-                            <th>所属项ID</th>
-                            <th>所属审计项</th>
-                            <th>程序内容</th>
-                            <th>是否主程序</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {proc_rows}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="timestamp">
-            报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-        </div>
-    </div>
-</body>
-</html>"""
+        # 使用字符串拼接构建HTML，避免f-string与JavaScript大括号冲突
+        sources_data_json = json.dumps(sources_data_js, ensure_ascii=False)
+        
+        html_parts = []
+        html_parts.append('<!DOCTYPE html>')
+        html_parts.append('<html lang="zh-CN">')
+        html_parts.append('<head>')
+        html_parts.append('    <meta charset="UTF-8">')
+        html_parts.append('    <meta name="viewport" content="width=device-width, initial-scale=1.0">')
+        html_parts.append('    <title>审计项清洗结果分析报告</title>')
+        html_parts.append('    <style>')
+        html_parts.append('        * { margin: 0; padding: 0; box-sizing: border-box; }')
+        html_parts.append('        body {')
+        html_parts.append('            font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, \'Helvetica Neue\', Arial, sans-serif;')
+        html_parts.append('            line-height: 1.6;')
+        html_parts.append('            color: #333;')
+        html_parts.append('            background: #f5f5f5;')
+        html_parts.append('            padding: 20px;')
+        html_parts.append('        }')
+        html_parts.append('        .container {')
+        html_parts.append('            max-width: 1600px;')
+        html_parts.append('            margin: 0 auto;')
+        html_parts.append('            background: white;')
+        html_parts.append('            padding: 30px;')
+        html_parts.append('            border-radius: 8px;')
+        html_parts.append('            box-shadow: 0 2px 4px rgba(0,0,0,0.1);')
+        html_parts.append('        }')
+        html_parts.append('        h1 {')
+        html_parts.append('            color: #2c3e50;')
+        html_parts.append('            margin-bottom: 30px;')
+        html_parts.append('            padding-bottom: 15px;')
+        html_parts.append('            border-bottom: 3px solid #3498db;')
+        html_parts.append('        }')
+        html_parts.append('        h2 {')
+        html_parts.append('            color: #34495e;')
+        html_parts.append('            margin: 30px 0 15px 0;')
+        html_parts.append('            padding-bottom: 10px;')
+        html_parts.append('            border-bottom: 2px solid #ecf0f1;')
+        html_parts.append('        }')
+        html_parts.append('        .stats-grid {')
+        html_parts.append('            display: grid;')
+        html_parts.append('            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));')
+        html_parts.append('            gap: 20px;')
+        html_parts.append('            margin-bottom: 30px;')
+        html_parts.append('        }')
+        html_parts.append('        .stat-card {')
+        html_parts.append('            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);')
+        html_parts.append('            color: white;')
+        html_parts.append('            padding: 20px;')
+        html_parts.append('            border-radius: 8px;')
+        html_parts.append('            text-align: center;')
+        html_parts.append('        }')
+        html_parts.append('        .stat-card h3 {')
+        html_parts.append('            font-size: 14px;')
+        html_parts.append('            font-weight: normal;')
+        html_parts.append('            opacity: 0.9;')
+        html_parts.append('            margin-bottom: 10px;')
+        html_parts.append('        }')
+        html_parts.append('        .stat-card .number {')
+        html_parts.append('            font-size: 36px;')
+        html_parts.append('            font-weight: bold;')
+        html_parts.append('        }')
+        html_parts.append('        table {')
+        html_parts.append('            width: 100%;')
+        html_parts.append('            border-collapse: collapse;')
+        html_parts.append('            margin: 20px 0;')
+        html_parts.append('            font-size: 13px;')
+        html_parts.append('        }')
+        html_parts.append('        th, td {')
+        html_parts.append('            padding: 10px 12px;')
+        html_parts.append('            text-align: left;')
+        html_parts.append('            border: 1px solid #e0e0e0;')
+        html_parts.append('            vertical-align: top;')
+        html_parts.append('        }')
+        html_parts.append('        th {')
+        html_parts.append('            background: #3498db;')
+        html_parts.append('            color: white;')
+        html_parts.append('            font-weight: 600;')
+        html_parts.append('            position: sticky;')
+        html_parts.append('            top: 0;')
+        html_parts.append('        }')
+        html_parts.append('        tr:hover {')
+        html_parts.append('            background: #f5f5f5;')
+        html_parts.append('        }')
+        html_parts.append('        .item-header {')
+        html_parts.append('            background: #e8f4f8;')
+        html_parts.append('        }')
+        html_parts.append('        .item-header:hover {')
+        html_parts.append('            background: #d0e8f0;')
+        html_parts.append('        }')
+        html_parts.append('        .procedure-row {')
+        html_parts.append('            background: white;')
+        html_parts.append('        }')
+        html_parts.append('        .procedure-row:hover {')
+        html_parts.append('            background: #fafafa;')
+        html_parts.append('        }')
+        html_parts.append('        .item-title {')
+        html_parts.append('            font-weight: 500;')
+        html_parts.append('            color: #2c3e50;')
+        html_parts.append('            max-width: 400px;')
+        html_parts.append('        }')
+        html_parts.append('        .procedure-text {')
+        html_parts.append('            color: #555;')
+        html_parts.append('            line-height: 1.5;')
+        html_parts.append('            max-width: 600px;')
+        html_parts.append('        }')
+        html_parts.append('        .no-procedure {')
+        html_parts.append('            color: #999;')
+        html_parts.append('            font-style: italic;')
+        html_parts.append('        }')
+        html_parts.append('        .badge {')
+        html_parts.append('            display: inline-block;')
+        html_parts.append('            padding: 2px 6px;')
+        html_parts.append('            border-radius: 3px;')
+        html_parts.append('            font-size: 11px;')
+        html_parts.append('            font-weight: bold;')
+        html_parts.append('            margin-right: 5px;')
+        html_parts.append('        }')
+        html_parts.append('        .badge.primary {')
+        html_parts.append('            background: #e74c3c;')
+        html_parts.append('            color: white;')
+        html_parts.append('        }')
+        html_parts.append('        .source-badge {')
+        html_parts.append('            display: inline-block;')
+        html_parts.append('            background: #e8e8e8;')
+        html_parts.append('            color: #52c41a;')
+        html_parts.append('            padding: 1px 6px;')
+        html_parts.append('            border-radius: 4px;')
+        html_parts.append('            font-size: 11px;')
+        html_parts.append('            font-weight: bold;')
+        html_parts.append('            margin-left: 5px;')
+        html_parts.append('            cursor: pointer;')
+        html_parts.append('            vertical-align: middle;')
+        html_parts.append('        }')
+        html_parts.append('        .source-badge:hover {')
+        html_parts.append('            background: #d0d0d0;')
+        html_parts.append('        }')
+        html_parts.append('        .source-popup {')
+        html_parts.append('            display: none;')
+        html_parts.append('            position: fixed;')
+        html_parts.append('            top: 0;')
+        html_parts.append('            left: 0;')
+        html_parts.append('            width: 100%;')
+        html_parts.append('            height: 100%;')
+        html_parts.append('            background: rgba(0,0,0,0.5);')
+        html_parts.append('            z-index: 1000;')
+        html_parts.append('        }')
+        html_parts.append('        .source-popup-content {')
+        html_parts.append('            position: absolute;')
+        html_parts.append('            top: 50%;')
+        html_parts.append('            left: 50%;')
+        html_parts.append('            transform: translate(-50%, -50%);')
+        html_parts.append('            background: white;')
+        html_parts.append('            padding: 20px;')
+        html_parts.append('            border-radius: 8px;')
+        html_parts.append('            max-width: 700px;')
+        html_parts.append('            width: 90%;')
+        html_parts.append('            max-height: 80vh;')
+        html_parts.append('            overflow-y: auto;')
+        html_parts.append('        }')
+        html_parts.append('        .source-popup h3 {')
+        html_parts.append('            margin-bottom: 15px;')
+        html_parts.append('            color: #2c3e50;')
+        html_parts.append('            border-bottom: 2px solid #3498db;')
+        html_parts.append('            padding-bottom: 10px;')
+        html_parts.append('        }')
+        html_parts.append('        .source-list {')
+        html_parts.append('            list-style: none;')
+        html_parts.append('            padding: 0;')
+        html_parts.append('        }')
+        html_parts.append('        .source-item {')
+        html_parts.append('            margin-bottom: 15px;')
+        html_parts.append('            padding: 12px;')
+        html_parts.append('            background: #f8f9fa;')
+        html_parts.append('            border-radius: 6px;')
+        html_parts.append('            border-left: 4px solid #52c41a;')
+        html_parts.append('        }')
+        html_parts.append('        .source-item .source-file {')
+        html_parts.append('            font-weight: bold;')
+        html_parts.append('            color: #333;')
+        html_parts.append('            margin-bottom: 8px;')
+        html_parts.append('        }')
+        html_parts.append('        .source-item .source-text {')
+        html_parts.append('            color: #666;')
+        html_parts.append('            font-size: 13px;')
+        html_parts.append('            line-height: 1.5;')
+        html_parts.append('        }')
+        html_parts.append('        .source-popup .close-btn {')
+        html_parts.append('            margin-top: 20px;')
+        html_parts.append('            padding: 8px 20px;')
+        html_parts.append('            background: #3498db;')
+        html_parts.append('            color: white;')
+        html_parts.append('            border: none;')
+        html_parts.append('            border-radius: 4px;')
+        html_parts.append('            cursor: pointer;')
+        html_parts.append('            float: right;')
+        html_parts.append('        }')
+        html_parts.append('        .source-popup .close-btn:hover {')
+        html_parts.append('            background: #2980b9;')
+        html_parts.append('        }')
+        html_parts.append('        .section {')
+        html_parts.append('            margin-bottom: 40px;')
+        html_parts.append('        }')
+        html_parts.append('        .info {')
+        html_parts.append('            background: #e3f2fd;')
+        html_parts.append('            border-left: 4px solid #2196f3;')
+        html_parts.append('            padding: 15px;')
+        html_parts.append('            margin: 20px 0;')
+        html_parts.append('        }')
+        html_parts.append('        .timestamp {')
+        html_parts.append('            color: #7f8c8d;')
+        html_parts.append('            font-size: 12px;')
+        html_parts.append('            text-align: right;')
+        html_parts.append('            margin-top: 30px;')
+        html_parts.append('        }')
+        html_parts.append('        .scroll-container {')
+        html_parts.append('            max-height: 800px;')
+        html_parts.append('            overflow-y: auto;')
+        html_parts.append('            border: 1px solid #ddd;')
+        html_parts.append('            border-radius: 4px;')
+        html_parts.append('        }')
+        html_parts.append('        .count-badge {')
+        html_parts.append('            background: #3498db;')
+        html_parts.append('            color: white;')
+        html_parts.append('            padding: 2px 8px;')
+        html_parts.append('            border-radius: 10px;')
+        html_parts.append('            font-size: 12px;')
+        html_parts.append('            margin-left: 10px;')
+        html_parts.append('        }')
+        html_parts.append('    </style>')
+        html_parts.append('</head>')
+        html_parts.append('<body>')
+        html_parts.append('    <div class="container">')
+        html_parts.append('        <h1>审计项清洗结果分析报告</h1>')
+        html_parts.append('')
+        html_parts.append('        <div class="section">')
+        html_parts.append('            <h2>基础统计</h2>')
+        html_parts.append('            <div class="stats-grid">')
+        html_parts.append('                <div class="stat-card">')
+        html_parts.append('                    <h3>审计项总数</h3>')
+        html_parts.append(f'                    <div class="number">{result.total_items}</div>')
+        html_parts.append('                </div>')
+        html_parts.append('                <div class="stat-card">')
+        html_parts.append('                    <h3>审计程序总数</h3>')
+        html_parts.append(f'                    <div class="number">{result.total_procedures}</div>')
+        html_parts.append('                </div>')
+        html_parts.append('                <div class="stat-card">')
+        html_parts.append('                    <h3>来源记录总数</h3>')
+        html_parts.append(f'                    <div class="number">{result.total_sources}</div>')
+        html_parts.append('                </div>')
+        html_parts.append('                <div class="stat-card">')
+        html_parts.append('                    <h3>维度总数</h3>')
+        html_parts.append(f'                    <div class="number">{result.total_dimensions}</div>')
+        html_parts.append('                </div>')
+        html_parts.append('            </div>')
+        html_parts.append('')
+        html_parts.append('            <div class="info">')
+        html_parts.append('                <strong>平均值：</strong>')
+        html_parts.append(f'                平均程序数/项: {result.avg_procedures_per_item:.2f} |')
+        html_parts.append(f'                平均来源数/项: {result.avg_sources_per_item:.2f} |')
+        html_parts.append(f'                多程序审计项: {result.items_with_multiple_procedures} |')
+        html_parts.append(f'                最大程序数: {result.max_procedures_count}')
+        html_parts.append('            </div>')
+        html_parts.append('        </div>')
+        html_parts.append('')
+        html_parts.append('        <div class="section">')
+        html_parts.append('            <h2>维度分布</h2>')
+        html_parts.append('            <table>')
+        html_parts.append('                <thead>')
+        html_parts.append('                    <tr>')
+        html_parts.append('                        <th>维度名称</th>')
+        html_parts.append('                        <th>审计项数</th>')
+        html_parts.append('                        <th>审计程序数</th>')
+        html_parts.append('                    </tr>')
+        html_parts.append('                </thead>')
+        html_parts.append('                <tbody>')
+        html_parts.append(dim_rows)
+        html_parts.append('                </tbody>')
+        html_parts.append('            </table>')
+        html_parts.append('        </div>')
+        html_parts.append('')
+        html_parts.append(f'        <div class="section">')
+        html_parts.append(f'            <h2>审计项与审计程序对应关系表 <span class="count-badge">共{result.total_items}项</span></h2>')
+        html_parts.append('            <div class="scroll-container">')
+        html_parts.append('                <table>')
+        html_parts.append('                    <thead>')
+        html_parts.append('                        <tr>')
+        html_parts.append('                            <th style="width: 50px;">项ID</th>')
+        html_parts.append('                            <th style="width: 120px;">代码</th>')
+        html_parts.append('                            <th style="width: 150px;">维度</th>')
+        html_parts.append('                            <th style="width: 350px;">审计项标题</th>')
+        html_parts.append('                            <th style="width: 60px;">程序ID</th>')
+        html_parts.append('                            <th>审计程序内容</th>')
+        html_parts.append('                        </tr>')
+        html_parts.append('                    </thead>')
+        html_parts.append('                    <tbody>')
+        html_parts.append(item_proc_rows)
+        html_parts.append('                    </tbody>')
+        html_parts.append('                </table>')
+        html_parts.append('            </div>')
+        html_parts.append('        </div>')
+        html_parts.append('')
+        html_parts.append(f'        <div class="section">')
+        html_parts.append(f'            <h2>审计项列表 <span class="count-badge">共{result.total_items}项</span></h2>')
+        html_parts.append('            <div class="scroll-container">')
+        html_parts.append('                <table>')
+        html_parts.append('                    <thead>')
+        html_parts.append('                        <tr>')
+        html_parts.append('                            <th>ID</th>')
+        html_parts.append('                            <th>代码</th>')
+        html_parts.append('                            <th>维度</th>')
+        html_parts.append('                            <th>标题</th>')
+        html_parts.append('                            <th>程序数</th>')
+        html_parts.append('                            <th>来源数</th>')
+        html_parts.append('                        </tr>')
+        html_parts.append('                    </thead>')
+        html_parts.append('                    <tbody>')
+        html_parts.append(item_rows)
+        html_parts.append('                    </tbody>')
+        html_parts.append('                </table>')
+        html_parts.append('            </div>')
+        html_parts.append('        </div>')
+        html_parts.append('')
+        html_parts.append(f'        <div class="section">')
+        html_parts.append(f'            <h2>审计程序列表 <span class="count-badge">共{result.total_procedures}条</span></h2>')
+        html_parts.append('            <div class="scroll-container">')
+        html_parts.append('                <table>')
+        html_parts.append('                    <thead>')
+        html_parts.append('                        <tr>')
+        html_parts.append('                            <th>程序ID</th>')
+        html_parts.append('                            <th>所属项ID</th>')
+        html_parts.append('                            <th>所属审计项</th>')
+        html_parts.append('                            <th>程序内容</th>')
+        html_parts.append('                            <th>是否主程序</th>')
+        html_parts.append('                        </tr>')
+        html_parts.append('                    </thead>')
+        html_parts.append('                    <tbody>')
+        html_parts.append(proc_rows)
+        html_parts.append('                    </tbody>')
+        html_parts.append('                </table>')
+        html_parts.append('            </div>')
+        html_parts.append('        </div>')
+        html_parts.append('')
+        timestamp_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        html_parts.append('        <div class="timestamp">')
+        html_parts.append(f'            报告生成时间: {timestamp_str}')
+        html_parts.append('        </div>')
+        html_parts.append('    </div>')
+        html_parts.append('')
+        html_parts.append('    <!-- 来源详情弹窗 -->')
+        html_parts.append('    <div id="sourcePopup" class="source-popup" onclick="closePopup(event)">')
+        html_parts.append('        <div class="source-popup-content" onclick="event.stopPropagation()">')
+        html_parts.append('            <h3>来源详情</h3>')
+        html_parts.append('            <ul id="sourceList" class="source-list"></ul>')
+        html_parts.append('            <button class="close-btn" onclick="closePopup()">关闭</button>')
+        html_parts.append('        </div>')
+        html_parts.append('    </div>')
+        html_parts.append('')
+        # 转换 source_id_map 为JSON
+        source_id_map_json = json.dumps(source_id_map, ensure_ascii=False)
+        
+        html_parts.append('    <script>')
+        html_parts.append('        // 来源数据')
+        html_parts.append(f'        const sourcesData = {sources_data_json};')
+        html_parts.append(f'        const sourceIdMap = {source_id_map_json};')
+        html_parts.append('')
+        html_parts.append('        // 显示审计项来源弹窗')
+        html_parts.append('        function showSources(itemId) {')
+        html_parts.append('            const item = sourcesData.find(function(item) { return item.item_id === itemId; });')
+        html_parts.append('            if (!item || !item.sources.length) return;')
+        html_parts.append('')
+        html_parts.append('            const list = document.getElementById(\'sourceList\');')
+        html_parts.append('            list.innerHTML = \'\';')
+        html_parts.append('')
+        html_parts.append('            item.sources.forEach(function(source, index) {')
+        html_parts.append('                const li = document.createElement(\'li\');')
+        html_parts.append('                li.className = \'source-item\';')
+        html_parts.append('                li.innerHTML = \'<div class="source-file">来源 \' + (index + 1) + \'：\' + source.source_file + \'</div>\' +')
+        html_parts.append('                    (source.raw_title ? \'<div class="source-text">\' + source.raw_title + \'</div>\' : \'\');')
+        html_parts.append('                list.appendChild(li);')
+        html_parts.append('            });')
+        html_parts.append('')
+        html_parts.append('            document.getElementById(\'sourcePopup\').style.display = \'block\';')
+        html_parts.append('        }')
+        html_parts.append('')
+        html_parts.append('        // 显示审计程序来源弹窗')
+        html_parts.append('        function showProcSource(sourceId) {')
+        html_parts.append('            const source = sourceIdMap[sourceId];')
+        html_parts.append('            if (!source) return;')
+        html_parts.append('')
+        html_parts.append('            const list = document.getElementById(\'sourceList\');')
+        html_parts.append('            list.innerHTML = \'\';')
+        html_parts.append('')
+        html_parts.append('            const li = document.createElement(\'li\');')
+        html_parts.append('            li.className = \'source-item\';')
+        html_parts.append('            li.innerHTML = \'<div class="source-file">来源：\' + source.source_file + \'</div>\' +')
+        html_parts.append('                (source.raw_title ? \'<div class="source-text">\' + source.raw_title + \'</div>\' : \'\');')
+        html_parts.append('            list.appendChild(li);')
+        html_parts.append('')
+        html_parts.append('            document.getElementById(\'sourcePopup\').style.display = \'block\';')
+        html_parts.append('        }')
+        html_parts.append('')
+        html_parts.append('        // 关闭弹窗')
+        html_parts.append('        function closePopup(event) {')
+        html_parts.append('            if (!event || event.target.id === \'sourcePopup\') {')
+        html_parts.append('                document.getElementById(\'sourcePopup\').style.display = \'none\';')
+        html_parts.append('            }')
+        html_parts.append('        }')
+        html_parts.append('    </script>')
+        html_parts.append('</body>')
+        html_parts.append('</html>')
+        
+        return '\n'.join(html_parts)

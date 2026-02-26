@@ -165,7 +165,7 @@ class DatabaseLoader:
         """
         query = """
             SELECT p.id, p.item_id, p.procedure_text,
-                   p.procedure_type, p.is_primary, p.created_at,
+                   p.procedure_type, p.is_primary, p.source_id, p.created_at,
                    i.title as item_title
             FROM audit_procedures p
             LEFT JOIN audit_items i ON p.item_id = i.id
@@ -184,6 +184,7 @@ class DatabaseLoader:
                 procedure_text=row['procedure_text'],
                 procedure_type=row['procedure_type'],
                 is_primary=bool(row['is_primary']),
+                source_id=row['source_id'],
                 created_at=row['created_at']
             )
             procedures.append(proc)
@@ -199,7 +200,7 @@ class DatabaseLoader:
         """
         query = """
             SELECT p.id, p.item_id, p.procedure_text,
-                   p.procedure_type, p.is_primary, p.created_at,
+                   p.procedure_type, p.is_primary, p.source_id, p.created_at,
                    i.title as item_title
             FROM audit_procedures p
             LEFT JOIN audit_items i ON p.item_id = i.id
@@ -217,6 +218,7 @@ class DatabaseLoader:
                 procedure_text=row['procedure_text'],
                 procedure_type=row['procedure_type'],
                 is_primary=bool(row['is_primary']),
+                source_id=row['source_id'],
                 created_at=row['created_at']
             )
             procedures.append(proc)

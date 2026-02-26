@@ -45,6 +45,7 @@ class AuditProcedure:
     item_title: Optional[str] = None  # 冗余字段，方便展示
     procedure_type: Optional[str] = None
     is_primary: bool = False
+    source_id: Optional[int] = None  # 关联的来源ID
     created_at: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
@@ -56,6 +57,7 @@ class AuditProcedure:
             'procedure_text': self.procedure_text,
             'procedure_type': self.procedure_type,
             'is_primary': self.is_primary,
+            'source_id': self.source_id,
             'created_at': self.created_at
         }
 

@@ -1,0 +1,11 @@
+# 火山方舟大模型服务平台配置
+# API Key 获取地址：https://console.volcengine.com/ark/region:ark+cn-beijing/apikey
+ARK_API_KEY= 9d097523-ba3c-4270-a203-e7140df9529c
+ARK_BASE_URL=https://ark.cn-beijing.volces.com/api/v3
+
+# 多模态视觉模型（用于图片识别）
+# 模型ID获取地址：https://console.volcengine.com/ark/region:ark+cn-beijing/model
+ARK_VISION_MODEL= doubao-seed-2-0-mini-260215
+
+# 文本生成模型（可选）
+ARK_CHAT_MODEL=doubao-seed-2-0-mini-260215
