@@ -21,9 +21,9 @@ class LLMVerifier:
 - summary: 统计信息
 - merge_suggestions: 合并建议列表
   - suggestion_id: 建议编号
-  - new_item: 新审计项信息
-  - match_result: 匹配结果（action: merge/new_item）
-  - procedure_match: 审计程序匹配结果
+  - new_item: 新审计项信息（title, dimension, procedure）
+  - match_result: 匹配结果（action: create/reuse, similarity）
+  - procedure_match: 审计程序匹配结果（action: create_procedure/reuse_procedure）
   - vector_confidence: 向量模型置信度
 - pending_review: 待确认列表（相似度中等的候选）
 
@@ -31,38 +31,43 @@ class LLMVerifier:
 
 对于每条建议，请判断：
 1. match_result.action 是否正确？
-   - merge: 两个审计项是否真的是同一个检查项？
-   - new_item: 是否确实应该新建？
+   - reuse: 两个审计项是否真的是同一个检查项？
+   - create: 是否确实应该新建？
 2. procedure_match.action 是否正确？
-   - 审计程序是否可以合并，还是应该新增？
+   - 审计程序是否可以复用，还是应该新增？
 3. 维度分类是否合理？
 
 ## 判断标准
 
-- 合并条件：检查重点相同、检查对象相同
-- 分离条件：检查重点不同、存在包含关系
-- 审计程序：检查方法或检查对象不同时，应新增程序
+- 复用条件（reuse）：检查重点相同、检查对象相同
+- 新建条件（create）：检查重点不同、存在包含关系、检查角度不同
+- 审计程序：检查方法或检查对象不同时，应新增程序（create_procedure）
+- 程序相似度≥0.80时可复用（reuse_procedure）
 
 ## 输出格式
 
 请输出JSON格式：
 
-{
-  "review_id": "R001",
-  "overall_assessment": "整体评价",
-  "adjustments": [
-    {
-      "suggestion_id": "M002",
-      "field": "match_result.action",
-      "original_value": "merge",
-      "new_value": "new_item",
-      "reason": "检查重点不同：M002检查运作是否有效，已有项检查是否建立"
-    }
-  ],
-  "approved_count": 78,
-  "adjusted_count": 2,
-  "status": "approved / need_revision"
-}
+{{
+  "review_status": "confirmed/adjusted/failed",
+  "review_round": 1,
+  "total_items": 224,
+  "confirmed_items": 200,
+  "adjusted_items": 24,
+  "details": [
+    {{
+      "suggestion_id": "M001",
+      "is_same_item": true/false,
+      "item_decision": "create/reuse",
+      "item_reason": "判断理由",
+      "is_same_procedure": true/false,
+      "procedure_decision": "create_procedure/reuse_procedure",
+      "procedure_reason": "判断理由",
+      "dimension_adjustment": null或建议维度,
+      "confidence": "high/medium/low"
+    }}
+  ]
+}}
 
 ## 合并建议文档
 
@@ -127,12 +132,12 @@ class LLMVerifier:
     def _mock_response(self) -> str:
         """模拟LLM响应（用于测试）"""
         return json.dumps({
-            "review_id": "R001",
-            "overall_assessment": "模拟审核：所有建议已审核通过",
-            "adjustments": [],
-            "approved_count": 0,
-            "adjusted_count": 0,
-            "status": "approved"
+            "review_status": "confirmed",
+            "review_round": 1,
+            "total_items": 0,
+            "confirmed_items": 0,
+            "adjusted_items": 0,
+            "details": []
         }, ensure_ascii=False)
     
     def _parse_response(self, response: str) -> Dict[str, Any]:
@@ -155,89 +160,176 @@ class LLMVerifier:
             "raw_response": response
         }
     
-    def apply_adjustments(self, merge_result: Dict[str, Any], 
+    def apply_adjustments(self, merge_result: Dict[str, Any],
                           review_result: Dict[str, Any]) -> Dict[str, Any]:
         """
-        应用审核调整到合并建议
-        
+        应用审核调整到合并建议（兼容旧格式）
+
         Args:
             merge_result: 原合并建议
             review_result: LLM审核意见
-        
+
         Returns:
             调整后的合并建议
         """
         adjustments = review_result.get('adjustments', [])
-        
+
         if not adjustments:
             return merge_result
-        
+
         adjustment_map = {a['suggestion_id']: a for a in adjustments}
-        
+
         for suggestion in merge_result.get('merge_suggestions', []):
             sid = suggestion.get('suggestion_id')
             if sid in adjustment_map:
                 adj = adjustment_map[sid]
                 field = adj.get('field', '')
                 new_value = adj.get('new_value')
-                
+
                 if field == 'match_result.action' and new_value:
                     suggestion['match_result']['action'] = new_value
                     suggestion['adjusted'] = True
                     suggestion['adjustment_reason'] = adj.get('reason', '')
-        
+
         for pending in merge_result.get('pending_review', []):
             sid = pending.get('suggestion_id')
             if sid in adjustment_map:
                 adj = adjustment_map[sid]
                 new_value = adj.get('new_value')
                 target_item_id = adj.get('target_item_id')
-                
-                if new_value == 'merge' and target_item_id:
+
+                if new_value == 'reuse' and target_item_id:
                     pending['match_result'] = {
                         'existing_item_id': target_item_id,
-                        'action': 'merge'
+                        'action': 'reuse'
                     }
                     pending['adjusted'] = True
                     pending['adjustment_reason'] = adj.get('reason', '')
-        
+
         return merge_result
+
+    def apply_detailed_adjustments(self, merge_result: Dict[str, Any],
+                                   review_result: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        应用详细审核调整到合并建议（新格式）
+
+        Args:
+            merge_result: 原合并建议
+            review_result: LLM详细审核意见
+
+        Returns:
+            调整后的合并建议
+        """
+        details = review_result.get('details', [])
+
+        if not details:
+            return merge_result
+
+        detail_map = {d['suggestion_id']: d for d in details}
+
+        for suggestion in merge_result.get('merge_suggestions', []):
+            sid = suggestion.get('suggestion_id')
+            if sid in detail_map:
+                detail = detail_map[sid]
+
+                # 应用审计项决策
+                item_decision = detail.get('item_decision')
+                if item_decision:
+                    old_action = suggestion['match_result']['action']
+                    suggestion['match_result']['action'] = item_decision
+                    suggestion['adjusted'] = True
+                    suggestion['adjustment_reason'] = detail.get('item_reason', '')
+                    suggestion['llm_review'] = detail
+
+                    # 如果决策从reuse改为create，清除existing_item_id
+                    if old_action == 'reuse' and item_decision == 'create':
+                        suggestion['match_result']['existing_item_id'] = None
+                        suggestion['match_result']['existing_title'] = None
+
+                # 应用程序决策
+                procedure_decision = detail.get('procedure_decision')
+                if procedure_decision and 'procedure_match' in suggestion:
+                    suggestion['procedure_match']['action'] = procedure_decision
+                    suggestion['procedure_match']['adjustment_reason'] = detail.get('procedure_reason', '')
+
+                # 应用维度调整
+                dimension_adjustment = detail.get('dimension_adjustment')
+                if dimension_adjustment:
+                    suggestion['new_item']['dimension'] = dimension_adjustment
+
+        return merge_result
+
+    def generate_failure_report(self, merge_result: Dict, review_history: List) -> Dict:
+        """生成LLM审核失败报告"""
+        return {
+            "status": "failed_review",
+            "total_rounds": len(review_history),
+            "initial_judgment": {
+                "total_items": merge_result.get('summary', {}).get('total_new_items', 0),
+                "suggested_new_items": merge_result.get('summary', {}).get('suggested_new_items', 0),
+                "suggested_reuse_items": merge_result.get('summary', {}).get('suggested_reuse_items', 0),
+                "pending_review": merge_result.get('summary', {}).get('pending_review', 0)
+            },
+            "review_history": [
+                {
+                    "round": r.get('review_round', i+1),
+                    "status": r.get('review_status', 'unknown'),
+                    "confirmed_items": r.get('confirmed_items', 0),
+                    "adjusted_items": r.get('adjusted_items', 0)
+                }
+                for i, r in enumerate(review_history)
+            ],
+            "recommended_action": "人工介入处理"
+        }
     
-    def iterative_verify(self, merge_result: Dict[str, Any], 
+    def iterative_verify(self, merge_result: Dict[str, Any],
                          max_iterations: int = 3) -> Dict[str, Any]:
         """
-        迭代审核，直到LLM确认OK
-        
+        迭代审核，最多3次循环
+        - 3次内通过：返回verified=True的结果
+        - 3次不通过：标记为failed_review，生成失败报告
+
         Args:
             merge_result: 合并建议
             max_iterations: 最大迭代次数
-        
+
         Returns:
-            最终审核通过的合并建议
+            最终审核结果
         """
         current_result = merge_result.copy()
-        
+        review_history = []
+
         for i in range(max_iterations):
             print(f"\n第{i+1}轮LLM审核...")
-            
+
             review = self.verify_merge_suggestions(current_result)
-            
-            print(f"  审核状态: {review.get('status')}")
+            review['review_round'] = i + 1
+            review_history.append(review)
+
+            print(f"  审核状态: {review.get('review_status')}")
             print(f"  调整数量: {review.get('adjusted_count', 0)}")
-            
-            if review.get('status') == 'approved':
+
+            if review.get('review_status') == 'confirmed':
                 current_result['review'] = review
                 current_result['verified'] = True
+                current_result['review_history'] = review_history
                 return current_result
-            
-            if review.get('adjustments'):
-                current_result = self.apply_adjustments(current_result, review)
+
+            # 应用调整并继续下一轮
+            if review.get('details'):
+                current_result = self.apply_detailed_adjustments(current_result, review)
                 current_result['review'] = review
             else:
+                # 没有调整但也没有确认，可能是失败
                 break
-        
+
+        # 3次后仍未通过，生成失败报告
         current_result['verified'] = False
         current_result['review'] = review
+        current_result['review_history'] = review_history
+        current_result['failure_report'] = self.generate_failure_report(merge_result, review_history)
+
+        print(f"\n警告: 经过{max_iterations}轮审核仍未通过，标记为失败")
         return current_result
 
 

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "evolver": {
+      "command": "node",
+      "args": [
+        "f:/mycode/垂直领域工具类/agent-team/evolver/mcp-server.js"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "version": "2.0.0"
+    }
+  }
+}

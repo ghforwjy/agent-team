@@ -54,3 +54,6 @@ model/
 # Training materials
 训练材料/
 
+# Trae IDE
+.trae/
+

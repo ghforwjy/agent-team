@@ -1,0 +1,4516 @@
+{
+  "version": "1.0",
+  "created_at": "2026-02-26T12:38:28.747392",
+  "source_file": "audit_items_2022.xlsx",
+  "summary": {
+    "total_new_items": 224,
+    "total_existing_items": 224,
+    "suggested_new_items": 0,
+    "suggested_reuse_items": 224,
+    "pending_review": 0
+  },
+  "merge_suggestions": [
+    {
+      "suggestion_id": "M001",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件处置的具体方案。"
+      },
+      "match_result": {
+        "existing_item_id": 161,
+        "existing_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M002",
+      "new_item": {
+        "title": "是否定期检查违反规定拨号上网或其他违反网络安全策略的行为。",
+        "dimension": "网络管理",
+        "procedure": "a)访谈网络管理员，了解是否有检查网络违规行为（如拨号上网等）的检查手段和工具；b)查看网络监控日志，是否有违反规定拨号上网或其他违反网络安全策略的行为。"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M003",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "运维管理",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M004",
+      "new_item": {
+        "title": "公司IT治理委员会或负责指导和管理信息安全工作的委员会或领导小组是否由公司主要负责人、相关高级管理人员及相关部门负责人组成；是否明确网络安全直接责任人。",
+        "dimension": "信息技术治理",
+        "procedure": "查阅IT治理委员会、网络安全委员会或领导小组成立发文和成员名单。"
+      },
+      "match_result": {
+        "existing_item_id": 151,
+        "existing_title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M005",
+      "new_item": {
+        "title": "公司IT治理委员会或负责指导和管理信息安全工作的委员会或领导小组是否由公司主要负责人、相关高级管理人员及相关部门负责人组成；是否明确网络安全直接责任人。",
+        "dimension": "信息技术治理",
+        "procedure": "查阅IT治理委员会、网络安全委员会或领导小组成立发文和成员名单。"
+      },
+      "match_result": {
+        "existing_item_id": 151,
+        "existing_title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M006",
+      "new_item": {
+        "title": "公司IT治理委员会或负责指导和管理信息安全工作的委员会或领导小组是否由公司主要负责人、相关高级管理人员及相关部门负责人组成；是否明确网络安全直接责任人。",
+        "dimension": "信息技术治理",
+        "procedure": "查阅IT治理委员会、网络安全委员会或领导小组成立发文和成员名单。"
+      },
+      "match_result": {
+        "existing_item_id": 151,
+        "existing_title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M007",
+      "new_item": {
+        "title": "是否将APP安全合规内容纳入信息技术管理体系。",
+        "dimension": "经营机构面向投资者的APP安全合规专项工作情况（核心机构参照）",
+        "procedure": "a)是否将APP安全需求、安全开发、安全测试、安全发布、APP个人信息保护纳入信息技术管理制度;\nb)询问是否参照《证券期货业移动互联网应用程序安全规范》、《证券期货业移动互联网应用程序安全检测规范》..."
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M008",
+      "new_item": {
+        "title": "机房是否设置交流电源地线。",
+        "dimension": "机房管理",
+        "procedure": "a)访谈物理安全负责人，询问机房是否设置有交流电源地线；b)检查机房验收合格证明，是否有设置交流电源地线的说明。"
+      },
+      "match_result": {
+        "existing_item_id": 179,
+        "existing_title": "是否对公司进行专项IT审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M009",
+      "new_item": {
+        "title": "受托方提供的应用系统的性能和容量是否满足委托方的要求。",
+        "dimension": "信息系统托管",
+        "procedure": "检查应用系统性能和容量情况是否满足委托方要求，是否未影响正常业务运行。"
+      },
+      "match_result": {
+        "existing_item_id": 188,
+        "existing_title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M010",
+      "new_item": {
+        "title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "dimension": "信息技术治理",
+        "procedure": "检查“表L.9-基本情况”，访谈系统建设负责人，询问是否有专门的部门或人员负责本单位软件正版化工作，由何部门/何人负责。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M011",
+      "new_item": {
+        "title": "是否设立信息系统运维组织，负责信息系统的运行维护工作。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查设立信息系统运维组织的正式发文，查看运维岗位分工及岗位职责说明，了解信息系统运维岗位设立情况；b)访谈相关人员，询问是否知悉其职责范围。"
+      },
+      "match_result": {
+        "existing_item_id": 76,
+        "existing_title": "是否对新上线的设备在接入运行网络前进行全面的安全检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M012",
+      "new_item": {
+        "title": "值班负责人和信息技术负责人是否负责信息安全应急值守。",
+        "dimension": "运维管理",
+        "procedure": "检查值班管理制度，是否明确值班负责人和信息技术负责人负责信息安全应急值守。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M013",
+      "new_item": {
+        "title": "是否将APP安全合规内容纳入信息技术管理体系。",
+        "dimension": "经营机构面向投资者的APP安全合规专项工作情况（核心机构参照）",
+        "procedure": "a)是否将APP安全需求、安全开发、安全测试、安全发布、APP个人信息保护纳入信息技术管理制度;\nb)询问是否参照《证券期货业移动互联网应用程序安全规范》、《证券期货业移动互联网应用程序安全检测规范》..."
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M014",
+      "new_item": {
+        "title": "值班负责人和信息技术负责人是否负责信息安全应急值守。",
+        "dimension": "运维管理",
+        "procedure": "检查值班管理制度，是否明确值班负责人和信息技术负责人负责信息安全应急值守。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M015",
+      "new_item": {
+        "title": "是否设立信息安全管理工作的职能部门，设立安全主管、安全管理各个方面的负责人岗位，并定义各负责人的职责。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否设立信息安全管理工作的职能部门、安全主管、安全管理各个方面的负责人岗位；b)检查岗位职责文档，查看文档是否明确设置安全主管、安全管理各个方面的负责人、各个岗位的职责范围是否清..."
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M016",
+      "new_item": {
+        "title": "运维岗位是否至少包括机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位，并设置主备岗。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查“表L.1-按岗位人员情况”，检查运维岗位分工及岗位职责说明，是否包括机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位，并设置主备岗；b)访谈机房管理员、网络管理员、系统..."
+      },
+      "match_result": {
+        "existing_item_id": 216,
+        "existing_title": "是否建立软件资产管理制度，或将软件资产纳入本单位资产管理体系，对软件采购、安装、升级等工作流程有严格管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M017",
+      "new_item": {
+        "title": "关键岗位是否进行分离，兼岗时是否满足岗位相互制约的要求。",
+        "dimension": "信息技术治理",
+        "procedure": "检查运维岗位分工及岗位职责说明，机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位的职责范围是否清晰、明确，有相互制约的要求。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M018",
+      "new_item": {
+        "title": "是否设立信息系统运维组织，负责信息系统的运行维护工作。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查设立信息系统运维组织的正式发文，查看运维岗位分工及岗位职责说明，了解信息系统运维岗位设立情况；b)访谈相关人员，询问是否知悉其职责范围。"
+      },
+      "match_result": {
+        "existing_item_id": 76,
+        "existing_title": "是否对新上线的设备在接入运行网络前进行全面的安全检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M019",
+      "new_item": {
+        "title": "是否建立运维管理制度和操作流程的制定、发布、维护和更新的机制。至少每年一次评审、修订运维管理制度和操作流程。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查运维管理制度和操作流程维护办法，是否有关于制定、发布、维护和更新的规定；b)检查评审、修订运维管理制度和操作流程的记录，是否每年对运维管理制度和操作流程进行了评审、修订。"
+      },
+      "match_result": {
+        "existing_item_id": 93,
+        "existing_title": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M020",
+      "new_item": {
+        "title": "是否建立运维管理制度和操作流程的制定、发布、维护和更新的机制。至少每年一次评审、修订运维管理制度和操作流程。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查运维管理制度和操作流程维护办法，是否有关于制定、发布、维护和更新的规定；b)检查评审、修订运维管理制度和操作流程的记录，是否每年对运维管理制度和操作流程进行了评审、修订。"
+      },
+      "match_result": {
+        "existing_item_id": 93,
+        "existing_title": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M021",
+      "new_item": {
+        "title": "是否制定软件开发管理制度，明确说明开发过程的控制方法和人员行为准则。",
+        "dimension": "信息技术治理",
+        "procedure": "检查是否有软件开发方面的管理制度，查看文件是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则，是否明确哪些开发活动应经过授权、审批等。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M022",
+      "new_item": {
+        "title": "是否制定软件开发管理制度，明确说明开发过程的控制方法和人员行为准则。",
+        "dimension": "信息技术治理",
+        "procedure": "检查是否有软件开发方面的管理制度，查看文件是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则，是否明确哪些开发活动应经过授权、审批等。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M023",
+      "new_item": {
+        "title": "是否指定机房管理负责人。",
+        "dimension": "信息技术治理",
+        "procedure": "查阅公司正式发文，是否设立机房管理负责人。"
+      },
+      "match_result": {
+        "existing_item_id": 33,
+        "existing_title": "是否建立供应商管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M024",
+      "new_item": {
+        "title": "是否建立运维值班管理制度，对日常操作、监控管理、事件处理、问题处理、数据和介质管理、机房管理、安全管理、应急处置进行规范。",
+        "dimension": "信息技术治理",
+        "procedure": "检查运维值班管理制度，判断是否对日常操作、监控管理、事件处理、问题处理、数据和介质管理、机房管理、安全管理、应急处置进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 31,
+        "existing_title": "信息安全事件相关管理制度中是否制定安全事件报告和响应处理程序，确定事件的报告流程，响应和处置的范围、程度，以及处理方法等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M025",
+      "new_item": {
+        "title": "是否指定机房管理负责人。",
+        "dimension": "信息技术治理",
+        "procedure": "查阅公司正式发文，是否设立机房管理负责人。"
+      },
+      "match_result": {
+        "existing_item_id": 33,
+        "existing_title": "是否建立供应商管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M026",
+      "new_item": {
+        "title": "是否建立变更管理制度，系统发生变更前，向主管领导申请，变更和变更方案经过评审、审批后方可实施变更，并在实施后将变更情况向相关人员通告。",
+        "dimension": "信息技术治理",
+        "procedure": "a)文档审阅，是否建立变更管理制度；b)系统发生变更前，是否向主管领导申请；c)变更和变更方案是否经过评审、审批后方可实施变更，并在实施后将变更情况向相关人员通告。"
+      },
+      "match_result": {
+        "existing_item_id": 136,
+        "existing_title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M027",
+      "new_item": {
+        "title": "是否至少每月对运行日志和审计数据进行分析。",
+        "dimension": "信息系统",
+        "procedure": "检查是否每月对运行日志和审计数据进行分析。"
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M028",
+      "new_item": {
+        "title": "是否建立备份与恢复管理相关的安全管理制度，对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。",
+        "dimension": "信息技术治理",
+        "procedure": "检查是否建立备份与恢复管理相关的安全管理制度，对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M029",
+      "new_item": {
+        "title": "是否建立备份与恢复管理相关的安全管理制度，对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。",
+        "dimension": "信息技术治理",
+        "procedure": "检查是否建立备份与恢复管理相关的安全管理制度，对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M030",
+      "new_item": {
+        "title": "是否建立事件管理流程，对信息系统运维事件的处理进行规范。",
+        "dimension": "运维管理",
+        "procedure": "检查事件管理流程，是否对信息系统运维事件的处理进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M031",
+      "new_item": {
+        "title": "是否制定安全事件报告和响应处理程序，确定事件的报告流程，响应和处置的范围、程度，以及处理方法等。",
+        "dimension": "运维管理",
+        "procedure": "检查是否有安全事件报告和处置管理制度，查看其是否细化了不同安全事件的处理和报告程序，是否明确具体报告方式、报告内容、报告人等方面内容，造成系统中断和造成信息泄密的重大安全事件是否采用了不同于其他的处理..."
+      },
+      "match_result": {
+        "existing_item_id": 43,
+        "existing_title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M032",
+      "new_item": {
+        "title": "是否指定机房管理负责人。",
+        "dimension": "信息技术治理",
+        "procedure": "查阅公司正式发文，是否设立机房管理负责人。"
+      },
+      "match_result": {
+        "existing_item_id": 33,
+        "existing_title": "是否建立供应商管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M033",
+      "new_item": {
+        "title": "是否建立供应商管理制度，对供应商支持运维服务的相关活动进行统一管理。",
+        "dimension": "信息技术治理",
+        "procedure": "检查供应商管理制度，查看是否有对供应商支持运维服务的相关活动进行统一管理的规定。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M034",
+      "new_item": {
+        "title": "是否对年度安全教育和培训进行书面规定，针对运维人员等不同岗位制定不同的培训计划，对信息安全基础知识、岗位操作规程、机房消防及相关应急内容等进行培训，并留存培训记录。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查安全教育和培训计划文档，查看计划是否明确了培训方式、培训对象、培训内容、培训时间和地点等，培训内容是否包含信息安全基础知识、岗位操作规程、机房消防及相关应急内容等；b)检查安全教育和培训记录，..."
+      },
+      "match_result": {
+        "existing_item_id": 155,
+        "existing_title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M035",
+      "new_item": {
+        "title": "是否对安全教育和培训的情况和结果进行记录并归档保存。",
+        "dimension": "信息技术治理",
+        "procedure": "检查安全教育和培训记录，查看记录是否有培训人员、培训内容、培训结果等的描述。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M036",
+      "new_item": {
+        "title": "是否对安全教育和培训的情况和结果进行记录并归档保存。",
+        "dimension": "信息技术治理",
+        "procedure": "检查安全教育和培训记录，查看记录是否有培训人员、培训内容、培训结果等的描述。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M037",
+      "new_item": {
+        "title": "是否对各类人员进行安全意识教育、岗位技能培训和相关安全技术培训。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否制定安全教育和培训计划；b)检查安全教育和培训计划文档，查看计划是否明确了培训方式、培训对象、培训内容、培训时间和地点等；c)检查培训内容是否包含信息安全基础知识、岗位操作规..."
+      },
+      "match_result": {
+        "existing_item_id": 213,
+        "existing_title": "信息技术外包管理制度中是否明确驻场外包人员入场、离场的管理要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M038",
+      "new_item": {
+        "title": "是否定期对各个岗位的人员进行安全技能及安全认知的考核。安全技能及安全认知的考核是否至少每年一次。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否定期对各个岗位人员进行安全技能及安全知识的考核；b)检查考核记录，查看考核人员是否包括各个岗位的人员，考核内容是否包含安全知识、安全技能等。检查相关岗位的安全技能和安全认知的..."
+      },
+      "match_result": {
+        "existing_item_id": 43,
+        "existing_title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M039",
+      "new_item": {
+        "title": "是否对考核结果进行记录并保存。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查是否对岗位人员的安全审查和技能考核结果进行记录；b)记录是否得到妥善保存。"
+      },
+      "match_result": {
+        "existing_item_id": 218,
+        "existing_title": "是否制定了软件正版化工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M040",
+      "new_item": {
+        "title": "是否定期对各个岗位的人员进行安全技能及安全认知的考核。安全技能及安全认知的考核是否至少每年一次。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否定期对各个岗位人员进行安全技能及安全知识的考核；b)检查考核记录，查看考核人员是否包括各个岗位的人员，考核内容是否包含安全知识、安全技能等。检查相关岗位的安全技能和安全认知的..."
+      },
+      "match_result": {
+        "existing_item_id": 43,
+        "existing_title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M041",
+      "new_item": {
+        "title": "是否对关键岗位的人员进行全面、严格的安全审查和技能考核。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否对关键岗位人员定期进行安全审查和技能考核；b)检查考核记录，查看是否考核关键岗位人员，考核内容是否包含安全知识、安全技能等，考核是否至少每年一次。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M042",
+      "new_item": {
+        "title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员，并对违反违背安全策略和规定的人员进行惩戒。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查安全责任和惩戒措施管理文档，查看是否包含具体的安全责任和惩戒措施；b)检查安全责任惩戒记录，是否对违反安全策略和规定的人员进行惩戒。"
+      },
+      "match_result": {
+        "existing_item_id": 131,
+        "existing_title": "客户进行资金交易时，根据客户意愿，可采取认证强度与交易额度相匹配的技术措施，提高交易的安全性。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M043",
+      "new_item": {
+        "title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "dimension": "信息技术治理",
+        "procedure": "a）检查是否建立信息系统数据管理制度；b）数据管理制度是否对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 43,
+        "existing_title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M044",
+      "new_item": {
+        "title": "是否由授权主体配置访问控制策略，并严格限制默认账户的访问权限。",
+        "dimension": "信息系统",
+        "procedure": "a)检查应用系统设计和验收文档，查看其访问控制的覆盖范围是否包括与信息安全直接相关的主体、客体及它们之间的操作；b)测试主要应用系统，可通过以默认用户登录系统，并进行一些合法和非法操作，验证系统是否严..."
+      },
+      "match_result": {
+        "existing_item_id": 196,
+        "existing_title": "【三类以上（含）】是否采用双路市电，双路市电应能实现自动切换。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M045",
+      "new_item": {
+        "title": "是否对网络设备的管理员登录地址进行限制。",
+        "dimension": "网络管理",
+        "procedure": "a)查阅安全管理相关制度，查看对管理员登录地址的限制策略，评估其合理性；b)现场抽查关键网络设备，检验管理员登录地址限制策略是否被严格执行。"
+      },
+      "match_result": {
+        "existing_item_id": 214,
+        "existing_title": "是否对驻场外包人员的入场和离场进行管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M046",
+      "new_item": {
+        "title": "是否在网络边界处对恶意代码进行检测和清除。",
+        "dimension": "网络管理",
+        "procedure": "查看网络安全规划文档和访谈网络安全管理员，检查网络边界恶意代码防护策略，检查在网络边界及核心业务网段处是否有相应的防恶意代码措施，如果部署了主机恶意代码检测系统，网络边界恶意代码检测系统可选择安装部署..."
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M047",
+      "new_item": {
+        "title": "是否定期检查防病毒网关和邮件防病毒网关的恶意代码库的升级情况并进行记录，对截获的危险病毒或恶意代码进行及时分析处理，并形成书面的报表和总结汇报。",
+        "dimension": "网络管理",
+        "procedure": "a)询问安全管理员，防病毒网关和邮件防病毒网关的恶意代码库的升级机制；b)检查恶意代码库的升级记录，判断是否定期；c)检查恶意代码分析报告，确认对防病毒网关和邮件防病毒网关上截获的危险病毒或恶意代码进..."
+      },
+      "match_result": {
+        "existing_item_id": 157,
+        "existing_title": "是否在统一的网络与信息安全事件应急预案框架下制定不同事件的应急预案，应急预案框架应包括处置应对责任机制、指挥机制、响应流程、临机处置权限等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M048",
+      "new_item": {
+        "title": "是否定期检查防病毒网关和邮件防病毒网关的恶意代码库的升级情况并进行记录，对截获的危险病毒或恶意代码进行及时分析处理，并形成书面的报表和总结汇报。",
+        "dimension": "网络管理",
+        "procedure": "a)询问安全管理员，防病毒网关和邮件防病毒网关的恶意代码库的升级机制；b)检查恶意代码库的升级记录，判断是否定期；c)检查恶意代码分析报告，确认对防病毒网关和邮件防病毒网关上截获的危险病毒或恶意代码进..."
+      },
+      "match_result": {
+        "existing_item_id": 157,
+        "existing_title": "是否在统一的网络与信息安全事件应急预案框架下制定不同事件的应急预案，应急预案框架应包括处置应对责任机制、指挥机制、响应流程、临机处置权限等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M049",
+      "new_item": {
+        "title": "是否综合运用防火墙、入侵检测等安全设备，保护网络与系统；是否正确设置安全设备的接口参数和过滤规则。",
+        "dimension": "网络管理",
+        "procedure": "a)访谈网络管理员安全访问控制策略；b)审阅网络拓扑图，查看防火墙、入侵检测等安全设备的配备情况；c)查看安全设备的接口参数、过滤规则等相关文档资料；d)查看安全测试记录或第三方安全测试报告。"
+      },
+      "match_result": {
+        "existing_item_id": 29,
+        "existing_title": "备份与恢复管理相关的安全管理制度只是否对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M050",
+      "new_item": {
+        "title": "是否在网络边界处监视以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等。",
+        "dimension": "网络管理",
+        "procedure": "a)检查“表L.3-该机房的网络安全检查情况”、网络入侵防范设备，查看是否能检测以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击、网络蠕虫攻击等；b)检查入侵..."
+      },
+      "match_result": {
+        "existing_item_id": 50,
+        "existing_title": "是否在网络边界处监视以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M051",
+      "new_item": {
+        "title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "dimension": "网络管理",
+        "procedure": "检查网络入侵防范设备的入侵报警记录，查看记录中是否包括入侵的源IP、攻击的类型、攻击的目的、攻击的时间等。"
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M052",
+      "new_item": {
+        "title": "是否至少每月对运行日志和审计数据进行分析。",
+        "dimension": "信息系统",
+        "procedure": "检查是否每月对运行日志和审计数据进行分析。"
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M053",
+      "new_item": {
+        "title": "邮件系统是否设置密码策略，启用双因子登录认证。",
+        "dimension": "运维管理",
+        "procedure": "检查邮件系统，确认是否设置密码策略，包括密码复杂度、密码有效期等，检查双因子登录认证。"
+      },
+      "match_result": {
+        "existing_item_id": 224,
+        "existing_title": "是否使用正版软件并保存软件授权证书和许可协议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M054",
+      "new_item": {
+        "title": "是否启用访问控制功能，依据安全策略控制用户对资源的访问。",
+        "dimension": "信息系统",
+        "procedure": "检查重要服务器操作系统的访问控制策略，查看是否对重要文件的访问权限进行了限制，对系统不需要的服务、共享路径等进行了禁用或删除。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M055",
+      "new_item": {
+        "title": "持续跟踪厂商提供的系统升级更新情况，是否在经过充分的测试评估后对必要的补丁进行及时更新，并在安装系统补丁前对现有的重要文件进行备份。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈系统管理员，了解系统补丁更新程序和评估方法；b)查看系统补丁更新记录，确认持续跟踪厂商提供的系统升级更新情况，确认在对重要文件进行备份后，才实施系统补丁程序的安装。"
+      },
+      "match_result": {
+        "existing_item_id": 136,
+        "existing_title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M056",
+      "new_item": {
+        "title": "是否保持系统的可用性，及时维修、更换故障设备和更新软件。",
+        "dimension": "信息系统",
+        "procedure": "检查运维操作手册,是否包括保持系统的可用性，及时维修、更换故障设备和更新软件。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M057",
+      "new_item": {
+        "title": "持续跟踪厂商提供的系统升级更新情况，是否在经过充分的测试评估后对必要的补丁进行及时更新，并在安装系统补丁前对现有的重要文件进行备份。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈系统管理员，了解系统补丁更新程序和评估方法；b)查看系统补丁更新记录，确认持续跟踪厂商提供的系统升级更新情况，确认在对重要文件进行备份后，才实施系统补丁程序的安装。"
+      },
+      "match_result": {
+        "existing_item_id": 136,
+        "existing_title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M058",
+      "new_item": {
+        "title": "是否对所有服务器和终端设备安装防木马、病毒等防恶意代码软件，定期进行全面检查，并及时更新防恶意代码软件版本和恶意代码库。a)原则上所有主机应安装防恶意代码软件，系统不支持该要求的除外；b)未安装防恶意代码软件的主机，应采取有效措施进行恶意代码防范。",
+        "dimension": "信息系统",
+        "procedure": "查看“表L.3-该机房的病毒木马防护软件情况”，检查关键服务器的恶意代码防范策略，对支持安装防恶意代码软件的主机操作系统，查看是否安装了实时检测与查杀恶意代码的软件产品，并且及时更新了软件版本和恶意代..."
+      },
+      "match_result": {
+        "existing_item_id": 152,
+        "existing_title": "接到中国证监会及其派出机构关于系统漏洞、安全隐患、产品缺陷的信息安全通报书后，是否立即核实情况，采取必要的处置措施，并根据要求进行事件总结报告。事件总结报告内容应当包括：事件基本情况，可能或者已经造成的影响范围和后果，已采取的防范措施及相关建议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M059",
+      "new_item": {
+        "title": "是否对网络设备的管理员登录地址进行限制。",
+        "dimension": "网络管理",
+        "procedure": "a)查阅安全管理相关制度，查看对管理员登录地址的限制策略，评估其合理性；b)现场抽查关键网络设备，检验管理员登录地址限制策略是否被严格执行。"
+      },
+      "match_result": {
+        "existing_item_id": 200,
+        "existing_title": "【三类以上（含）】机房是否配备双UPS供电。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M060",
+      "new_item": {
+        "title": "是否支持防恶意代码软件的统一管理。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈安全管理员，询问防恶意代码软件是否由专人负责进行管理和维护；b)检查主机防恶意代码软件维护记录，确认防恶意代码软件由专人统一管理。"
+      },
+      "match_result": {
+        "existing_item_id": 219,
+        "existing_title": "是否每年对软件正版化情况开展自查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M061",
+      "new_item": {
+        "title": "是否指定或授权专门的部门或人员负责安全管理制度的制定。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈安全主管，询问由哪个部门或人员负责制定安全管理制度；b)查阅公司正式发文，是否指定或授权专门的部门或人员负责安全管理制度的制定。"
+      },
+      "match_result": {
+        "existing_item_id": 188,
+        "existing_title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M062",
+      "new_item": {
+        "title": "是否定期对配置库进行备份。",
+        "dimension": "运维管理",
+        "procedure": "检查配置库维护记录，判断是否定期对配置库进行备份。"
+      },
+      "match_result": {
+        "existing_item_id": 179,
+        "existing_title": "是否对公司进行专项IT审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M063",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "运维管理",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M064",
+      "new_item": {
+        "title": "是否建立安全管理中心，对设备状态、恶意代码、补丁升级、安全审计等安全相关事项进行集中管理。",
+        "dimension": "运维管理",
+        "procedure": "访谈系统运维负责人，询问是否对通信线路、主机、网络设备和应用软件的运行状况，对设备状态、恶意代码、网络流量、补丁升级、安全审计等安全相关事项进行集中管理，是否形成监测记录文档，是否组织人员对监测记录进..."
+      },
+      "match_result": {
+        "existing_item_id": 64,
+        "existing_title": "是否建立安全管理中心，对设备状态、恶意代码、补丁升级、安全审计等安全相关事项进行集中管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M065",
+      "new_item": {
+        "title": "是否对外包人员工作情况进行监督和检查，并保留相应记录。",
+        "dimension": "信息技术治理",
+        "procedure": "查看监督和检查记录，确认对外包人员工作情况进行了监督和检查。"
+      },
+      "match_result": {
+        "existing_item_id": 76,
+        "existing_title": "是否对新上线的设备在接入运行网络前进行全面的安全检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M066",
+      "new_item": {
+        "title": "是否定期对配置库进行备份。",
+        "dimension": "运维管理",
+        "procedure": "检查配置库维护记录，判断是否定期对配置库进行备份。"
+      },
+      "match_result": {
+        "existing_item_id": 179,
+        "existing_title": "是否对公司进行专项IT审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M067",
+      "new_item": {
+        "title": "受托方是否为委托方提供信息系统运维和监控条件，满足委托方运维和监控需要。",
+        "dimension": "信息系统托管",
+        "procedure": "检查相关服务说明或合同等材料，确定受托方是否为委托方提供信息系统运维和监控条件，满足委托方运维和监控需要。"
+      },
+      "match_result": {
+        "existing_item_id": 161,
+        "existing_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M068",
+      "new_item": {
+        "title": "是否根据所承载数据和软件的重要程度对介质进行分类和标识管理。",
+        "dimension": "运维管理",
+        "procedure": "a)访谈资产管理员，询问是否根据重要性对介质进行分类和标识；b)检查介质存储环境，查看是否对其进行了分类，并具有不同标识。"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M069",
+      "new_item": {
+        "title": "门户网站是否禁止存放客户资料、交易数据等客户敏感数据。",
+        "dimension": "信息系统",
+        "procedure": "审阅门户网站说明，检查是否禁止存放客户资料、交易数据等客户敏感数据。"
+      },
+      "match_result": {
+        "existing_item_id": 188,
+        "existing_title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M070",
+      "new_item": {
+        "title": "是否对外送设备的维修进行严格管理，防止数据泄露。",
+        "dimension": "运维管理",
+        "procedure": "访谈安全管理员，了解采取了哪些措施，防止外送维修设备的数据泄露。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M071",
+      "new_item": {
+        "title": "在线数据和离线数据用于非生产环境时，是否进行脱敏处理；用于模拟测试时如无法进行脱敏处理，测试环境应采取与生产环境相当的安全措施。",
+        "dimension": "运维管理",
+        "procedure": "访谈安全管理员，在线数据和离线数据用于非生产环境时，是否进行脱敏处理；用于模拟测试时如无法进行脱敏处理，测试环境的与生产环境安全措施是否相当。"
+      },
+      "match_result": {
+        "existing_item_id": 149,
+        "existing_title": "是否在安全事件报告和响应处理过程中，分析和鉴定事件产生的原因，收集证据，记录处理过程，总结经验教训，制定防止再次发生的补救措施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M072",
+      "new_item": {
+        "title": "离线数据的调阅、复制、传输、查询，是否按照拟定的流程办理审批手续，并进行登记。",
+        "dimension": "运维管理",
+        "procedure": "检查离线数据维护记录，查看对离线数据的调阅、复制、传输、查询的授权审批记录。"
+      },
+      "match_result": {
+        "existing_item_id": 206,
+        "existing_title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M073",
+      "new_item": {
+        "title": "离线数据的调阅、复制、传输、查询，是否按照拟定的流程办理审批手续，并进行登记。",
+        "dimension": "运维管理",
+        "procedure": "检查离线数据维护记录，查看对离线数据的调阅、复制、传输、查询的授权审批记录。"
+      },
+      "match_result": {
+        "existing_item_id": 206,
+        "existing_title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M074",
+      "new_item": {
+        "title": "离线数据的调阅、复制、传输、查询，是否按照拟定的流程办理审批手续，并进行登记。",
+        "dimension": "运维管理",
+        "procedure": "检查离线数据维护记录，查看对离线数据的调阅、复制、传输、查询的授权审批记录。"
+      },
+      "match_result": {
+        "existing_item_id": 206,
+        "existing_title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M075",
+      "new_item": {
+        "title": "是否建立至少每季度扫描并修补漏洞的工作机制，定义扫描检测的内容和程序，明确漏洞扫描工具和扫描频率，记录扫描结果及处理情况。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈系统管理员，询问是否定期对系统进行漏洞扫描，扫描周期多长，发现漏洞是否及时修补，在安装系统补丁前是否对重要文件进行备份，是否先在测试环境中测试通过再安装；b)检查是否至少每季进行一次漏洞扫描，..."
+      },
+      "match_result": {
+        "existing_item_id": 31,
+        "existing_title": "信息安全事件相关管理制度中是否制定安全事件报告和响应处理程序，确定事件的报告流程，响应和处置的范围、程度，以及处理方法等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M076",
+      "new_item": {
+        "title": "是否对新上线的设备在接入运行网络前进行全面的安全检查。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈安全管理员，了解设备上线前的安全检查流程；b)查看设备上线前的漏洞扫描、渗透测试、病毒扫描、木马检测等扫描报告。"
+      },
+      "match_result": {
+        "existing_item_id": 76,
+        "existing_title": "是否对新上线的设备在接入运行网络前进行全面的安全检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M077",
+      "new_item": {
+        "title": "是否每季度至少进行一次漏洞扫描，对漏洞风险持续跟踪，在经过充分的验证测试后对必要的漏洞开展修补工作。",
+        "dimension": "网络管理",
+        "procedure": "a)访谈网络管理员，询问是否每季度对网络进行漏洞扫描，发现漏洞如何处理；b)检查漏洞扫描报告，确认每季度对网络系统进行了漏洞扫描；c)检查漏洞修补（变更）报告，确认对发现的网络系统安全漏洞进行了风险评..."
+      },
+      "match_result": {
+        "existing_item_id": 164,
+        "existing_title": "是否制定应急处置联络手册。应急处置联络手册是否至少包括应急处置组织体系及相关关联单位的应急联络方式。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M078",
+      "new_item": {
+        "title": "是否在漏洞扫描或漏洞修补后进行验证测试，以保证网络系统的正常运行。",
+        "dimension": "网络管理",
+        "procedure": "a)访谈网络管理员，询问是否在漏洞扫描或漏洞修补后应进行验证测试；b)查看漏洞修补（变更）记录，是否有验证测试记录。"
+      },
+      "match_result": {
+        "existing_item_id": 115,
+        "existing_title": "是否组织对问题进行分析、提出解决方案、通过变更管理审批后部署实施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M079",
+      "new_item": {
+        "title": "是否委托第三方测试单位测试系统安全性，并出具安全性测试报告。",
+        "dimension": "信息系统",
+        "procedure": "检查是否具有系统测试验收报告，是否有第三方测试机构的签字或盖章。"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M080",
+      "new_item": {
+        "title": "是否定期对服务器进行全面病毒扫描，但不得在交易时段内进行。",
+        "dimension": "信息系统",
+        "procedure": "a)查看病毒扫描记录，判断是否定期对服务器进行全面病毒扫描；b)检查病毒扫描时间，确认未在交易时段内进行。"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M081",
+      "new_item": {
+        "title": "是否定期对服务器进行全面病毒扫描，但不得在交易时段内进行。",
+        "dimension": "信息系统",
+        "procedure": "a)查看病毒扫描记录，判断是否定期对服务器进行全面病毒扫描；b)检查病毒扫描时间，确认未在交易时段内进行。"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M082",
+      "new_item": {
+        "title": "是否对关键岗位的人员进行全面、严格的安全审查和技能考核。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈安全主管，询问是否对关键岗位人员定期进行安全审查和技能考核；b)检查考核记录，查看是否考核关键岗位人员，考核内容是否包含安全知识、安全技能等，考核是否至少每年一次。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M083",
+      "new_item": {
+        "title": "是否对安全检查情况进行评估，形成评估报告。",
+        "dimension": "运维管理",
+        "procedure": "审阅评估报告，检查是否对安全检查情况进行评估。"
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M084",
+      "new_item": {
+        "title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "dimension": "信息技术治理",
+        "procedure": "查看最近的安全检查记录，是否包括口令检查内容"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M085",
+      "new_item": {
+        "title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "dimension": "信息技术治理",
+        "procedure": "查看最近的安全检查记录，是否包括口令检查内容"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M086",
+      "new_item": {
+        "title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "dimension": "信息技术治理",
+        "procedure": "查看最近的安全检查记录，是否包括端口和服务开启情况检查。"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M087",
+      "new_item": {
+        "title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "dimension": "信息技术治理",
+        "procedure": "查看最近的安全检查记录，是否包括口令检查内容"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M088",
+      "new_item": {
+        "title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "dimension": "信息技术治理",
+        "procedure": "查看最近的安全检查记录，是否包括口令检查内容"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M089",
+      "new_item": {
+        "title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "dimension": "信息技术治理",
+        "procedure": "查看最近的安全检查记录，是否包括端口和服务开启情况检查。"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M090",
+      "new_item": {
+        "title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "dimension": "信息技术治理",
+        "procedure": "查看最近的安全检查记录，是否包括口令检查内容"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M091",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "运维管理",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M092",
+      "new_item": {
+        "title": "第二级信息系统是否每年开展一次自查，对于不符合证券期货业信息安全等级保护基本要求（试行）的内容，是否及时整改。",
+        "dimension": "信息系统安全等级保护相关工作",
+        "procedure": "a)查看“表L.7-本年度开展安全建设整改的信息系统情况-是否组织开展信息系统安全自查工作”，二级信息系统本年度是否开展自查工作；b)检查二级信息系统的自查报告，是否每年开展一次自查；c)检查二级信息..."
+      },
+      "match_result": {
+        "existing_item_id": 147,
+        "existing_title": "是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M093",
+      "new_item": {
+        "title": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈信息技术负责人，询问是否在开展信息系统新建、升级、变更、换代等建设项目时，进行充分论证和测试，以及确保落实的机制；b)检查是否具有相关测试报告、论证材料（包括需求分析、立项报告等）。"
+      },
+      "match_result": {
+        "existing_item_id": 93,
+        "existing_title": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M094",
+      "new_item": {
+        "title": "核心交易业务系统是否提示并阻止用户使用弱口令登录。",
+        "dimension": "信息系统",
+        "procedure": "检查核心交易业务系统设计和验收文档，确定核心交易业务系统是否提示并阻止用户使用弱口令登录。"
+      },
+      "match_result": {
+        "existing_item_id": 156,
+        "existing_title": "合规部门、风险管理部门或岗位是否参与应急演练工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M095",
+      "new_item": {
+        "title": "是否制定代码编写安全规范，要求开发人员参照规范编写代码。",
+        "dimension": "运维管理",
+        "procedure": "a)访谈软件开发人员，询问其是否了解软件开发管理制度，是否了解代码编写安全规范，是否按照代码编写安全规范进行软件开发；b)检查代码编写安全规范，查看规范中是否明确代码编写规则，应抽样部分源代码，检查是..."
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M096",
+      "new_item": {
+        "title": "是否建立完整、规范的系统测试操作流程，对测试工作的计划、实施及总结做出详细的规定。对于在生产系统上进行的测试工作，必须制定详细的系统及数据备份、测试环境搭建、测试后系统及数据恢复、生产系统审核等计划，确保生产系统的安全。",
+        "dimension": "信息系统",
+        "procedure": "检查系统测试操作流程，是否对系统上线前进行的模拟环境测试和生产环境测试进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 96,
+        "existing_title": "是否建立完整、规范的系统测试操作流程，对测试工作的计划、实施及总结做出详细的规定。对于在生产系统上进行的测试工作，必须制定详细的系统及数据备份、测试环境搭建、测试后系统及数据恢复、生产系统审核等计划，确保生产系统的安全。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M097",
+      "new_item": {
+        "title": "是否根据系统上线要求制定测试方案，确定采用的测试方法和测试流程。测试方案及测试用例覆盖功能、性能、容量、安全性、稳定性等方面。测试完成后对测试结果进行分析评估，并给出测试报告。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈开发负责人，询问是否根据系统上线要求制定测试方案，确定采用的测试方法和测试流程；b)检查是否具有测试方案，是否包括覆盖功能、性能、容量、安全性、稳定性等方面；c)检查近期上线系统的测试报告。"
+      },
+      "match_result": {
+        "existing_item_id": 165,
+        "existing_title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M098",
+      "new_item": {
+        "title": "生产环境测试前是否备份当前系统的数据和配置。",
+        "dimension": "信息系统",
+        "procedure": "a)检查系统测试管理制度和操作流程，查看数据和配置备份要求；b)抽查在生产系统上进行测试的工作记录，检查是否做好数据备份。"
+      },
+      "match_result": {
+        "existing_item_id": 198,
+        "existing_title": "机房是否有独立于一般照明电的专用供配电线路。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M099",
+      "new_item": {
+        "title": "是否为系统测试配备必要的人员和设备资源，需要时协调关联单位配合测试。",
+        "dimension": "信息系统",
+        "procedure": "访谈开发负责人，询问是否为系统测试配备必要的人员和设备资源，需要时协调关联单位配合测试。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M100",
+      "new_item": {
+        "title": "涉及核心交易业务系统的上线测试，是否组织全市场或全公司各相关部门测试。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈开发负责人，询问涉及核心交易业务系统的上线测试，是否组织全市场或全公司各相关部门测试；b)抽查核心系统上线测试方案、测试记录，是否体现参测机构及部门。"
+      },
+      "match_result": {
+        "existing_item_id": 154,
+        "existing_title": "是否按照安全责任和惩戒措施规定对违反违背安全策略和规定的人员进行惩戒。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M101",
+      "new_item": {
+        "title": "是否禁止交易时段使用生产环境进行测试。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈开发负责人，询问是否交易时段不得使用生产环境进行测试；b)抽查测试方案、测试记录、测试报告，查看是否在交易时段测试。"
+      },
+      "match_result": {
+        "existing_item_id": 190,
+        "existing_title": "是否制定信息系统备份能力建设工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M102",
+      "new_item": {
+        "title": "是否委托第三方测试单位测试系统安全性，并出具安全性测试报告。",
+        "dimension": "信息系统",
+        "procedure": "检查是否具有系统测试验收报告，是否有第三方测试机构的签字或盖章。"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M103",
+      "new_item": {
+        "title": "是否根据需要，要求生产系统运维人员和业务部门组织业务人员参与模拟环境测试。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈开发负责人，询问是否根据需要，要求生产系统运维人员和业务部门组织业务人员参与模拟环境测试；b)查看测试通知或记录，是否有生产系统运维人员和业务部门组织业务人员参与。"
+      },
+      "match_result": {
+        "existing_item_id": 168,
+        "existing_title": "是否对系统相关的人员进行应急预案培训，应急预案的培训是否至少每年举办一次。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M104",
+      "new_item": {
+        "title": "是否指定或授权专门的部门负责系统测试验收的管理，并按照管理规定的要求完成系统测试验收工作。",
+        "dimension": "信息系统",
+        "procedure": "访谈系统建设负责人，询问是否有专门的部门负责测试验收工作，由何部门负责；是否委托第三方测试机构对信息系统进行独立的安全性测试。"
+      },
+      "match_result": {
+        "existing_item_id": 64,
+        "existing_title": "是否建立安全管理中心，对设备状态、恶意代码、补丁升级、安全审计等安全相关事项进行集中管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M105",
+      "new_item": {
+        "title": "是否委托第三方测试单位测试系统安全性，并出具安全性测试报告。",
+        "dimension": "信息系统",
+        "procedure": "检查是否具有系统测试验收报告，是否有第三方测试机构的签字或盖章。"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M106",
+      "new_item": {
+        "title": "是否根据生产环境测试的结果设计系统升级过程及应急预案。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈开发负责人，询问是否根据生产环境测试的结果设计系统升级过程及应急预案；b)抽查一次生产环境测试报告和系统变更方案。"
+      },
+      "match_result": {
+        "existing_item_id": 188,
+        "existing_title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M107",
+      "new_item": {
+        "title": "是否制定外包服务意外终止的应急措施。",
+        "dimension": "信息技术治理",
+        "procedure": "检查应急预案，确认有外包服务意外终止的应急措施。"
+      },
+      "match_result": {
+        "existing_item_id": 186,
+        "existing_title": "审计记录是否包含重要的安全相关信息。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M108",
+      "new_item": {
+        "title": "是否定期对系统容量进行检查和评估，形成评估报告。",
+        "dimension": "信息系统",
+        "procedure": "检查系统容量评估报告，是否定期对系统容量进行检查和评估。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M109",
+      "new_item": {
+        "title": "是否定期对系统容量进行检查和评估，形成评估报告。",
+        "dimension": "信息系统",
+        "procedure": "检查系统容量评估报告，是否定期对系统容量进行检查和评估。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M110",
+      "new_item": {
+        "title": "是否建立配置库，对交易业务系统的服务器、存储、网络、安全设备，操作系统、应用软件、数据库等进行管理。",
+        "dimension": "运维管理",
+        "procedure": "检查配置库文档，是否包括对交易业务系统的服务器、存储、网络、安全设备，操作系统、应用软件、数据库等配置清单。"
+      },
+      "match_result": {
+        "existing_item_id": 164,
+        "existing_title": "是否制定应急处置联络手册。应急处置联络手册是否至少包括应急处置组织体系及相关关联单位的应急联络方式。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M111",
+      "new_item": {
+        "title": "配置项属性至少包括编号、名称、描述、维护责任人、运行状态、关联关系等。",
+        "dimension": "运维管理",
+        "procedure": "检查配置库文档，配置项属性是否至少包括编号、名称、描述、维护责任人、运行状态、关联关系等。"
+      },
+      "match_result": {
+        "existing_item_id": 154,
+        "existing_title": "是否按照安全责任和惩戒措施规定对违反违背安全策略和规定的人员进行惩戒。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M112",
+      "new_item": {
+        "title": "是否对所有事件响应、处理、结束等过程进行跟踪、督促及检查。",
+        "dimension": "运维管理",
+        "procedure": "查看运维事件处理记录，是否对所有事件响应、处理、结束等过程进行跟踪、督促及检查。"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M113",
+      "new_item": {
+        "title": "事件总结报告中事件处理情况，是否包括事件暴露出的问题及采取的整改措施，责任追究情况。",
+        "dimension": "运维管理",
+        "procedure": "检查事件总结报告，事件处理情况是否包括事件暴露出的问题及采取的整改措施，责任追究情况。"
+      },
+      "match_result": {
+        "existing_item_id": 207,
+        "existing_title": "是否与选定的安全服务商签订与安全相关的协议，对合作方服务人员提出明确的信息安全要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M114",
+      "new_item": {
+        "title": "是否将监控、分析、自查、检查、测评、评估和事件处理中发现的问题进行汇总，并纳入问题库。",
+        "dimension": "运维管理",
+        "procedure": "查看问题库，是否将监控、分析、自查、检查、测评、评估和事件处理中发现的问题进行汇总，并纳入问题库。"
+      },
+      "match_result": {
+        "existing_item_id": 201,
+        "existing_title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M115",
+      "new_item": {
+        "title": "是否组织对问题进行分析、提出解决方案、通过变更管理审批后部署实施，并将解决过程归纳整理并纳入问题库。",
+        "dimension": "运维管理",
+        "procedure": "查看问题库，是否对问题进行分析、提出解决方案、通过变更管理审批后部署实施，并将解决过程归纳整理并纳入问题库。"
+      },
+      "match_result": {
+        "existing_item_id": 164,
+        "existing_title": "是否制定应急处置联络手册。应急处置联络手册是否至少包括应急处置组织体系及相关关联单位的应急联络方式。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M116",
+      "new_item": {
+        "title": "是否建立事件管理流程，对信息系统运维事件的处理进行规范。",
+        "dimension": "运维管理",
+        "procedure": "检查事件管理流程，是否对信息系统运维事件的处理进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M117",
+      "new_item": {
+        "title": "是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控。交易时段应指定人员对交易业务系统进行监控，交易时段以外如无法做到人工监控，是否开启自动监控系统和自动报警系统。",
+        "dimension": "信息系统",
+        "procedure": "a)访谈运维负责人，询问是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控；b)检查巡检记录，是否包括报单数、成交数、委托数、CPU使用率、内存使用率等指标。"
+      },
+      "match_result": {
+        "existing_item_id": 117,
+        "existing_title": "是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控。交易时段应指定人员对交易业务系统进行监控，交易时段以外如无法做到人工监控，是否开启自动监控系统和自动报警系统。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M118",
+      "new_item": {
+        "title": "是否建立辅助的人工巡检制度，规定巡检内容、频度、人员等。巡检内容应覆盖电力、空调、消防、安防等机房设施，主机、网络、通信、安全等设备的运行状况。巡检结果应及时记录，如遇异常应及时处理，并按规定要求进行报告。",
+        "dimension": "信息技术治理",
+        "procedure": "检查IT运维管理方面的制度，查看制度中是否包括人工巡检方面的内容，是否明确巡检内容、频度、人员、报告等要求，巡检内容是否覆盖审计项中列示的内容。"
+      },
+      "match_result": {
+        "existing_item_id": 118,
+        "existing_title": "是否建立辅助的人工巡检流程，规定巡检内容、频度、人员等。巡检内容应覆盖电力、空调、消防、安防等机房设施，主机、网络、通信、安全等设备的运行状况。巡检结果应及时记录，如遇异常应及时处理，并按规定要求进行报告。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M119",
+      "new_item": {
+        "title": "是否指定运维值班负责人。运维值班负责人负责日常操作的部署、检查、风险控制、业务衔接等工作。运维值班负责人是否有备岗，主备岗是否不得同时离岗。",
+        "dimension": "信息技术治理",
+        "procedure": "a)查阅运维值班负责人及备岗人员名单；b)访谈运维值班负责人及备岗人员，询问是否知悉其职责范围包括：日常操作的部署、检查、风险控制、业务衔接等工作；c)查看运维值班负责人及备岗人员值班记录，判断是否没..."
+      },
+      "match_result": {
+        "existing_item_id": 208,
+        "existing_title": "是否要求供应商签署承诺书，承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M120",
+      "new_item": {
+        "title": "是否指定运维值班负责人。运维值班负责人负责日常操作的部署、检查、风险控制、业务衔接等工作。运维值班负责人是否有备岗，主备岗是否不得同时离岗。",
+        "dimension": "信息技术治理",
+        "procedure": "a)查阅运维值班负责人及备岗人员名单；b)访谈运维值班负责人及备岗人员，询问是否知悉其职责范围包括：日常操作的部署、检查、风险控制、业务衔接等工作；c)查看运维值班负责人及备岗人员值班记录，判断是否没..."
+      },
+      "match_result": {
+        "existing_item_id": 208,
+        "existing_title": "是否要求供应商签署承诺书，承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M121",
+      "new_item": {
+        "title": "是否每日分析核心交易业务系统监控日志及巡检记录，形成评估记录，跟踪处理日志分析中发现的异常事件。",
+        "dimension": "信息系统",
+        "procedure": "查看评估记录，是否每日分析核心交易业务系统监控日志及巡检记录，并跟踪处理日志分析中发现的异常事件。"
+      },
+      "match_result": {
+        "existing_item_id": 43,
+        "existing_title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M122",
+      "new_item": {
+        "title": "是否建立问题管理制度，对运维活动中发现的问题进行根本解决，并建立问题库。",
+        "dimension": "信息技术治理",
+        "procedure": "查看问题管理制度，是否对运维活动中发现的问题建立问题库。"
+      },
+      "match_result": {
+        "existing_item_id": 161,
+        "existing_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M123",
+      "new_item": {
+        "title": "是否依据业务、信息系统的变化，对操作手册及规程进行及时修订，经审批通过后遵照执行。",
+        "dimension": "信息系统",
+        "procedure": "抽查修订记录，确认业务或信息系统发生重大变更时，是否对相关系统操作手册及规程进行修订并经过审批。"
+      },
+      "match_result": {
+        "existing_item_id": 22,
+        "existing_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M124",
+      "new_item": {
+        "title": "是否定期评估外包的服务质量。",
+        "dimension": "信息技术治理",
+        "procedure": "检查外包服务的评估报告，确认定期对外包的服务质量进行了评估。"
+      },
+      "match_result": {
+        "existing_item_id": 148,
+        "existing_title": "是否对网络安全事件进行记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M125",
+      "new_item": {
+        "title": "是否记录演练情况，演练记录至少保存两年。",
+        "dimension": "运维管理",
+        "procedure": "检查两年内的演练记录。"
+      },
+      "match_result": {
+        "existing_item_id": 200,
+        "existing_title": "【三类以上（含）】机房是否配备双UPS供电。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M126",
+      "new_item": {
+        "title": "是否在设备和软件投入使用前进行必要的验证性测试，并保留测试记录。",
+        "dimension": "信息系统",
+        "procedure": "查看测试记录，是否在设备和软件投入使用前进行必要的验证性测试。"
+      },
+      "match_result": {
+        "existing_item_id": 213,
+        "existing_title": "信息技术外包管理制度中是否明确驻场外包人员入场、离场的管理要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M127",
+      "new_item": {
+        "title": "是否禁止在交易时段对交易业务网的网络设备、安全设备、系统设备进行更换或变更配置。",
+        "dimension": "网络管理",
+        "procedure": "a)查看机房管理制度或变更管理制度，是否规定了原则上禁止交易时段对交易业务网的网络设备、安全设备、系统设备进行更换或变更配置；b)抽查变更记录，是否做到原则上不在交易时段对交易业务网的网络设备、安全设..."
+      },
+      "match_result": {
+        "existing_item_id": 206,
+        "existing_title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M128",
+      "new_item": {
+        "title": "邮件系统是否设置密码策略，启用双因子登录认证。",
+        "dimension": "运维管理",
+        "procedure": "检查邮件系统，确认是否设置密码策略，包括密码复杂度、密码有效期等，检查双因子登录认证。"
+      },
+      "match_result": {
+        "existing_item_id": 224,
+        "existing_title": "是否使用正版软件并保存软件授权证书和许可协议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M129",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "运维管理",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M130",
+      "new_item": {
+        "title": "是否建立供应商管理制度，对供应商支持运维服务的相关活动进行统一管理。",
+        "dimension": "信息技术治理",
+        "procedure": "检查供应商管理制度，查看是否有对供应商支持运维服务的相关活动进行统一管理的规定。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M131",
+      "new_item": {
+        "title": "是否根据系统的安全保护等级选择基本安全措施，依据风险分析的结果补充和调整安全措施。",
+        "dimension": "信息系统安全等级保护相关工作",
+        "procedure": "a)访谈信息技术负责人，询问是否根据系统的安全保护等级选择基本安全措施，并依据风险分析的结果补充和调整安全措施；b)检查基本安全措施相关文档和修订、完善安全策略的记录。"
+      },
+      "match_result": {
+        "existing_item_id": 22,
+        "existing_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M132",
+      "new_item": {
+        "title": "是否建立交付流程，对建成的信息系统交付运行维护的活动进行规范。",
+        "dimension": "信息系统",
+        "procedure": "检查交付管理制度，查看交付流程是否对建成的信息系统交付运行维护的活动进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 196,
+        "existing_title": "【三类以上（含）】是否采用双路市电，双路市电应能实现自动切换。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M133",
+      "new_item": {
+        "title": "应用系统是否能够对每个业务用户的关键操作进行记录，例如用户登录、用户退出、增加用户、修改用户权限等操作。",
+        "dimension": "信息系统",
+        "procedure": "a)检查主要应用系统，查看审计范围是否覆盖到每个用户，审计策略是否覆盖系统内重要的安全相关事件，例如，用户标识与鉴别、访问控制的所有操作记录、重要用户行为、系统资源的异常使用、重要系统命令的使用等；b..."
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M134",
+      "new_item": {
+        "title": "是否禁止通过互联网对防火墙、网络设备、服务器进行远程管理和维护，特殊紧急情况下是否采取限制登录IP、数字证书或动态口令认证、全程监控等措施，在操作完成后应及时关闭，并对维护过程进行监控并留存记录。",
+        "dimension": "网络管理",
+        "procedure": "a)询问网络管理员，是否禁止通过互联网对防火墙、网络设备、服务器进行远程管理和维护，特殊紧急情况下的访问策略；b)对防火墙、网络设备、服务器进行远程管理和维护，而特殊紧急情况下是否采取限制登录IP、使..."
+      },
+      "match_result": {
+        "existing_item_id": 210,
+        "existing_title": "信息系统托管中，受托方是否为委托方提供7×24小时支持服务，是否在5分钟内响应委托方提出的服务请求，并在30分钟内到场服务。遇到突发事件，是否积极配合委托方共同开展应急处置工作。（本项适用于：三+系统托管）",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M135",
+      "new_item": {
+        "title": "三级系统是否至少每年对系统进行一次等级测评，发现不符合相应等级保护标准要求的及时整改。",
+        "dimension": "信息系统安全等级保护相关工作",
+        "procedure": "a)检查等级测评报告，检查是否每年对三级系统进行测评；b)检查测评报告是否覆盖所有三级系统；c)检查整改报告，对发现的问题是否及时整改。"
+      },
+      "match_result": {
+        "existing_item_id": 201,
+        "existing_title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M136",
+      "new_item": {
+        "title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改。",
+        "dimension": "信息系统安全等级保护相关工作",
+        "procedure": "a)检查系统变更记录，了解系统是否发生重大变更；b)检查系统评测记录，如果系统发生重大变更是否及时对系统进行登记测评；c)检查安全整改报告，发现级别发生变化的，是否及时调整级别并进行安全改造，发现不符..."
+      },
+      "match_result": {
+        "existing_item_id": 136,
+        "existing_title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M137",
+      "new_item": {
+        "title": "是否组织相关部门和有关安全技术专家对信息系统定级结果的合理性和正确性进行论证和审定。",
+        "dimension": "信息系统安全等级保护相关工作",
+        "procedure": "检查会议纪要或者论证报告等文档，是否组织有关部门及技术专家对信息系统定级结果的合理性和正确性进行论证和审定。"
+      },
+      "match_result": {
+        "existing_item_id": 207,
+        "existing_title": "是否与选定的安全服务商签订与安全相关的协议，对合作方服务人员提出明确的信息安全要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M138",
+      "new_item": {
+        "title": "是否授予不同账户为完成各自承担任务所需的最小权限，并在它们之间形成相互制约的关系。",
+        "dimension": "信息系统",
+        "procedure": "a)检查应用系统的用户角色或权限的分配情况，查看是否仅授予不同帐户为完成各自承担任务所需的最小权限，特权用户的权限是否分离，权限之间是否相互制约，如系统管理员不能进行审计操作、审计员不能进行系统管理操..."
+      },
+      "match_result": {
+        "existing_item_id": 22,
+        "existing_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M139",
+      "new_item": {
+        "title": "是否授予不同账户为完成各自承担任务所需的最小权限，并在它们之间形成相互制约的关系。",
+        "dimension": "信息系统",
+        "procedure": "a)检查应用系统的用户角色或权限的分配情况，查看是否仅授予不同帐户为完成各自承担任务所需的最小权限，特权用户的权限是否分离，权限之间是否相互制约，如系统管理员不能进行审计操作、审计员不能进行系统管理操..."
+      },
+      "match_result": {
+        "existing_item_id": 22,
+        "existing_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M140",
+      "new_item": {
+        "title": "是否及时注销不再使用的账户。",
+        "dimension": "信息系统",
+        "procedure": "检查在岗人员名单和账户列表，确定没有未注销的不再使用的账户。"
+      },
+      "match_result": {
+        "existing_item_id": 148,
+        "existing_title": "是否对网络安全事件进行记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M141",
+      "new_item": {
+        "title": "是否及时注销不再使用的账户。",
+        "dimension": "信息系统",
+        "procedure": "检查在岗人员名单和账户列表，确定没有未注销的不再使用的账户。"
+      },
+      "match_result": {
+        "existing_item_id": 148,
+        "existing_title": "是否对网络安全事件进行记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M142",
+      "new_item": {
+        "title": "是否明确信息系统的边界和安全保护等级。",
+        "dimension": "信息系统安全等级保护相关工作",
+        "procedure": "a)查看“表L.7-信息系统备案情况-信息系统备案情况-定级级别”，信息系统是否评定了安全保护等级；b)访谈信息技术负责人，询问是否明确信息系统的边界和安全保护等级；c)审阅信息系统安全等级评定资料，..."
+      },
+      "match_result": {
+        "existing_item_id": 190,
+        "existing_title": "是否制定信息系统备份能力建设工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M143",
+      "new_item": {
+        "title": "是否能够对单个账户的多重并发会话进行限制。",
+        "dimension": "信息系统",
+        "procedure": "测试主要应用系统，可通过对系统进行超过规定的单个帐户的多重并发会话数进行连接，验证系统是否能够正确地限制单个帐户的多重并发会话数。"
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M144",
+      "new_item": {
+        "title": "是否能够对一个时间段内可能的并发会话连接数进行限制。",
+        "dimension": "信息系统",
+        "procedure": "检查主要应用系统的配置参数，查看是否提供对最大并发会话连接数进行限制。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M145",
+      "new_item": {
+        "title": "是否能够对一个访问账户或一个请求进程占用的资源分配最大限额和最小限额。",
+        "dimension": "信息系统",
+        "procedure": "检查主要应用系统设计和验收文档，查看是否对一个访问帐户或一个请求进程占用的资源分配最大限额和最小限额。"
+      },
+      "match_result": {
+        "existing_item_id": 154,
+        "existing_title": "是否按照安全责任和惩戒措施规定对违反违背安全策略和规定的人员进行惩戒。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M146",
+      "new_item": {
+        "title": "第二级信息系统是否每年开展一次自查，对于不符合证券期货业信息安全等级保护基本要求（试行）的内容，是否及时整改。",
+        "dimension": "信息系统安全等级保护相关工作",
+        "procedure": "a)查看“表L.7-本年度开展安全建设整改的信息系统情况-是否组织开展信息系统安全自查工作”，二级信息系统本年度是否开展自查工作；b)检查二级信息系统的自查报告，是否每年开展一次自查；c)检查二级信息..."
+      },
+      "match_result": {
+        "existing_item_id": 147,
+        "existing_title": "是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M147",
+      "new_item": {
+        "title": "是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。",
+        "dimension": "运维管理",
+        "procedure": "检查“表L.4-数据备份情况”、“表L.5-数据备份情况”，查看是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。"
+      },
+      "match_result": {
+        "existing_item_id": 147,
+        "existing_title": "是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M148",
+      "new_item": {
+        "title": "是否对考核结果进行记录并保存。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查是否对岗位人员的安全审查和技能考核结果进行记录；b)记录是否得到妥善保存。"
+      },
+      "match_result": {
+        "existing_item_id": 218,
+        "existing_title": "是否制定了软件正版化工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M149",
+      "new_item": {
+        "title": "是否在安全事件报告和响应处理过程中，分析和鉴定事件产生的原因，收集证据，记录处理过程，总结经验教训，制定防止再次发生的补救措施。",
+        "dimension": "运维管理",
+        "procedure": "检查安全事件处理记录，查看其是否记录引发安全事件的原因，是否记录事件处理过程，是否与管理规定的处理要求一致等。"
+      },
+      "match_result": {
+        "existing_item_id": 149,
+        "existing_title": "是否在安全事件报告和响应处理过程中，分析和鉴定事件产生的原因，收集证据，记录处理过程，总结经验教训，制定防止再次发生的补救措施。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M150",
+      "new_item": {
+        "title": "是否建立事件管理流程，对信息系统运维事件的处理进行规范。",
+        "dimension": "运维管理",
+        "procedure": "检查事件管理流程，是否对信息系统运维事件的处理进行规范。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M151",
+      "new_item": {
+        "title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "dimension": "运维管理",
+        "procedure": "a)审阅应急预案，是否规定在网络与信息安全事件发生后，报告要素有哪些，如何报告事件情况，并保持持续报告，直至系统恢复正常运行；b)检查事件报告记录，判断要素是否完备、及时、准确，没有迟报、漏报、谎报或..."
+      },
+      "match_result": {
+        "existing_item_id": 151,
+        "existing_title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M152",
+      "new_item": {
+        "title": "接到中国证监会及其派出机构关于系统漏洞、安全隐患、产品缺陷的信息安全通报书后，是否立即核实情况，采取必要的处置措施，并根据要求进行事件总结报告。事件总结报告内容应当包括：事件基本情况，可能或者已经造成的影响范围和后果，已采取的防范措施及相关建议。",
+        "dimension": "运维管理",
+        "procedure": "a)检查监管部门信息安全通报记录，对系统漏洞、安全隐患、产品缺陷等，是否立即核实情况，采取必要的处置措施；b)检查信息安全通报事件总结报告，内容是否包括：事件基本情况，可能或者已经造成的影响范围和后果..."
+      },
+      "match_result": {
+        "existing_item_id": 152,
+        "existing_title": "接到中国证监会及其派出机构关于系统漏洞、安全隐患、产品缺陷的信息安全通报书后，是否立即核实情况，采取必要的处置措施，并根据要求进行事件总结报告。事件总结报告内容应当包括：事件基本情况，可能或者已经造成的影响范围和后果，已采取的防范措施及相关建议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M153",
+      "new_item": {
+        "title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员，并对违反违背安全策略和规定的人员进行惩戒。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查安全责任和惩戒措施管理文档，查看是否包含具体的安全责任和惩戒措施；b)检查安全责任惩戒记录，是否对违反安全策略和规定的人员进行惩戒。"
+      },
+      "match_result": {
+        "existing_item_id": 131,
+        "existing_title": "客户进行资金交易时，根据客户意愿，可采取认证强度与交易额度相匹配的技术措施，提高交易的安全性。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M154",
+      "new_item": {
+        "title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员，并对违反违背安全策略和规定的人员进行惩戒。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查安全责任和惩戒措施管理文档，查看是否包含具体的安全责任和惩戒措施；b)检查安全责任惩戒记录，是否对违反安全策略和规定的人员进行惩戒。"
+      },
+      "match_result": {
+        "existing_item_id": 175,
+        "existing_title": "信息技术风险评估结果是否经IT治理委员会审定后，向公司总经理汇报，并向业务、合规、审计等部门传达",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M155",
+      "new_item": {
+        "title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。"
+      },
+      "match_result": {
+        "existing_item_id": 155,
+        "existing_title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M156",
+      "new_item": {
+        "title": "是否每半年至少组织一次网络与信息安全应急演练。",
+        "dimension": "运维管理",
+        "procedure": "a)查看“表L.8-本年度应急演练情况”和应急演练计划，是否每半年至少组织一次网络与信息安全应急演练；b)检查应急演练记录。"
+      },
+      "match_result": {
+        "existing_item_id": 224,
+        "existing_title": "是否使用正版软件并保存软件授权证书和许可协议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M157",
+      "new_item": {
+        "title": "是否在统一的应急预案框架下制定不同事件的应急预案，应急预案框架应包括启动应急预案的条件、应急处理流程、系统恢复流程、事后教育和培训等内容。",
+        "dimension": "运维管理",
+        "procedure": "a)检查应急预案框架，查看其内容是否覆盖启动应急预案的条件、应急处理流程、系统恢复流程、事后教育和培训等方面；b)检查是否具有根据应急预案框架制定的不同事件的应急预案。"
+      },
+      "match_result": {
+        "existing_item_id": 208,
+        "existing_title": "是否要求供应商签署承诺书，承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M158",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括应急预案的适用范围。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，判断是否包括应急预案的适用范围。"
+      },
+      "match_result": {
+        "existing_item_id": 86,
+        "existing_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M159",
+      "new_item": {
+        "title": "是否制定外包服务意外终止的应急措施。",
+        "dimension": "信息技术治理",
+        "procedure": "检查应急预案，确认有外包服务意外终止的应急措施。"
+      },
+      "match_result": {
+        "existing_item_id": 186,
+        "existing_title": "审计记录是否包含重要的安全相关信息。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M160",
+      "new_item": {
+        "title": "应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案评估报告，判断是否根据应急演练的情况进行评估和更新。"
+      },
+      "match_result": {
+        "existing_item_id": 156,
+        "existing_title": "合规部门、风险管理部门或岗位是否参与应急演练工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M161",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件处置的具体方案。"
+      },
+      "match_result": {
+        "existing_item_id": 161,
+        "existing_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M162",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件内部调查处理以及分析总结的要求。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件内部调查处理以及分析总结的要求。"
+      },
+      "match_result": {
+        "existing_item_id": 174,
+        "existing_title": "是否定期或不定期开展信息技术风险评估活动，或聘请外部有资质的机构定期进行信息技术风险评估",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M163",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件的报告流程。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件的报告流程。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M164",
+      "new_item": {
+        "title": "是否制定应急处置联络手册，明确详细的联络方式，并及时更新，在发生变化时及时通知相关单位。应急处置联络手册是否至少包括应急处置组织体系及相关关联单位的应急联络方式。",
+        "dimension": "运维管理",
+        "procedure": "a)审阅应急处置联络手册，是否至少包括应急处置组织体系及相关关联单位的应急联络方式，且联络方式必须明确详细；b)抽查应急处置联络手册中的相关信息是否真实、有效、可用。"
+      },
+      "match_result": {
+        "existing_item_id": 155,
+        "existing_title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M165",
+      "new_item": {
+        "title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位。",
+        "dimension": "信息技术治理",
+        "procedure": "a)查看应急处置联络手册，确认指定了通报联络人，至少包括信息技术负责人及其备岗；确认通报人联络方式至少包括应急值守电话与传真；b)访谈通报联络人，询问是否知悉其职责范围；c)查阅通报联络人正式发文，确..."
+      },
+      "match_result": {
+        "existing_item_id": 165,
+        "existing_title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M166",
+      "new_item": {
+        "title": "是否建立有效的应急通讯联络系统，确保信息畅通。",
+        "dimension": "运维管理",
+        "procedure": "a)查看应急预案中是否要求建立应急通讯联络系统；b)抽查应急通讯联络系统中的相关信息是否真实、有效、可用。"
+      },
+      "match_result": {
+        "existing_item_id": 224,
+        "existing_title": "是否使用正版软件并保存软件授权证书和许可协议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M167",
+      "new_item": {
+        "title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位。",
+        "dimension": "信息技术治理",
+        "procedure": "a)查看应急处置联络手册，确认指定了通报联络人，至少包括信息技术负责人及其备岗；确认通报人联络方式至少包括应急值守电话与传真；b)访谈通报联络人，询问是否知悉其职责范围；c)查阅通报联络人正式发文，确..."
+      },
+      "match_result": {
+        "existing_item_id": 165,
+        "existing_title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M168",
+      "new_item": {
+        "title": "是否对系统相关的人员进行应急预案培训，应急预案的培训是否至少每年举办一次。",
+        "dimension": "运维管理",
+        "procedure": "a)访谈系统运维负责人，询问是否对系统相关人员进行应急预案培训，多长时间举办一次；b)检查应急培训记录，判断系统相关人员是否参加、是否每年至少一次。"
+      },
+      "match_result": {
+        "existing_item_id": 168,
+        "existing_title": "是否对系统相关的人员进行应急预案培训，应急预案的培训是否至少每年举办一次。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M169",
+      "new_item": {
+        "title": "应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案评估报告，判断是否根据应急演练的情况进行评估和更新。"
+      },
+      "match_result": {
+        "existing_item_id": 2,
+        "existing_title": "是否按照建党100年网络保障要求开展网络安全风险排查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M170",
+      "new_item": {
+        "title": "是否根据应急预案的内容，制定详细的应急演练计划。计划至少包括演练的目的、内容、时间、参与方、方式、前期准备情况、统计与记录要求、系统恢复与验证要求等内容。",
+        "dimension": "运维管理",
+        "procedure": "检查应急演练计划，是否至少包括目的、内容、时间、参与方、方式、前期准备情况、统计与记录要求、系统恢复与验证要求等内容。"
+      },
+      "match_result": {
+        "existing_item_id": 151,
+        "existing_title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M171",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件的报告流程。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件的报告流程。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M172",
+      "new_item": {
+        "title": "是否建立关联单位联系表，表的内容至少包括单位名称、业务事项、联系人、联系方式、备注等，并及时更新。",
+        "dimension": "信息技术治理",
+        "procedure": "检查关联单位联系表，是否包括单位名称、业务事项、联系人、联系方式、备注等，并及时更新。"
+      },
+      "match_result": {
+        "existing_item_id": 29,
+        "existing_title": "备份与恢复管理相关的安全管理制度只是否对备份信息的备份方式、备份频度、存储介质和保存期等进行规范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M173",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "运维管理",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M174",
+      "new_item": {
+        "title": "是否定期对系统容量进行检查和评估，形成评估报告。",
+        "dimension": "信息系统",
+        "procedure": "检查系统容量评估报告，是否定期对系统容量进行检查和评估。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M175",
+      "new_item": {
+        "title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件的报告流程。",
+        "dimension": "运维管理",
+        "procedure": "检查应急预案，判断是否包括网络与信息安全事件的报告流程。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M176",
+      "new_item": {
+        "title": "是否对安全检查情况进行评估，形成评估报告。",
+        "dimension": "运维管理",
+        "procedure": "审阅评估报告，检查是否对安全检查情况进行评估。"
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M177",
+      "new_item": {
+        "title": "是否对安全检查情况进行评估，形成评估报告。",
+        "dimension": "运维管理",
+        "procedure": "审阅评估报告，检查是否对安全检查情况进行评估。"
+      },
+      "match_result": {
+        "existing_item_id": 204,
+        "existing_title": "如有发电机，是否定期对发电机进行开机测试。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M178",
+      "new_item": {
+        "title": "是否制定信息系统运行维护年度预算计划，每年进行核算。预算和核算是否接受监督和审计。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查是否有信息系统运行维护年度预算计划；b)检查是否有预算审批记录和审计记录。"
+      },
+      "match_result": {
+        "existing_item_id": 22,
+        "existing_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M179",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "运维管理",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M180",
+      "new_item": {
+        "title": "是否在发生网络与信息安全事件后，立即启动应急预案，迅速采取应急措施，尽快恢复信息系统正常运行。",
+        "dimension": "运维管理",
+        "procedure": "检查事件处置报告，判断发生网络与信息安全事件后，是否立即启动应急预案，迅速采取应急措施，尽快恢复信息系统正常运行。"
+      },
+      "match_result": {
+        "existing_item_id": 131,
+        "existing_title": "客户进行资金交易时，根据客户意愿，可采取认证强度与交易额度相匹配的技术措施，提高交易的安全性。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M181",
+      "new_item": {
+        "title": "是否建立检查审计制度，对运维制度的执行情况和运维工作开展情况定期进行检查和审计，以督促运维工作持续改进。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查是否有与IT检查审计相关的管理制度，查看其是否要求对IT运维制度的执行情况和运维工作开展情况定期进行检查和审计；b)检查审计期内的IT检查和审计记录，是否每年至少每年进行一次IT 运维审计。"
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M182",
+      "new_item": {
+        "title": "检查和审计范围是否至少包括对运维管理制度和操作流程的合理性和完整性进行评估，对运维管理制度和操作流程的执行情况进行评估，对文档、配置、数据的有效性进行评估，对整体安全状况进行评估，对运维人员履职能力进行评估等。",
+        "dimension": "信息系统",
+        "procedure": "检查信息系统运维管理工作审计报告，确定信息系统运维管理工作审计范围至少包括对运维管理制度和操作流程的合理性和完整性进行评估，对运维管理制度和操作流程的执行情况进行评估，对文档、配置、数据的有效性进行评..."
+      },
+      "match_result": {
+        "existing_item_id": 118,
+        "existing_title": "是否建立辅助的人工巡检流程，规定巡检内容、频度、人员等。巡检内容应覆盖电力、空调、消防、安防等机房设施，主机、网络、通信、安全等设备的运行状况。巡检结果应及时记录，如遇异常应及时处理，并按规定要求进行报告。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M183",
+      "new_item": {
+        "title": "是否对演练中发现的问题进行改进。",
+        "dimension": "运维管理",
+        "procedure": "检查演练整改报告，是否对演练中发现的问题进行改进。"
+      },
+      "match_result": {
+        "existing_item_id": 139,
+        "existing_title": "不同账户是否形成相互制约的关系。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M184",
+      "new_item": {
+        "title": "服务器主机的审计范围是否覆盖到服务器和重要客户端上的每个操作系统用户；应在保证系统运行安全和效率的前提下，启用系统审计或采用第三方安全审计产品实现审计要求。",
+        "dimension": "信息系统",
+        "procedure": "a)检查主要服务器操作系统、重要终端操作系统和主要数据库管理系统的安全审计策略，查看安全审计配置是否包括系统内重要用户行为、系统资源的异常和重要系统命令的使用等重要的安全相关事件；b)检查是否在确保系..."
+      },
+      "match_result": {
+        "existing_item_id": 155,
+        "existing_title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M185",
+      "new_item": {
+        "title": "是否记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，留存日志应满足审计的需要。",
+        "dimension": "信息系统",
+        "procedure": "检查是否记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，以满足审计的需要。"
+      },
+      "match_result": {
+        "existing_item_id": 185,
+        "existing_title": "是否记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，留存日志应满足审计的需要。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M186",
+      "new_item": {
+        "title": "审计记录是否包括事件的日期和时间、用户、事件类型、事件是否成功及其他与审计相关的信息。",
+        "dimension": "网络管理",
+        "procedure": "检查边界和主要网络设备的安全审计记录，查看是否包括：事件的日期和时间、用户、事件类型、事件成功情况，及其他与审计相关的信息。"
+      },
+      "match_result": {
+        "existing_item_id": 201,
+        "existing_title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M187",
+      "new_item": {
+        "title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。审计记录是否至少保存6个月。",
+        "dimension": "信息系统",
+        "procedure": "检查审计记录是否至少保存6个月。"
+      },
+      "match_result": {
+        "existing_item_id": 22,
+        "existing_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M188",
+      "new_item": {
+        "title": "是否对审计记录进行保护，避免受到未预期的删除、修改或覆盖等。",
+        "dimension": "网络管理",
+        "procedure": "a)询问网络管理员审计记录保护机制；b)查看审计保护机制设计文档；c)测试边界和主要网络设备，通过以某个非审计用户登录系统，试图删除、修改或覆盖审计记录，验证安全审计的保护情况与要求是否一致。"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M189",
+      "new_item": {
+        "title": "是否能够根据记录数据进行分析，并生成审计报表。",
+        "dimension": "信息系统",
+        "procedure": "检查主要服务器操作系统、重要终端操作系统和主要数据库管理系统的安全审计策略，查看是否为授权用户提供浏览和分析审计记录的功能，是否可以根据需要自动生成不同格式的审计报表。"
+      },
+      "match_result": {
+        "existing_item_id": 224,
+        "existing_title": "是否使用正版软件并保存软件授权证书和许可协议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M190",
+      "new_item": {
+        "title": "是否制定信息系统备份能力建设工作计划。",
+        "dimension": "信息系统",
+        "procedure": "检查信息技术部门是否编制了信息系统备份能力建设工作计划。"
+      },
+      "match_result": {
+        "existing_item_id": 190,
+        "existing_title": "是否制定信息系统备份能力建设工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M191",
+      "new_item": {
+        "title": "机房管理员是否根据国家有关规定和标准进行用电管理，应重点保障核心交易业务系统用电安全。",
+        "dimension": "机房管理",
+        "procedure": "检查机房用电管理规定，查看是否具有重点保障核心交易业务系统用电安全的措施。"
+      },
+      "match_result": {
+        "existing_item_id": 201,
+        "existing_title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M192",
+      "new_item": {
+        "title": "在自身力量不足以满足应急要求的情况下，是否与相关单位签订通信、消防、电力设备、空调设备、软硬件产品、安全服务等的应急响应及服务保障协议。协议内容应包括双方联系人、联系方式、服务内容及范围、应急处理方式等。是否定期检查和评估协议的执行情况，确保服务保障措施落实到位，确保在应急处置中相关单位能提供及时有效的技术支持。",
+        "dimension": "运维管理",
+        "procedure": "a)检查应急响应服务协议是否包括通信、消防、电力设备、空调设备、软硬件产品、安全服务等相关单位；b)检查应急响应及服务保障协议内容是否包括双方联系人、联系方式、服务内容及范围、应急处理方式等；c)检查..."
+      },
+      "match_result": {
+        "existing_item_id": 193,
+        "existing_title": "公司制订的业务连续性计划是否考虑以下情况，包括但不限于：因自然灾害等原因导致机房不可用、机房电力中断；网络、通信中断或拥堵至不可用；重要业务信息技术系统软硬件故障；重要业务信息数据损毁或遭到破坏；与经营机构建立业务连接的其他机构信息技术系统中断或严重故障；信息技术服务商的重大变更、公司核心信息技术团队发生重大变动等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M193",
+      "new_item": {
+        "title": "是否建立关联单位联系制度，定期与关联单位进行合作与沟通。关联单位包括证券期货行业监管部门、协会，当地政府部门，公安机关，交易所等市场核心机构，其他证券期货经营机构，银行机构，电力和通信设施保障机构，软硬件供应商，技术服务商和物业公司等。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查关联单位联系表，是否包括证券期货行业监管部门、协会，当地政府部门，公安机关，交易所等市场核心机构，其他证券期货经营机构，银行机构，电力和通信设施保障机构，软硬件供应商，技术服务商和物业公司等；..."
+      },
+      "match_result": {
+        "existing_item_id": 58,
+        "existing_title": "是否对所有服务器安装防木马、病毒等防恶意代码软件，定期进行全面检查，并及时更新防恶意代码软件版本和恶意代码库。a)原则上所有主机应安装防恶意代码软件，系统不支持该要求的除外；b)未安装防恶意代码软件的主机，应采取有效措施进行恶意代码防范。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M194",
+      "new_item": {
+        "title": "机房管理员是否根据国家有关规定和标准进行用电管理，应重点保障核心交易业务系统用电安全。",
+        "dimension": "机房管理",
+        "procedure": "检查机房用电管理规定，查看是否具有重点保障核心交易业务系统用电安全的措施。"
+      },
+      "match_result": {
+        "existing_item_id": 201,
+        "existing_title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M195",
+      "new_item": {
+        "title": "机房是否采用双路市电，双路市电是否能实现自动切换。",
+        "dimension": "机房管理",
+        "procedure": "a)检查“表L.3-电力情况-供电方式（可多选）”，访谈机房管理员，询问机房是否采用了双路市电；b)检查双路市电线路切换记录或供电部门相关协议，查看双路市电是否能够自动切换。"
+      },
+      "match_result": {
+        "existing_item_id": 156,
+        "existing_title": "合规部门、风险管理部门或岗位是否参与应急演练工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M196",
+      "new_item": {
+        "title": "机房是否采用双路市电，双路市电是否能实现自动切换。",
+        "dimension": "机房管理",
+        "procedure": "a)检查“表L.3-电力情况-供电方式（可多选）”，访谈机房管理员，询问机房是否采用了双路市电；b)检查双路市电线路切换记录或供电部门相关协议，查看双路市电是否能够自动切换。"
+      },
+      "match_result": {
+        "existing_item_id": 2,
+        "existing_title": "是否按照建党100年网络保障要求开展网络安全风险排查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M197",
+      "new_item": {
+        "title": "机房是否采用防静电地板。",
+        "dimension": "机房管理",
+        "procedure": "检查机房验收合格证明，是否采用了防静电地板或敷设防静电地板。"
+      },
+      "match_result": {
+        "existing_item_id": 33,
+        "existing_title": "是否建立供应商管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M198",
+      "new_item": {
+        "title": "机房是否采用防静电地板。",
+        "dimension": "机房管理",
+        "procedure": "检查机房验收合格证明，是否采用了防静电地板或敷设防静电地板。"
+      },
+      "match_result": {
+        "existing_item_id": 33,
+        "existing_title": "是否建立供应商管理制度。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M199",
+      "new_item": {
+        "title": "是否在机房供电线路上配置稳压器和过电压防护设备。",
+        "dimension": "机房管理",
+        "procedure": "a)检查机房供电系统图及相关说明材料，机房供电线路上是否设置了稳压器和过电压防护设备；b)检查机房维护记录，稳压器和过电压防护设备是否正常运行。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M200",
+      "new_item": {
+        "title": "机房是否自备或租用发电机，能够保障持续供电。",
+        "dimension": "机房管理",
+        "procedure": "a)检查“表L.3-发电机”，现场是否配备了发电机，检查发电机储油是否能够确保发电机持续供电，是否采取了有效措施确保发电机用油的及时补充；b)如果是租用发电机，检查租用发电机的合同或相关证明材料；该合..."
+      },
+      "match_result": {
+        "existing_item_id": 87,
+        "existing_title": "是否对基础软件和通用软件的更新情况进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M201",
+      "new_item": {
+        "title": "机房是否配备UPS，是否定期检查和维护，UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+        "dimension": "机房管理",
+        "procedure": "a)检查“表L.3-UPS”，现场检查UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上；b)检查UPS设备运行记录、定期检查和维护记录。"
+      },
+      "match_result": {
+        "existing_item_id": 51,
+        "existing_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M202",
+      "new_item": {
+        "title": "是否将主要设备放置在机房内。",
+        "dimension": "机房管理",
+        "procedure": "a)获取主要设备清单列表；b)现场检查主要设备等是否放置在机房内。"
+      },
+      "match_result": {
+        "existing_item_id": 148,
+        "existing_title": "是否对网络安全事件进行记录。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M203",
+      "new_item": {
+        "title": "机房是否自备或租用发电机，能够保障持续供电。",
+        "dimension": "机房管理",
+        "procedure": "a)检查“表L.3-发电机”，现场是否配备了发电机，检查发电机储油是否能够确保发电机持续供电，是否采取了有效措施确保发电机用油的及时补充；b)如果是租用发电机，检查租用发电机的合同或相关证明材料；该合..."
+      },
+      "match_result": {
+        "existing_item_id": 87,
+        "existing_title": "是否对基础软件和通用软件的更新情况进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M204",
+      "new_item": {
+        "title": "是否定期对配置库进行备份。",
+        "dimension": "运维管理",
+        "procedure": "检查配置库维护记录，判断是否定期对配置库进行备份。"
+      },
+      "match_result": {
+        "existing_item_id": 179,
+        "existing_title": "是否对公司进行专项IT审计。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M205",
+      "new_item": {
+        "title": "是否定期进行消防设施的使用培训和演习。",
+        "dimension": "运维管理",
+        "procedure": "a)检查“表L.8-本年度应急演练情况-针对消防等开展的应急演练的次数（次）”，审阅机房管理制度，是否规定定期进行消防设施的使用培训和演习；b)检查消防设施的使用培训和演习记录，确定是否定期进行培训和..."
+      },
+      "match_result": {
+        "existing_item_id": 190,
+        "existing_title": "是否制定信息系统备份能力建设工作计划。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M206",
+      "new_item": {
+        "title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "dimension": "信息技术治理",
+        "procedure": "检查与供应商签订的合同，查看是否明确其应承担的责任、义务，并约定服务要求和范围等内容。"
+      },
+      "match_result": {
+        "existing_item_id": 206,
+        "existing_title": "是否在与供应商签订的合同中明确其应承担的责任、义务，并约定服务要求和范围等内容。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M207",
+      "new_item": {
+        "title": "是否与选定的安全服务商签订与安全相关的协议，对合作方服务人员提出明确的信息安全要求。",
+        "dimension": "信息技术治理",
+        "procedure": "检查与安全服务商签订的安全责任合同书或保密协议等文档，查看其内容是否包含保密范围、安全责任、违约责任、协议的有效期限和责任人的签字等。"
+      },
+      "match_result": {
+        "existing_item_id": 207,
+        "existing_title": "是否与选定的安全服务商签订与安全相关的协议，对合作方服务人员提出明确的信息安全要求。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M208",
+      "new_item": {
+        "title": "是否与供应商签署保密协议，不得泄露所服务机构的保密信息，并要求供应商签署承诺书，承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查供应商签署的保密协议，查看是否禁止供应商泄露所服务机构的保密信息；b)检查供应商签署的承诺书，查看供应商是否承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期..."
+      },
+      "match_result": {
+        "existing_item_id": 210,
+        "existing_title": "信息系统托管中，受托方是否为委托方提供7×24小时支持服务，是否在5分钟内响应委托方提出的服务请求，并在30分钟内到场服务。遇到突发事件，是否积极配合委托方共同开展应急处置工作。（本项适用于：三+系统托管）",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M209",
+      "new_item": {
+        "title": "机房是否合理划分区域，包括主机房、辅助区、支持区等功能区域。",
+        "dimension": "机房管理",
+        "procedure": "检查机房平面图，并现场检查，是否包括：主机房、辅助区、支持区等功能区域。"
+      },
+      "match_result": {
+        "existing_item_id": 84,
+        "existing_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M210",
+      "new_item": {
+        "title": "受托方是否为委托方提供7×24小时支持服务，是否在5分钟内响应委托方提出的服务请求，并在30分钟内到场服务。遇到突发事件，是否积极配合委托方共同开展应急处置工作。（本项适用于：三+系统托管）",
+        "dimension": "信息系统托管",
+        "procedure": "a)查看委托合同和应急预案，是否明确要求7×24小时支持服务制度；b)检查应急事件报告书，查看受托方是否在5分钟内响应委托方的服务请求，并在30分钟内到场服务。"
+      },
+      "match_result": {
+        "existing_item_id": 117,
+        "existing_title": "是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控。交易时段应指定人员对交易业务系统进行监控，交易时段以外如无法做到人工监控，是否开启自动监控系统和自动报警系统。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M211",
+      "new_item": {
+        "title": "是否建立供应商管理制度，对供应商支持运维服务的相关活动进行统一管理。",
+        "dimension": "信息技术治理",
+        "procedure": "检查供应商管理制度，查看是否有对供应商支持运维服务的相关活动进行统一管理的规定。"
+      },
+      "match_result": {
+        "existing_item_id": 160,
+        "existing_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M212",
+      "new_item": {
+        "title": "是否定期收集、更新供应商信息，组织对供应商的服务质量、合同履行情况、人员工作情况等内容进行评价，形成评价报告，并跟踪和记录供应商改进情况。",
+        "dimension": "信息技术治理",
+        "procedure": "a)检查供应商列表，访谈信息技术负责人，判断是否定期收集、更新供应商信息；b)检查供应商评价报告，判断是否定期组织对供应商的服务质量、合同履行情况、人员工作情况等内容进行评价，并跟踪和记录供应商改进情..."
+      },
+      "match_result": {
+        "existing_item_id": 208,
+        "existing_title": "是否要求供应商签署承诺书，承诺产品不存在恶意代码或未授权的功能，不提供违反我国法律法规的功能模块，并符合证券期货行业有关技术规范和技术指引。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M213",
+      "new_item": {
+        "title": "是否明确界定外包人员的工作职责、活动范围、操作权限。",
+        "dimension": "信息技术治理",
+        "procedure": "检查与外包公司签订的合同，确认合同中明确了明确界定外包人员的工作职责、活动范围、操作权限。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M214",
+      "new_item": {
+        "title": "是否对外包人员工作情况进行监督和检查，并保留相应记录。",
+        "dimension": "信息技术治理",
+        "procedure": "查看监督和检查记录，确认对外包人员工作情况进行了监督和检查。"
+      },
+      "match_result": {
+        "existing_item_id": 188,
+        "existing_title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M215",
+      "new_item": {
+        "title": "是否明确界定外包人员的工作职责、活动范围、操作权限。",
+        "dimension": "信息技术治理",
+        "procedure": "检查与外包公司签订的合同，确认合同中明确了明确界定外包人员的工作职责、活动范围、操作权限。"
+      },
+      "match_result": {
+        "existing_item_id": 209,
+        "existing_title": "公司托管机房服务合同是否包含应急服务响应和支持条款。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M216",
+      "new_item": {
+        "title": "是否建立软件资产管理制度，或将软件资产纳入本单位资产管理体系，对软件采购、安装、升级等工作流程有严格管理。",
+        "dimension": "信息技术治理",
+        "procedure": "a)访谈信息技术负责人，是否将软件资产纳入资产管理体系，并对软件采购、安装、升级等流程进行管理；b)检查固定资产管理办法，是否包含软件购置、安装、升级等流程。"
+      },
+      "match_result": {
+        "existing_item_id": 216,
+        "existing_title": "是否建立软件资产管理制度，或将软件资产纳入本单位资产管理体系，对软件采购、安装、升级等工作流程有严格管理。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M217",
+      "new_item": {
+        "title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "dimension": "信息技术治理",
+        "procedure": "检查“表L.9-基本情况”，访谈系统建设负责人，询问是否有专门的部门或人员负责本单位软件正版化工作，由何部门/何人负责。"
+      },
+      "match_result": {
+        "existing_item_id": 217,
+        "existing_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M218",
+      "new_item": {
+        "title": "是否制定了软件正版化计划。",
+        "dimension": "软件正版化",
+        "procedure": "a)访谈软件正版化人员，是否制定了软件正版化计划；b)检查软件正版化计划，是否对通用软件和专业软件制定正版化计划。"
+      },
+      "match_result": {
+        "existing_item_id": 197,
+        "existing_title": "机房是否配备单独的配电柜。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M219",
+      "new_item": {
+        "title": "是否每年对软件正版化情况开展自查。",
+        "dimension": "软件正版化",
+        "procedure": "a)访谈软件正版化人员，是否对公司使用的软件正版化情况每年进行自查，并出具自查报告；b)检查软件正版化自查报告。"
+      },
+      "match_result": {
+        "existing_item_id": 219,
+        "existing_title": "是否每年对软件正版化情况开展自查。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M220",
+      "new_item": {
+        "title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "dimension": "软件正版化",
+        "procedure": "a)访谈文档管理员，是否对软件采购合同、授权书等资料进行管理；b)检查文档清单，是否包含软件购置合同及授权许可。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M221",
+      "new_item": {
+        "title": "是否使用正版软件并保存软件授权证书和许可协议，是否编制软件清单，主要包括软件名称、软件编号、入库时间、软件版本，授权和许可情况、软件序列号、软件状态、软件维护期、软件安装设备、用途和使用责任人等内容，并保留软件启用、转移、升级、报废等过程的记录。",
+        "dimension": "软件正版化",
+        "procedure": "a)检查软件授权证书和许可协议；b)检查软件清单，是否包括软件名称、软件编号、入库时间、软件版本，授权和许可情况、软件序列号、软件状态、软件维护期、软件安装设备、用途和使用责任人等内容，并保留软件启用..."
+      },
+      "match_result": {
+        "existing_item_id": 152,
+        "existing_title": "接到中国证监会及其派出机构关于系统漏洞、安全隐患、产品缺陷的信息安全通报书后，是否立即核实情况，采取必要的处置措施，并根据要求进行事件总结报告。事件总结报告内容应当包括：事件基本情况，可能或者已经造成的影响范围和后果，已采取的防范措施及相关建议。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M222",
+      "new_item": {
+        "title": "杀毒软件是否有授权。",
+        "dimension": "软件正版化",
+        "procedure": "检查“表L.9-软件正版化情况-杀毒软件”，查看使用的杀毒软件版本，并检查在使用杀毒软件是否有授权文件。"
+      },
+      "match_result": {
+        "existing_item_id": 140,
+        "existing_title": "是否存在共用账号。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M223",
+      "new_item": {
+        "title": "是否在软件安装之前检测软件包中可能存在的恶意代码。",
+        "dimension": "运维管理",
+        "procedure": "访谈系统建设负责人，询问软件安装之前是否检测软件中的恶意代码；"
+      },
+      "match_result": {
+        "existing_item_id": 156,
+        "existing_title": "合规部门、风险管理部门或岗位是否参与应急演练工作。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    },
+    {
+      "suggestion_id": "M224",
+      "new_item": {
+        "title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "dimension": "软件正版化",
+        "procedure": "a)访谈文档管理员，是否对软件采购合同、授权书等资料进行管理；b)检查文档清单，是否包含软件购置合同及授权许可。"
+      },
+      "match_result": {
+        "existing_item_id": 220,
+        "existing_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+        "similarity": 1.0,
+        "action": "reuse"
+      },
+      "procedure_match": {
+        "existing_procedure": null,
+        "similarity": 0.0,
+        "action": "create_procedure"
+      },
+      "vector_confidence": "high"
+    }
+  ],
+  "pending_review": [],
+  "review": {
+    "review_status": "confirmed",
+    "review_round": 1,
+    "total_items": 0,
+    "confirmed_items": 0,
+    "adjusted_items": 0,
+    "details": [],
+    "review_id": "R001"
+  },
+  "verified": true,
+  "review_history": [
+    {
+      "review_status": "confirmed",
+      "review_round": 1,
+      "total_items": 0,
+      "confirmed_items": 0,
+      "adjusted_items": 0,
+      "details": [],
+      "review_id": "R001"
+    }
+  ]
+}

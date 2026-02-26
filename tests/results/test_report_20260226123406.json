@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "total": 5,
+    "passed": 3,
+    "failed": 2,
+    "pass_rate": "60.0%"
+  },
+  "results": [
+    {
+      "test_name": "场景1：首次导入",
+      "passed": true,
+      "timestamp": "2026-02-26T12:33:50.700510",
+      "details": {
+        "导入审计项数": 224,
+        "创建维度数": 9,
+        "来源记录数": 224,
+        "清洗结果统计": {
+          "total_new_items": 224,
+          "total_existing_items": 0,
+          "suggested_new_items": 224,
+          "suggested_reuse_items": 0,
+          "pending_review": 0
+        }
+      }
+    },
+    {
+      "test_name": "场景2：重复检测",
+      "passed": true,
+      "timestamp": "2026-02-26T12:33:59.300869",
+      "details": {
+        "导入前审计项数": 224,
+        "导入后审计项数": 224,
+        "导入前来源记录数": 224,
+        "导入后来源记录数": 448,
+        "新增来源记录数": 224,
+        "审计项是否新增": true,
+        "LLM审核状态": "confirmed",
+        "建议复用数": 224,
+        "LLM审核通过": true
+      }
+    },
+    {
+      "test_name": "场景3：向量+LLM迭代审核",
+      "passed": true,
+      "timestamp": "2026-02-26T12:34:06.505356",
+      "details": {
+        "2021年已有审计项": 224,
+        "导入后总审计项": 224,
+        "新增审计项数": 0,
+        "新审计项建议数": 0,
+        "建议复用数": 224,
+        "待确认数": 0,
+        "LLM审核状态": "confirmed",
+        "LLM审核轮次": 1,
+        "LLM审核通过": true,
+        "结果保存路径": "e:/mycode/agent-team/tests/results\\clean_result_2022_20260226123359.json"
+      }
+    },
+    {
+      "test_name": "场景4：审计动作积累",
+      "passed": false,
+      "timestamp": "2026-02-26T12:34:06.512874",
+      "details": {
+        "总审计项数": 224,
+        "总审计程序数": 0,
+        "有多审计程序的项数": 0,
+        "多程序审计项示例": "无",
+        "平均程序数/项": 0.0
+      }
+    },
+    {
+      "test_name": "场景5：边界情况",
+      "passed": false,
+      "timestamp": "2026-02-26T12:34:06.515881",
+      "details": {
+        "总审计程序数": 0,
+        "空审计程序数": 0,
+        "空程序占比": "0%",
+        "超长审计项数(>500字)": 0,
+        "维度数量": 9
+      }
+    }
+  ]
+}

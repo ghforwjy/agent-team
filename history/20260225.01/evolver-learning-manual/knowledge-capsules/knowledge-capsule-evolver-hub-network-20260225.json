@@ -1,0 +1,44 @@
+{
+  "type": "KnowledgeCapsule",
+  "id": "knowledge-capsule-evolver-hub-network-20260225",
+  "created_at": "2026-02-25",
+  "topic": "evolver-hub-and-network",
+  "for_agent": {
+    "trigger": [
+      "hub",
+      "evomap",
+      "a2a",
+      "网络",
+      "共享",
+      "基因共享",
+      "publish",
+      "fetch",
+      "心跳",
+      "节点"
+    ],
+    "summary": "Evolver Hub 是 AI 基因的 GitHub，让不同实例可以共享成功的进化成果",
+    "key_points": [
+      "Hub = AI 基因的 GitHub，EvoMap 平台的核心基础设施",
+      "A2A 协议是 Agent-to-Agent 通信标准，支持 hello/publish/fetch/report/decision/revoke 6种消息",
+      "资产发布条件：爆炸半径安全 + 得分≥0.7 + 连续成功≥2次",
+      "Search-First 模式：遇到新问题先搜 Hub，有则复用无则本地进化",
+      "评分算法：rank = confidence × max(success_streak, 1) × (reputation/100)",
+      "复用模式：direct（直接使用）或 reference（作为提示注入）",
+      "心跳机制：每2分钟发送一次，保持节点在线状态",
+      "安全机制：HMAC-SHA256 签名 + 声誉系统 + 验证报告"
+    ],
+    "analogies": {
+      "life": "开源软件社区：Hub=GitHub，Gene=代码库，Capsule=项目案例，A2A=HTTP协议",
+      "tech": "微服务注册中心：Evolver实例像微服务，Hub像注册中心，Gene像服务定义"
+    },
+    "when_to_use": "用户询问 Hub、EvoMap、A2A协议、基因共享网络、节点通信、资产发布/搜索相关问题时",
+    "related_capsules": [
+      "knowledge-capsule-gene-capsule-concept-20260224",
+      "knowledge-capsule-architecture-understanding-20260224"
+    ]
+  },
+  "for_human": {
+    "document_path": "./topics/evolver-hub-and-network.md",
+    "brief": "详细讲解 Evolver Hub 与 EvoMap 网络的概念、A2A协议、资产发布与搜索机制、配置方法"
+  }
+}

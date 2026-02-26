@@ -31,26 +31,35 @@ class SemanticMatcher:
             
             os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'
             
+            # 新的模型路径: model/Sentence-BERT/
             model_cache = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', 'model'))
+            model_path = os.path.join(model_cache, 'Sentence-BERT')
+            
+            print(f"模型缓存目录: {model_cache}")
+            print(f"模型路径: {model_path}")
+            
+            if os.path.exists(model_path):
+                print(f"从本地加载模型: {model_path}")
+                self.model = SentenceTransformer(model_path)
+                print(f"已加载模型: {self.model_name}")
+                return
+            
+            # 如果新路径不存在，尝试旧路径（兼容性）
             snapshot_dir = os.path.join(
                 model_cache,
                 'models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2',
                 'snapshots'
             )
-            
-            print(f"模型缓存目录: {model_cache}")
-            print(f"快照目录: {snapshot_dir}")
-            
             if os.path.exists(snapshot_dir):
                 snapshots = os.listdir(snapshot_dir)
                 if snapshots:
-                    model_path = os.path.join(snapshot_dir, snapshots[0])
-                    print(f"从本地加载模型: {model_path}")
-                    self.model = SentenceTransformer(model_path)
+                    old_model_path = os.path.join(snapshot_dir, snapshots[0])
+                    print(f"从旧路径加载模型: {old_model_path}")
+                    self.model = SentenceTransformer(old_model_path)
                     print(f"已加载模型: {self.model_name}")
                     return
             
-            raise FileNotFoundError(f"模型未找到: {snapshot_dir}")
+            raise FileNotFoundError(f"模型未找到，请确认模型已放置在 {model_path} 或 {snapshot_dir}")
         except ImportError:
             raise ImportError("请安装sentence-transformers: pip install sentence-transformers")
     
@@ -86,22 +95,24 @@ class SemanticMatcher:
             print("数据库为空，所有审计项将作为新项处理")
             merge_suggestions = []
             for i, new_item in enumerate(new_items, 1):
+                # 支持两种字段名: procedure 或 audit_procedure
+                procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
                 merge_suggestions.append({
                     'suggestion_id': f'M{i:03d}',
                     'new_item': {
                         'title': new_item.get('title', ''),
                         'dimension': new_item.get('dimension', ''),
-                        'procedure': new_item.get('procedure', '')
+                        'procedure': procedure_text
                     },
                     'match_result': {
                         'existing_item_id': None,
                         'existing_title': None,
                         'similarity': 0.0,
-                        'action': 'new_item'
+                        'action': 'create'
                     },
                     'vector_confidence': 'high'
                 })
-            
+
             result = {
                 'version': '1.0',
                 'created_at': datetime.now().isoformat(),
@@ -110,7 +121,7 @@ class SemanticMatcher:
                     'total_new_items': len(new_items),
                     'total_existing_items': 0,
                     'suggested_new_items': len(new_items),
-                    'suggested_merge_items': 0,
+                    'suggested_reuse_items': 0,
                     'pending_review': 0
                 },
                 'merge_suggestions': merge_suggestions,
@@ -156,6 +167,9 @@ class SemanticMatcher:
                         'similarity': sim
                     })
             
+            # 支持两种字段名: procedure 或 audit_procedure
+            procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
+            
             if not top_candidates:
                 merge_suggestions.append(self._create_new_item_suggestion(
                     new_item, suggestion_counter, None, 0.0
@@ -164,22 +178,22 @@ class SemanticMatcher:
             elif top_candidates[0]['similarity'] > self.SIMILARITY_HIGH:
                 best = top_candidates[0]
                 procedure_match = self._match_procedure(
-                    new_item.get('procedure', ''),
+                    procedure_text,
                     best['existing_item'].get('procedures', [])
                 )
-                
+
                 merge_suggestions.append({
                     'suggestion_id': f'M{suggestion_counter:03d}',
                     'new_item': {
                         'title': new_item.get('title', ''),
                         'dimension': new_item.get('dimension', ''),
-                        'procedure': new_item.get('procedure', '')
+                        'procedure': procedure_text
                     },
                     'match_result': {
                         'existing_item_id': best['existing_item'].get('id'),
                         'existing_title': best['existing_item'].get('title'),
                         'similarity': round(best['similarity'], 2),
-                        'action': 'merge'
+                        'action': 'reuse'
                     },
                     'procedure_match': procedure_match,
                     'vector_confidence': 'high' if best['similarity'] > 0.90 else 'medium'
@@ -191,7 +205,7 @@ class SemanticMatcher:
                     'new_item': {
                         'title': new_item.get('title', ''),
                         'dimension': new_item.get('dimension', ''),
-                        'procedure': new_item.get('procedure', '')
+                        'procedure': procedure_text
                     },
                     'candidates': [
                         {
@@ -206,8 +220,8 @@ class SemanticMatcher:
                 })
                 pending_counter += 1
         
-        new_count = sum(1 for s in merge_suggestions if s['match_result']['action'] == 'new_item')
-        merge_count = sum(1 for s in merge_suggestions if s['match_result']['action'] == 'merge')
+        new_count = sum(1 for s in merge_suggestions if s['match_result']['action'] == 'create')
+        merge_count = sum(1 for s in merge_suggestions if s['match_result']['action'] == 'reuse')
         
         result = {
             'version': '1.0',
@@ -217,7 +231,7 @@ class SemanticMatcher:
                 'total_new_items': len(new_items),
                 'total_existing_items': len(existing_items),
                 'suggested_new_items': new_count,
-                'suggested_merge_items': merge_count,
+                'suggested_reuse_items': merge_count,
                 'pending_review': len(pending_review)
             },
             'merge_suggestions': merge_suggestions,
@@ -226,32 +240,34 @@ class SemanticMatcher:
         
         return result
     
-    def _create_new_item_suggestion(self, new_item: Dict, counter: int, 
+    def _create_new_item_suggestion(self, new_item: Dict, counter: int,
                                      best_match: Optional[Dict], best_sim: float) -> Dict:
         """创建新建审计项的建议"""
+        # 支持两种字段名: procedure 或 audit_procedure
+        procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
         suggestion = {
             'suggestion_id': f'M{counter:03d}',
             'new_item': {
                 'title': new_item.get('title', ''),
                 'dimension': new_item.get('dimension', ''),
-                'procedure': new_item.get('procedure', '')
+                'procedure': procedure_text
             },
             'match_result': {
                 'existing_item_id': None,
                 'existing_title': None,
                 'similarity': round(best_sim, 2),
-                'action': 'new_item'
+                'action': 'create'
             },
             'vector_confidence': 'high'
         }
-        
+
         if best_match:
             suggestion['best_match'] = {
                 'existing_item_id': best_match.get('id'),
                 'existing_title': best_match.get('title'),
                 'similarity': round(best_sim, 2)
             }
-        
+
         return suggestion
     
     def _match_procedure(self, new_procedure: str, existing_procedures: List[Dict]) -> Dict:
@@ -260,7 +276,7 @@ class SemanticMatcher:
             return {
                 'existing_procedure': existing_procedures[0].get('text', '') if existing_procedures else None,
                 'similarity': 0.0,
-                'action': 'new_procedure'
+                'action': 'create_procedure'
             }
         
         new_vec = self.model.encode(new_procedure)
@@ -280,8 +296,8 @@ class SemanticMatcher:
                 best_sim = sim
                 best_match = proc_text
         
-        action = 'merge_procedure' if best_sim > self.PROCEDURE_SIMILARITY_HIGH else 'new_procedure'
-        
+        action = 'reuse_procedure' if best_sim > self.PROCEDURE_SIMILARITY_HIGH else 'create_procedure'
+
         return {
             'existing_procedure': best_match,
             'similarity': round(best_sim, 2),

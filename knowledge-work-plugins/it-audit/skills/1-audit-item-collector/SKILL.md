@@ -166,6 +166,7 @@ for item in items:
 
 ### 语义相似 (可选)
 - 使用sentence-transformers计算语义相似度
+- 模型路径: `model/Sentence-BERT/`
 - 相似度>85%: 自动合并
 - 相似度60-85%: 提示用户确认
 

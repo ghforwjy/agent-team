@@ -31,16 +31,17 @@ class AuditItemCleaner:
         )
         self.import_batch = datetime.now().strftime("%Y%m%d-%H%M%S")
     
-    def clean_from_excel(self, file_path: str, output_json: str = None, 
-                         skip_llm: bool = False) -> Dict[str, Any]:
+    def clean_from_excel(self, file_path: str, output_json: str = None,
+                         skip_llm: bool = False, force_llm: bool = False) -> Dict[str, Any]:
         """
         从Excel文件清洗审计项
-        
+
         Args:
             file_path: Excel文件路径
             output_json: 输出JSON文件路径（可选）
-            skip_llm: 是否跳过LLM校验
-        
+            skip_llm: 是否跳过LLM校验（场景1使用）
+            force_llm: 是否强制启用LLM校验（场景2使用，即使高相似度也要审核）
+
         Returns:
             匹配结果JSON
         """
@@ -48,24 +49,33 @@ class AuditItemCleaner:
         print(f"开始清洗: {file_path}")
         print(f"导入批次: {self.import_batch}")
         print(f"{'='*60}")
-        
+
         print("\n步骤1: 解析Excel文件...")
         parser = ExcelParser(file_path)
         new_items = parser.parse()
         print(f"解析出 {len(new_items)} 条审计项")
-        
+
         print("\n步骤2: 读取数据库已有审计项...")
         existing_items = self.db.get_all_items_with_procedures()
         print(f"数据库已有 {len(existing_items)} 条审计项")
-        
+
         print("\n步骤3: 向量模型语义匹配...")
         result = self.matcher.batch_match(new_items, existing_items)
         result['source_file'] = os.path.basename(file_path)
-        
-        if not skip_llm:
+
+        # 场景2：强制启用LLM审核（即使相似度=1.0）
+        if force_llm:
+            print("\n步骤4: LLM强制校验（场景2：重复检测）...")
+            result = self.verifier.iterative_verify(result)
+
+            if result.get('verified'):
+                print("LLM校验通过!")
+            else:
+                print("警告: LLM校验未通过，请人工确认")
+        elif not skip_llm:
             print("\n步骤4: LLM校验...")
             result = self.verifier.iterative_verify(result)
-            
+
             if result.get('verified'):
                 print("LLM校验通过!")
             else:
@@ -89,7 +99,7 @@ class AuditItemCleaner:
         print(f"{'='*60}")
         print(f"统计:")
         print(f"  新审计项: {result['summary']['suggested_new_items']}")
-        print(f"  建议合并: {result['summary']['suggested_merge_items']}")
+        print(f"  建议复用: {result['summary']['suggested_reuse_items']}")
         print(f"  待确认: {result['summary']['pending_review']}")
         if result.get('review'):
             print(f"  LLM审核状态: {result['review'].get('status')}")
@@ -117,10 +127,10 @@ class AuditItemCleaner:
         for suggestion in result.get('merge_suggestions', []):
             new_item = suggestion['new_item']
             match_result = suggestion['match_result']
-            
-            if match_result['action'] == 'new_item':
+
+            if match_result['action'] == 'create':
                 self._create_new_item(new_item, suggestion)
-            elif match_result['action'] == 'merge':
+            elif match_result['action'] == 'reuse':
                 self._merge_to_existing(new_item, match_result, suggestion)
         
         for pending in result.get('pending_review', []):
@@ -140,10 +150,12 @@ class AuditItemCleaner:
             'description': ''
         })
         
-        if new_item.get('procedure'):
+        # 支持两种字段名: procedure 或 audit_procedure
+        procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
+        if procedure_text:
             self.db.insert_procedure({
                 'item_id': item_id,
-                'procedure_text': new_item['procedure'],
+                'procedure_text': procedure_text,
                 'is_primary': 1
             })
         
@@ -161,16 +173,23 @@ class AuditItemCleaner:
         existing_id = match_result.get('existing_item_id')
         if not existing_id:
             return
-        
+
+        # 支持两种字段名: procedure 或 audit_procedure
+        procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
         procedure_match = suggestion.get('procedure_match', {})
-        if procedure_match.get('action') == 'new_procedure' and new_item.get('procedure'):
-            self.db.insert_procedure({
-                'item_id': existing_id,
-                'procedure_text': new_item['procedure'],
-                'is_primary': 0
-            })
-            print(f"  新增动作到 [{existing_id}]: {new_item['procedure'][:30]}...")
-        
+        if procedure_match.get('action') == 'create_procedure' and procedure_text:
+            # 检查程序是否已存在（去重）
+            existing_procedures = self.db.get_procedures_by_item(existing_id)
+            if not any(p['procedure_text'] == procedure_text for p in existing_procedures):
+                self.db.insert_procedure({
+                    'item_id': existing_id,
+                    'procedure_text': procedure_text,
+                    'is_primary': 0
+                })
+                print(f"  新增动作到 [{existing_id}]: {procedure_text[:30]}...")
+            else:
+                print(f"  跳过重复程序 [{existing_id}]: {procedure_text[:30]}...")
+
         self.db.insert_item_source({
             'item_id': existing_id,
             'source_type': 'excel',

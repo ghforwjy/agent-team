@@ -1,0 +1,46 @@
+{
+  "type": "KnowledgeCapsule",
+  "id": "knowledge-capsule-evolver-trae-deployment-20260224",
+  "name": "Evolver 在 Trae 中的部署实践",
+  "topic": "evolver-trae-deployment",
+  "gene": "gene_knowledge_accumulation",
+  "created_at": "2026-02-24",
+  "updated_at": "2026-02-25",
+  "for_agent": {
+    "trigger": [
+      "部署",
+      "trae",
+      "mcp",
+      "集成",
+      "配置",
+      "安装",
+      "怎么部署",
+      "如何配置",
+      "进化流程",
+      "v2.0.0",
+      "analyze_session",
+      "evolve_capability",
+      "表观遗传",
+      "胶囊创建"
+    ],
+    "summary": "通过 MCP 协议将 Evolver 集成到 Trae，v2.0.0 实现完整进化流程：分析会话→选择基因→创建事件/胶囊→应用表观遗传标记",
+    "key_points": [
+      "MCP 协议连接 Trae 和 Evolver，四个核心工具",
+      "v2.0.0 关键改进：analyze_session 选择基因+准备状态，evolve_capability 创建事件/胶囊/表观遗传",
+      "完整进化流程：用户任务→分析→进化→优胜劣汰",
+      "表观遗传：成功+0.05，失败-0.1，90天衰减",
+      "知识胶囊 ≠ 系统胶囊，前者记录学习，后者记录进化"
+    ],
+    "analogies": {
+      "life": "Trae=餐厅前台, MCP=点餐系统, Evolver=后厨, Genes=菜谱, Capsules=成品菜",
+      "tech": "MCP 是 AI 工具调用的标准化协议，类似 HTTP API"
+    },
+    "when_to_use": "用户询问如何部署 Evolver、MCP 配置、Trae 集成、进化流程、表观遗传、胶囊创建时",
+    "related_capsules": [
+      "knowledge-capsule-architecture-understanding",
+      "knowledge-capsule-gene-selection-elimination"
+    ]
+  },
+  "document_path": "./topics/evolver-trae-deployment.md",
+  "confidence": 0.95
+}

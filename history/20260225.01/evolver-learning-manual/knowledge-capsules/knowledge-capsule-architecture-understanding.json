@@ -1,0 +1,40 @@
+{
+  "type": "KnowledgeCapsule",
+  "id": "knowledge-capsule-architecture-understanding-20260224",
+  "name": "Evolver 架构解析",
+  "topic": "evolver-architecture",
+  "gene": "gene_knowledge_accumulation",
+  "created_at": "2026-02-24",
+  "updated_at": "2026-02-24",
+  "for_agent": {
+    "trigger": [
+      "architecture",
+      "mcp",
+      "gep",
+      "protocol",
+      "系统架构",
+      "mcp 和 gep 区别",
+      "四层架构",
+      "evolver 工作原理"
+    ],
+    "summary": "Evolver 采用四层架构：MCP层→GEP层→基因层→应用层，信号驱动进化",
+    "key_points": [
+      "MCP (Model Context Protocol) - 模型上下文协议，AI工具调用标准",
+      "GEP (Gene-Capsule Evolution Protocol) - 基因胶囊进化协议",
+      "四层架构：MCP层→GEP层→基因层→应用层",
+      "信号驱动：错误/机会信号触发进化",
+      "固化机制：成功经验转化为可复用胶囊"
+    ],
+    "analogies": {
+      "life": "MCP=餐厅点餐系统, GEP=后厨管理系统, Gene=菜谱, Capsule=成品菜",
+      "tech": "MCP=HTTP API, GEP=微服务框架, Gene=设计模式, Capsule=代码片段"
+    },
+    "when_to_use": "用户询问 Evolver 架构、MCP/GEP 区别、系统工作原理时",
+    "related_capsules": [
+      "knowledge-capsule-gene-capsule-concept",
+      "knowledge-capsule-evolver-trae-deployment"
+    ]
+  },
+  "document_path": "./topics/evolver-architecture.md",
+  "confidence": 0.95
+}

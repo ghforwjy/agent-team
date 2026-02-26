@@ -757,15 +757,16 @@ SIMILARITY_ENGINE = {
         "type": "sentence-transformer",
         "language": "multilingual",
         "vector_dim": 384,
-        "description": "多语言句子编码模型，支持中文语义理解"
+        "description": "多语言句子编码模型，支持中文语义理解",
+        "local_path": "model/Sentence-BERT"  # 本地模型路径
     },
-    
+
     "alternative_models": {
         "chinese_optimized": "shibing624/text2vec-base-chinese",
         "lightweight": "distiluse-base-multilingual-cased-v2",
         "api_based": "openai/text-embedding-ada-002"
     },
-    
+
     "computation": {
         "method": "cosine_similarity",
         "batch_size": 32,

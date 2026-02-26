@@ -1,0 +1,24 @@
+{
+  "id": "knowledge-capsule-powershell-command-compatibility-20260225",
+  "type": "KnowledgeCapsule",
+  "created_at": "2026-02-25T02:20:00.000Z",
+  "for_agent": {
+    "trigger": ["powershell", "&&", "命令连接", "shell语法", "跨平台", "Windows"],
+    "core_point": "PowerShell 5.x 不支持 && 语法连接命令，需使用分号(;)或分开执行",
+    "analogy": "就像不同方言有不同的语法规则，Bash 说 'do A && do B'，PowerShell 5.x 只能说 'do A; do B' 或分开说"
+  },
+  "knowledge": {
+    "problem": "在 Windows PowerShell 5.x 环境下执行 'cmd1 && cmd2' 报错：标记'&&'不是此版本中的有效语句分隔符",
+    "solution": "分开执行命令，或使用分号(;)连接（注意：分号不会检查前一条命令是否成功）",
+    "examples": [
+      {
+        "wrong": "git branch -M main && git push -u origin main",
+        "correct_approach_1": "分开执行：先 git branch -M main，再 git push -u origin main",
+        "correct_approach_2": "使用分号：git branch -M main; git push -u origin main（注意：分号不检查前命令成功与否）"
+      }
+    ],
+    "note": "PowerShell 7+ 支持 && 语法，但 Windows 默认的 PowerShell 5.x 不支持"
+  },
+  "related_gene": "gene_gep_repair_from_errors",
+  "document_path": null
+}
