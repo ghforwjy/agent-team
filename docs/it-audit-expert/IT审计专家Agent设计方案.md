@@ -583,94 +583,226 @@ def match_audit_procedure(new_procedure: str, existing_procedures: List[dict]) -
 
 | 场景 | 触发条件 | 校验目的 |
 |------|----------|----------|
-| 审计项合并校验 | 语义相似度 > 0.85 时 | 确认是否真的是同一检查项 |
-| 审计动作合并校验 | 语义相似度 > 0.80 时 | 确认检查方法是否真的相同 |
-| 维度一致性校验 | 新增审计项时 | 确认维度分类是否合理 |
+| 审计项合并校验 | 语义相似度 >= 0.85 | 确认是否真的是同一检查项 |
+| 审计动作合并校验 | 语义相似度 >= 0.80 | 确认检查方法是否真的相同 |
+| 维度一致性校验 | 审计项合并时维度不一致 | 确认维度分类是否合理 |
 
-**LLM校验Prompt模板**:
+**校验流程**:
+
+```
+向量模型初筛
+    │
+    ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 筛选需要LLM校验的候选                                        │
+│   - 审计项: 相似度 >= 0.85                                   │
+│   - 审计动作: 相似度 >= 0.80                                 │
+│   - 维度: 不一致且相似度 >= 0.85                             │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 批量LLM校验（一次性校验）                                    │
+│   - 将筛选后的候选打包成JSON                                 │
+│   - 使用详细的Prompt模板（含案例）                           │
+│   - 一次LLM调用完成所有校验                                  │
+└──────────────────────────┬──────────────────────────────────┘
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 应用校验结果                                                 │
+│   - 解析LLM返回的JSON                                        │
+│   - 应用到合并建议中                                         │
+│   - 标记需要人工确认的项                                     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**LLM校验Prompt模板（V2）**:
 
 ```python
-LLM_VERIFY_PROMPT = """
-你是一个IT审计专家，负责审核审计项的合并决策是否正确。
+PROMPT_TEMPLATE_V2 = """你是一个IT审计专家，负责审核审计项的合并决策是否正确。
 
 ## 待审核内容
 
-**已有审计项**:
-- 标题: {existing_title}
-- 维度: {existing_dimension}
-- 审计动作: {existing_procedures}
+我将提供三类需要审核的内容，请分别判断：
 
-**新导入审计项**:
-- 标题: {new_title}
-- 维度: {new_dimension}
-- 审计程序: {new_procedure}
-- 语义相似度: {similarity_score}
+### 1. 审计项合并审核
 
-## 审核要点
+以下审计项对被向量模型标记为"相似度>=0.85"，请判断是否真的是同一检查项：
 
-请判断以下问题：
+{item_merges_json}
 
-1. **是否同一审计项？**
-   - 检查重点是否相同？
-   - 检查对象是否相同？
-   - 是否存在包含关系（一个是另一个的子项）？
+**判断标准：**
+- **应该合并（reuse）**：检查重点相同、检查对象相同、只是表述不同
+- **应该分离（create）**：检查重点不同、存在包含关系、检查角度不同
 
-2. **维度是否一致？**
-   - 如果维度不同，是否合理？
-   - 是否应该调整维度？
+**典型案例参考：**
+- 案例1（应合并）：
+  - A: "公司是否建立IT治理委员会"
+  - B: "是否设立IT治理委员会"
+  - 判断：同一检查项，合并
 
-3. **审计动作是否相同？**
-   - 检查方法是否相同？
-   - 检查对象是否相同？
-   - 是否需要保留为不同动作？
+- 案例2（应分离）：
+  - A: "是否建立IT治理委员会"
+  - B: "IT治理委员会是否有效运作"
+  - 判断：A检查"有没有"，B检查"运作效果"，应分离
+
+### 2. 审计动作合并审核
+
+以下审计动作对被向量模型标记为"相似度>=0.80"，请判断是否真的是同一检查方法：
+
+{procedure_merges_json}
+
+**判断标准：**
+- **应该复用（reuse_procedure）**：检查方法相同、检查对象相同
+- **应该新建（create_procedure）**：检查方法不同、检查对象不同
+
+**典型案例参考：**
+- 案例1（应复用）：
+  - A: "查阅IT治理委员会成立发文"
+  - B: "检查公司是否制定IT治理委员会成立文件"
+  - 判断：同一检查方法，复用
+
+- 案例2（应新建）：
+  - A: "查阅IT治理委员会成立发文"
+  - B: "查阅IT治理委员会会议记录"
+  - 判断：A查"成立文件"，B查"会议记录"，应新建
+
+### 3. 维度一致性审核
+
+以下审计项的维度分类可能存在不一致，请判断是否合理：
+
+{dimension_checks_json}
+
+**判断标准：**
+- 根据审计项内容判断维度分类是否合理
+- 如不合理，建议正确的维度
 
 ## 输出格式
 
 请以JSON格式输出审核结果：
-{
-    "is_same_item": true/false,
-    "item_merge_decision": "merge"/"keep_separate",
-    "item_reason": "判断理由",
-    "is_same_procedure": true/false,
-    "procedure_merge_decision": "merge"/"keep_separate", 
-    "procedure_reason": "判断理由",
-    "dimension_adjustment": null 或建议的维度,
-    "confidence": "high"/"medium"/"low"
-}
+
+{{
+    "review_status": "confirmed/adjusted",
+    "item_merge_decisions": [
+        {{
+            "suggestion_id": "M001",
+            "is_same_item": true/false,
+            "decision": "reuse/create",
+            "reason": "判断理由（30字内）"
+        }}
+    ],
+    "procedure_merge_decisions": [
+        {{
+            "suggestion_id": "M001",
+            "is_same_procedure": true/false,
+            "decision": "reuse_procedure/create_procedure",
+            "reason": "判断理由（30字内）"
+        }}
+    ],
+    "dimension_adjustments": [
+        {{
+            "suggestion_id": "M001",
+            "is_correct": true/false,
+            "suggested_dimension": "建议的维度（如需调整）",
+            "reason": "判断理由（30字内）"
+        }}
+    ]
+}}
 """
+```
+
+**核心代码实现**:
+
+```python
+class LLMVerifier:
+    def _filter_candidates_for_llm(self, merge_result: Dict) -> Dict:
+        """
+        筛选需要LLM校验的候选
+        
+        筛选条件：
+        1. 审计项相似度 >= 0.85（高相似度，需要LLM确认）
+        2. 审计动作相似度 >= 0.80（高相似度，需要LLM确认）
+        3. 维度不一致但标题相似（相似度 >= 0.85）
+        """
+        candidates = {
+            'item_merges': [],      # 需要校验的审计项合并
+            'procedure_merges': [], # 需要校验的审计动作合并
+            'dimension_checks': []  # 需要校验的维度
+        }
+        
+        existing_items_cache = merge_result.get('existing_items_cache', {})
+        
+        for suggestion in merge_result.get('merge_suggestions', []):
+            match_result = suggestion.get('match_result', {})
+            
+            # 1. 审计项合并候选（相似度>=0.85且action为reuse）
+            if match_result.get('action') == 'reuse':
+                similarity = match_result.get('similarity', 0)
+                if similarity >= 0.85:
+                    candidates['item_merges'].append({...})
+                    
+                    # 3. 维度不一致检查
+                    existing_item_id = match_result.get('existing_item_id', '')
+                    if existing_item_id in existing_items_cache:
+                        existing_item = existing_items_cache[existing_item_id]
+                        if existing_item.get('dimension') != new_item.get('dimension'):
+                            candidates['dimension_checks'].append({...})
+            
+            # 2. 审计动作合并候选（相似度>=0.80且action为reuse_procedure）
+            procedure_match = suggestion.get('procedure_match', {})
+            if procedure_match and procedure_match.get('action') == 'reuse_procedure':
+                proc_similarity = procedure_match.get('similarity', 0)
+                if proc_similarity >= 0.80:
+                    candidates['procedure_merges'].append({...})
+        
+        return candidates
+    
+    def _build_verification_prompt(self, candidates: Dict) -> str:
+        """构建校验Prompt"""
+        item_merges_json = json.dumps(candidates.get('item_merges', []), ...)
+        procedure_merges_json = json.dumps(candidates.get('procedure_merges', []), ...)
+        dimension_checks_json = json.dumps(candidates.get('dimension_checks', []), ...)
+        
+        return self.PROMPT_TEMPLATE_V2.format(...)
+    
+    def apply_detailed_adjustments(self, merge_result: Dict, review_result: Dict) -> Dict:
+        """应用详细审核调整到合并建议"""
+        details = review_result.get('details', [])
+        detail_map = {d['suggestion_id']: d for d in details}
+        
+        for suggestion in merge_result.get('merge_suggestions', []):
+            sid = suggestion.get('suggestion_id')
+            if sid in detail_map:
+                detail = detail_map[sid]
+                
+                # 应用审计项决策
+                item_decision = detail.get('item_decision')
+                if item_decision:
+                    suggestion['match_result']['action'] = item_decision
+                
+                # 应用程序决策
+                procedure_decision = detail.get('procedure_decision')
+                if procedure_decision and 'procedure_match' in suggestion:
+                    suggestion['procedure_match']['action'] = procedure_decision
+                
+                # 应用维度调整
+                dimension_adjustment = detail.get('dimension_adjustment')
+                if dimension_adjustment:
+                    suggestion['new_item']['dimension'] = dimension_adjustment
+        
+        return merge_result
 ```
 
 **校验结果处理**:
 
 | LLM判断 | 处理方式 |
 |---------|----------|
-| is_same_item=true, confidence=high | 执行合并 |
-| is_same_item=true, confidence=low | 标记待人工确认 |
-| is_same_item=false | 保持分离，不合并 |
-| 维度需要调整 | 更新维度后入库 |
-
-**校验流程图**:
-
-```
-语义匹配结果
-    │
-    ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ LLM校验                                                         │
-│   ├─ 审计项合并校验                                             │
-│   ├─ 审计动作合并校验                                           │
-│   └─ 维度一致性校验                                             │
-└────────────────────────────┬────────────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────────────┐
-│ 校验结果处理                                                    │
-│   ├─ 确认合并 → 执行入库                                        │
-│   ├─ 确认分离 → 创建新记录                                      │
-│   ├─ 低置信度 → 标记待人工确认                                  │
-│   └─ 维度调整 → 更新后入库                                      │
-└─────────────────────────────────────────────────────────────────┘
-```
+| decision=reuse | 执行合并 |
+| decision=create | 创建新记录 |
+| procedure_decision=reuse_procedure | 复用审计动作 |
+| procedure_decision=create_procedure | 新建审计动作 |
+| dimension_adjustment有值 | 更新维度后入库 |
 
 **典型错误案例**:
 
