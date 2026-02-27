@@ -19,8 +19,7 @@ except ImportError:
 
 class LLMVerifier:
     """LLM校验器 - 对向量模型的匹配结果进行逻辑校验"""
-
-    # 旧版Prompt模板（保留兼容）
+    
     PROMPT_TEMPLATE = """你是一个IT审计专家。我正在将新的审计项导入审计知识库，需要你审核向量模型的匹配建议。
 
 ## 输入数据结构说明
@@ -80,98 +79,6 @@ class LLMVerifier:
 ## 合并建议文档
 
 {json_content}"""
-
-    # 新版Prompt模板（V2）
-    PROMPT_TEMPLATE_V2 = """你是一个IT审计专家，负责审核审计项的合并决策是否正确。
-
-## 待审核内容
-
-我将提供三类需要审核的内容，请分别判断：
-
-### 1. 审计项合并审核
-
-以下审计项对被向量模型标记为"相似度>0.85"，请判断是否真的是同一检查项：
-
-{item_merges_json}
-
-**判断标准：**
-- **应该合并（reuse）**：检查重点相同、检查对象相同、只是表述不同
-- **应该分离（create）**：检查重点不同、存在包含关系、检查角度不同
-
-**典型案例参考：**
-- 案例1（应合并）：
-  - A: "公司是否建立IT治理委员会"
-  - B: "是否设立IT治理委员会"
-  - 判断：同一检查项，合并
-
-- 案例2（应分离）：
-  - A: "是否建立IT治理委员会"
-  - B: "IT治理委员会是否有效运作"
-  - 判断：A检查"有没有"，B检查"运作效果"，应分离
-
-### 2. 审计动作合并审核
-
-以下审计动作对被向量模型标记为"相似度>0.80"，请判断是否真的是同一检查方法：
-
-{procedure_merges_json}
-
-**判断标准：**
-- **应该复用（reuse_procedure）**：检查方法相同、检查对象相同
-- **应该新建（create_procedure）**：检查方法不同、检查对象不同
-
-**典型案例参考：**
-- 案例1（应复用）：
-  - A: "查阅IT治理委员会成立发文"
-  - B: "检查公司是否制定IT治理委员会成立文件"
-  - 判断：同一检查方法，复用
-
-- 案例2（应新建）：
-  - A: "查阅IT治理委员会成立发文"
-  - B: "查阅IT治理委员会会议记录"
-  - 判断：A查"成立文件"，B查"会议记录"，应新建
-
-### 3. 维度一致性审核
-
-以下审计项的维度分类可能存在不一致，请判断是否合理：
-
-{dimension_checks_json}
-
-**判断标准：**
-- 根据审计项内容判断维度分类是否合理
-- 如不合理，建议正确的维度
-
-## 输出格式
-
-请以JSON格式输出审核结果：
-
-{{
-    "review_status": "confirmed/adjusted",
-    "item_merge_decisions": [
-        {{
-            "suggestion_id": "M001",
-            "is_same_item": true/false,
-            "decision": "reuse/create",
-            "reason": "判断理由（30字内）"
-        }}
-    ],
-    "procedure_merge_decisions": [
-        {{
-            "suggestion_id": "M001",
-            "is_same_procedure": true/false,
-            "decision": "reuse_procedure/create_procedure",
-            "reason": "判断理由（30字内）"
-        }}
-    ],
-    "dimension_adjustments": [
-        {{
-            "suggestion_id": "M001",
-            "is_correct": true/false,
-            "suggested_dimension": "建议的维度（如需调整）",
-            "reason": "判断理由（30字内）"
-        }}
-    ]
-}}
-"""
     
     def __init__(self, api_base: str = None, api_key: str = None, model: str = None):
         # 支持两种环境变量命名：Agent框架使用的 ARK_* 和传统的 LLM_*
@@ -179,105 +86,6 @@ class LLMVerifier:
         self.api_key = api_key or os.environ.get('ARK_API_KEY') or os.environ.get('LLM_API_KEY', '')
         self.model = model or os.environ.get('ARK_CHAT_MODEL') or os.environ.get('LLM_MODEL', 'gpt-3.5-turbo')
         self.review_counter = 1
-
-    # ==================== V2新方法 ====================
-
-    def _filter_candidates_for_llm(self, merge_result: Dict) -> Dict:
-        """
-        筛选需要LLM校验的候选
-
-        筛选条件：
-        1. 审计项相似度 >= 0.85（高相似度，需要LLM确认）
-        2. 审计动作相似度 >= 0.80（高相似度，需要LLM确认）
-        3. 维度不一致但标题相似（相似度 >= 0.85）
-
-        Args:
-            merge_result: 合并建议结果
-
-        Returns:
-            筛选后的候选字典
-        """
-        candidates = {
-            'item_merges': [],  # 需要校验的审计项合并
-            'procedure_merges': [],  # 需要校验的审计动作合并
-            'dimension_checks': []  # 需要校验的维度
-        }
-
-        # 获取已有审计项缓存（用于维度对比）
-        existing_items_cache = merge_result.get('existing_items_cache', {})
-
-        for suggestion in merge_result.get('merge_suggestions', []):
-            match_result = suggestion.get('match_result', {})
-            suggestion_id = suggestion.get('suggestion_id', '')
-            new_item = suggestion.get('new_item', {})
-
-            # 1. 审计项合并候选（相似度>=0.85且action为reuse）
-            if match_result.get('action') == 'reuse':
-                similarity = match_result.get('similarity', 0)
-                if similarity >= 0.85:
-                    candidates['item_merges'].append({
-                        'suggestion_id': suggestion_id,
-                        'new_title': new_item.get('title', ''),
-                        'new_dimension': new_item.get('dimension', ''),
-                        'existing_item_id': match_result.get('existing_item_id', ''),
-                        'existing_title': match_result.get('existing_title', ''),
-                        'similarity': similarity
-                    })
-
-                    # 3. 维度不一致检查（只在审计项需要合并时检查）
-                    existing_item_id = match_result.get('existing_item_id', '')
-                    if existing_item_id and existing_item_id in existing_items_cache:
-                        existing_item = existing_items_cache[existing_item_id]
-                        existing_dimension = existing_item.get('dimension', '')
-                        new_dimension = new_item.get('dimension', '')
-                        if existing_dimension and new_dimension and existing_dimension != new_dimension:
-                            candidates['dimension_checks'].append({
-                                'suggestion_id': suggestion_id,
-                                'title': new_item.get('title', ''),
-                                'new_dimension': new_dimension,
-                                'existing_dimension': existing_dimension
-                            })
-
-            # 2. 审计动作合并候选（相似度>=0.80且action为reuse_procedure）
-            procedure_match = suggestion.get('procedure_match', {})
-            if procedure_match and procedure_match.get('action') == 'reuse_procedure':
-                proc_similarity = procedure_match.get('similarity', 0)
-                if proc_similarity >= 0.80:
-                    candidates['procedure_merges'].append({
-                        'suggestion_id': suggestion_id,
-                        'new_procedure': new_item.get('procedure', ''),
-                        'existing_procedure': procedure_match.get('existing_procedure', ''),
-                        'similarity': proc_similarity
-                    })
-
-        return candidates
-
-    def _build_verification_prompt(self, candidates: Dict) -> str:
-        """
-        构建校验Prompt
-
-        Args:
-            candidates: 筛选后的候选字典
-
-        Returns:
-            完整的Prompt字符串
-        """
-        # 准备JSON数据
-        item_merges_json = json.dumps(candidates.get('item_merges', []), ensure_ascii=False, indent=2)
-        procedure_merges_json = json.dumps(candidates.get('procedure_merges', []), ensure_ascii=False, indent=2)
-        dimension_checks_json = json.dumps(candidates.get('dimension_checks', []), ensure_ascii=False, indent=2)
-
-        # 如果没有候选，返回空列表的Prompt
-        if not candidates.get('item_merges') and not candidates.get('procedure_merges') and not candidates.get('dimension_checks'):
-            item_merges_json = "[]"
-            procedure_merges_json = "[]"
-            dimension_checks_json = "[]"
-
-        return self.PROMPT_TEMPLATE_V2.format(
-            item_merges_json=item_merges_json,
-            procedure_merges_json=procedure_merges_json,
-            dimension_checks_json=dimension_checks_json
-        )
     
     def verify_merge_suggestions(self, merge_result: Dict[str, Any]) -> Dict[str, Any]:
         """
