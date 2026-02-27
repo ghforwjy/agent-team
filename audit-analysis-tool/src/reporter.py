@@ -312,26 +312,81 @@ class HtmlReporter:
         # 准备来源数据用于JavaScript
         sources_data_js = []
         source_id_map = {}  # source_id -> source_info 映射
+        # 为每个审计程序构建来源列表（procedure_id -> [source_ids]）
+        proc_sources_map = {}  # procedure_id -> list of source info
+        
         for item in result.items:
             item_sources = []
+            normal_count = 0
+            duplicate_count = 0
             for source in item.sources:
                 # 使用 source_file，如果为空则使用 source_type
                 source_name = source.source_file if source.source_file else (source.source_type or '未知来源')
-                item_sources.append({
+                # 格式化导入时间
+                imported_at_str = source.imported_at or ''
+                # 标记是否为重复来源
+                is_duplicate = source.source_type == 'excel_duplicate'
+                if is_duplicate:
+                    duplicate_count += 1
+                else:
+                    normal_count += 1
+                source_info = {
+                    'source_id': source.id,
                     'source_file': source_name,
-                    'raw_title': source.raw_title or ''
-                })
+                    'raw_title': source.raw_title or '',
+                    'imported_at': imported_at_str,
+                    'is_duplicate': is_duplicate
+                }
+                item_sources.append(source_info)
                 # 构建 source_id 映射
-                source_id_map[source.id] = {'source_file': source_name, 'raw_title': source.raw_title or ''}
-            sources_data_js.append({'item_id': item.id, 'sources': item_sources})
+                source_id_map[source.id] = source_info
+            # 审计项来源也按时间排序
+            item_sources.sort(key=lambda x: x.get('imported_at', ''))
+            
+            sources_data_js.append({
+                'item_id': item.id,
+                'sources': item_sources,
+                'normal_count': normal_count,
+                'duplicate_count': duplicate_count
+            })
+            
+            # 为每个审计程序构建来源列表（包括原始来源和所有重复来源）
+            for proc in item.procedures:
+                if proc.id not in proc_sources_map:
+                    proc_sources_map[proc.id] = []
+                
+                # 1. 添加该程序自己的来源（原始来源）
+                for source in item.sources:
+                    if source.id == proc.source_id:
+                        source_info = source_id_map.get(source.id, {})
+                        if source_info and source_info not in proc_sources_map[proc.id]:
+                            proc_sources_map[proc.id].append(source_info)
+                        break
+                
+                # 2. 添加所有提到该程序ID的重复来源
+                for source in item.sources:
+                    if source.source_type == 'excel_duplicate' and source.raw_title:
+                        # 检查raw_title是否包含该程序ID
+                        if f'复用程序ID {proc.id}' in source.raw_title:
+                            source_info = source_id_map.get(source.id, {})
+                            if source_info and source_info not in proc_sources_map[proc.id]:
+                                proc_sources_map[proc.id].append(source_info)
+                
+                # 3. 按时间排序（imported_at）
+                proc_sources_map[proc.id].sort(key=lambda x: x.get('imported_at', ''))
         
         # 生成审计项和程序的对应表格 - 全部数据
         item_proc_rows = ""
         for item in result.items:
-            # 生成来源角标
+            # 生成来源角标（区分正常来源和重复来源）
             source_badges = ""
             if item.sources:
-                source_badges = f'<span class="source-badge" onclick="showSources({item.id})">{len(item.sources)}</span>'
+                normal_count = sum(1 for s in item.sources if s.source_type != 'excel_duplicate')
+                duplicate_count = sum(1 for s in item.sources if s.source_type == 'excel_duplicate')
+                if duplicate_count > 0:
+                    source_badges = f'<span class="source-badge" onclick="showSources({item.id})">{normal_count}+{duplicate_count}</span>'
+                else:
+                    source_badges = f'<span class="source-badge" onclick="showSources({item.id})">{normal_count}</span>'
             
             # 审计项基本信息行
             item_proc_rows += f"""
@@ -346,10 +401,16 @@ class HtmlReporter:
                 # 第一个程序
                 proc = item.procedures[0]
                 primary_badge = '<span class="badge primary">主</span>' if proc.is_primary else ''
-                # 生成程序的来源角标
+                # 生成程序的来源角标（和审计项一样，显示正常+重复）
                 proc_source_badge = ""
-                if proc.source_id and proc.source_id in source_id_map:
-                    proc_source_badge = f'<span class="source-badge" onclick="showProcSource({proc.source_id})">1</span>'
+                proc_sources = proc_sources_map.get(proc.id, [])
+                if proc_sources:
+                    proc_normal = sum(1 for s in proc_sources if not s.get('is_duplicate'))
+                    proc_duplicate = sum(1 for s in proc_sources if s.get('is_duplicate'))
+                    if proc_duplicate > 0:
+                        proc_source_badge = f'<span class="source-badge" onclick="showProcSources({proc.id})">{proc_normal}+{proc_duplicate}</span>'
+                    else:
+                        proc_source_badge = f'<span class="source-badge" onclick="showProcSources({proc.id})">{proc_normal}</span>'
                 item_proc_rows += f"""
                 <td>{proc.id}</td>
                 <td class="procedure-text">{primary_badge} {proc.procedure_text} {proc_source_badge}</td>
@@ -358,10 +419,16 @@ class HtmlReporter:
                 # 后续程序
                 for proc in item.procedures[1:]:
                     primary_badge = '<span class="badge primary">主</span>' if proc.is_primary else ''
-                    # 生成程序的来源角标
+                    # 生成程序的来源角标（和审计项一样）
                     proc_source_badge = ""
-                    if proc.source_id and proc.source_id in source_id_map:
-                        proc_source_badge = f'<span class="source-badge" onclick="showProcSource({proc.source_id})">1</span>'
+                    proc_sources = proc_sources_map.get(proc.id, [])
+                    if proc_sources:
+                        proc_normal = sum(1 for s in proc_sources if not s.get('is_duplicate'))
+                        proc_duplicate = sum(1 for s in proc_sources if s.get('is_duplicate'))
+                        if proc_duplicate > 0:
+                            proc_source_badge = f'<span class="source-badge" onclick="showProcSources({proc.id})">{proc_normal}+{proc_duplicate}</span>'
+                        else:
+                            proc_source_badge = f'<span class="source-badge" onclick="showProcSources({proc.id})">{proc_normal}</span>'
                     item_proc_rows += f"""
             <tr class="procedure-row">
                 <td>{proc.id}</td>
@@ -761,13 +828,30 @@ class HtmlReporter:
         html_parts.append('        </div>')
         html_parts.append('    </div>')
         html_parts.append('')
-        # 转换 source_id_map 为JSON
+        # 转换 source_id_map 和 proc_sources_map 为JSON
         source_id_map_json = json.dumps(source_id_map, ensure_ascii=False)
+        proc_sources_map_json = json.dumps(proc_sources_map, ensure_ascii=False)
         
         html_parts.append('    <script>')
         html_parts.append('        // 来源数据')
         html_parts.append(f'        const sourcesData = {sources_data_json};')
         html_parts.append(f'        const sourceIdMap = {source_id_map_json};')
+        html_parts.append(f'        const procSourcesMap = {proc_sources_map_json};')
+        html_parts.append('')
+        html_parts.append('        // 格式化时间显示')
+        html_parts.append('        function formatDateTime(datetimeStr) {')
+        html_parts.append('            if (!datetimeStr) return \'\';')
+        html_parts.append('            // 数据库中已经是本地时间，直接格式化显示')
+        html_parts.append('            const date = new Date(datetimeStr.replace(/-/g, \'/\'));  // 兼容IE的日期格式')
+        html_parts.append('            if (isNaN(date.getTime())) return datetimeStr;')
+        html_parts.append('            const year = date.getFullYear();')
+        html_parts.append('            const month = String(date.getMonth() + 1).padStart(2, \'0\');')
+        html_parts.append('            const day = String(date.getDate()).padStart(2, \'0\');')
+        html_parts.append('            const hours = String(date.getHours()).padStart(2, \'0\');')
+        html_parts.append('            const minutes = String(date.getMinutes()).padStart(2, \'0\');')
+        html_parts.append('            const seconds = String(date.getSeconds()).padStart(2, \'0\');')
+        html_parts.append('            return year + \'-\' + month + \'-\' + day + \' \' + hours + \':\' + minutes + \':\' + seconds;')
+        html_parts.append('        }')
         html_parts.append('')
         html_parts.append('        // 显示审计项来源弹窗')
         html_parts.append('        function showSources(itemId) {')
@@ -780,7 +864,11 @@ class HtmlReporter:
         html_parts.append('            item.sources.forEach(function(source, index) {')
         html_parts.append('                const li = document.createElement(\'li\');')
         html_parts.append('                li.className = \'source-item\';')
-        html_parts.append('                li.innerHTML = \'<div class="source-file">来源 \' + (index + 1) + \'：\' + source.source_file + \'</div>\' +')
+        html_parts.append('                const timeStr = source.imported_at ? \' <span style="color:#999;font-size:12px;">(\' + formatDateTime(source.imported_at) + \')</span>\' : \'\';')
+        html_parts.append('                // 重复来源显示不同样式')
+        html_parts.append('                const duplicateBadge = source.is_duplicate ? \'<span style="background:#ff9800;color:white;padding:2px 6px;border-radius:3px;font-size:11px;margin-right:5px;">重复</span>\' : \'\';')
+        html_parts.append('                const sourceStyle = source.is_duplicate ? \'color:#999;\' : \'\';')
+        html_parts.append('                li.innerHTML = \'<div class="source-file" style="\' + sourceStyle + \'">\' + duplicateBadge + \'来源 \' + (index + 1) + \'：\' + source.source_file + timeStr + \'</div>\' +')
         html_parts.append('                    (source.raw_title ? \'<div class="source-text">\' + source.raw_title + \'</div>\' : \'\');')
         html_parts.append('                list.appendChild(li);')
         html_parts.append('            });')
@@ -788,19 +876,25 @@ class HtmlReporter:
         html_parts.append('            document.getElementById(\'sourcePopup\').style.display = \'block\';')
         html_parts.append('        }')
         html_parts.append('')
-        html_parts.append('        // 显示审计程序来源弹窗')
-        html_parts.append('        function showProcSource(sourceId) {')
-        html_parts.append('            const source = sourceIdMap[sourceId];')
-        html_parts.append('            if (!source) return;')
+        html_parts.append('        // 显示审计程序来源弹窗（和审计项一样，显示所有来源）')
+        html_parts.append('        function showProcSources(procId) {')
+        html_parts.append('            const sources = procSourcesMap[procId];')
+        html_parts.append('            if (!sources || !sources.length) return;')
         html_parts.append('')
         html_parts.append('            const list = document.getElementById(\'sourceList\');')
         html_parts.append('            list.innerHTML = \'\';')
         html_parts.append('')
-        html_parts.append('            const li = document.createElement(\'li\');')
-        html_parts.append('            li.className = \'source-item\';')
-        html_parts.append('            li.innerHTML = \'<div class="source-file">来源：\' + source.source_file + \'</div>\' +')
-        html_parts.append('                (source.raw_title ? \'<div class="source-text">\' + source.raw_title + \'</div>\' : \'\');')
-        html_parts.append('            list.appendChild(li);')
+        html_parts.append('            sources.forEach(function(source, index) {')
+        html_parts.append('                const li = document.createElement(\'li\');')
+        html_parts.append('                li.className = \'source-item\';')
+        html_parts.append('                const timeStr = source.imported_at ? \' <span style="color:#999;font-size:12px;">(\' + formatDateTime(source.imported_at) + \')</span>\' : \'\';')
+        html_parts.append('                // 重复来源显示不同样式')
+        html_parts.append('                const duplicateBadge = source.is_duplicate ? \'<span style="background:#ff9800;color:white;padding:2px 6px;border-radius:3px;font-size:11px;margin-right:5px;">重复</span>\' : \'\';')
+        html_parts.append('                const sourceStyle = source.is_duplicate ? \'color:#999;\' : \'\';')
+        html_parts.append('                li.innerHTML = \'<div class="source-file" style="\' + sourceStyle + \'">\' + duplicateBadge + \'来源 \' + (index + 1) + \'：\' + source.source_file + timeStr + \'</div>\' +')
+        html_parts.append('                    (source.raw_title ? \'<div class="source-text">\' + source.raw_title + \'</div>\' : \'\');')
+        html_parts.append('                list.appendChild(li);')
+        html_parts.append('            });')
         html_parts.append('')
         html_parts.append('            document.getElementById(\'sourcePopup\').style.display = \'block\';')
         html_parts.append('        }')

@@ -181,31 +181,81 @@ class AuditItemCleaner:
         if not existing_id:
             return
 
-        # 先插入来源记录，获取 source_id
-        source_id = self.db.insert_item_source({
-            'item_id': existing_id,
-            'source_type': 'excel',
-            'source_file': suggestion.get('source_file', ''),
-            'raw_title': new_item['title'],
-            'import_batch': self.import_batch
-        })
+        source_file = suggestion.get('source_file', '')
 
         # 支持两种字段名: procedure 或 audit_procedure
         procedure_text = new_item.get('procedure') or new_item.get('audit_procedure', '')
         procedure_match = suggestion.get('procedure_match', {})
+        
         if procedure_match.get('action') == 'create_procedure' and procedure_text:
-            # 检查程序是否已存在（去重）
+            # 检查程序是否已存在（使用语义匹配去重）
+            import numpy as np
             existing_procedures = self.db.get_procedures_by_item(existing_id)
-            if not any(p['procedure_text'] == procedure_text for p in existing_procedures):
+            is_duplicate = False
+            duplicate_proc = None
+
+            if existing_procedures:
+                # 使用语义匹配检查是否重复
+                new_vec = self.matcher.model.encode(procedure_text)
+                for proc in existing_procedures:
+                    existing_text = proc.get('procedure_text', '')
+                    if existing_text:
+                        existing_vec = self.matcher.model.encode(existing_text)
+                        similarity = float(np.dot(new_vec, existing_vec) / (np.linalg.norm(new_vec) * np.linalg.norm(existing_vec)))
+                        if similarity >= 0.85:  # 相似度阈值
+                            is_duplicate = True
+                            duplicate_proc = proc
+                            break
+
+            if not is_duplicate:
+                # 创建新程序：同时创建审计项来源和程序
+                # 1. 先创建审计项来源
+                source_id = self.db.insert_item_source({
+                    'item_id': existing_id,
+                    'source_type': 'excel',
+                    'source_file': source_file,
+                    'raw_title': new_item['title'],
+                    'import_batch': self.import_batch
+                })
+                # 2. 再创建程序，关联到来源
                 self.db.insert_procedure({
                     'item_id': existing_id,
                     'procedure_text': procedure_text,
                     'is_primary': 0,
-                    'source_id': source_id  # 关联来源
+                    'source_id': source_id
                 })
                 print(f"  新增动作到 [{existing_id}]: {procedure_text[:30]}...")
             else:
-                print(f"  跳过重复程序 [{existing_id}]: {procedure_text[:30]}...")
+                # 跳过重复程序：创建重复来源记录（标记为excel_duplicate）
+                duplicate_source_id = self.db.insert_item_source({
+                    'item_id': existing_id,
+                    'source_type': 'excel_duplicate',  # 标记为重复来源
+                    'source_file': source_file,
+                    'raw_title': f"[重复跳过，复用程序ID {duplicate_proc['id']}] {new_item['title']}",
+                    'import_batch': self.import_batch
+                })
+                print(f"  跳过重复程序 [{existing_id}]: {procedure_text[:30]}... (与程序ID {duplicate_proc['id']} 语义相似)")
+        else:
+            # 没有程序需要创建，只记录审计项来源
+            # 检查是否已存在该文件的来源记录（去重）
+            existing_sources = self.db.get_sources_by_item(existing_id)
+            source_id = None
+            
+            for src in existing_sources:
+                if src.get('source_file') == source_file and src.get('source_type') == 'excel':
+                    source_id = src['id']
+                    print(f"  复用审计项来源 [{existing_id}]: {source_file}")
+                    break
+            
+            if not source_id:
+                source_id = self.db.insert_item_source({
+                    'item_id': existing_id,
+                    'source_type': 'excel',
+                    'source_file': source_file,
+                    'raw_title': new_item['title'],
+                    'import_batch': self.import_batch
+                })
+                print(f"  记录审计项来源 [{existing_id}]: {source_file}")
 
 
 def main():
