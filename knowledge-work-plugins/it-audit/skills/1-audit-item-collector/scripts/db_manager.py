@@ -12,11 +12,19 @@ from typing import Optional, List, Dict, Any
 class DatabaseManager:
     """数据库管理器"""
     
-    def __init__(self, db_path: str = None):
-        if db_path is None:
-            current_dir = os.path.dirname(os.path.abspath(__file__))
-            it_audit_dir = os.path.dirname(os.path.dirname(os.path.dirname(current_dir)))
-            db_path = os.path.join(it_audit_dir, 'data', 'it_audit.db')
+    def __init__(self, db_path: str):
+        """
+        初始化数据库管理器
+        
+        Args:
+            db_path: 数据库文件路径（必须传入）
+        
+        数据库路径规则：
+            - 正式使用: knowledge-work-plugins/it-audit/data/it_audit.db
+            - 测试使用: tests/test_data/test_it_audit.db
+        """
+        if not db_path:
+            raise ValueError("数据库路径(db_path)必须传入，不能为空")
         
         self.db_path = db_path
         self._ensure_db_dir()
@@ -375,11 +383,23 @@ class DatabaseManager:
 
 
 if __name__ == '__main__':
-    db = DatabaseManager()
-    db.init_database()
+    import argparse
     
-    stats = db.get_statistics()
-    print(f"\n数据库统计:")
-    print(f"  维度数: {stats['dimensions']}")
-    print(f"  审计项数: {stats['items']}")
-    print(f"  来源记录数: {stats['sources']}")
+    parser = argparse.ArgumentParser(description="IT审计数据库管理器")
+    parser.add_argument("--db-path", "-d", required=True, help="数据库文件路径（必须）")
+    parser.add_argument("--init", action="store_true", help="初始化数据库")
+    parser.add_argument("--stats", action="store_true", help="显示数据库统计")
+    
+    args = parser.parse_args()
+    
+    db = DatabaseManager(args.db_path)
+    
+    if args.init:
+        db.init_database()
+    
+    if args.stats:
+        stats = db.get_statistics()
+        print(f"\n数据库统计:")
+        print(f"  维度数: {stats['dimensions']}")
+        print(f"  审计项数: {stats['items']}")
+        print(f"  来源记录数: {stats['sources']}")

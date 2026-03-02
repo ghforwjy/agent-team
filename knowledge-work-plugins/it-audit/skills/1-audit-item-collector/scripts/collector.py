@@ -18,7 +18,20 @@ from excel_parser import ExcelParser
 class AuditItemCollector:
     """审计项收集器"""
     
-    def __init__(self, db_path: str = None):
+    def __init__(self, db_path: str):
+        """
+        初始化收集器
+        
+        Args:
+            db_path: 数据库文件路径（必须传入）
+        
+        数据库路径规则：
+            - 正式使用: knowledge-work-plugins/it-audit/data/it_audit.db
+            - 测试使用: tests/test_data/test_it_audit.db
+        """
+        if not db_path:
+            raise ValueError("数据库路径(db_path)必须传入，不能为空")
+        
         self.db = DatabaseManager(db_path)
         self.db.init_database()
         self.import_batch = datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -114,7 +127,7 @@ def main():
     arg_parser.add_argument("file", nargs="?", 
                            default="训练材料/2021年网络安全专自查底稿.xls",
                            help="要导入的Excel文件路径")
-    arg_parser.add_argument("--db", help="数据库路径")
+    arg_parser.add_argument("--db-path", "-d", required=True, help="数据库路径（必须）")
     arg_parser.add_argument("--force", action="store_true", 
                            help="强制导入，不跳过重复项")
     
@@ -124,7 +137,7 @@ def main():
         print(f"错误: 文件不存在 - {args.file}")
         return
     
-    collector = AuditItemCollector(args.db)
+    collector = AuditItemCollector(args.db_path)
     
     collector.collect_from_excel(args.file, skip_existing=not args.force)
     

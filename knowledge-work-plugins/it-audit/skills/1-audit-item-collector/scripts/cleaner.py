@@ -20,7 +20,21 @@ from llm_verifier import LLMVerifier
 class AuditItemCleaner:
     """审计项清洗器"""
     
-    def __init__(self, db_path: str = None, llm_config: Dict = None):
+    def __init__(self, db_path: str, llm_config: Dict = None):
+        """
+        初始化清洗器
+        
+        Args:
+            db_path: 数据库文件路径（必须传入）
+            llm_config: LLM配置（可选）
+        
+        数据库路径规则：
+            - 正式使用: knowledge-work-plugins/it-audit/data/it_audit.db
+            - 测试使用: tests/test_data/test_it_audit.db
+        """
+        if not db_path:
+            raise ValueError("数据库路径(db_path)必须传入，不能为空")
+        
         self.db = DatabaseManager(db_path)
         self.db.init_database()
         self.matcher = SemanticMatcher()
@@ -263,6 +277,7 @@ def main():
     
     parser = argparse.ArgumentParser(description="IT审计项清洗器")
     parser.add_argument("file", nargs="?", help="要清洗的Excel文件路径")
+    parser.add_argument("--db-path", "-d", required=True, help="数据库文件路径（必须）")
     parser.add_argument("--output", "-o", help="输出JSON文件路径")
     parser.add_argument("--apply", action="store_true", help="应用结果到数据库")
     parser.add_argument("--result", help="要应用的清洗结果JSON文件")
@@ -270,7 +285,7 @@ def main():
     
     args = parser.parse_args()
     
-    cleaner = AuditItemCleaner()
+    cleaner = AuditItemCleaner(db_path=args.db_path)
     
     if args.file:
         result = cleaner.clean_from_excel(args.file, args.output, skip_llm=args.skip_llm)

@@ -2,6 +2,8 @@
 
 本文档目录包含IT审计专家Agent的设计、开发和测试相关文档。
 
+> **代码位置**: [knowledge-work-plugins/it-audit/](../../knowledge-work-plugins/it-audit/README.md)
+
 ## 文档清单
 
 ### 1. 设计方案
@@ -39,7 +41,35 @@ knowledge-work-plugins/it-audit/skills/1-audit-item-collector/scripts/
 ├── semantic_matcher.py     # 语义匹配模块
 ├── llm_verifier.py         # LLM校验模块
 ├── excel_parser.py         # Excel解析器
-└── db_manager.py           # 数据库管理
+├── db_manager.py           # 数据库管理
+└── analyzers/              # 数据分析器（新增）
+    ├── models.py           # 数据模型
+    ├── data_loader.py      # 数据加载
+    ├── analyzer.py         # 分析逻辑
+    └── reporter.py         # 报告生成
+```
+
+### 模块2代码
+```
+knowledge-work-plugins/it-audit/skills/2-policy-compliance-checker/scripts/
+├── policy_extractor.py     # 制度要求提取
+└── analyzers/              # 数据分析器（新增）
+    └── policy_reporter.py  # 策略报告生成
+```
+
+### 场景测试器
+```
+knowledge-work-plugins/it-audit/skills/scenario-tester/scripts/
+└── runner.py               # 测试运行器
+```
+
+**运行场景测试命令：**
+```bash
+# 运行所有场景测试
+python -m knowledge_work_plugins.it_audit.skills.scenario_tester.scripts.runner
+
+# 运行指定模块测试
+python -m knowledge_work_plugins.it_audit.skills.scenario_tester.scripts.runner --module 1
 ```
 
 ### 测试程序
