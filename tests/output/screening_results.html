@@ -85,7 +85,7 @@
             background: white;
         }
         .scroll-container {
-            max-height: 500px;
+            max-height: 800px;
             overflow-y: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -94,12 +94,18 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 13px;
+            table-layout: fixed;
         }
         th, td {
             padding: 10px 12px;
             text-align: left;
             border: 1px solid #e0e0e0;
             vertical-align: top;
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: normal;
+            line-height: 1.5;
+            height: auto;
         }
         th {
             background: #3498db;
@@ -107,8 +113,34 @@
             font-weight: 600;
             position: sticky;
             top: 0;
+            user-select: none;
+            white-space: normal;
+            line-height: 1.4;
         }
-        tr:hover { background: #f5f5f5; }
+        th .resizer {
+            display: inline-block;
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: col-resize;
+            background: transparent;
+        }
+        th .resizer:hover {
+            background: #2980b9;
+        }
+        th.resizing .resizer {
+            background: #2980b9;
+        }
+        .content-cell {
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: visible;
+            text-overflow: clip;
+            max-width: none;
+        }
         .badge {
             display: inline-block;
             padding: 3px 8px;
@@ -151,9 +183,9 @@
         <h1>制度要求筛选结果报告</h1>
         
         <div class="info-bar">
-            <span>数据库: <strong>e:\mycode\agent-team\tests\test_data\test_it_audit.db</strong></span>
+            <span>数据库: <strong>tests/test_data/test_it_audit.db</strong></span>
             <span>筛选总数: <strong>136</strong> 条</span>
-            <span>报告时间: 2026-03-02 18:40:37</span>
+            <span>报告时间: 2026-03-02 20:26:32</span>
         </div>
         
         <div class="section">
@@ -209,14 +241,14 @@
                 <table id="resultsTable">
                     <thead>
                         <tr>
-                            <th style="width:100px;">编码</th>
-                            <th style="width:200px;">标题</th>
-                            <th style="width:80px;">类型</th>
-                            <th style="width:80px;">维度</th>
-                            <th style="width:80px;">相似度</th>
-                            <th style="width:80px;">置信度</th>
-                            <th style="width:60px;">状态</th>
-                            <th>程序文本</th>
+                            <th style="width:100px;">编码<div class="resizer"></div></th>
+                            <th style="width:200px;">标题<div class="resizer"></div></th>
+                            <th style="width:80px;">类型<div class="resizer"></div></th>
+                            <th style="width:80px;">维度<div class="resizer"></div></th>
+                            <th style="width:80px;">相似度<div class="resizer"></div></th>
+                            <th style="width:80px;">置信度<div class="resizer"></div></th>
+                            <th style="width:60px;">状态<div class="resizer"></div></th>
+                            <th style="width:400px;">程序文本<div class="resizer"></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1730,7 +1762,7 @@ b)查看病毒扫描记录，判断是否定期对服务器...</td>
         </div>
         
         <div class="timestamp">
-            报告生成时间: 2026-03-02 18:40:37
+            报告生成时间: 2026-03-02 20:26:32
         </div>
     </div>
     
@@ -1767,6 +1799,60 @@ b)查看病毒扫描记录，判断是否定期对服务器...</td>
                 row.style.display = show ? '' : 'none';
             });
         }
+        
+        // 表头拖动宽度功能
+        function initResizableHeaders() {
+            const table = document.getElementById('resultsTable');
+            const headers = table.querySelectorAll('th');
+            let currentHeader = null;
+            let startX = 0;
+            let startWidth = 0;
+            
+            headers.forEach(header => {
+                const resizer = header.querySelector('.resizer');
+                if (!resizer) return;
+                
+                // 鼠标按下
+                resizer.addEventListener('mousedown', (e) => {
+                    currentHeader = header;
+                    startX = e.pageX;
+                    startWidth = header.offsetWidth;
+                    header.classList.add('resizing');
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
+            });
+            
+            // 鼠标移动
+            document.addEventListener('mousemove', (e) => {
+                if (!currentHeader) return;
+                
+                const diff = e.pageX - startX;
+                const newWidth = startWidth + diff;
+                
+                // 最小宽度限制
+                if (newWidth > 50) {
+                    currentHeader.style.width = newWidth + 'px';
+                    
+                    // 如果是最后一列，还需要调整表格宽度
+                    const headersArray = Array.from(headers);
+                    if (currentHeader === headersArray[headersArray.length - 1]) {
+                        table.style.width = 'auto';
+                    }
+                }
+            });
+            
+            // 鼠标释放
+            document.addEventListener('mouseup', () => {
+                if (currentHeader) {
+                    currentHeader.classList.remove('resizing');
+                    currentHeader = null;
+                }
+            });
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initResizableHeaders);
     </script>
 </body>
 </html>

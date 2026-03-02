@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "batch_id": "SCREEN-20260302-C583B5",
+  "total_items": 157,
+  "high_confidence": 0,
+  "medium_confidence": 0,
+  "skipped": 157,
+  "saved_high": 0,
+  "saved_medium": 0,
+  "llm_verified": 0,
+  "llm_adjusted": 0
+}

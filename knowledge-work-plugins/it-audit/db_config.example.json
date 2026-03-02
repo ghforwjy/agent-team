@@ -1,0 +1,20 @@
+{
+  "formal": {
+    "name": "正式环境",
+    "db_path": "knowledge-work-plugins/it-audit/data/it_audit.db",
+    "output_dir": "knowledge-work-plugins/it-audit/output",
+    "description": "生产环境数据库"
+  },
+  "test": {
+    "name": "测试环境",
+    "db_path": "tests/test_data/test_it_audit.db",
+    "output_dir": "tests/output",
+    "description": "测试环境数据库"
+  },
+  "dev": {
+    "name": "开发环境",
+    "db_path": "dev/it_audit_dev.db",
+    "output_dir": "dev/output",
+    "description": "开发环境数据库"
+  }
+}

@@ -33,33 +33,56 @@ class ScreeningResultReporter:
         return stats
     
     def print_summary(self) -> None:
-        """打印摘要报告到控制台"""
+        """打印摘要报告到控制台（包含阶段二 LLM 校验分析）"""
         stats = self.generate_summary()
         
         print("\n" + "=" * 70)
-        print("制度要求筛选结果报告")
+        print("制度要求筛选结果报告（向量 +LLM 两阶段）")
         print("=" * 70)
-        print(f"数据库: {self.db_path}")
-        print(f"筛选总数: {stats.get('total', 0)} 条")
+        print(f"数据库：{self.db_path}")
+        print(f"筛选总数：{stats.get('total', 0)} 条")
         
-        print("\n【按状态分布】")
-        by_status = stats.get('by_status', {})
-        for status, count in by_status.items():
-            print(f"  - {status}: {count} 条")
-        
-        print("\n【按类型分布】")
-        by_type = stats.get('by_type', {})
-        for req_type, count in sorted(by_type.items(), key=lambda x: -x[1]):
-            print(f"  - {req_type}: {count} 条")
-        
-        print("\n【按置信度分布】")
+        print("\n【阶段一：向量筛选结果】")
         by_confidence = stats.get('by_confidence', {})
         high = by_confidence.get('high', 0)
         medium = by_confidence.get('medium', 0)
         low = by_confidence.get('low', 0)
-        print(f"  - 高置信度(≥0.70): {high} 条")
-        print(f"  - 中置信度(0.45-0.70): {medium} 条")
-        print(f"  - 低置信度(<0.45): {low} 条")
+        print(f"  - 高置信度 (≥0.70): {high} 条（直接确认）")
+        print(f"  - 中置信度 (0.45-0.70): {medium} 条（进入 LLM 校验）")
+        print(f"  - 低置信度 (<0.45): {low} 条（跳过）")
+        
+        print("\n【阶段二：LLM 校验结果】")
+        llm_verified = stats.get('llm_verified', 0)
+        llm_adjusted = stats.get('llm_adjusted', 0)
+        llm_confirmed = llm_verified - llm_adjusted
+        if llm_verified > 0:
+            print(f"  - LLM 校验总数：{llm_verified} 条")
+            print(f"  - 确认向量模型正确：{llm_confirmed} 条 ({llm_confirmed/llm_verified*100:.1f}%)")
+            print(f"  - 修正向量模型错误：{llm_adjusted} 条 ({llm_adjusted/llm_verified*100:.1f}%)")
+        else:
+            print("  - 暂无 LLM 校验数据")
+        
+        print("\n【最终结果（按状态）】")
+        by_status = stats.get('by_status', {})
+        for status, count in by_status.items():
+            print(f"  - {status}: {count} 条")
+        
+        print("\n【最终结果（按类型分布）】")
+        by_type = stats.get('by_type', {})
+        for req_type, count in sorted(by_type.items(), key=lambda x: -x[1]):
+            print(f"  - {req_type}: {count} 条")
+        
+        print("\n【LLM 校验详细分析】")
+        # 按类型统计 LLM 修正情况
+        llm_by_type = stats.get('llm_by_type', {})
+        if llm_by_type:
+            print("  按类型统计 LLM 修正:")
+            for req_type, data in sorted(llm_by_type.items(), key=lambda x: -x[1].get('total', 0)):
+                total = data.get('total', 0)
+                adjusted = data.get('adjusted', 0)
+                confirmed = total - adjusted
+                adj_rate = adjusted/total*100 if total > 0 else 0
+                print(f"    - {req_type}: 共{total}条，确认{confirmed}条，修正{adjusted}条 (修正率{adj_rate:.1f}%)")
         
         print("=" * 70)
     
@@ -142,12 +165,15 @@ class ScreeningResultReporter:
         by_type = stats.get('by_type', {})
         by_confidence = stats.get('by_confidence', {})
         
+        llm_verified = stats.get('llm_verified', 0)
+        llm_adjusted = stats.get('llm_adjusted', 0)
+        
         html = f'''<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>制度要求筛选结果报告</title>
+    <title>制度要求筛选结果报告（向量 +LLM 两阶段）</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
@@ -229,7 +255,7 @@ class ScreeningResultReporter:
             background: white;
         }}
         .scroll-container {{
-            max-height: 500px;
+            max-height: 800px;
             overflow-y: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -238,12 +264,18 @@ class ScreeningResultReporter:
             width: 100%;
             border-collapse: collapse;
             font-size: 13px;
+            table-layout: fixed;
         }}
         th, td {{
             padding: 10px 12px;
             text-align: left;
             border: 1px solid #e0e0e0;
             vertical-align: top;
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: normal;
+            line-height: 1.5;
+            height: auto;
         }}
         th {{
             background: #3498db;
@@ -251,8 +283,34 @@ class ScreeningResultReporter:
             font-weight: 600;
             position: sticky;
             top: 0;
+            user-select: none;
+            white-space: normal;
+            line-height: 1.4;
         }}
-        tr:hover {{ background: #f5f5f5; }}
+        th .resizer {{
+            display: inline-block;
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: col-resize;
+            background: transparent;
+        }}
+        th .resizer:hover {{
+            background: #2980b9;
+        }}
+        th.resizing .resizer {{
+            background: #2980b9;
+        }}
+        .content-cell {{
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: visible;
+            text-overflow: clip;
+            max-width: none;
+        }}
         .badge {{
             display: inline-block;
             padding: 3px 8px;
@@ -323,6 +381,28 @@ class ScreeningResultReporter:
         </div>
         
         <div class="section">
+            <h2>LLM 校验统计</h2>
+            <div class="stats-grid">
+                <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <h3>LLM 校验总数</h3>
+                    <div class="number">{llm_verified}</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+                    <h3>确认向量模型</h3>
+                    <div class="number">{llm_verified - llm_adjusted}</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);">
+                    <h3>修正分类</h3>
+                    <div class="number">{llm_adjusted}</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h3>修正率</h3>
+                    <div class="number">{llm_adjusted/llm_verified*100:.1f}%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
             <h2>类型分布</h2>
             <div class="chart-container">
                 <canvas id="typeChart"></canvas>
@@ -353,14 +433,15 @@ class ScreeningResultReporter:
                 <table id="resultsTable">
                     <thead>
                         <tr>
-                            <th style="width:100px;">编码</th>
-                            <th style="width:200px;">标题</th>
-                            <th style="width:80px;">类型</th>
-                            <th style="width:80px;">维度</th>
-                            <th style="width:80px;">相似度</th>
-                            <th style="width:80px;">置信度</th>
-                            <th style="width:60px;">状态</th>
-                            <th>程序文本</th>
+                            <th style="width:100px;">编码<div class="resizer"></div></th>
+                            <th style="width:200px;">标题<div class="resizer"></div></th>
+                            <th style="width:80px;">类型<div class="resizer"></div></th>
+                            <th style="width:80px;">向量建议<div class="resizer"></div></th>
+                            <th style="width:80px;">维度<div class="resizer"></div></th>
+                            <th style="width:80px;">相似度<div class="resizer"></div></th>
+                            <th style="width:80px;">置信度<div class="resizer"></div></th>
+                            <th style="width:60px;">状态<div class="resizer"></div></th>
+                            <th style="width:400px;">程序文本<div class="resizer"></div></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -408,6 +489,60 @@ class ScreeningResultReporter:
                 row.style.display = show ? '' : 'none';
             }});
         }}
+        
+        // 表头拖动宽度功能
+        function initResizableHeaders() {{
+            const table = document.getElementById('resultsTable');
+            const headers = table.querySelectorAll('th');
+            let currentHeader = null;
+            let startX = 0;
+            let startWidth = 0;
+            
+            headers.forEach(header => {{
+                const resizer = header.querySelector('.resizer');
+                if (!resizer) return;
+                
+                // 鼠标按下
+                resizer.addEventListener('mousedown', (e) => {{
+                    currentHeader = header;
+                    startX = e.pageX;
+                    startWidth = header.offsetWidth;
+                    header.classList.add('resizing');
+                    e.preventDefault();
+                    e.stopPropagation();
+                }});
+            }});
+            
+            // 鼠标移动
+            document.addEventListener('mousemove', (e) => {{
+                if (!currentHeader) return;
+                
+                const diff = e.pageX - startX;
+                const newWidth = startWidth + diff;
+                
+                // 最小宽度限制
+                if (newWidth > 50) {{
+                    currentHeader.style.width = newWidth + 'px';
+                    
+                    // 如果是最后一列，还需要调整表格宽度
+                    const headersArray = Array.from(headers);
+                    if (currentHeader === headersArray[headersArray.length - 1]) {{
+                        table.style.width = 'auto';
+                    }}
+                }}
+            }});
+            
+            // 鼠标释放
+            document.addEventListener('mouseup', () => {{
+                if (currentHeader) {{
+                    currentHeader.classList.remove('resizing');
+                    currentHeader = null;
+                }}
+            }});
+        }}
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initResizableHeaders);
     </script>
 </body>
 </html>'''
@@ -428,11 +563,26 @@ class ScreeningResultReporter:
             req_type = r.get('requirement_type', '')
             type_class = f"type-{req_type}" if req_type else ""
             
+            # 获取向量模型原始建议
+            vector_suggested = r.get('vector_suggested_type', '')
+            llm_verified = r.get('llm_verified', False)
+            
+            # 如果被修正，添加标记和详情
+            if vector_suggested and vector_suggested != req_type:
+                # LLM 修正了类型（包括修正为 None 的情况）
+                display_req_type = req_type if req_type else 'None'
+                vector_badge = f'<span style="color: #e74c3c; text-decoration: line-through;" title="向量模型原始建议">{vector_suggested}</span> <span style="color: #95a5a6;">→</span> <span style="color: #27ae60; font-weight: bold;" title="LLM 修正后的类型">{display_req_type}</span>'
+                change_flag = '<span style="background: #f39c12; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; display: inline-block;" title="LLM 修正了此分类">变更</span>'
+            else:
+                vector_badge = f'<span style="color: #27ae60;">{vector_suggested or req_type}</span>'
+                change_flag = '<span style="background: #27ae60; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; display: inline-block;" title="LLM 确认了此分类">确认</span>'
+            
             rows.append(f'''
-            <tr data-type="{req_type}" data-confidence="{conf_level}">
+            <tr data-type="{req_type}" data-confidence="{conf_level}" data-changed="{vector_suggested != req_type if vector_suggested else 'false'}">
                 <td>{r.get('item_code', '')}</td>
                 <td class="content-cell" title="{r.get('item_title', '')}">{r.get('item_title', '')[:30]}</td>
-                <td><span class="badge {type_class}">{req_type}</span></td>
+                <td><span class="badge {type_class}">{req_type}</span> {change_flag}</td>
+                <td>{vector_badge}</td>
                 <td>{r.get('dimension_name', '')}</td>
                 <td>{r.get('vector_similarity', 0):.4f}</td>
                 <td><span class="confidence {conf_level}">{confidence:.4f}</span></td>

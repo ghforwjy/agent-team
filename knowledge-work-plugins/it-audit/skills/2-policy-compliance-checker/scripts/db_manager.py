@@ -23,6 +23,7 @@ class ScreeningRecord:
     requirement_type: str = ''
     confidence: float = 0.0
     llm_verified: bool = False
+    vector_suggested_type: str = ''  # 向量模型原始建议类型
     item_title: str = ''
     dimension_name: str = ''
     procedure_text: str = ''
@@ -71,6 +72,7 @@ class PolicyDatabaseManager:
                 requirement_type VARCHAR(20),
                 confidence REAL,
                 llm_verified BOOLEAN DEFAULT 0,
+                vector_suggested_type VARCHAR(20),  -- 向量模型原始建议类型
                 item_title TEXT,
                 dimension_name TEXT,
                 procedure_text TEXT,
@@ -134,8 +136,9 @@ class PolicyDatabaseManager:
                     INSERT OR REPLACE INTO policy_screening_results
                     (item_id, item_code, screening_batch, vector_similarity, 
                      screening_status, requirement_type, confidence, llm_verified,
+                     vector_suggested_type,
                      item_title, dimension_name, procedure_text, updated_at)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                 ''', (
                     record.item_id,
                     record.item_code,
@@ -145,6 +148,7 @@ class PolicyDatabaseManager:
                     record.requirement_type,
                     record.confidence,
                     1 if record.llm_verified else 0,
+                    record.vector_suggested_type,  # 保存向量模型原始建议
                     record.item_title,
                     record.dimension_name,
                     record.procedure_text
@@ -156,6 +160,31 @@ class PolicyDatabaseManager:
         conn.commit()
         return count
     
+    def update_screening_result(self, record: ScreeningRecord) -> bool:
+        """更新单条筛选结果（用于 LLM 校验后更新状态）"""
+        conn = self.connect()
+        cursor = conn.cursor()
+        
+        try:
+            cursor.execute('''
+                UPDATE policy_screening_results
+                SET screening_status = ?,
+                    requirement_type = ?,
+                    llm_verified = ?,
+                    updated_at = CURRENT_TIMESTAMP
+                WHERE item_id = ?
+            ''', (
+                record.screening_status,
+                record.requirement_type,
+                1 if record.llm_verified else 0,
+                record.item_id
+            ))
+            conn.commit()
+            return True
+        except Exception as e:
+            print(f"更新记录失败 [{record.item_code}]: {e}")
+            return False
+    
     def get_screened_item_ids(self) -> Set[int]:
         """获取已筛选的审计项ID集合"""
         conn = self.connect()
@@ -165,7 +194,7 @@ class PolicyDatabaseManager:
         return {row[0] for row in cursor.fetchall()}
     
     def get_screening_statistics(self) -> Dict:
-        """获取筛选统计信息"""
+        """获取筛选统计信息（包含 LLM 校验统计）"""
         conn = self.connect()
         cursor = conn.cursor()
         
@@ -202,6 +231,43 @@ class PolicyDatabaseManager:
             GROUP BY confidence_level
         ''')
         stats['by_confidence'] = {row[0]: row[1] for row in cursor.fetchall()}
+        
+        # LLM 校验统计
+        cursor.execute('''
+            SELECT 
+                COUNT(*) as total,
+                SUM(CASE WHEN llm_verified = 1 THEN 1 ELSE 0 END) as verified
+            FROM policy_screening_results
+        ''')
+        row = cursor.fetchone()
+        stats['llm_verified'] = row[1] if row else 0
+        
+        # 统计 LLM 修正情况（比较向量模型原始建议和最终类型）
+        cursor.execute('''
+            SELECT 
+                COUNT(*) as total,
+                SUM(CASE WHEN llm_verified = 1 AND vector_suggested_type != requirement_type THEN 1 ELSE 0 END) as adjusted
+            FROM policy_screening_results
+            WHERE vector_suggested_type IS NOT NULL AND vector_suggested_type != ''
+        ''')
+        row = cursor.fetchone()
+        stats['llm_adjusted'] = row[1] if row else 0
+        
+        # 按类型统计 LLM 校验情况
+        cursor.execute('''
+            SELECT 
+                requirement_type,
+                COUNT(*) as total,
+                SUM(CASE WHEN llm_verified = 1 THEN 1 ELSE 0 END) as verified,
+                SUM(CASE WHEN llm_verified = 1 AND vector_suggested_type != requirement_type THEN 1 ELSE 0 END) as adjusted
+            FROM policy_screening_results
+            WHERE requirement_type IS NOT NULL AND requirement_type != ''
+            GROUP BY requirement_type
+        ''')
+        stats['llm_by_type'] = {
+            row[0]: {'total': row[1], 'verified': row[2], 'adjusted': row[3] or 0}
+            for row in cursor.fetchall()
+        }
         
         return stats
     
