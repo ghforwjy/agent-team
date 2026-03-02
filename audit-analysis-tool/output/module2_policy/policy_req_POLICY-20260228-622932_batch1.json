@@ -1,0 +1,63 @@
+{
+  "batch_id": "POLICY-20260228-622932",
+  "extract_time": "2024-02-27T10:30:00",
+  "total_items": 100,
+  "policy_requirements": [
+    {
+      "requirement_id": "REQ-001-001",
+      "source_item_code": "TEST-001",
+      "source_item_title": "测试审计项-建立制度",
+      "source_procedure": "检查是否制定相关制度",
+      "requirement_type": "建立制度",
+      "requirement_detail": {
+        "what": "信息安全管理制度",
+        "scope": "全公司",
+        "content": "制定完善的信息安全管理制度，明确安全责任",
+        "frequency": null,
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "信息安全",
+        "管理制度",
+        "安全责任"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "requirement_id": "REQ-001-002",
+      "source_item_code": "TEST-002",
+      "source_item_title": "测试审计项-定期执行",
+      "source_procedure": "检查是否每年进行安全评审",
+      "requirement_type": "定期执行",
+      "requirement_detail": {
+        "what": "信息安全评审",
+        "scope": "全公司",
+        "content": "每年至少一次对信息安全管理制度进行评审和修订",
+        "frequency": "每年至少一次",
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "安全评审",
+        "年度评审",
+        "制度修订"
+      ],
+      "confidence": 0.88
+    }
+  ],
+  "statistics": {
+    "total_requirements": 2,
+    "by_type": {
+      "建立制度": 1,
+      "建立组织": 0,
+      "人员配备": 0,
+      "定期执行": 1,
+      "岗位分离": 0,
+      "文件保存": 0
+    }
+  },
+  "batch_seq": 1
+}

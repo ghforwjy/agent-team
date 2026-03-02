@@ -1,0 +1,2812 @@
+{
+  "version": "1.0",
+  "batch_info": {
+    "batch_id": "POLICY-20260228-11B915",
+    "extract_time": "2026-02-28T15:26:10.637226",
+    "total_batches": 3,
+    "items_processed": 0
+  },
+  "summary": {
+    "total_requirements_found": 207,
+    "by_type": {
+      "建立制度": 163,
+      "建立组织": 4,
+      "人员配备": 7,
+      "定期执行": 28,
+      "岗位分离": 1,
+      "文件保存": 4
+    }
+  },
+  "policy_requirements": [
+    {
+      "requirement_id": "REQ-001",
+      "source_item_code": "NEW-20260227112113-M001",
+      "source_item_title": "是否制定相关的网络安全保障方案",
+      "source_dimension": "XC建党100周年网络安全保障专项工作情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定建党100周年网络安全保障方案",
+      "related_clues": [
+        "建党100周年",
+        "网络安全方案"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-002",
+      "source_item_code": "NEW-20260227112113-M002",
+      "source_item_title": "是否按照建党100年网络保障要求开展网络安全风险排查",
+      "source_dimension": "XC建党100周年网络安全保障专项工作情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定建党100周年网络保障自查清单",
+      "related_clues": [
+        "自查清单",
+        "风险排查准备"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-003",
+      "source_item_code": "NEW-20260227112113-M002",
+      "source_item_title": "是否按照建党100年网络保障要求开展网络安全风险排查",
+      "source_dimension": "XC建党100周年网络安全保障专项工作情况",
+      "requirement_type": "定期执行",
+      "requirement_content": "根据建党100周年网络保障自查清单开展网络安全风险排查",
+      "related_clues": [
+        "风险排查",
+        "自查执行"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-004",
+      "source_item_code": "NEW-20260227112113-M003",
+      "source_item_title": "是否对网络安全风险排查所发现的问题进行整改",
+      "source_dimension": "XC建党100周年网络安全保障专项工作情况",
+      "requirement_type": "定期执行",
+      "requirement_content": "对建党100周年网络保障自查发现的问题进行整改",
+      "related_clues": [
+        "问题整改",
+        "排查整改"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-005",
+      "source_item_code": "NEW-20260227112113-M004",
+      "source_item_title": "公司是否建立IT治理委员会",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立组织",
+      "requirement_content": "建立IT治理委员会",
+      "related_clues": [
+        "IT治理委员会",
+        "组织建设"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-006",
+      "source_item_code": "NEW-20260227112113-M005",
+      "source_item_title": "IT治理委员会是否由公司主要负责人、相关高级管理人员及相关部门负责人组成",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确IT治理委员会由公司主要负责人、相关高级管理人员及相关部门负责人组成",
+      "related_clues": [
+        "IT治理委员会",
+        "人员组成"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-007",
+      "source_item_code": "NEW-20260227112113-M006",
+      "source_item_title": "是否明确公司IT治理委员会工作职责，制定公司IT治理委员会议事规则，IT治理委员会审议内容是否全面",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定IT治理委员会议事规则，明确其工作职责涵盖拟订IT治理目标计划、审议IT发展规划/年度计划/预算/重大IT项目/IT管理制度、制定IT培训计划、检查落实情况、评估IT重大事项并报告管理层",
+      "related_clues": [
+        "IT治理",
+        "议事规则",
+        "职责明确"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-008",
+      "source_item_code": "NEW-20260227112113-M007",
+      "source_item_title": "是否定期召开会议决策信息技术治理重大事项",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期召开IT治理委员会会议决策信息技术治理重大事项",
+      "related_clues": [
+        "IT治理会议",
+        "定期决策"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-009",
+      "source_item_code": "NEW-20260227112113-M008",
+      "source_item_title": "公司是否设置首席信息官岗位",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "人员配备",
+      "requirement_content": "设立首席信息官岗位",
+      "related_clues": [
+        "CIO",
+        "岗位设置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-010",
+      "source_item_code": "NEW-20260227112113-M009",
+      "source_item_title": "首席信息官是否满足任职资格要求",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确首席信息官需具备相关学习背景或工作经验",
+      "related_clues": [
+        "CIO",
+        "任职资格"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-011",
+      "source_item_code": "NEW-20260227112113-M010",
+      "source_item_title": "分管IT的高管人员是否有IT专业背景或工作经验",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确分管IT的高管人员需具备IT专业背景或工作经验",
+      "related_clues": [
+        "分管IT高管",
+        "专业背景"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-012",
+      "source_item_code": "NEW-20260227112113-M011",
+      "source_item_title": "公司是否设立信息技术内部审计岗，配备专职信息技术审计人员",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "人员配备",
+      "requirement_content": "设立信息技术内部审计岗位，配备专职信息技术审计人员",
+      "related_clues": [
+        "IT内审岗",
+        "专职人员"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-013",
+      "source_item_code": "NEW-20260227112113-M012",
+      "source_item_title": "信息技术审计人员是否有信息技术相关专业学历或工作经验",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确信息技术审计人员需具备信息技术相关专业学历或工作经验",
+      "related_clues": [
+        "IT审计人员",
+        "专业资质"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-014",
+      "source_item_code": "NEW-20260227112113-M013",
+      "source_item_title": "公司是否设立信息技术合规及风险管理部门及岗位",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立组织",
+      "requirement_content": "设立信息技术合规及风险管理部门及岗位",
+      "related_clues": [
+        "IT合规岗",
+        "风险管理部门"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-015",
+      "source_item_code": "NEW-20260227112113-M014",
+      "source_item_title": "信息技术合规及风险管理岗位人员是否具有信息技术专业背景或相关IT工作经验",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确信息技术合规及风险管理岗位人员需具备信息技术专业背景或相关IT工作经验",
+      "related_clues": [
+        "IT合规人员",
+        "专业背景"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-016",
+      "source_item_code": "NEW-20260227112113-M015",
+      "source_item_title": "是否设立信息安全管理工作的职能部门，设立安全主管、安全管理各个方面的负责人岗位，并定义各负责人的职责",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立组织",
+      "requirement_content": "设立信息安全管理工作的职能部门、安全主管及安全管理各方面负责人岗位",
+      "related_clues": [
+        "信息安全部门",
+        "岗位设置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-017",
+      "source_item_code": "NEW-20260227112113-M015",
+      "source_item_title": "是否设立信息安全管理工作的职能部门，设立安全主管、安全管理各个方面的负责人岗位，并定义各负责人的职责",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确各安全管理岗位的职责范围，清晰明确",
+      "related_clues": [
+        "岗位职责",
+        "安全管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-018",
+      "source_item_code": "NEW-20260227112113-M016",
+      "source_item_title": "机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位是否设置主备岗",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "人员配备",
+      "requirement_content": "为机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位设置主备岗位",
+      "related_clues": [
+        "关键岗位",
+        "主备岗"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-019",
+      "source_item_code": "NEW-20260227112113-M017",
+      "source_item_title": "关键岗位是否进行分离，兼岗时是否满足岗位相互制约的要求",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "岗位分离",
+      "requirement_content": "明确机房管理员、网络管理员、系统管理员、数据库管理员、安全管理员等关键岗位职责分离，兼岗时需满足岗位相互制约要求",
+      "related_clues": [
+        "岗位分离",
+        "不相容岗位"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-020",
+      "source_item_code": "NEW-20260227112113-M018",
+      "source_item_title": "公司是否配备足够的信息技术人员，公司的IT工作人员总数不少于公司员工总人数的6%",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "人员配备",
+      "requirement_content": "确保公司信息技术工作人员总数不少于公司员工总人数的6%",
+      "related_clues": [
+        "IT人员占比",
+        "人员配置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-021",
+      "source_item_code": "NEW-20260227112114-M019",
+      "source_item_title": "是否建立信息技术管理制度和操作流程的制定、发布、维护和更新的机制",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立信息技术管理制度和操作流程的制定、发布、维护和更新机制",
+      "related_clues": [
+        "IT制度",
+        "流程维护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-022",
+      "source_item_code": "NEW-20260227112114-M020",
+      "source_item_title": "是否至少每年一次评审、修订信息技术管理制度和操作流程",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "定期执行",
+      "requirement_content": "至少每年一次评审、修订信息技术管理制度和操作流程",
+      "related_clues": [
+        "制度评审",
+        "年度修订"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-023",
+      "source_item_code": "NEW-20260227112114-M021",
+      "source_item_title": "是否制定软件开发管理制度",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定软件开发管理制度",
+      "related_clues": [
+        "软件开发",
+        "管理制度"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-024",
+      "source_item_code": "NEW-20260227112114-M022",
+      "source_item_title": "软件开发管理制度中是否明确软件设计、开发、测试、验收过程的控制方法和人员行为准则",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在软件开发管理制度中明确软件设计、开发、测试、验收过程的控制方法和人员行为准则",
+      "related_clues": [
+        "软件开发规范",
+        "开发流程控制"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-025",
+      "source_item_code": "NEW-20260227112114-M023",
+      "source_item_title": "是否建立运维管理制度",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立运维管理制度",
+      "related_clues": [
+        "IT运维",
+        "管理制度"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-026",
+      "source_item_code": "NEW-20260227112114-M024",
+      "source_item_title": "运维管理制度是否对日常操作、监控管理、事件处理、问题处理、数据和介质管理、机房管理、安全管理、应急处置进行规范",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "运维管理制度需对日常操作、监控管理、事件处理、问题处理、数据和介质管理、机房管理、安全管理、应急处置进行规范",
+      "related_clues": [
+        "运维规范",
+        "全流程管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-027",
+      "source_item_code": "NEW-20260227112114-M025",
+      "source_item_title": "是否建立变更管理制度",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立IT变更管理制度",
+      "related_clues": [
+        "变更管理",
+        "制度建设"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-028",
+      "source_item_code": "NEW-20260227112114-M026",
+      "source_item_title": "变更管理制度是否包含系统发生变更前，向主管领导申请，变更和变更方案经过评审、审批后方可实施变更，并在实施后将变更情况向相关人员通告",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在变更管理制度中明确系统变更前需向主管领导申请，变更和变更方案经评审、审批后方可实施，实施后将变更情况向相关人员通告",
+      "related_clues": [
+        "变更流程",
+        "审批管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-029",
+      "source_item_code": "NEW-20260227112114-M027",
+      "source_item_title": "是否建立IT审计制度或在公司审计制度内对IT审计进行要求",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立IT审计制度或在公司审计制度中对IT审计提出要求",
+      "related_clues": [
+        "IT审计",
+        "审计制度"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-030",
+      "source_item_code": "NEW-20260227112114-M028",
+      "source_item_title": "是否建立备份与恢复管理相关的安全管理制度",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立备份与恢复管理相关的安全管理制度",
+      "related_clues": [
+        "数据备份",
+        "恢复管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-031",
+      "source_item_code": "NEW-20260227112114-M029",
+      "source_item_title": "备份与恢复管理相关的安全管理制度只是否对备份信息的备份方式、备份频度、存储介质和保存期等进行规范",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在备份与恢复管理相关的安全管理制度中对备份信息的备份方式、备份频度、存储介质和保存期等进行规范",
+      "related_clues": [
+        "备份规范",
+        "存储管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-032",
+      "source_item_code": "NEW-20260227112114-M030",
+      "source_item_title": "是否建立信息安全事件相关管理制度",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立信息安全事件相关管理制度",
+      "related_clues": [
+        "安全事件",
+        "应急管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-033",
+      "source_item_code": "NEW-20260227112114-M031",
+      "source_item_title": "信息安全事件相关管理制度中是否制定安全事件报告和响应处理程序，确定事件的报告流程，响应和处置的范围、程度，以及处理方法等",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在信息安全事件相关管理制度中制定安全事件报告和响应处理程序，明确报告流程、响应处置范围方法，针对系统中断、信息泄密等重大安全事件制定专属处理和报告程序",
+      "related_clues": [
+        "安全事件响应",
+        "报告流程"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-034",
+      "source_item_code": "NEW-20260227112114-M032",
+      "source_item_title": "公司是否制定IT合规及风险管理策略和制度",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定IT合规及风险管理策略和制度",
+      "related_clues": [
+        "IT合规",
+        "风险管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-035",
+      "source_item_code": "NEW-20260227112114-M033",
+      "source_item_title": "是否建立供应商管理制度",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立供应商管理制度",
+      "related_clues": [
+        "供应商管理",
+        "合作管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-036",
+      "source_item_code": "NEW-20260227112114-M034",
+      "source_item_title": "是否对年度安全教育和培训进行书面规定，针对运维人员等不同岗位制定不同的培训计划，对信息安全基础知识、岗位操作规程、机房消防及相关应急内容等进行培训，并留存培训记录",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "对年度安全教育和培训进行书面规定，针对不同岗位制定培训计划，培训内容包含信息安全基础知识、岗位操作规程、机房消防及相关应急内容，并留存培训记录",
+      "related_clues": [
+        "安全培训",
+        "培训计划",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-037",
+      "source_item_code": "NEW-20260227112114-M035",
+      "source_item_title": "安全教育培训是否覆盖全体员工",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "确保安全教育培训覆盖全体员工",
+      "related_clues": [
+        "全员培训",
+        "覆盖范围"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-038",
+      "source_item_code": "NEW-20260227112114-M036",
+      "source_item_title": "安全教育培训是否每年进行一次",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "定期执行",
+      "requirement_content": "确保安全教育培训至少每年进行一次",
+      "related_clues": [
+        "年度培训",
+        "安全培训"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-039",
+      "source_item_code": "NEW-20260227112114-M037",
+      "source_item_title": "安全教育培训是否包含网络攻击防范以及员工邮件安全意识教育，提高员工对网络攻击尤其是钓鱼邮件、仿冒邮件的辨识能力",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在安全教育培训中包含网络攻击防范以及员工邮件安全意识教育，提升员工对钓鱼邮件等网络攻击的辨识能力",
+      "related_clues": [
+        "钓鱼邮件",
+        "安全意识培训"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-040",
+      "source_item_code": "NEW-20260227112114-M038",
+      "source_item_title": "是否对各个岗位的人员至少每年一次进行安全技能及安全认知的考核",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "定期执行",
+      "requirement_content": "至少每年一次对各岗位人员进行安全技能及安全认知考核",
+      "related_clues": [
+        "安全考核",
+        "年度考核"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-041",
+      "source_item_code": "NEW-20260227112114-M039",
+      "source_item_title": "是否对安全技能及安全认知考核结果进行记录并保存",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "文件保存",
+      "requirement_content": "对安全技能及安全认知考核结果进行记录并妥善保存",
+      "related_clues": [
+        "考核记录",
+        "文档留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-042",
+      "source_item_code": "NEW-20260227112114-M040",
+      "source_item_title": "安全技能和安全认知考核是否覆盖所有岗位",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "确保安全技能和安全认知考核覆盖所有岗位人员",
+      "related_clues": [
+        "全员考核",
+        "覆盖范围"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-043",
+      "source_item_code": "NEW-20260227112114-M041",
+      "source_item_title": "安全技能和安全认知考核覆盖内容是否全面",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "确保安全技能和安全认知考核内容包含安全知识、安全技能等，覆盖全面",
+      "related_clues": [
+        "考核内容",
+        "全面性"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-044",
+      "source_item_code": "NEW-20260227112114-M042",
+      "source_item_title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员，并对违反违背安全策略和规定的人员进行惩戒",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "对安全责任和惩戒措施进行书面规定并告知相关人员，对违反安全策略和规定的人员进行惩戒",
+      "related_clues": [
+        "安全责任",
+        "惩戒机制"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-045",
+      "source_item_code": "NEW-20260227112114-M043",
+      "source_item_title": "是否建立信息系统数据管理制度，对在线和离线数据的使用、备份、存放、保护及恢复验证等活动进行规范",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立信息系统数据管理制度，规范在线和离线数据的使用、备份、存放、保护及恢复验证等活动",
+      "related_clues": [
+        "数据管理",
+        "数据规范"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-046",
+      "source_item_code": "NEW-20260227112114-M044",
+      "source_item_title": "是否按照最小化原则配置防火墙访问控制策略",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "按照最小化原则配置防火墙访问控制策略",
+      "related_clues": [
+        "防火墙策略",
+        "最小权限"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-047",
+      "source_item_code": "NEW-20260227112114-M045",
+      "source_item_title": "应对远程接入内部网络的行为进行严格限制",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立远程运维网络渠道使用的申请和审批流程，采用白名单方式严格控制远程接入内部网络的行为",
+      "related_clues": [
+        "远程接入",
+        "权限管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-048",
+      "source_item_code": "NEW-20260227112114-M046",
+      "source_item_title": "是否在网络边界处部署防病毒网关等设备对恶意代码进行检测和清除",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "在网络边界处部署防病毒网关等设备对恶意代码进行检测和清除",
+      "related_clues": [
+        "防病毒网关",
+        "恶意代码防护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-049",
+      "source_item_code": "NEW-20260227112114-M047",
+      "source_item_title": "是否定期检查防病毒网关和邮件防病毒网关的恶意代码库的升级情况并进行记录",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期检查防病毒网关和邮件防病毒网关的恶意代码库升级情况并记录",
+      "related_clues": [
+        "病毒库升级",
+        "定期检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-050",
+      "source_item_code": "NEW-20260227112114-M048",
+      "source_item_title": "是否对截获的危险病毒或恶意代码进行及时分析处理，并形成书面的报表和总结汇报",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "对防病毒网关、邮件防病毒网关及主机防病毒产品上截获的危险病毒或恶意代码进行及时分析处理，形成书面报表和总结汇报",
+      "related_clues": [
+        "恶意代码分析",
+        "安全报表"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-051",
+      "source_item_code": "NEW-20260227112114-M049",
+      "source_item_title": "是否综合运用入侵检测等安全设备，保护网络与系统；是否正确设置安全设备的接口参数和过滤规则",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "综合运用入侵检测等安全设备保护网络与系统，正确设置安全设备的接口参数和过滤规则",
+      "related_clues": [
+        "入侵检测",
+        "安全设备配置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-052",
+      "source_item_code": "NEW-20260227112114-M050",
+      "source_item_title": "是否在网络边界处监视以下攻击行为：端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "在网络边界处监视端口扫描、强力攻击、木马后门攻击、拒绝服务攻击、缓冲区溢出攻击、IP碎片攻击和网络蠕虫攻击等攻击行为",
+      "related_clues": [
+        "入侵监测",
+        "攻击防护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-053",
+      "source_item_code": "NEW-20260227112114-M051",
+      "source_item_title": "当检测到攻击行为时，是否记录攻击源IP、攻击类型、攻击目的、攻击时间，在发生严重入侵事件时是否提供报警",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "检测到攻击行为时记录攻击源IP、攻击类型、攻击目的、攻击时间，发生严重入侵事件时提供报警",
+      "related_clues": [
+        "攻击记录",
+        "入侵报警"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-054",
+      "source_item_code": "NEW-20260227112114-M052",
+      "source_item_title": "是否使用堡垒机对操作系统、数据库、网络设备进行管控",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "使用堡垒机对操作系统、数据库、网络设备进行管控",
+      "related_clues": [
+        "堡垒机",
+        "访问管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-055",
+      "source_item_code": "NEW-20260227112115-M053",
+      "source_item_title": "操作系统、数据库、网络设备、堡垒机应设置密码安全策略",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "为操作系统、数据库、网络设备、堡垒机设置密码安全策略，明确密码最小长度、复杂度、历史密码要求",
+      "related_clues": [
+        "密码策略",
+        "访问控制"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-056",
+      "source_item_code": "NEW-20260227112115-M054",
+      "source_item_title": "应建立用户认证和访问控制流程",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立用户认证和访问控制流程，明确用户权限申请、审批、更新、注销流程",
+      "related_clues": [
+        "用户认证",
+        "权限管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-057",
+      "source_item_code": "NEW-20260227112115-M055",
+      "source_item_title": "是否建立补丁管理流程，持续跟踪厂商提供的系统升级更新情况，在经过充分的测试评估后对必要的系统补丁进行及时更新",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立补丁管理流程，持续跟踪厂商系统升级更新情况，经充分测试评估后及时更新必要系统补丁",
+      "related_clues": [
+        "补丁管理",
+        "系统更新"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-058",
+      "source_item_code": "NEW-20260227112115-M056",
+      "source_item_title": "是否通过设置升级服务器等方式保持系统补丁及时得到更新",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "通过设置升级服务器等方式保持系统补丁及时得到更新",
+      "related_clues": [
+        "升级服务器",
+        "补丁更新"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-059",
+      "source_item_code": "NEW-20260227112115-M057",
+      "source_item_title": "在安装系统补丁前是否对重要文件进行备份，在测试环境中测试通过再安装",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "安装系统补丁前对重要文件进行备份，在测试环境中测试通过后再安装",
+      "related_clues": [
+        "补丁安装",
+        "备份测试"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-060",
+      "source_item_code": "NEW-20260227112115-M058",
+      "source_item_title": "是否对所有服务器安装防木马、病毒等防恶意代码软件，定期进行全面检查，并及时更新防恶意代码软件版本和恶意代码库",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "为所有服务器安装防木马、病毒等防恶意代码软件，定期全面检查，及时更新软件版本和恶意代码库",
+      "related_clues": [
+        "服务器防护",
+        "病毒查杀"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-061",
+      "source_item_code": "NEW-20260227112115-M059",
+      "source_item_title": "是否对终端软件安装进行限制和管理",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "对终端软件安装进行限制和管理，部署终端管理系统实现管控",
+      "related_clues": [
+        "终端管理",
+        "软件安装管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-062",
+      "source_item_code": "NEW-20260227112115-M060",
+      "source_item_title": "是否对所有终端安装防木马、病毒等防恶意代码软件",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "为所有终端安装防木马、病毒等防恶意代码软件",
+      "related_clues": [
+        "终端防护",
+        "病毒查杀"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-063",
+      "source_item_code": "NEW-20260227112115-M061",
+      "source_item_title": "是否设置专人负责室外LED大屏的安全管理",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "人员配备",
+      "requirement_content": "设置专人负责室外LED大屏的安全管理",
+      "related_clues": [
+        "LED大屏",
+        "专人管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-064",
+      "source_item_code": "NEW-20260227112115-M062",
+      "source_item_title": "是否配置LED屏幕播放内容监控设备",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "配置LED屏幕播放内容监控设备",
+      "related_clues": [
+        "LED监控",
+        "内容管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-065",
+      "source_item_code": "NEW-20260227112115-M063",
+      "source_item_title": "是否对LED屏幕操作权限进行控制",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "对LED屏幕操作权限进行控制，若可远程管理则使用高强度口令并修改默认口令",
+      "related_clues": [
+        "LED权限",
+        "口令安全"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-066",
+      "source_item_code": "NEW-20260227112115-M064",
+      "source_item_title": "是否建立安全管理中心，对设备状态、恶意代码、补丁升级、安全审计等安全相关事项进行集中管理",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立组织",
+      "requirement_content": "建立安全管理中心，集中管理设备状态、恶意代码、补丁升级、安全审计等安全相关事项",
+      "related_clues": [
+        "安全中心",
+        "集中管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-067",
+      "source_item_code": "NEW-20260227112115-M065",
+      "source_item_title": "是否对系统大流量数据异常外传、非授权传输等数据访问情况进行监测",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "对系统大流量数据异常外传、非授权传输等数据访问情况进行监测",
+      "related_clues": [
+        "数据监测",
+        "异常访问"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-068",
+      "source_item_code": "NEW-20260227112115-M066",
+      "source_item_title": "是否对网站进行安全监测",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "对网站进行安全监测，定时扫描网页、文件、链接，监测页面篡改、域名劫持、暗链插入、跳转代码等安全事件",
+      "related_clues": [
+        "网站监测",
+        "页面篡改"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-069",
+      "source_item_code": "NEW-20260227112115-M067",
+      "source_item_title": "是否与CDN服务提供商、基础电信运营企业联动，抵御DDOS攻击",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "与CDN服务提供商、基础电信运营企业联动，抵御DDOS攻击",
+      "related_clues": [
+        "DDOS防护",
+        "联动防护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-070",
+      "source_item_code": "NEW-20260227112115-M068",
+      "source_item_title": "是否根据数据完整性、保密性、可用性等安全属性遭到破坏后的影响对象和影响程度综合对数据进行分级",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "根据数据完整性、保密性、可用性等安全属性破坏后的影响对象和程度对数据进行分级",
+      "related_clues": [
+        "数据分级",
+        "敏感数据"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-071",
+      "source_item_code": "NEW-20260227112115-M069",
+      "source_item_title": "是否建立不同等级敏感数据保护流程",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立不同等级敏感数据保护流程，明确各级敏感信息的采集、处理、存储、传输、加密、备份、恢复、清理和销毁等管理要求",
+      "related_clues": [
+        "数据分级保护",
+        "敏感数据管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-072",
+      "source_item_code": "NEW-20260227112115-M070",
+      "source_item_title": "是否采取技术手段防止内部人员将系统架构、开发代码等内部数据泄露",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "采取技术手段防止内部人员泄露系统架构、开发代码等内部数据",
+      "related_clues": [
+        "数据防泄露",
+        "开发数据防护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-073",
+      "source_item_code": "NEW-20260227112115-M071",
+      "source_item_title": "在线数据和离线数据用于非生产环境时，是否进行脱敏处理；用于模拟测试时如无法进行脱敏处理，测试环境应采取与生产环境相当的安全措施",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "在线数据和离线数据用于非生产环境时进行脱敏处理；无法脱敏的模拟测试环境采取与生产环境相当的安全措施",
+      "related_clues": [
+        "数据脱敏",
+        "测试环境安全"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-074",
+      "source_item_code": "NEW-20260227112115-M072",
+      "source_item_title": "是否建立离线数据的调阅、复制、传输、查询和登记流程",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立离线数据的调阅、复制、传输、查询和登记流程",
+      "related_clues": [
+        "离线数据",
+        "流程管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-075",
+      "source_item_code": "NEW-20260227112115-M073",
+      "source_item_title": "离线数据存储介质入库前的调阅、复制、传输、查询是否进行了登记",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "对离线数据存储介质入库前的调阅、复制、传输、查询进行登记",
+      "related_clues": [
+        "介质登记",
+        "入库前管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-076",
+      "source_item_code": "NEW-20260227112115-M074",
+      "source_item_title": "离线数据存储介质入库后的调阅、复制、传输、查询是否进行了登记",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "对离线数据存储介质入库后的调阅、复制、传输、查询进行登记",
+      "related_clues": [
+        "介质登记",
+        "入库后管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-077",
+      "source_item_code": "NEW-20260227112115-M075",
+      "source_item_title": "是否建立至少每季度扫描并修补漏洞的工作机制，定义扫描检测的内容和程序，明确漏洞扫描工具和扫描频率，记录扫描结果及处理情况",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "建立至少每季度扫描并修补漏洞的工作机制，明确扫描内容、程序、工具、频率，记录扫描结果及处理情况",
+      "related_clues": [
+        "漏洞扫描",
+        "季度检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-078",
+      "source_item_code": "NEW-20260227112115-M076",
+      "source_item_title": "是否对新上线的设备在接入运行网络前进行全面的安全检查",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "对新上线的设备在接入运行网络前进行全面的安全检查",
+      "related_clues": [
+        "新设备上线",
+        "安全检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-079",
+      "source_item_code": "NEW-20260227112115-M077",
+      "source_item_title": "是否对漏洞风险持续跟踪，在经过充分的验证测试后对必要的漏洞开展修补工作",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "持续跟踪漏洞风险，经充分验证测试后对必要漏洞开展修补工作",
+      "related_clues": [
+        "漏洞修补",
+        "风险评估"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-080",
+      "source_item_code": "NEW-20260227112115-M078",
+      "source_item_title": "是否在漏洞扫描或漏洞修补后进行验证测试，以保证网络系统的正常运行",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "在漏洞扫描或漏洞修补后进行验证测试，保证网络系统正常运行",
+      "related_clues": [
+        "漏洞验证",
+        "测试确认"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-081",
+      "source_item_code": "NEW-20260227112115-M079",
+      "source_item_title": "是否对网上信息系统进行渗透测试，并出具安全性测试报告",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "对网上信息系统进行渗透测试，并出具安全性测试报告",
+      "related_clues": [
+        "渗透测试",
+        "安全报告"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-082",
+      "source_item_code": "NEW-20260227112115-M080",
+      "source_item_title": "是否定期对服务器和终端进行全面病毒扫描",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对服务器和终端进行全面病毒扫描",
+      "related_clues": [
+        "病毒扫描",
+        "定期检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-083",
+      "source_item_code": "NEW-20260227112115-M081",
+      "source_item_title": "全面病毒扫描不得在交易时段内进行",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "全面病毒扫描不得在交易时段内进行",
+      "related_clues": [
+        "扫描时段",
+        "交易时段规避"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-084",
+      "source_item_code": "NEW-20260227112115-M082",
+      "source_item_title": "是否由内部人员每年进行一次全面安全检查",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "由内部人员每年进行一次全面安全检查",
+      "related_clues": [
+        "全面安全检查",
+        "年度检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-085",
+      "source_item_code": "NEW-20260227112115-M083",
+      "source_item_title": "是否对安全区域隔离情况进行检查",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对安全区域隔离情况进行检查",
+      "related_clues": [
+        "安全域隔离",
+        "定期检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-086",
+      "source_item_code": "NEW-20260227112115-M084",
+      "source_item_title": "是否对系统弱口令、默认口令、通用口令、长期不变口令进行检查",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对系统弱口令、默认口令、通用口令、长期不变口令进行检查",
+      "related_clues": [
+        "口令检查",
+        "弱口令整治"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-087",
+      "source_item_code": "NEW-20260227112115-M085",
+      "source_item_title": "是否对系统中高危漏洞进行检查",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对系统中高危漏洞进行检查",
+      "related_clues": [
+        "高危漏洞",
+        "漏洞检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-088",
+      "source_item_code": "NEW-20260227112115-M086",
+      "source_item_title": "是否对端口及服务开启情况进行检查，并关闭非必要端口和服务",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "建立制度",
+      "requirement_content": "定期对端口及服务开启情况进行检查，关闭非必要端口和服务",
+      "related_clues": [
+        "端口管控",
+        "服务加固"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-089",
+      "source_item_code": "NEW-20260227112116-M087",
+      "source_item_title": "是否对基础软件和通用软件的更新情况进行检查",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对基础软件和通用软件的更新情况进行检查",
+      "related_clues": [
+        "软件更新",
+        "版本检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-090",
+      "source_item_code": "NEW-20260227112116-M088",
+      "source_item_title": "是否对系统密码策略进行检查，对账户尝试登陆次数进行限制",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对系统密码策略进行检查，对账户尝试登陆次数进行限制",
+      "related_clues": [
+        "密码策略",
+        "登录限制"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-091",
+      "source_item_code": "NEW-20260227112116-M089",
+      "source_item_title": "是否对系统互联网出入口和无线接入点进行检查，关闭不必要的链接",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对系统互联网出入口和无线接入点进行检查，关闭不必要的链接",
+      "related_clues": [
+        "网络接入",
+        "链接管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-092",
+      "source_item_code": "NEW-20260227112116-M090",
+      "source_item_title": "是否对共享访问和远程桌面连接进行检查",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对共享访问和远程桌面连接进行检查",
+      "related_clues": [
+        "远程访问",
+        "共享管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-093",
+      "source_item_code": "NEW-20260227112116-M091",
+      "source_item_title": "检查发现的问题是否及时整改",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "对安全检查发现的问题及时进行整改",
+      "related_clues": [
+        "问题整改",
+        "检查整改"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-094",
+      "source_item_code": "NEW-20260227112116-M092",
+      "source_item_title": "二级及以上信息系统是否每年开展一次自查，对于不符合证券期货业信息安全等级保护基本要求（试行）的内容，是否及时整改",
+      "source_dimension": "XC网络安全管理与防护",
+      "requirement_type": "定期执行",
+      "requirement_content": "二级及以上信息系统每年开展一次自查，对不符合证券期货业信息安全等级保护基本要求（试行）的内容及时整改",
+      "related_clues": [
+        "等保自查",
+        "整改落实"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-095",
+      "source_item_code": "NEW-20260227112116-M093",
+      "source_item_title": "在开展信息系统新建、升级、变更、换代等建设项目时，是否进行充分论证和测试，论证材料包括需求分析、立项报告等",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在信息系统新建、升级、变更、换代等建设项目时，进行充分论证和测试，论证材料包含需求分析、立项报告等",
+      "related_clues": [
+        "项目论证",
+        "系统建设"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-096",
+      "source_item_code": "NEW-20260227112116-M094",
+      "source_item_title": "业务系统开发项目前是否将信息安全要求纳入系统设计",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在业务系统开发项目前将信息安全要求纳入系统设计",
+      "related_clues": [
+        "安全左移",
+        "系统设计安全"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-097",
+      "source_item_code": "NEW-20260227112116-M095",
+      "source_item_title": "是否制定代码编写规范，要求开发人员参照规范编写代码",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定代码编写规范，要求开发人员参照规范编写代码",
+      "related_clues": [
+        "代码规范",
+        "开发管控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-098",
+      "source_item_code": "NEW-20260227112116-M096",
+      "source_item_title": "是否建立完整、规范的系统测试操作流程，对测试工作的计划、实施及总结做出详细的规定。对于在生产系统上进行的测试工作，必须制定详细的系统及数据备份、测试环境搭建、测试后系统及数据恢复、生产系统审核等计划，确保生产系统的安全",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立完整规范的系统测试操作流程，规范测试计划、实施、总结；生产系统测试需制定系统及数据备份、测试环境搭建、恢复、生产系统审核等计划确保生产安全",
+      "related_clues": [
+        "测试流程",
+        "生产环境防护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-099",
+      "source_item_code": "NEW-20260227112116-M097",
+      "source_item_title": "是否根据系统上线要求制定测试方案，确定采用的测试方法和测试流程。测试方案及测试用例覆盖功能、性能、容量、安全性、稳定性等方面",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "根据系统上线要求制定测试方案，明确测试方法和流程，测试方案及用例覆盖功能、性能、容量、安全性、稳定性等方面",
+      "related_clues": [
+        "测试方案",
+        "测试覆盖"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-100",
+      "source_item_code": "NEW-20260227112116-M098",
+      "source_item_title": "生产环境测试前是否备份当前系统的数据和配置",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在生产环境测试前备份当前系统的数据和配置",
+      "related_clues": [
+        "生产测试",
+        "数据备份"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-101",
+      "source_item_code": "NEW-20260227112116-M099",
+      "source_item_title": "是否为系统测试配备必要的人员和设备资源",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "人员配备",
+      "requirement_content": "为系统测试配备必要的人员和设备资源",
+      "related_clues": [
+        "测试资源",
+        "人员配置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-102",
+      "source_item_code": "NEW-20260227112116-M100",
+      "source_item_title": "涉及核心交易业务系统的上线测试，是否组织全市场或全公司各相关部门测试",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "涉及核心交易业务系统的上线测试，组织全市场或全公司各相关部门测试",
+      "related_clues": [
+        "核心系统测试",
+        "跨部门测试"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-103",
+      "source_item_code": "NEW-20260227112119-M201",
+      "source_item_title": "【三类以上（含）】UPS实际供电能力需满足主要设备断电情况下正常运行2小时以上",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确UPS实际供电能力需满足主要设备在断电情况下正常运行2小时以上的要求",
+      "related_clues": [
+        "UPS",
+        "供电能力",
+        "运行要求"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-104",
+      "source_item_code": "NEW-20260227112119-M201",
+      "source_item_title": "建立UPS设备运行、定期检查和维护的管理制度并留存相关记录",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定UPS设备运行、定期检查和维护的管理制度，留存运行、检查、维护记录",
+      "related_clues": [
+        "UPS",
+        "运行记录",
+        "检查维护",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-105",
+      "source_item_code": "NEW-20260227112119-M202",
+      "source_item_title": "UPS需存放在与计算机、网络设备不同的独立封闭区域",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确UPS需存放在与计算机、网络设备不同的独立封闭区域",
+      "related_clues": [
+        "UPS",
+        "独立区域",
+        "机房布局"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-106",
+      "source_item_code": "NEW-20260227112119-M203",
+      "source_item_title": "【三类以上（含）】机房需自备或租用发电机保障持续供电",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确机房需自备或租用发电机以保障持续供电",
+      "related_clues": [
+        "机房供电",
+        "发电机",
+        "持续供电"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-107",
+      "source_item_code": "NEW-20260227112119-M203",
+      "source_item_title": "建立发电机储油及用油补充的管理制度",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定发电机储油管理办法，采取有效措施确保发电机用油及时补充",
+      "related_clues": [
+        "发电机",
+        "储油",
+        "用油补充"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-108",
+      "source_item_code": "NEW-20260227112119-M203",
+      "source_item_title": "租用发电机需签订明确保障持续供电的合同",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "租用发电机时需签订明确可确保持续供电的合同或留存相关证明材料",
+      "related_clues": [
+        "发电机租赁",
+        "合同",
+        "供电保障"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-109",
+      "source_item_code": "NEW-20260227112119-M203",
+      "source_item_title": "建立发电机运行、定期检查和维护的管理制度并留存记录",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定发电机运行、定期检查和维护的管理制度，留存相关运行、检查、维护记录",
+      "related_clues": [
+        "发电机",
+        "运行记录",
+        "检查维护",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-110",
+      "source_item_code": "NEW-20260227112119-M204",
+      "source_item_title": "建立发电机开机测试管理制度，明确测试周期和记录要求",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定发电机开机测试管理制度，明确测试周期并留存测试记录",
+      "related_clues": [
+        "发电机",
+        "开机测试",
+        "制度建设"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-111",
+      "source_item_code": "NEW-20260227112119-M204",
+      "source_item_title": "定期开展发电机开机测试并留存测试记录",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对发电机进行开机测试，留存包含测试时间、测试结果等内容的记录",
+      "related_clues": [
+        "发电机",
+        "开机测试",
+        "测试记录"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-112",
+      "source_item_code": "NEW-20260227112119-M205",
+      "source_item_title": "建立电力设施实时切换演练制度，明确演练场景和要求",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定电力设施实时切换演练制度，明确演练需模拟市电中断、UPS完全失效、电源开关故障等场景，确保生产环境设备无需人工操作即可正常运行",
+      "related_clues": [
+        "电力切换演练",
+        "制度建设",
+        "演练场景"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-113",
+      "source_item_code": "NEW-20260227112119-M205",
+      "source_item_title": "定期开展电力设施实时切换演练并留存演练记录",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "定期执行",
+      "requirement_content": "每两年至少开展一次电力设施实时切换演练，留存近两年的演练记录",
+      "related_clues": [
+        "电力切换演练",
+        "演练记录",
+        "定期执行"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-114",
+      "source_item_code": "NEW-20260227112119-M206",
+      "source_item_title": "在供应商合同中明确责任义务、服务要求和范围",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "与供应商签订合同时，需明确其应承担的责任、义务，并约定服务要求和范围等内容",
+      "related_clues": [
+        "供应商合同",
+        "责任义务",
+        "服务范围"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-115",
+      "source_item_code": "NEW-20260227112119-M207",
+      "source_item_title": "与安全服务商签订包含明确信息安全要求的协议",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "与选定的安全服务商签订安全责任合同书或保密协议，协议需包含保密范围、安全责任、违约责任、协议有效期、责任人签字等内容",
+      "related_clues": [
+        "安全服务商",
+        "保密协议",
+        "安全责任"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-116",
+      "source_item_code": "NEW-20260227112119-M208",
+      "source_item_title": "要求供应商签署符合要求的承诺书",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "要求供应商签署承诺书，承诺产品不存在恶意代码或未授权功能、不提供违法违规功能模块、符合证券期货行业技术规范",
+      "related_clues": [
+        "供应商承诺书",
+        "合规要求",
+        "技术规范"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-117",
+      "source_item_code": "NEW-20260227112119-M209",
+      "source_item_title": "托管机房服务合同需包含应急服务响应和支持条款",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "托管机房服务合同中需明确包含应急服务响应和支持条款",
+      "related_clues": [
+        "托管机房",
+        "应急响应",
+        "合同条款"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-118",
+      "source_item_code": "NEW-20260227112119-M210",
+      "source_item_title": "三+系统托管合同需明确受托方提供7×24小时支持服务",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在三+系统托管委托合同中明确要求受托方提供7×24小时支持服务",
+      "related_clues": [
+        "三+系统托管",
+        "7×24小时服务",
+        "合同条款"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-119",
+      "source_item_code": "NEW-20260227112119-M210",
+      "source_item_title": "明确受托方服务响应和到场时限要求",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确受托方需在5分钟内响应服务请求，30分钟内到场服务，突发事件时配合开展应急处置",
+      "related_clues": [
+        "服务响应",
+        "到场时限",
+        "应急处置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-120",
+      "source_item_code": "NEW-20260227112119-M211",
+      "source_item_title": "建立供应商列表并定期收集更新供应商信息",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立供应商列表，定期收集、更新供应商信息",
+      "related_clues": [
+        "供应商列表",
+        "信息更新",
+        "定期维护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-121",
+      "source_item_code": "NEW-20260227112119-M212",
+      "source_item_title": "建立供应商评价管理制度并定期开展评价",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定供应商评价管理制度，定期组织对供应商的服务质量、合同履行情况、人员工作情况等进行评价，形成评价报告并跟踪改进情况",
+      "related_clues": [
+        "供应商评价",
+        "评价报告",
+        "改进跟踪"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-122",
+      "source_item_code": "NEW-20260227112119-M212",
+      "source_item_title": "定期开展供应商评价并跟踪改进情况",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期组织供应商评价，形成评价报告并跟踪记录供应商改进情况",
+      "related_clues": [
+        "供应商评价",
+        "改进跟踪",
+        "定期执行"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-123",
+      "source_item_code": "NEW-20260227112119-M213",
+      "source_item_title": "在信息技术外包管理制度中明确驻场外包人员入场、离场管理要求",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在信息技术外包管理制度中明确驻场外包人员入场、离场的管理要求",
+      "related_clues": [
+        "外包人员管理",
+        "入场离场",
+        "制度建设"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-124",
+      "source_item_code": "NEW-20260227112119-M214",
+      "source_item_title": "建立驻场外包人员入场离场登记制度并留存记录",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立驻场外包人员入场离场登记制度，留存相关记录",
+      "related_clues": [
+        "外包人员",
+        "入场离场",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-125",
+      "source_item_code": "NEW-20260227112119-M215",
+      "source_item_title": "在外包合同中明确外包人员的工作职责、活动范围和操作权限",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在外包合同中明确界定外包人员的工作职责、活动范围、操作权限",
+      "related_clues": [
+        "外包人员",
+        "职责权限",
+        "合同条款"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-126",
+      "source_item_code": "NEW-20260227112119-M216",
+      "source_item_title": "建立软件资产管理制度或将软件资产纳入资产管理体系",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立软件资产管理制度，或将软件资产纳入本单位资产管理体系，严格管理软件采购、安装、升级等流程",
+      "related_clues": [
+        "软件资产管理",
+        "采购管理",
+        "安装升级"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-127",
+      "source_item_code": "NEW-20260227112119-M217",
+      "source_item_title": "明确软件正版化工作的负责部门或责任人",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "人员配备",
+      "requirement_content": "指定专门的部门或人员负责本单位软件正版化工作，并明确其岗位职责",
+      "related_clues": [
+        "软件正版化",
+        "人员配备",
+        "岗位职责"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-128",
+      "source_item_code": "NEW-20260227112119-M217",
+      "source_item_title": "建立软件正版化工作管理制度",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定软件正版化工作相关制度，明确负责部门/人员及岗位职责",
+      "related_clues": [
+        "软件正版化",
+        "制度建设",
+        "岗位职责"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-129",
+      "source_item_code": "NEW-20260227112119-M218",
+      "source_item_title": "制定软件正版化工作计划，覆盖通用软件和专业软件",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定软件正版化工作计划，对通用软件和专业软件分别制定正版化要求",
+      "related_clues": [
+        "软件正版化",
+        "工作计划",
+        "软件分类"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-130",
+      "source_item_code": "NEW-20260227112119-M218",
+      "source_item_title": "将软件采购经费纳入预算管理并按预算执行",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "将软件采购经费纳入年度预算，按照预算执行软件采购",
+      "related_clues": [
+        "软件采购",
+        "预算管理",
+        "经费执行"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-131",
+      "source_item_code": "NEW-20260227112119-M219",
+      "source_item_title": "每年开展软件正版化情况自查并留存记录",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "定期执行",
+      "requirement_content": "每年对公司软件正版化情况开展自查，留存自查记录",
+      "related_clues": [
+        "软件正版化",
+        "自查",
+        "年度检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-132",
+      "source_item_code": "NEW-20260227112119-M219",
+      "source_item_title": "建立软件正版化自查管理制度",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定软件正版化自查管理制度，明确每年开展自查并留存记录",
+      "related_clues": [
+        "软件正版化",
+        "自查制度",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-133",
+      "source_item_code": "NEW-20260227112120-M220",
+      "source_item_title": "建立软件核心资料归档管理制度并妥善保存",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "建立软件购置合同、授权证书、许可协议等核心资料的归档管理制度，妥善留存相关资料",
+      "related_clues": [
+        "软件资料",
+        "归档管理",
+        "授权许可"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-134",
+      "source_item_code": "NEW-20260227112120-M220",
+      "source_item_title": "妥善保存软件购置合同、授权证书或许可协议等核心资料",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "文件保存",
+      "requirement_content": "妥善保存软件购置合同、授权证书、许可协议等核心资料",
+      "related_clues": [
+        "软件资料",
+        "文件保存",
+        "授权许可"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-135",
+      "source_item_code": "NEW-20260227112120-M221",
+      "source_item_title": "编制规范的软件清单并留存全生命周期记录",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "编制包含软件名称、编号、入库时间、版本、授权情况等内容的软件清单，留存软件启用、转移、升级、报废等全生命周期记录",
+      "related_clues": [
+        "软件清单",
+        "全生命周期",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-136",
+      "source_item_code": "NEW-20260227112120-M222",
+      "source_item_title": "确保软件清单记录完整，覆盖所有软件信息",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "完善软件清单，确保记录所有软件的相关信息",
+      "related_clues": [
+        "软件清单",
+        "信息完整"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-137",
+      "source_item_code": "NEW-20260227112120-M223",
+      "source_item_title": "使用技术软件检测办公电脑软件安装情况并留存检测记录",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "使用技术软件检测办公电脑软件安装情况，留存检测记录",
+      "related_clues": [
+        "软件检测",
+        "技术工具",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-138",
+      "source_item_code": "NEW-20260227112120-M224",
+      "source_item_title": "确保使用正版软件并妥善保存授权证书和许可协议",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "规范软件使用，确保使用正版软件，妥善保存软件授权证书和许可协议，确保授权未过期",
+      "related_clues": [
+        "正版软件",
+        "授权许可",
+        "合规使用"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-139",
+      "source_item_code": "NEW-20260227112151-M018",
+      "source_item_title": "将信息系统运行维护费用纳入预算管理，明确费用覆盖范围",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "将信息系统运行维护各项费用纳入年度预算管理，明确费用覆盖机房物理环境、软硬件、网络通信、应急保障、技术服务、人员培训等",
+      "related_clues": [
+        "运维预算",
+        "费用范围",
+        "预算管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-140",
+      "source_item_code": "NEW-20260227112151-M025",
+      "source_item_title": "建立人员离岗管理相关制度并留存记录",
+      "source_dimension": "XC信息技术治理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定人员离岗管理制度，明确离岗时需取回身份证件、钥匙、徽章及机构提供的软硬件设备，留存相关离岗记录",
+      "related_clues": [
+        "人员离岗",
+        "设备回收",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-141",
+      "source_item_code": "NEW-20260227112152-M039",
+      "source_item_title": "机房设置符合要求的火灾自动消防系统并备案",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在机房设置可自动检测、报警、灭火的火灾自动消防系统，该系统需经消防检测合格并向当地公安消防部门备案",
+      "related_clues": [
+        "机房消防",
+        "自动报警",
+        "消防备案"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-142",
+      "source_item_code": "NEW-20260227112152-M039",
+      "source_item_title": "建立机房消防系统运行管理制度并留存运行记录",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定机房消防系统运行管理制度，留存系统运行记录",
+      "related_clues": [
+        "消防系统",
+        "运行记录",
+        "制度建设"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-143",
+      "source_item_code": "NEW-20260227112152-M040",
+      "source_item_title": "机房及相关房间采用具有耐火等级的建筑材料",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "机房及相关工作房间、辅助房需采用具有耐火等级的建筑材料，在机房验收时留存相关说明",
+      "related_clues": [
+        "机房建筑",
+        "耐火材料",
+        "验收"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-144",
+      "source_item_code": "NEW-20260227112152-M041",
+      "source_item_title": "机房及所在大楼安装符合要求的防雷击措施",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在机房或机房所在大楼设计安装防雷击措施，至少包含避雷针或避雷器，相关验收文档需明确避雷装置设置情况",
+      "related_clues": [
+        "防雷措施",
+        "避雷装置",
+        "验收"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-145",
+      "source_item_code": "NEW-20260227112152-M042",
+      "source_item_title": "禁止无关水管穿过机房屋顶和活动地板下",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "机房内及相关区域禁止无关水管穿过机房屋顶和活动地板下",
+      "related_clues": [
+        "机房水管",
+        "防水",
+        "机房布局"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-146",
+      "source_item_code": "NEW-20260227112152-M043",
+      "source_item_title": "明确禁止无关水管穿过机房屋顶和活动地板下的要求",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确与机房设备无关的水管禁止穿过机房屋顶和活动地板下，在验收文档中体现相关要求",
+      "related_clues": [
+        "机房水管",
+        "禁止穿越",
+        "验收"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-147",
+      "source_item_code": "NEW-20260227112152-M044",
+      "source_item_title": "采取措施防止雨水通过机房窗户、屋顶和墙壁渗透",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在机房采取防水防渗措施，防止雨水通过窗户、屋顶、墙壁渗透，留存验收及维护记录",
+      "related_clues": [
+        "机房防水",
+        "雨水渗透",
+        "防渗处理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-148",
+      "source_item_code": "NEW-20260227112152-M045",
+      "source_item_title": "采取措施防止机房内水蒸气结露和地下积水渗透",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在机房采取措施防止水蒸气结露和地下积水的转移与渗透，留存验收相关证明",
+      "related_clues": [
+        "机房防水",
+        "结露防治",
+        "地下积水"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-149",
+      "source_item_code": "NEW-20260227112152-M046",
+      "source_item_title": "安装机房防水检测报警装置并留存运行维护记录",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在机房安装对水敏感的检测仪表或元件，开展防水检测和报警，留存运行维护记录",
+      "related_clues": [
+        "防水检测",
+        "报警装置",
+        "运行记录"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-150",
+      "source_item_code": "NEW-20260227112152-M047",
+      "source_item_title": "在机房重要区域前设置专门的过渡区域",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在主机房、辅助区、支持区等机房重要区域前设置专门的过渡区域，用于设备交付或安装",
+      "related_clues": [
+        "机房布局",
+        "过渡区域",
+        "设备安装"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-151",
+      "source_item_code": "NEW-20260227112152-M048",
+      "source_item_title": "合理划分机房区域，设置主机房、辅助区、支持区等功能区域",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "合理规划机房布局，划分主机房、辅助区、支持区等功能区域",
+      "related_clues": [
+        "机房布局",
+        "功能区域",
+        "区域划分"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-152",
+      "source_item_code": "NEW-20260227112152-M049",
+      "source_item_title": "为机房主要设备、机柜、机架设置明显且不易除去的标识",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "为机房主要设备、机柜、机架粘贴明显且不易除去的标签或铭牌",
+      "related_clues": [
+        "设备标识",
+        "机柜标识",
+        "铭牌"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-153",
+      "source_item_code": "NEW-20260227112152-M050",
+      "source_item_title": "将机房通信线缆铺设在隐蔽处，采用管道或线槽、线架敷设",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "规范机房通信线缆敷设，将线缆铺设在管道或线槽、线架等隐蔽位置",
+      "related_clues": [
+        "通信线缆",
+        "线缆敷设",
+        "隐蔽安装"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-154",
+      "source_item_code": "NEW-20260227112152-M051",
+      "source_item_title": "机房出入口监控录像需保存至少90天",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确机房出入口监控录像保存期限不少于90天",
+      "related_clues": [
+        "监控录像",
+        "存储期限",
+        "机房监控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-155",
+      "source_item_code": "NEW-20260227112152-M051",
+      "source_item_title": "留存机房出入口监控录像至少90天",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "妥善留存机房出入口监控录像，确保保存期限不少于90天",
+      "related_clues": [
+        "监控录像",
+        "文件保存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-156",
+      "source_item_code": "NEW-20260227112152-M052",
+      "source_item_title": "建立外来设备接入生产环境审批制度",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定外来设备接入生产环境的审批管理制度，未经批准不得接入生产环境",
+      "related_clues": [
+        "外来设备",
+        "接入审批",
+        "生产环境"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-157",
+      "source_item_code": "NEW-20260227112152-M053",
+      "source_item_title": "保持机房环境卫生，采取防尘措施并定期除尘",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定机房环境卫生管理制度，采取防尘措施，定期开展除尘处理",
+      "related_clues": [
+        "机房卫生",
+        "防尘措施",
+        "定期除尘"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-158",
+      "source_item_code": "NEW-20260227112152-M053",
+      "source_item_title": "定期开展机房除尘处理并留存维护记录",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "定期对机房进行除尘处理，留存相关维护记录",
+      "related_clues": [
+        "机房除尘",
+        "维护记录",
+        "定期执行"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-159",
+      "source_item_code": "NEW-20260227112152-M054",
+      "source_item_title": "机房设置温湿度自动调节设施，控制温度在22℃-24℃，相对湿度在40%-55%",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在机房设置温湿度自动调节设施，将机房温度控制在22℃-24℃，相对湿度控制在40%-55%",
+      "related_clues": [
+        "温湿度调节",
+        "温度控制",
+        "湿度控制"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-160",
+      "source_item_code": "NEW-20260227112152-M054",
+      "source_item_title": "留存机房温湿度记录",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "妥善留存机房温湿度记录，确保符合温湿度控制要求",
+      "related_clues": [
+        "温湿度记录",
+        "文件保存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-161",
+      "source_item_code": "NEW-20260227112152-M056",
+      "source_item_title": "机房外墙壁对外窗户需采用双层固定窗并做密封防水处理",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "机房外墙壁若有对外窗户，需采用双层固定窗并做密封、防水处理",
+      "related_clues": [
+        "机房窗户",
+        "密封防水",
+        "双层窗"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-162",
+      "source_item_code": "NEW-20260227112153-M057",
+      "source_item_title": "机房设置在顶层或地下室需采取有效防水措施",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "机房场地不宜设在建筑物顶层或地下室，若无法避免需采取有效防水措施，留存相关验收证明",
+      "related_clues": [
+        "机房选址",
+        "防水措施",
+        "顶层地下室"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-163",
+      "source_item_code": "NEW-20260227112153-M058",
+      "source_item_title": "机房周围有用水设备时需采取防渗水和疏导措施",
+      "source_dimension": "XC机房管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "机房周围若存在用水设备，需采取防渗水和疏导措施，留存相关验收证明",
+      "related_clues": [
+        "机房周边",
+        "防渗水",
+        "疏导措施"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-164",
+      "source_item_code": "NEW-20260227112153-M069",
+      "source_item_title": "采用冗余技术设计网络拓扑结构，避免关键节点单点故障",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在网络拓扑结构设计中采用冗余技术，避免关键节点存在单点故障",
+      "related_clues": [
+        "网络拓扑",
+        "冗余设计",
+        "单点故障"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-165",
+      "source_item_code": "NEW-20260227112153-M070",
+      "source_item_title": "规范网络设备用户管理，删除或修改默认用户口令",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定网络设备用户管理制度，删除或修改默认用户口令，根据管理需要开设用户，禁止使用缺省口令、空口令、弱口令",
+      "related_clues": [
+        "网络用户",
+        "口令管理",
+        "默认账户"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-166",
+      "source_item_code": "NEW-20260227112153-M071",
+      "source_item_title": "确保网络设备用户标识唯一",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "规范网络设备用户管理，确保每个用户的标识具有唯一性",
+      "related_clues": [
+        "网络用户",
+        "标识唯一"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-167",
+      "source_item_code": "NEW-20260227112153-M072",
+      "source_item_title": "制定网络设备口令管理制度，明确口令复杂度要求",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定网络设备口令管理制度，规定口令需采用数字、字母、符号混排的无规律方式",
+      "related_clues": [
+        "口令管理",
+        "复杂度要求"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-168",
+      "source_item_code": "NEW-20260227112153-M073",
+      "source_item_title": "明确管理员用户口令长度至少为12位",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在口令管理制度中明确管理员用户口令长度至少为12位",
+      "related_clues": [
+        "管理员口令",
+        "口令长度"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-169",
+      "source_item_code": "NEW-20260227112153-M074",
+      "source_item_title": "明确管理员用户口令更换周期和重复限制",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在口令管理制度中明确管理员用户口令至少每季度更换1次，更新的口令5次内不得重复",
+      "related_clues": [
+        "口令更换",
+        "重复限制"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-170",
+      "source_item_code": "NEW-20260227112153-M075",
+      "source_item_title": "明确特殊设备口令的替代管理方案",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "若设备不支持12位或其他复杂度口令要求，规定使用支持的最长长度并缩短更换周期，或采用动态密码卡等一次性口令认证方式",
+      "related_clues": [
+        "特殊口令",
+        "动态密码",
+        "认证方式"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-171",
+      "source_item_code": "NEW-20260227112153-M076",
+      "source_item_title": "绘制并及时更新与当前运行情况相符的网络拓扑结构图和配置表",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定网络拓扑结构和配置管理制度，绘制完整的网络拓扑结构图及包含设备IP地址等信息的网络配置表，并及时更新以匹配当前运行情况",
+      "related_clues": [
+        "网络拓扑",
+        "配置表",
+        "及时更新"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-172",
+      "source_item_code": "NEW-20260227112153-M080",
+      "source_item_title": "规范网络跳线管理，确保跳线整齐干净且标识清晰",
+      "source_dimension": "XC网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定网络跳线管理制度，要求跳线整齐干净，标识清晰",
+      "related_clues": [
+        "网络跳线",
+        "标识管理",
+        "机房布线"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-173",
+      "source_item_code": "NEW-20260227112154-M085",
+      "source_item_title": "确保配置项编号唯一",
+      "source_dimension": "XC运维管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定配置库管理制度，确保配置项编号具有唯一性",
+      "related_clues": [
+        "配置库",
+        "配置项",
+        "编号唯一"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-174",
+      "source_item_code": "NEW-20260227112154-M086",
+      "source_item_title": "建立配置项变更记录管理制度，留存变更记录",
+      "source_dimension": "XC运维管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定配置库维护管理制度，确保配置项的添加、修改、替换、删除均有变更记录并留存",
+      "related_clues": [
+        "配置项变更",
+        "变更记录",
+        "配置库"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-175",
+      "source_item_code": "NEW-20260227112154-M090",
+      "source_item_title": "交易业务系统历史数据至少保留一年",
+      "source_dimension": "XC运维管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定数据备份管理制度，确保交易业务系统历史数据至少保留一年",
+      "related_clues": [
+        "数据备份",
+        "存储期限",
+        "交易系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-176",
+      "source_item_code": "NEW-20260227112154-M091",
+      "source_item_title": "建立在线数据访问复制授权管理制度",
+      "source_dimension": "XC运维管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定在线数据管理制度，明确未经授权不得访问、复制在线数据，留存授权审批记录",
+      "related_clues": [
+        "在线数据",
+        "访问授权",
+        "数据保护"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-177",
+      "source_item_code": "NEW-20260227112154-M092",
+      "source_item_title": "建立离线数据保护制度，禁止未经授权更改离线数据",
+      "source_dimension": "XC运维管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定离线数据管理制度，明确离线数据不得随意更改，留存相关维护记录",
+      "related_clues": [
+        "离线数据",
+        "数据保护",
+        "更改限制"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-178",
+      "source_item_code": "NEW-20260227112154-M101",
+      "source_item_title": "在应急预案中明确投资者沟通和媒体配合要求",
+      "source_dimension": "XC运维管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "在应急预案中明确突发事件发生时，需及时向投资者说明真实情况，引导应急措施，配合媒体采访报道",
+      "related_clues": [
+        "应急预案",
+        "投资者沟通",
+        "媒体配合"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-179",
+      "source_item_code": "NEW-20260227112156-M129",
+      "source_item_title": "制定信息系统口令管理制度，明确口令复杂度要求",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定信息系统口令管理制度，规定口令需采用数字、字母、符号混排的无规律方式",
+      "related_clues": [
+        "口令管理",
+        "复杂度要求",
+        "信息系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-180",
+      "source_item_code": "NEW-20260227112156-M130",
+      "source_item_title": "明确信息系统口令长度至少为12位",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "在口令管理制度中明确信息系统口令长度至少为12位",
+      "related_clues": [
+        "口令长度",
+        "信息系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-181",
+      "source_item_code": "NEW-20260227112156-M131",
+      "source_item_title": "明确信息系统口令更换周期和重复限制",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "在口令管理制度中明确信息系统口令至少每季度更换1次，更新的口令5次内不得重复",
+      "related_clues": [
+        "口令更换",
+        "重复限制",
+        "信息系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-182",
+      "source_item_code": "NEW-20260227112156-M132",
+      "source_item_title": "明确特殊设备口令的替代管理方案",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "若设备不支持12位或其他复杂度口令要求，规定使用支持的最长长度并缩短更换周期，或采用动态密码卡等一次性口令认证方式",
+      "related_clues": [
+        "特殊口令",
+        "动态密码",
+        "信息系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-183",
+      "source_item_code": "NEW-20260227112156-M133",
+      "source_item_title": "确保数据库系统用户标识唯一",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "为数据库系统的不同用户分配不同的用户名，确保用户名具有唯一性",
+      "related_clues": [
+        "数据库用户",
+        "标识唯一"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-184",
+      "source_item_code": "NEW-20260227112156-M138",
+      "source_item_title": "制定操作系统管理员口令管理制度，明确复杂度要求",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定操作系统管理员口令管理制度，规定口令需采用数字、字母、符号混排的无规律方式",
+      "related_clues": [
+        "操作系统",
+        "管理员口令",
+        "复杂度"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-185",
+      "source_item_code": "NEW-20260227112156-M139",
+      "source_item_title": "明确操作系统管理员口令长度至少为12位",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "在操作系统口令管理制度中明确管理员口令长度至少为12位",
+      "related_clues": [
+        "操作系统",
+        "管理员口令",
+        "口令长度"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-186",
+      "source_item_code": "NEW-20260227112156-M140",
+      "source_item_title": "明确操作系统管理员口令更换周期和重复限制",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "在操作系统口令管理制度中明确管理员口令至少每季度更换1次，更新的口令5次内不得重复",
+      "related_clues": [
+        "操作系统",
+        "管理员口令",
+        "更换要求"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-187",
+      "source_item_code": "NEW-20260227112156-M141",
+      "source_item_title": "确保操作系统用户标识唯一或采取堡垒机措施",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "为操作系统的不同用户分配不同的用户名，确保用户名唯一，或采取堡垒机等管控措施",
+      "related_clues": [
+        "操作系统用户",
+        "标识唯一",
+        "堡垒机"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-188",
+      "source_item_code": "NEW-20260227112156-M142",
+      "source_item_title": "明确远程登录主机设备的身份鉴别要求",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定安全策略，要求以远程方式登录主机设备时采用两种或两种以上组合的鉴别技术进行身份鉴别",
+      "related_clues": [
+        "远程登录",
+        "身份鉴别",
+        "安全策略"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-189",
+      "source_item_code": "NEW-20260227112156-M143",
+      "source_item_title": "严格限制操作系统默认账户访问权限，重命名并修改默认口令",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "严格限制操作系统默认账户的访问权限，重命名系统默认账户，修改默认口令，特殊情况可豁免",
+      "related_clues": [
+        "默认账户",
+        "权限限制",
+        "口令修改"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-190",
+      "source_item_code": "NEW-20260227112156-M150",
+      "source_item_title": "建立重要服务器监控报警制度",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定重要服务器监控管理制度，当CPU利用率、内存、磁盘存储空间等指标超过阈值时实时报警",
+      "related_clues": [
+        "服务器监控",
+        "阈值报警",
+        "监控系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-191",
+      "source_item_code": "NEW-20260227112157-M166",
+      "source_item_title": "建立特殊/临时操作双岗审批和记录管理制度",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定特殊操作、临时操作管理制度，要求操作需经批准后双岗执行，操作过程记录留痕且保存不少于一年",
+      "related_clues": [
+        "特殊操作",
+        "双岗审批",
+        "记录留存"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-192",
+      "source_item_code": "NEW-20260227112157-M166",
+      "source_item_title": "定期开展特殊/临时操作记录检查",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "定期执行",
+      "requirement_content": "抽查特殊操作和临时操作记录，确认操作经审批、有双岗签名且记录保存不少于一年",
+      "related_clues": [
+        "特殊操作",
+        "记录检查",
+        "定期执行"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-193",
+      "source_item_code": "NEW-20260227112157-M168",
+      "source_item_title": "明确存储监控指标范围",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定存储监控管理制度，明确监控指标需包括设备运行状态、数据交换延时、存储电池状态等",
+      "related_clues": [
+        "存储监控",
+        "监控指标",
+        "系统监控"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-194",
+      "source_item_code": "NEW-20260227112157-M173",
+      "source_item_title": "明确管理员口令更换要求",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "在口令管理制度中明确管理员口令至少每季度更换1次，更新的口令5次内不得重复",
+      "related_clues": [
+        "管理员口令",
+        "更换要求"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-195",
+      "source_item_code": "NEW-20260227112158-M175",
+      "source_item_title": "建立应用系统会话超时自动退出管理制度",
+      "source_dimension": "XC信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "制定应用系统登录会话管理策略，用户长时间未操作时自动退出系统",
+      "related_clues": [
+        "会话管理",
+        "超时退出",
+        "应用系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-196",
+      "source_item_code": "NEW-20260227112158-M186",
+      "source_item_title": "二级系统托管机房区域温湿度需符合GB50174 B级要求",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "二级系统托管的机柜所在机房区域温湿度需符合GB50174中B级的有关要求，留存巡检记录或证明材料",
+      "related_clues": [
+        "系统托管",
+        "温湿度要求",
+        "GB50174"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-197",
+      "source_item_code": "NEW-20260227112158-M187",
+      "source_item_title": "三级、三+系统托管机房配置环境监控系统",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "三级、三+系统托管的机柜所在机房需配置环境监控系统，实现对支路供电、温度、湿度等关键指标的自动实时监控和报警",
+      "related_clues": [
+        "环境监控",
+        "系统托管",
+        "监控指标"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-198",
+      "source_item_code": "NEW-20260227112158-M188",
+      "source_item_title": "信息系统托管机柜所在区域消防系统需通过消防验收",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "托管机柜所在区域需采用高效灭火系统和火灾自动报警系统，并通过当地公安消防部门验收",
+      "related_clues": [
+        "托管消防",
+        "消防验收",
+        "灭火系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-199",
+      "source_item_code": "NEW-20260227112158-M189",
+      "source_item_title": "三级、三+系统托管需提供双运营商多物理路由线路接入",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "三级、三+系统托管的受托方需提供至少两家基础通信运营商的线路接入资源，且每家运营商至少采用两种不同物理路由接入局端机房",
+      "related_clues": [
+        "通信接入",
+        "双运营商",
+        "物理路由"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-200",
+      "source_item_code": "NEW-20260227112158-M190",
+      "source_item_title": "信息系统托管机柜需配置锁具并规范备用钥匙管理",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "受托方需为托管机柜提供电子锁或机械锁，备用钥匙应急使用需提前获得委托方同意并记录使用情况",
+      "related_clues": [
+        "机柜锁具",
+        "备用钥匙",
+        "管理规范"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-201",
+      "source_item_code": "NEW-20260227112158-M191",
+      "source_item_title": "信息系统托管机房需配置覆盖关键区域的视频监控",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "受托方需对托管机柜所在机房设置视频监控设备，监控范围覆盖机柜操作面、机房出入口等关键区域",
+      "related_clues": [
+        "监控设备",
+        "监控区域",
+        "系统托管"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-202",
+      "source_item_code": "NEW-20260227112158-M191",
+      "source_item_title": "托管机房视频监控记录需保存至少90天",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确托管机房连续视频监控记录保存期限不少于90天",
+      "related_clues": [
+        "监控记录",
+        "存储期限",
+        "系统托管"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-203",
+      "source_item_code": "NEW-20260227112158-M194",
+      "source_item_title": "二级系统托管机房区域温湿度需符合GB50174 B级要求",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "二级系统托管的机房区域温湿度需符合GB50174中B级的有关要求，留存巡检记录或证明材料",
+      "related_clues": [
+        "系统托管",
+        "温湿度要求",
+        "GB50174"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-204",
+      "source_item_code": "NEW-20260227112158-M195",
+      "source_item_title": "三级、三+系统托管机房精密空调需采用N+1冗余",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "三级、三+系统托管的机房精密空调至少采用N+1方式冗余配置",
+      "related_clues": [
+        "精密空调",
+        "冗余配置",
+        "系统托管"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-205",
+      "source_item_code": "NEW-20260227112158-M195",
+      "source_item_title": "三级、三+系统托管机房区域温湿度需符合GB50174 A级要求",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "三级、三+系统托管的机房区域温湿度需符合GB50174中A级的有关要求，留存巡检记录或证明材料",
+      "related_clues": [
+        "系统托管",
+        "温湿度要求",
+        "GB50174"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-206",
+      "source_item_code": "NEW-20260227112158-M196",
+      "source_item_title": "信息系统托管机房需配置覆盖出入口的视频监控",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "受托方需对托管机房设置视频监控设备，监控范围覆盖机房出入口等关键区域",
+      "related_clues": [
+        "监控设备",
+        "监控区域",
+        "系统托管"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-207",
+      "source_item_code": "NEW-20260227112158-M196",
+      "source_item_title": "托管机房视频监控记录需保存至少90天",
+      "source_dimension": "XC信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "明确托管机房连续视频监控记录保存期限不少于90天",
+      "related_clues": [
+        "监控记录",
+        "存储期限",
+        "系统托管"
+      ],
+      "confidence": 0.95
+    }
+  ]
+}

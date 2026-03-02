@@ -1,0 +1,667 @@
+{
+  "policy_requirements": [
+    {
+      "requirement_id": "REQ-001",
+      "source_item_code": "NEW-20260227112119-M201",
+      "source_item_title": "【三类以上（含）】UPS实际供电能力是否能够满足主要设备在断电情况下正常运行2个小时以上。",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-002",
+      "source_item_code": "NEW-20260227112119-M203",
+      "source_item_title": "【三类以上（含）】机房是否自备或租用发电机，能够保障持续供电。",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-003",
+      "source_item_code": "NEW-20260227112119-M204",
+      "source_item_title": "如有发电机，是否定期对发电机进行开机测试。",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "定期执行",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-004",
+      "source_item_code": "NEW-20260227112119-M204",
+      "source_item_title": "如有发电机，是否定期对发电机进行开机测试。",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-005",
+      "source_item_code": "NEW-20260227112119-M205",
+      "source_item_title": "【三类以上（含）】是否定期进行电力设施实时切换演练。",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-006",
+      "source_item_code": "NEW-20260227112119-M205",
+      "source_item_title": "【三类以上（含）】是否定期进行电力设施实时切换演练。",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "定期执行",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-007",
+      "source_item_code": "NEW-20260227112119-M205",
+      "source_item_title": "【三类以上（含）】是否定期进行电力设施实时切换演练。",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-008",
+      "source_item_code": "NEW-20260227112119-M211",
+      "source_item_title": "是否建立供应商列表，定期收集、更新供应商信息。",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-009",
+      "source_item_code": "NEW-20260227112119-M211",
+      "source_item_title": "是否建立供应商列表，定期收集、更新供应商信息。",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-010",
+      "source_item_code": "NEW-20260227112119-M212",
+      "source_item_title": "是否组织对供应商的服务质量、合同履行情况、人员工作情况等内容进行评价，形成评价报告，并跟踪和记录供应商改进情况。",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-011",
+      "source_item_code": "NEW-20260227112119-M212",
+      "source_item_title": "是否组织对供应商的服务质量、合同履行情况、人员工作情况等内容进行评价，形成评价报告，并跟踪和记录供应商改进情况。",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-012",
+      "source_item_code": "NEW-20260227112119-M213",
+      "source_item_title": "信息技术外包管理制度中是否明确驻场外包人员入场、离场的管理要求。",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-013",
+      "source_item_code": "NEW-20260227112119-M214",
+      "source_item_title": "是否对驻场外包人员的入场和离场进行管理。",
+      "source_dimension": "XC外包管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-014",
+      "source_item_code": "NEW-20260227112119-M216",
+      "source_item_title": "是否建立软件资产管理制度，或将软件资产纳入本单位资产管理体系，对软件采购、安装、升级等工作流程有严格管理。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-015",
+      "source_item_code": "NEW-20260227112119-M217",
+      "source_item_title": "是否明确部门或责任人，负责本单位软件正版化工作。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "人员配备",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-016",
+      "source_item_code": "NEW-20260227112119-M219",
+      "source_item_title": "是否每年对软件正版化情况开展自查。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "定期执行",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-017",
+      "source_item_code": "NEW-20260227112119-M219",
+      "source_item_title": "是否每年对软件正版化情况开展自查。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-018",
+      "source_item_code": "NEW-20260227112120-M220",
+      "source_item_title": "是否妥善保存购置合同、软件授权证书或许可协议等核心资料。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-019",
+      "source_item_code": "NEW-20260227112120-M221",
+      "source_item_title": "是否编制软件清单，主要包括软件名称、软件编号、入库时间、软件版本，授权和许可情况、软件序列号、软件状态、软件维护期、软件安装设备、用途和使用责任人等内容，并保留软件启用、转移、升级、报废等过程的记录。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-020",
+      "source_item_code": "NEW-20260227112120-M223",
+      "source_item_title": "是否使用技术软件检测办公电脑软件安装情况。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "定期执行",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-021",
+      "source_item_code": "NEW-20260227112120-M223",
+      "source_item_title": "是否使用技术软件检测办公电脑软件安装情况。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-022",
+      "source_item_code": "NEW-20260227112120-M224",
+      "source_item_title": "是否使用正版软件并保存软件授权证书和许可协议。",
+      "source_dimension": "XC软件正版化",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-023",
+      "source_item_code": "NEW-20260227112151-M025",
+      "source_item_title": "人员离岗是否取回各种身份证件、钥匙、徽章等以及机构提供的软硬件设备。",
+      "source_dimension": "信息技术治理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-024",
+      "source_item_code": "NEW-20260227112152-M039",
+      "source_item_title": "机房是否设置火灾自动消防系统，能够自动检测火情、自动报警，并自动灭火；机房的火灾自动消防系统是否向当地公安消防部门备案。",
+      "source_dimension": "机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-025",
+      "source_item_code": "NEW-20260227112152-M051",
+      "source_item_title": "机房出入口的监控录像是否保存90天。",
+      "source_dimension": "机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-026",
+      "source_item_code": "NEW-20260227112152-M052",
+      "source_item_title": "是否实行外来设备未经批准不得接入生产环境。",
+      "source_dimension": "机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-027",
+      "source_item_code": "NEW-20260227112152-M053",
+      "source_item_title": "是否保持机房环境卫生，采取防尘措施，定期进行除尘处理。",
+      "source_dimension": "机房管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-028",
+      "source_item_code": "NEW-20260227112152-M053",
+      "source_item_title": "是否保持机房环境卫生，采取防尘措施，定期进行除尘处理。",
+      "source_dimension": "机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-029",
+      "source_item_code": "NEW-20260227112152-M054",
+      "source_item_title": "机房是否设置温、湿度自动调节设施，机房温度是否控制在22℃",
+      "source_dimension": "机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-030",
+      "source_item_code": "NEW-20260227112152-M055",
+      "source_item_title": "机房是否设置温、湿度自动调节设施，机房相对湿度是否控制在40%",
+      "source_dimension": "机房管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-031",
+      "source_item_code": "NEW-20260227112153-M072",
+      "source_item_title": "口令是否符合以下条件：数字、字母、符号混排，无规律的方式。",
+      "source_dimension": "网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-032",
+      "source_item_code": "NEW-20260227112153-M073",
+      "source_item_title": "管理员用户口令的长度至少为12位。",
+      "source_dimension": "网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-033",
+      "source_item_code": "NEW-20260227112153-M074",
+      "source_item_title": "管理员用户口令至少每季度更换1次，更新的口令至少5次内不能重复。",
+      "source_dimension": "网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-034",
+      "source_item_code": "NEW-20260227112153-M075",
+      "source_item_title": "如果设备口令长度不支持12位或其他复杂度要求，口令是否使用所支持的最长长度并适当缩小更换周期；也可以使用动态密码卡等一次性口令认证方式。",
+      "source_dimension": "网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-035",
+      "source_item_code": "NEW-20260227112153-M076",
+      "source_item_title": "是否绘制与当前运行情况相符的网络拓扑结构图；是否绘制完整的网络拓扑结构图，有相应的网络配置表，包含设备IP地址等主要信息，与当前运行情况相符，并及时更新。",
+      "source_dimension": "网络管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-036",
+      "source_item_code": "NEW-20260227112153-M078",
+      "source_item_title": "是否保证所有与外部系统的连接均得到授权和批准。",
+      "source_dimension": "网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-037",
+      "source_item_code": "NEW-20260227112153-M078",
+      "source_item_title": "是否保证所有与外部系统的连接均得到授权和批准。",
+      "source_dimension": "网络管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-038",
+      "source_item_code": "NEW-20260227112153-M080",
+      "source_item_title": "计算机网络跳线是否整齐干净，跳线标识清晰。",
+      "source_dimension": "网络管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-039",
+      "source_item_code": "NEW-20260227112154-M086",
+      "source_item_title": "配置项的添加、修改、替换、删除是否有变更记录。",
+      "source_dimension": "运维管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-040",
+      "source_item_code": "NEW-20260227112154-M090",
+      "source_item_title": "交易业务系统历史数据至少保留一年。",
+      "source_dimension": "运维管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-041",
+      "source_item_code": "NEW-20260227112154-M091",
+      "source_item_title": "在线数据未经授权不得访问、复制。",
+      "source_dimension": "运维管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-042",
+      "source_item_code": "NEW-20260227112154-M092",
+      "source_item_title": "离线数据不得更改。",
+      "source_dimension": "运维管理",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-043",
+      "source_item_code": "NEW-20260227112154-M101",
+      "source_item_title": "是否及时向投资者说明事件的真实情况，引导投资者采取应急措施，取得投资者的理解与配合，配合媒体的采访报道。",
+      "source_dimension": "运维管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-044",
+      "source_item_code": "NEW-20260227112156-M129",
+      "source_item_title": "口令是否符合以下条件：数字、字母、符号混排，无规律的方式。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-045",
+      "source_item_code": "NEW-20260227112156-M130",
+      "source_item_title": "口令的长度是否至少为12位。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-046",
+      "source_item_code": "NEW-20260227112156-M131",
+      "source_item_title": "口令是否至少每季度更换1次，更新的口令至少5次内不能重复。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-047",
+      "source_item_code": "NEW-20260227112156-M132",
+      "source_item_title": "如果设备口令长度不支持12位或其他复杂度要求，口令是否使用所支持的最长长度并适当缩小更换周期；也可以使用动态密码卡等一次性口令认证方式。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-048",
+      "source_item_code": "NEW-20260227112156-M138",
+      "source_item_title": "操作系统管理员口令是否符合以下条件：数字、字母、符号混排，无规律的方式。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-049",
+      "source_item_code": "NEW-20260227112156-M139",
+      "source_item_title": "操作系统管理员口令的长度是否为12位。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-050",
+      "source_item_code": "NEW-20260227112156-M140",
+      "source_item_title": "操作系统管理员口令是否每季度更换1次，更新的口令至少5次内不能重复。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-051",
+      "source_item_code": "NEW-20260227112156-M142",
+      "source_item_title": "以远程方式登录主机设备，是否采用两种或两种以上组合的鉴别技术进行身份鉴别。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-052",
+      "source_item_code": "NEW-20260227112156-M143",
+      "source_item_title": "是否严格限制默认账户的访问权限，重命名系统默认账户，修改这些账户的默认口令。a)系统无法修改访问权限的特殊默认账户，可不修改访问权限；b)系统无法重命名的特殊默认账户，可不重命名。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-053",
+      "source_item_code": "NEW-20260227112156-M150",
+      "source_item_title": "重要服务器的CPU利用率、内存、磁盘存储空间等指标超过预先规定的阈值后是否实时进行报警。",
+      "source_dimension": "信息系统",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-054",
+      "source_item_code": "NEW-20260227112157-M166",
+      "source_item_title": "特殊操作、临时操作是否经批准后方可双岗执行。操作过程是否进行记录留痕，记录的保存时间是否不少于一年。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-055",
+      "source_item_code": "NEW-20260227112157-M166",
+      "source_item_title": "特殊操作、临时操作是否经批准后方可双岗执行。操作过程是否进行记录留痕，记录的保存时间是否不少于一年。",
+      "source_dimension": "信息系统",
+      "requirement_type": "岗位分离",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-056",
+      "source_item_code": "NEW-20260227112157-M166",
+      "source_item_title": "特殊操作、临时操作是否经批准后方可双岗执行。操作过程是否进行记录留痕，记录的保存时间是否不少于一年。",
+      "source_dimension": "信息系统",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-057",
+      "source_item_code": "NEW-20260227112157-M173",
+      "source_item_title": "是否每季度对管理员口令进行修改，更新的管理员口令至少5次内不能重复。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-058",
+      "source_item_code": "NEW-20260227112158-M175",
+      "source_item_title": "用户登录应用系统后在规定的时间内未执行任何操作，是否自动退出系统。",
+      "source_dimension": "信息系统",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-059",
+      "source_item_code": "NEW-20260227112158-M190",
+      "source_item_title": "受托方是否为机柜提供电子锁或机械锁。受托方可留有备用钥匙以备应急使用，但是否提前获得委托方同意，并记录使用情况。",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "建立制度",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-060",
+      "source_item_code": "NEW-20260227112158-M190",
+      "source_item_title": "受托方是否为机柜提供电子锁或机械锁。受托方可留有备用钥匙以备应急使用，但是否提前获得委托方同意，并记录使用情况。",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-061",
+      "source_item_code": "NEW-20260227112158-M191",
+      "source_item_title": "受托方是否对机柜所在机房设置视频监控设备，监控范围覆盖机柜操作面、机柜所在机房出入口等关键区域。连续视频监控记录是否保存至少90天。",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-062",
+      "source_item_code": "NEW-20260227112158-M196",
+      "source_item_title": "受托方是否对机房设置视频监控设备，监控范围覆盖机房区域出入口。连续视频监控记录是否保存至少90天。",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-063",
+      "source_item_code": "NEW-20260227112158-M199",
+      "source_item_title": "受托方提供的虚拟机平台、存储平台等基础平台的可用性是否不低于99.9%。（本项适用于：三级系统托管）",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-064",
+      "source_item_code": "NEW-20260227112158-M200",
+      "source_item_title": "受托方提供的虚拟机平台、存储平台等基础平台的可用性是否不低于99.95%。（本项适用于：三+系统托管）",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-065",
+      "source_item_code": "NEW-20260227112159-M206",
+      "source_item_title": "双方终止合同，受托方是否协助委托方收回所有数据，并保证系统中全部相关数据被删除，并不可恢复。",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-066",
+      "source_item_code": "NEW-20260227112159-M207",
+      "source_item_title": "受托方提供的应用系统的设计和部署是否满足JR/T0059的要求。（本项适用于：三级、三+系统托管）",
+      "source_dimension": "信息系统托管",
+      "requirement_type": "文件保存",
+      "requirement_content": "",
+      "related_clues": [],
+      "confidence": 0.9
+    }
+  ],
+  "batch_seq": 3,
+  "batch_id": "POLICY-20260228-86D28F",
+  "total_items": 93
+}

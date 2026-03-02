@@ -1,0 +1,154 @@
+{
+  "version": "1.0",
+  "batch_info": {
+    "batch_id": "POLICY-20260228-622932",
+    "extract_time": "2026-02-28T13:00:35.000871",
+    "total_batches": 3,
+    "items_processed": 300
+  },
+  "summary": {
+    "total_requirements_found": 6,
+    "by_type": {
+      "建立制度": 3,
+      "建立组织": 0,
+      "人员配备": 0,
+      "定期执行": 3,
+      "岗位分离": 0,
+      "文件保存": 0
+    }
+  },
+  "policy_requirements": [
+    {
+      "requirement_id": "REQ-001-001",
+      "source_item_code": "TEST-001",
+      "source_item_title": "测试审计项-建立制度",
+      "source_procedure": "检查是否制定相关制度",
+      "requirement_type": "建立制度",
+      "requirement_detail": {
+        "what": "信息安全管理制度",
+        "scope": "全公司",
+        "content": "制定完善的信息安全管理制度，明确安全责任",
+        "frequency": null,
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "信息安全",
+        "管理制度",
+        "安全责任"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "requirement_id": "REQ-001-002",
+      "source_item_code": "TEST-002",
+      "source_item_title": "测试审计项-定期执行",
+      "source_procedure": "检查是否每年进行安全评审",
+      "requirement_type": "定期执行",
+      "requirement_detail": {
+        "what": "信息安全评审",
+        "scope": "全公司",
+        "content": "每年至少一次对信息安全管理制度进行评审和修订",
+        "frequency": "每年至少一次",
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "安全评审",
+        "年度评审",
+        "制度修订"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "requirement_id": "REQ-002-001",
+      "source_item_code": "TEST-001",
+      "source_item_title": "测试审计项-建立制度",
+      "source_procedure": "检查是否制定相关制度",
+      "requirement_type": "建立制度",
+      "requirement_detail": {
+        "what": "信息安全管理制度",
+        "scope": "全公司",
+        "content": "制定完善的信息安全管理制度，明确安全责任",
+        "frequency": null,
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "信息安全",
+        "管理制度",
+        "安全责任"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "requirement_id": "REQ-002-002",
+      "source_item_code": "TEST-002",
+      "source_item_title": "测试审计项-定期执行",
+      "source_procedure": "检查是否每年进行安全评审",
+      "requirement_type": "定期执行",
+      "requirement_detail": {
+        "what": "信息安全评审",
+        "scope": "全公司",
+        "content": "每年至少一次对信息安全管理制度进行评审和修订",
+        "frequency": "每年至少一次",
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "安全评审",
+        "年度评审",
+        "制度修订"
+      ],
+      "confidence": 0.88
+    },
+    {
+      "requirement_id": "REQ-003-001",
+      "source_item_code": "TEST-001",
+      "source_item_title": "测试审计项-建立制度",
+      "source_procedure": "检查是否制定相关制度",
+      "requirement_type": "建立制度",
+      "requirement_detail": {
+        "what": "信息安全管理制度",
+        "scope": "全公司",
+        "content": "制定完善的信息安全管理制度，明确安全责任",
+        "frequency": null,
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "信息安全",
+        "管理制度",
+        "安全责任"
+      ],
+      "confidence": 0.92
+    },
+    {
+      "requirement_id": "REQ-003-002",
+      "source_item_code": "TEST-002",
+      "source_item_title": "测试审计项-定期执行",
+      "source_procedure": "检查是否每年进行安全评审",
+      "requirement_type": "定期执行",
+      "requirement_detail": {
+        "what": "信息安全评审",
+        "scope": "全公司",
+        "content": "每年至少一次对信息安全管理制度进行评审和修订",
+        "frequency": "每年至少一次",
+        "quantity": null,
+        "qualification": null,
+        "retention_period": null
+      },
+      "related_clues": [
+        "安全评审",
+        "年度评审",
+        "制度修订"
+      ],
+      "confidence": 0.88
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "batch_id": "POLICY-20260228-85191C",
+  "extract_time": "2026-02-28T14:00:28.604859",
+  "total_items": 93,
+  "policy_requirements": [],
+  "statistics": {
+    "total_requirements": 0,
+    "by_type": {
+      "建立制度": 0,
+      "建立组织": 0,
+      "人员配备": 0,
+      "定期执行": 0,
+      "岗位分离": 0,
+      "文件保存": 0
+    }
+  },
+  "batch_seq": 3
+}

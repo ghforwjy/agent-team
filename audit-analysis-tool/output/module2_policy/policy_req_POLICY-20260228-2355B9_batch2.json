@@ -1,0 +1,1270 @@
+{
+  "policy_requirements": [
+    {
+      "requirement_id": "REQ-001",
+      "source_item_code": "NEW-20260227112116-M101",
+      "source_item_title": "是否禁止交易时段使用生产环境进行测试",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应明确禁止交易时段使用生产环境进行测试",
+      "related_clues": [
+        "交易时段",
+        "生产环境测试"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-002",
+      "source_item_code": "NEW-20260227112116-M102",
+      "source_item_title": "是否测试完成后对测试结果进行分析评估，并给出测试报告",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应组织制定工程测试验收方案，明确测试参与部门、人员、内容、操作过程等，并对系统测试验收报告进行审定",
+      "related_clues": [
+        "测试方案",
+        "测试验收报告",
+        "审定"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-003",
+      "source_item_code": "NEW-20260227112116-M103",
+      "source_item_title": "是否根据需要，要求生产系统运维人员和业务部门组织业务人员参与模拟环境测试",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应根据需要组织生产系统运维人员和业务部门人员参与模拟环境测试",
+      "related_clues": [
+        "模拟测试",
+        "运维人员",
+        "业务人员"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-004",
+      "source_item_code": "NEW-20260227112116-M104",
+      "source_item_title": "是否指定或授权专门的部门负责系统测试验收的管理，并按照管理规定的要求完成系统测试验收工作",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应指定或授权专门部门负责系统测试验收管理，并按规定完成测试验收工作",
+      "related_clues": [
+        "测试验收管理",
+        "专门部门"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-005",
+      "source_item_code": "NEW-20260227112116-M105",
+      "source_item_title": "是否在系统上线验收前经过安全测试",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应在系统上线验收前进行安全测试",
+      "related_clues": [
+        "上线验收",
+        "安全测试"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-006",
+      "source_item_code": "NEW-20260227112116-M106",
+      "source_item_title": "是否根据生产环境测试的结果设计系统升级过程及应急预案",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应根据生产环境测试结果设计系统升级过程及应急预案",
+      "related_clues": [
+        "生产测试",
+        "系统升级",
+        "应急预案"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-007",
+      "source_item_code": "NEW-20260227112116-M107",
+      "source_item_title": "是否针对系统制定应急操作手册",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应针对各信息系统制定应急操作手册",
+      "related_clues": [
+        "应急操作手册",
+        "系统应急"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-008",
+      "source_item_code": "NEW-20260227112116-M108",
+      "source_item_title": "是否对信息系统进行投产及变更的风险评估工作",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对信息系统投产及变更开展风险评估工作",
+      "related_clues": [
+        "投产变更",
+        "风险评估"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-009",
+      "source_item_code": "NEW-20260227112116-M109",
+      "source_item_title": "是否定期对系统容量进行检查和评估，形成评估报告",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "应定期对系统容量进行检查和评估并形成评估报告",
+      "related_clues": [
+        "系统容量",
+        "定期评估",
+        "评估报告"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-010",
+      "source_item_code": "NEW-20260227112116-M110",
+      "source_item_title": "是否建立配置库，对交易业务系统的服务器、存储、网络、安全设备，操作系统、应用软件、数据库等进行管理",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应建立配置库，对交易业务系统的服务器、存储、网络、安全设备及操作系统、应用软件、数据库等进行管理",
+      "related_clues": [
+        "配置库",
+        "设备管理",
+        "系统配置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-011",
+      "source_item_code": "NEW-20260227112116-M111",
+      "source_item_title": "配置项属性至少包括编号、名称、描述、维护责任人、运行状态、关联关系等",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "配置库中配置项属性应至少包括编号、名称、描述、维护责任人、运行状态、关联关系等",
+      "related_clues": [
+        "配置项属性",
+        "配置库管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-012",
+      "source_item_code": "NEW-20260227112116-M112",
+      "source_item_title": "是否对所有事件响应、处理、结束等过程进行跟踪、督促及检查",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对所有信息系统事件的响应、处理、结束等过程进行跟踪、督促及检查",
+      "related_clues": [
+        "事件响应",
+        "事件跟踪",
+        "运维事件"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-013",
+      "source_item_code": "NEW-20260227112116-M113",
+      "source_item_title": "事件记录中事件处理情况，是否包括事件暴露出的问题及采取的整改措施，责任追究情况",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "事件记录的处理情况应包括事件暴露出的问题、采取的整改措施及责任追究情况",
+      "related_clues": [
+        "事件记录",
+        "问题整改",
+        "责任追究"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-014",
+      "source_item_code": "NEW-20260227112116-M114",
+      "source_item_title": "是否将监控、分析、自查、检查、测评、评估和事件处理中发现的问题进行汇总，并纳入问题库",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应将监控、分析、自查、检查、测评、评估和事件处理中发现的问题汇总纳入问题库",
+      "related_clues": [
+        "问题库",
+        "问题汇总"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-015",
+      "source_item_code": "NEW-20260227112116-M115",
+      "source_item_title": "是否组织对问题进行分析、提出解决方案、通过变更管理审批后部署实施",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对问题库中的问题进行分析、提出解决方案，经变更管理审批后部署实施",
+      "related_clues": [
+        "问题管理",
+        "变更审批",
+        "部署实施"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-016",
+      "source_item_code": "NEW-20260227112116-M116",
+      "source_item_title": "是否建立系统，对公司事件和问题管理流程进行线上化管理",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应建立信息系统，对公司事件和问题管理流程进行线上化管理",
+      "related_clues": [
+        "事件管理",
+        "线上系统",
+        "问题管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-017",
+      "source_item_code": "NEW-20260227112116-M117",
+      "source_item_title": "是否采取人工值守和自动化工具相结合的方式，对交易业务系统进行24小时监控。交易时段应指定人员对交易业务系统进行监控，交易时段以外如无法做到人工监控，是否开启自动监控系统和自动报警系统",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应采取人工值守和自动化工具相结合的方式对交易业务系统进行24小时监控，交易时段指定人员监控，非交易时段无法人工监控的应开启自动监控和报警系统",
+      "related_clues": [
+        "系统监控",
+        "24小时监控",
+        "自动报警"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-018",
+      "source_item_code": "NEW-20260227112116-M118",
+      "source_item_title": "是否建立辅助的人工巡检流程，规定巡检内容、频度、人员等。巡检内容应覆盖电力、空调、消防、安防等机房设施，主机、网络、通信、安全等设备的运行状况。巡检结果应及时记录，如遇异常应及时处理，并按规定要求进行报告",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应建立辅助人工巡检流程，明确巡检内容、频度、人员、报告等要求，巡检内容覆盖机房设施、各类设备运行状况，异常及时处理并按规定报告",
+      "related_clues": [
+        "人工巡检",
+        "巡检流程",
+        "机房巡检"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-019",
+      "source_item_code": "NEW-20260227112116-M119",
+      "source_item_title": "是否指定运维值班负责人。运维值班负责人负责日常操作的部署、检查、风险控制、业务衔接等工作",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "人员配备",
+      "requirement_content": "应指定运维值班负责人，明确其职责包括日常操作部署、检查、风险控制、业务衔接等工作，并配备备岗人员",
+      "related_clues": [
+        "运维值班",
+        "岗位职责",
+        "备岗"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-020",
+      "source_item_code": "NEW-20260227112117-M120",
+      "source_item_title": "运维值班负责人是否有备岗，主备岗是否不得同时离岗",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "运维值班负责人应配备备岗人员，主备岗不得同时离岗",
+      "related_clues": [
+        "值班备岗",
+        "离岗管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-021",
+      "source_item_code": "NEW-20260227112117-M121",
+      "source_item_title": "是否每日分析核心交易业务系统监控日志及巡检记录，形成评估记录，跟踪处理日志分析中发现的异常事件",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "应每日分析核心交易业务系统监控日志及巡检记录，形成评估记录并跟踪处理发现的异常事件",
+      "related_clues": [
+        "日志分析",
+        "巡检记录",
+        "异常处理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-022",
+      "source_item_code": "NEW-20260227112117-M122",
+      "source_item_title": "是否建立变更管理流程，对重要变更、一般变更、紧急变更进行定义，并建立不同的管理流程",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应建立变更管理流程，对重要变更、一般变更、紧急变更进行定义并建立不同的申请、审批流程",
+      "related_clues": [
+        "变更管理",
+        "变更分类",
+        "审批流程"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-023",
+      "source_item_code": "NEW-20260227112117-M123",
+      "source_item_title": "是否明确信息技术部门、风控、合规及相关业务部门角色在变更管理中的审核责任，进行事前审查、事中确认及事后跟踪",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应明确信息技术部门、风控、合规及相关业务部门在变更管理中的审核责任，开展事前审查、事中确认及事后跟踪",
+      "related_clues": [
+        "变更审核",
+        "部门责任",
+        "变更跟踪"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-024",
+      "source_item_code": "NEW-20260227112117-M124",
+      "source_item_title": "变更后是否经业务部门确认",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "系统变更完成后应经业务部门进行确认",
+      "related_clues": [
+        "变更确认",
+        "业务部门"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-025",
+      "source_item_code": "NEW-20260227112117-M125",
+      "source_item_title": "是否利用软件工具或管理平台记录重要变更操作，并实时存档和备份功能",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应利用软件工具或管理平台记录重要变更操作，并具备实时存档和备份功能",
+      "related_clues": [
+        "变更记录",
+        "存档备份",
+        "变更管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-026",
+      "source_item_code": "NEW-20260227112117-M126",
+      "source_item_title": "是否在设备和软件投入使用前进行必要的验证性测试，并保留测试记录",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应在设备和软件投入使用前进行必要的验证性测试并保留测试记录",
+      "related_clues": [
+        "验证测试",
+        "设备软件",
+        "测试记录"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-027",
+      "source_item_code": "NEW-20260227112117-M127",
+      "source_item_title": "是否禁止在交易时段对交易业务网的网络设备、安全设备、系统设备进行更换或变更配置",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应原则上禁止在交易时段对交易业务网的网络设备、安全设备、系统设备进行更换或变更配置",
+      "related_clues": [
+        "交易时段",
+        "设备变更",
+        "网络设备"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-028",
+      "source_item_code": "NEW-20260227112117-M128",
+      "source_item_title": "邮件系统是否设置密码策略",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应在邮件系统设置密码策略，包括密码复杂度、密码有效期等要求",
+      "related_clues": [
+        "邮件系统",
+        "密码策略"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-029",
+      "source_item_code": "NEW-20260227112117-M129",
+      "source_item_title": "是否对批量下载邮件、异常时段登陆的行为进行监控",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对批量下载邮件、异常时段登陆的行为进行监控",
+      "related_clues": [
+        "邮件监控",
+        "异常登录",
+        "批量下载"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-030",
+      "source_item_code": "NEW-20260227112117-M130",
+      "source_item_title": "网上交易客户端是否提供可靠的身份认证机制，支持多种方式与服务端完成身份认证",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "网上交易客户端应提供可靠的身份认证机制，支持多种方式与服务端完成身份认证",
+      "related_clues": [
+        "身份认证",
+        "网上交易",
+        "认证方式"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-031",
+      "source_item_code": "NEW-20260227112117-M131",
+      "source_item_title": "客户进行资金交易时，根据客户意愿，可采取认证强度与交易额度相匹配的技术措施，提高交易的安全性",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "客户进行资金交易时，应根据客户意愿采取认证强度与交易额度相匹配的技术措施提升交易安全性",
+      "related_clues": [
+        "交易安全",
+        "认证强度",
+        "交易额度"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-032",
+      "source_item_code": "NEW-20260227112117-M132",
+      "source_item_title": "在交易环节，依据对用户IP、个人终端IMME等标识信息采取异常行为监控措施防范盗买盗卖",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应在交易环节依据用户IP、个人终端IMEI等标识信息采取异常行为监控措施防范盗买盗卖",
+      "related_clues": [
+        "交易监控",
+        "异常行为",
+        "盗买盗卖"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-033",
+      "source_item_code": "NEW-20260227112117-M133",
+      "source_item_title": "应具有防网络钓鱼的功能，例如，显示客户预留信息、使用预留信息卡、客户自定义个性化界面等",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "信息系统应具有防网络钓鱼的功能，例如显示客户预留信息、使用预留信息卡、客户自定义个性化界面等",
+      "related_clues": [
+        "防钓鱼",
+        "客户预留信息",
+        "交易安全"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-034",
+      "source_item_code": "NEW-20260227112117-M134",
+      "source_item_title": "对于客户账号、手机号码、证件类识别标识或其他识别标识信息等可以直接或组合后确定个人金融信息主体的信息应进行屏蔽展示，或由用户选择是否屏蔽展示，如需完整展示，应进行用户身份验证，并做好此类信息管理，防范此类信息泄露风险",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "对于可直接或组合确定个人金融信息主体的信息应进行屏蔽展示，或由用户选择是否屏蔽，如需完整展示应进行用户身份验证并做好信息管理防范泄露",
+      "related_clues": [
+        "客户信息",
+        "信息屏蔽",
+        "信息安全"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "requirement_id": "REQ-035",
+      "source_item_code": "NEW-20260227112117-M135",
+      "source_item_title": "三级系统是否至少每年对系统进行一次等级测评，发现不符合相应等级保护标准要求的及时整改",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "三级信息系统应至少每年进行一次等级测评，发现不符合等级保护标准要求的应及时整改",
+      "related_clues": [
+        "等级测评",
+        "三级系统",
+        "整改"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-036",
+      "source_item_code": "NEW-20260227112117-M136",
+      "source_item_title": "是否在系统发生变更时及时对系统进行等级测评，发现级别发生变化的及时调整级别并进行安全改造，发现不符合相应等级保护标准要求的及时整改",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "系统发生变更时应及时进行等级测评，级别变化的及时调整并安全改造，不符合标准的及时整改",
+      "related_clues": [
+        "变更测评",
+        "等级调整",
+        "安全整改"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-037",
+      "source_item_code": "NEW-20260227112117-M137",
+      "source_item_title": "是否组织相关部门和有关安全技术专家对信息系统定级结果的合理性和正确性进行论证和审定",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应组织相关部门和安全技术专家对信息系统定级结果的合理性和正确性进行论证和审定",
+      "related_clues": [
+        "系统定级",
+        "论证审定",
+        "安全专家"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-038",
+      "source_item_code": "NEW-20260227112117-M138",
+      "source_item_title": "是否授予不同账户为完成各自承担任务所需的最小权限",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应授予不同账户为完成各自承担任务所需的最小权限",
+      "related_clues": [
+        "权限管理",
+        "最小权限",
+        "账户权限"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-039",
+      "source_item_code": "NEW-20260227112117-M139",
+      "source_item_title": "不同账户是否形成相互制约的关系",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "不同账户的权限应形成相互制约的关系，例如系统管理员不能进行审计操作、审计员不能进行系统管理操作等",
+      "related_clues": [
+        "权限制约",
+        "岗位分离",
+        "账户权限"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-040",
+      "source_item_code": "NEW-20260227112117-M140",
+      "source_item_title": "是否存在共用账号",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应禁止存在多人共用同一账号的情况",
+      "related_clues": [
+        "账号管理",
+        "共用账号",
+        "权限安全"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-041",
+      "source_item_code": "NEW-20260227112117-M141",
+      "source_item_title": "是否中止离职人员访问权限",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应及时中止离职人员的信息系统访问权限",
+      "related_clues": [
+        "离职人员",
+        "权限注销",
+        "账号管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-042",
+      "source_item_code": "NEW-20260227112117-M142",
+      "source_item_title": "是否建立信息系统用户认证和访问控制流程",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应建立信息系统用户认证和访问控制流程，明确用户权限申请、审批、更新、注销流程",
+      "related_clues": [
+        "用户管理",
+        "访问控制",
+        "权限流程"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-043",
+      "source_item_code": "NEW-20260227112117-M143",
+      "source_item_title": "是否能够对单个账户的多重并发会话进行限制",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应能够对单个账户的多重并发会话进行限制",
+      "related_clues": [
+        "并发会话",
+        "会话限制",
+        "账户安全"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-044",
+      "source_item_code": "NEW-20260227112117-M144",
+      "source_item_title": "是否能够对一个时间段内可能的并发会话连接数进行限制",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应能够对一个时间段内可能的并发会话连接数进行限制",
+      "related_clues": [
+        "并发会话",
+        "会话限制",
+        "系统配置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-045",
+      "source_item_code": "NEW-20260227112117-M145",
+      "source_item_title": "是否能够对一个访问账户或一个请求进程占用的资源分配最大限额和最小限额",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "应能够对一个访问账户或一个请求进程占用的资源分配最大限额和最小限额",
+      "related_clues": [
+        "资源限额",
+        "进程管理",
+        "账户资源"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-046",
+      "source_item_code": "NEW-20260227112117-M146",
+      "source_item_title": "公司核心业务系统备份是否符合《证券期货经营机构信息系统备份能力标准规范》的相关要求",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "建立制度",
+      "requirement_content": "公司核心业务系统备份应符合《证券期货经营机构信息系统备份能力标准规范》的相关要求，达到故障应对能力第三级要求",
+      "related_clues": [
+        "核心系统",
+        "备份标准",
+        "灾备能力"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-047",
+      "source_item_code": "NEW-20260227112117-M147",
+      "source_item_title": "是否至少每季度对核心交易业务系统的备份数据进行一次有效性验证，如发现问题是否采取措施修复备份数据，并查明原因",
+      "source_dimension": "XC重要信息系统管理",
+      "requirement_type": "定期执行",
+      "requirement_content": "应至少每季度对核心交易业务系统的备份数据进行一次有效性验证，发现问题及时修复并查明原因",
+      "related_clues": [
+        "备份验证",
+        "备份数据",
+        "季度检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-048",
+      "source_item_code": "NEW-20260227112117-M148",
+      "source_item_title": "是否对网络安全事件进行记录",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对网络安全事件进行记录，记录内容包括事件原因、处理过程等",
+      "related_clues": [
+        "安全事件",
+        "事件记录",
+        "运维日志"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-049",
+      "source_item_code": "NEW-20260227112117-M149",
+      "source_item_title": "是否在安全事件报告和响应处理过程中，分析和鉴定事件产生的原因，收集证据，记录处理过程，总结经验教训，制定防止再次发生的补救措施",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应在安全事件报告和响应处理过程中分析鉴定原因、收集证据、记录过程、总结教训并制定防止再次发生的补救措施",
+      "related_clues": [
+        "事件处理",
+        "整改措施",
+        "安全事件"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-050",
+      "source_item_code": "NEW-20260227112117-M150",
+      "source_item_title": "合规部门、风险管理部门或岗位是否参与信息技术安全事故处理工作",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "人员配备",
+      "requirement_content": "合规部门、风险管理部门或岗位应参与信息技术安全事故处理工作",
+      "related_clues": [
+        "合规部门",
+        "事故处理",
+        "风险管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-051",
+      "source_item_code": "NEW-20260227112117-M151",
+      "source_item_title": "是否在网络与信息安全事件发生后，按有关规定报告事件情况，并保持持续报告，直至系统恢复正常运行，报告要素应完备、及时、准确，不得迟报、漏报、谎报或瞒报",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "网络与信息安全事件发生后应按规定报告事件情况并保持持续报告直至系统恢复正常，报告要素应完备、及时、准确，不得迟报漏报谎报瞒报",
+      "related_clues": [
+        "事件报告",
+        "持续报告",
+        "监管报送"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-052",
+      "source_item_code": "NEW-20260227112117-M152",
+      "source_item_title": "接到中国证监会及其派出机构关于系统漏洞、安全隐患、产品缺陷的信息安全通报书后，是否立即核实情况，采取必要的处置措施，并根据要求进行事件总结报告。事件总结报告内容应当包括：事件基本情况，可能或者已经造成的影响范围和后果，已采取的防范措施及相关建议",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "接到证监会及其派出机构的信息安全通报书后应立即核实情况、采取处置措施，并按要求提交事件总结报告，报告内容应包括事件基本情况、影响范围、防范措施及建议",
+      "related_clues": [
+        "监管通报",
+        "事件处置",
+        "总结报告"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-053",
+      "source_item_code": "NEW-20260227112117-M153",
+      "source_item_title": "是否对安全责任和惩戒措施进行书面规定并告知相关人员",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对安全责任和惩戒措施进行书面规定并告知相关人员",
+      "related_clues": [
+        "安全责任",
+        "惩戒措施",
+        "制度告知"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-054",
+      "source_item_code": "NEW-20260227112118-M154",
+      "source_item_title": "是否按照安全责任和惩戒措施规定对违反违背安全策略和规定的人员进行惩戒",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应按照安全责任和惩戒措施规定对违反安全策略和规定的人员进行惩戒",
+      "related_clues": [
+        "违规惩戒",
+        "安全策略",
+        "责任追究"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-055",
+      "source_item_code": "NEW-20260227112118-M155",
+      "source_item_title": "是否建立健全网络与信息安全事件应急处置组织体系，明确网络与信息安全事件的应急指挥决策机构和执行机构，负责网络与信息安全事件的预防预警、应急处置、报告和调查处理工作",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立组织",
+      "requirement_content": "应建立健全网络与信息安全事件应急处置组织体系，明确应急指挥决策机构和执行机构，负责事件预防预警、应急处置、报告和调查处理工作",
+      "related_clues": [
+        "应急组织",
+        "指挥机构",
+        "应急处置"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-056",
+      "source_item_code": "NEW-20260227112118-M156",
+      "source_item_title": "合规部门、风险管理部门或岗位是否参与应急演练工作",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "人员配备",
+      "requirement_content": "合规部门、风险管理部门或岗位应参与应急演练工作",
+      "related_clues": [
+        "应急演练",
+        "合规部门",
+        "风险管理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-057",
+      "source_item_code": "NEW-20260227112118-M157",
+      "source_item_title": "是否在统一的网络与信息安全事件应急预案框架下制定不同事件的应急预案，应急预案框架应包括处置应对责任机制、指挥机制、响应流程、临机处置权限等内容",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应在统一的网络与信息安全事件应急预案框架下制定不同事件的应急预案，应急预案框架应包括处置应对责任机制、指挥机制、响应流程、临机处置权限等内容",
+      "related_clues": [
+        "应急预案",
+        "应急框架",
+        "专项预案"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-058",
+      "source_item_code": "NEW-20260227112118-M158",
+      "source_item_title": "应将网络攻击场景纳入应急预案",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应将网络攻击场景纳入网络与信息安全事件应急预案",
+      "related_clues": [
+        "网络攻击",
+        "应急场景",
+        "应急预案"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-059",
+      "source_item_code": "NEW-20260227112118-M159",
+      "source_item_title": "应制定外包服务意外终止的应急措施",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应制定外包服务意外终止的应急措施",
+      "related_clues": [
+        "外包服务",
+        "应急措施",
+        "业务中断"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-060",
+      "source_item_code": "NEW-20260227112118-M160",
+      "source_item_title": "网络与信息安全事件应急预案内容是否根据应急演练的情况进行评估和更新",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "定期执行",
+      "requirement_content": "应根据应急演练的情况对应急预案进行评估和更新",
+      "related_clues": [
+        "应急演练",
+        "预案更新",
+        "评估改进"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-061",
+      "source_item_code": "NEW-20260227112118-M161",
+      "source_item_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件处置的具体方案",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "网络与信息安全事件应急预案应包括事件处置具体方案、编制目的和依据等内容",
+      "related_clues": [
+        "应急预案",
+        "处置方案",
+        "预案内容"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-062",
+      "source_item_code": "NEW-20260227112118-M162",
+      "source_item_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件内部调查处理以及分析总结的要求",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "网络与信息安全事件应急预案应包括事件内部调查处理以及分析总结的要求",
+      "related_clues": [
+        "内部调查",
+        "应急总结",
+        "应急预案"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-063",
+      "source_item_code": "NEW-20260227112118-M163",
+      "source_item_title": "网络与信息安全事件应急预案内容是否包括网络与信息安全事件的报告流程",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "网络与信息安全事件应急预案应包括事件的报告流程",
+      "related_clues": [
+        "报告流程",
+        "应急预案",
+        "事件报送"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-064",
+      "source_item_code": "NEW-20260227112118-M164",
+      "source_item_title": "是否制定应急处置联络手册。应急处置联络手册是否至少包括应急处置组织体系及相关关联单位的应急联络方式",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应制定应急处置联络手册，至少包括应急处置组织体系及相关关联单位的应急联络方式",
+      "related_clues": [
+        "应急联络",
+        "联络手册",
+        "应急沟通"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-065",
+      "source_item_code": "NEW-20260227112118-M165",
+      "source_item_title": "是否指定通报联络人，明确联络方式。通报联络人至少包括信息技术负责人及其备岗。通报联络方式至少包括应急值守电话与传真。将通报联络人及其联络方式及时通知监管部门、行业协会和相关单位",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "人员配备",
+      "requirement_content": "应指定通报联络人，至少包括信息技术负责人及其备岗，明确联络方式包括应急值守电话与传真，并将联络信息及时通知监管部门、行业协会和相关单位",
+      "related_clues": [
+        "通报联络人",
+        "应急值守",
+        "监管报送"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-066",
+      "source_item_code": "NEW-20260227112118-M166",
+      "source_item_title": "应急处置联络手册是否及时更新",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "定期执行",
+      "requirement_content": "应及时更新应急处置联络手册，确保相关信息真实有效可用",
+      "related_clues": [
+        "联络手册",
+        "信息更新",
+        "应急沟通"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-067",
+      "source_item_code": "NEW-20260227112118-M167",
+      "source_item_title": "是否向证监会报备应急联络信息，并在发生变化时及时通知相关单位",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应向证监会报备应急联络信息，并在发生变化时及时通知相关单位",
+      "related_clues": [
+        "监管报备",
+        "联络信息",
+        "应急更新"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-068",
+      "source_item_code": "NEW-20260227112118-M168",
+      "source_item_title": "是否对系统相关的人员进行应急预案培训，应急预案的培训是否至少每年举办一次",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "定期执行",
+      "requirement_content": "应每年至少组织一次对系统相关人员的应急预案培训",
+      "related_clues": [
+        "应急培训",
+        "年度培训",
+        "人员培训"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-069",
+      "source_item_code": "NEW-20260227112118-M169",
+      "source_item_title": "是否根据应急预案的内容，制定详细的应急演练计划",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应根据应急预案内容制定详细的应急演练计划",
+      "related_clues": [
+        "应急演练",
+        "演练计划",
+        "应急准备"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-070",
+      "source_item_code": "NEW-20260227112118-M170",
+      "source_item_title": "应急演练计划是否至少包括演练的目的、内容、时间、参与方、方式、前期准备情况、统计与记录要求、系统恢复与验证要求等内容",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应急演练计划应至少包括演练目的、内容、时间、参与方、方式、前期准备、统计记录、系统恢复与验证要求等内容",
+      "related_clues": [
+        "演练计划",
+        "演练内容",
+        "应急准备"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-071",
+      "source_item_code": "NEW-20260227112118-M171",
+      "source_item_title": "公司应急演练是否覆盖公司核心交易业务系统，是否覆盖其他场景应急演练覆盖情况，包括但不限于网络、通信、灾难、突发事件等方面的应急演练情况",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "定期执行",
+      "requirement_content": "公司应急演练应覆盖核心交易业务系统，并覆盖网络、通信、灾难、突发事件等多场景的应急演练",
+      "related_clues": [
+        "应急演练",
+        "核心系统",
+        "多场景"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-072",
+      "source_item_code": "NEW-20260227112118-M172",
+      "source_item_title": "是否与银行等外部关联机构开展过联合应急演练，包括银证转账系统、银期转账系统、基金估值系统等",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "定期执行",
+      "requirement_content": "应与银行等外部关联机构开展联合应急演练，包括银证转账、银期转账、基金估值系统等",
+      "related_clues": [
+        "联合演练",
+        "外部机构",
+        "业务系统"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-073",
+      "source_item_code": "NEW-20260227112118-M173",
+      "source_item_title": "是否对演练中发现的问题进行改进",
+      "source_dimension": "XC事件与应急管理情况",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对应急演练中发现的问题进行改进",
+      "related_clues": [
+        "演练整改",
+        "问题改进",
+        "应急演练"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-074",
+      "source_item_code": "NEW-20260227112118-M174",
+      "source_item_title": "是否定期或不定期开展信息技术风险评估活动，或聘请外部有资质的机构定期进行信息技术风险评估",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "定期执行",
+      "requirement_content": "应定期或不定期开展信息技术风险评估活动，或聘请外部有资质机构定期进行信息技术风险评估",
+      "related_clues": [
+        "风险评估",
+        "IT审计",
+        "外部评估"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-075",
+      "source_item_code": "NEW-20260227112118-M175",
+      "source_item_title": "信息技术风险评估结果是否经IT治理委员会审定后，向公司总经理汇报，并向业务、合规、审计等部门传达",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "信息技术风险评估结果应经IT治理委员会审定后，向公司总经理汇报并向业务、合规、审计等部门传达",
+      "related_clues": [
+        "风险评估",
+        "汇报流程",
+        "IT治理"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-076",
+      "source_item_code": "NEW-20260227112118-M176",
+      "source_item_title": "公司是否定期开展风险监测机制及执行情况的有效性评估",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "定期执行",
+      "requirement_content": "应定期开展风险监测机制及执行情况的有效性评估",
+      "related_clues": [
+        "风险监测",
+        "有效性评估",
+        "机制评估"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-077",
+      "source_item_code": "NEW-20260227112118-M177",
+      "source_item_title": "公司风险监测机制及执行情况的有效性评估报告是否报送公司管理层",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "风险监测机制及执行情况的有效性评估报告应报送公司管理层",
+      "related_clues": [
+        "评估报告",
+        "管理层报送",
+        "风险监测"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-078",
+      "source_item_code": "NEW-20260227112118-M178",
+      "source_item_title": "是否制定审计计划，审计计划是否保证3年内完成IT全面审计",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "应制定审计计划，保证3年内完成IT全面审计",
+      "related_clues": [
+        "IT审计",
+        "审计计划",
+        "全面审计"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-079",
+      "source_item_code": "NEW-20260227112118-M179",
+      "source_item_title": "是否对公司进行专项IT审计",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "定期执行",
+      "requirement_content": "应定期开展专项IT审计",
+      "related_clues": [
+        "专项审计",
+        "IT审计",
+        "内部审计"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-080",
+      "source_item_code": "NEW-20260227112118-M180",
+      "source_item_title": "在发生较大以上级别信息安全事件或频繁发生安全事件时，内部审计部门或合规风控部门是否对信息技术系统开展专项审计",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "在发生较大以上级别信息安全事件或频繁发生安全事件时，内部审计部门或合规风控部门应开展信息技术系统专项审计",
+      "related_clues": [
+        "专项审计",
+        "安全事件",
+        "IT审计"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-081",
+      "source_item_code": "NEW-20260227112118-M181",
+      "source_item_title": "是否每年对运维制度的执行情况和运维工作开展情况定期进行检查和审计",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "定期执行",
+      "requirement_content": "应每年对运维制度的执行情况和运维工作开展情况定期进行检查和审计",
+      "related_clues": [
+        "运维审计",
+        "制度执行",
+        "年度检查"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-082",
+      "source_item_code": "NEW-20260227112118-M182",
+      "source_item_title": "信息系统运维管理工作审计范围是否至少包括对运维管理制度和操作流程的合理性和完整性进行评估，对运维管理制度和操作流程的执行情况进行评估，对文档、配置、数据的有效性进行评估，对整体安全状况进行评估，对运维人员履职能力进行评估等",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "信息系统运维管理工作审计范围应至少包括运维管理制度和操作流程的合理性完整性、执行情况、文档配置数据有效性、整体安全状况、运维人员履职能力等",
+      "related_clues": [
+        "运维审计",
+        "审计范围",
+        "IT运维"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-083",
+      "source_item_code": "NEW-20260227112118-M183",
+      "source_item_title": "是否对审计发现的问题进行整改",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "应对审计发现的问题进行整改",
+      "related_clues": [
+        "审计整改",
+        "问题整改",
+        "内部审计"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-084",
+      "source_item_code": "NEW-20260227112118-M184",
+      "source_item_title": "应在保证系统运行安全和效率的前提下，启用系统审计或采用第三方安全审计产品，对服务器和重要客户端上的每个操作系统用户进行审计",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "应在保证系统运行安全和效率的前提下，启用系统审计或采用第三方安全审计产品，对服务器和重要客户端上的每个操作系统用户和数据库用户进行审计",
+      "related_clues": [
+        "安全审计",
+        "审计日志",
+        "用户审计"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-085",
+      "source_item_code": "NEW-20260227112118-M185",
+      "source_item_title": "是否记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，留存日志应满足审计的需要",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "应记录并集中分类存储必要的操作日志、系统日志、应用日志、安全日志等，留存日志满足审计需要",
+      "related_clues": [
+        "审计日志",
+        "日志存储",
+        "日志分类"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-086",
+      "source_item_code": "NEW-20260227112118-M186",
+      "source_item_title": "审计记录是否包含重要的安全相关信息",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "审计记录应包含重要的安全相关信息，如系统内重要用户行为、系统资源异常、重要系统命令使用等",
+      "related_clues": [
+        "审计记录",
+        "安全信息",
+        "日志内容"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-087",
+      "source_item_code": "NEW-20260227112119-M187",
+      "source_item_title": "审计记录是否至少保存6个月",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "文件保存",
+      "requirement_content": "审计记录应至少保存6个月",
+      "related_clues": [
+        "审计日志",
+        "日志留存",
+        "保存期限"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-088",
+      "source_item_code": "NEW-20260227112119-M188",
+      "source_item_title": "是否保护审计记录，避免受到未预期的删除、修改或覆盖等",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "应采取措施保护审计记录，避免受到未预期的删除、修改或覆盖等",
+      "related_clues": [
+        "审计保护",
+        "日志安全",
+        "防篡改"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-089",
+      "source_item_code": "NEW-20260227112119-M189",
+      "source_item_title": "是否能够根据记录数据进行分析，并生成审计报表",
+      "source_dimension": "XC信息技术风险评估与审计",
+      "requirement_type": "建立制度",
+      "requirement_content": "应能够根据记录数据进行分析，并生成审计报表",
+      "related_clues": [
+        "审计报表",
+        "日志分析",
+        "审计功能"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-090",
+      "source_item_code": "NEW-20260227112119-M190",
+      "source_item_title": "是否制定信息系统备份能力建设工作计划",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "应制定信息系统备份能力建设工作计划",
+      "related_clues": [
+        "备份建设",
+        "灾备计划",
+        "IT规划"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "requirement_id": "REQ-091",
+      "source_item_code": "NEW-20260227112119-M191",
+      "source_item_title": "是否已建立故障备份设施和同城灾备中心（灾备机房），至少可保障核心交易业务系统应用级备份",
+      "source_dimension": "XC业务连续性",
+      "requirement_type": "建立制度",
+      "requirement_content": "应建立故障备份设施和同城灾备中心（灾备机房），至少保障核心交易业务系统应用级备份",
+      "related_clues": [
+        "灾备中心",
+        "备份设施",
+        "核心系统"
+      ],
+      "confidence": 0.95
+    }
+  ],
+  "batch_seq": 2,
+  "batch_id": "POLICY-20260228-2355B9"
+}

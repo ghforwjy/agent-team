@@ -1,0 +1,3524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制度要求提取分析报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+        }
+        h2 {
+            color: #34495e;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        .info-bar {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .info-bar span {
+            color: #555;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-card.total {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            grid-column: span 2;
+        }
+        .stat-card h3 {
+            font-size: 14px;
+            font-weight: normal;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        .stat-card .number {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .stat-card .percentage {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        .chart-container {
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        th, td {
+            padding: 10px 12px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        th {
+            background: #3498db;
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .filter-bar {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .filter-bar label {
+            font-weight: 500;
+            color: #555;
+        }
+        .filter-bar select {
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        .scroll-container {
+            max-height: 600px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .badge.type-建立制度 { background: #3498db; color: white; }
+        .badge.type-建立组织 { background: #2ecc71; color: white; }
+        .badge.type-人员配备 { background: #f39c12; color: white; }
+        .badge.type-定期执行 { background: #e74c3c; color: white; }
+        .badge.type-岗位分离 { background: #9b59b6; color: white; }
+        .badge.type-文件保存 { background: #1abc9c; color: white; }
+        .confidence {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .confidence.high { background: #d4edda; color: #155724; }
+        .confidence.medium { background: #fff3cd; color: #856404; }
+        .confidence.low { background: #f8d7da; color: #721c24; }
+        .tag {
+            display: inline-block;
+            background: #e8e8e8;
+            color: #666;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            margin-right: 4px;
+        }
+        .content-cell {
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .count-badge {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .timestamp {
+            color: #7f8c8d;
+            font-size: 12px;
+            text-align: right;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>制度要求提取分析报告</h1>
+
+        <div class="info-bar">
+            <span>批次号: <strong>POLICY-20260228-86D28F</strong></span>
+            <span>提取时间: 2026-02-28T15:48:15.302832</span>
+            <span>审计项总数: 293</span>
+        </div>
+
+        <div class="section">
+            <h2>统计概览</h2>
+            <div class="stats-grid">
+
+            <div class="stat-card total">
+                <h3>制度要求总数</h3>
+                <div class="number">306</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>建立制度</h3>
+                <div class="number">172</div>
+                <div class="percentage">56.2%</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>建立组织</h3>
+                <div class="number">7</div>
+                <div class="percentage">2.3%</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>人员配备</h3>
+                <div class="number">15</div>
+                <div class="percentage">4.9%</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>定期执行</h3>
+                <div class="number">40</div>
+                <div class="percentage">13.1%</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>岗位分离</h3>
+                <div class="number">3</div>
+                <div class="percentage">1.0%</div>
+            </div>
+
+            <div class="stat-card">
+                <h3>文件保存</h3>
+                <div class="number">69</div>
+                <div class="percentage">22.5%</div>
+            </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>类型分布</h2>
+            <div class="chart-container">
+                <canvas id="typeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>维度分布</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>维度名称</th>
+                        <th>制度要求数</th>
+                        <th>占比</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+            <tr>
+                <td>XC重要信息系统管理</td>
+                <td>67</td>
+                <td>21.9%</td>
+            </tr>
+
+            <tr>
+                <td>XC网络安全管理与防护</td>
+                <td>52</td>
+                <td>17.0%</td>
+            </tr>
+
+            <tr>
+                <td>XC信息技术治理</td>
+                <td>43</td>
+                <td>14.1%</td>
+            </tr>
+
+            <tr>
+                <td>XC事件与应急管理情况</td>
+                <td>34</td>
+                <td>11.1%</td>
+            </tr>
+
+            <tr>
+                <td>XC信息技术风险评估与审计</td>
+                <td>24</td>
+                <td>7.8%</td>
+            </tr>
+
+            <tr>
+                <td>XC业务连续性</td>
+                <td>18</td>
+                <td>5.9%</td>
+            </tr>
+
+            <tr>
+                <td>信息系统</td>
+                <td>15</td>
+                <td>4.9%</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>9</td>
+                <td>2.9%</td>
+            </tr>
+
+            <tr>
+                <td>XC软件正版化</td>
+                <td>9</td>
+                <td>2.9%</td>
+            </tr>
+
+            <tr>
+                <td>网络管理</td>
+                <td>8</td>
+                <td>2.6%</td>
+            </tr>
+
+            <tr>
+                <td>信息系统托管</td>
+                <td>8</td>
+                <td>2.6%</td>
+            </tr>
+
+            <tr>
+                <td>机房管理</td>
+                <td>7</td>
+                <td>2.3%</td>
+            </tr>
+
+            <tr>
+                <td>XC外包管理</td>
+                <td>6</td>
+                <td>2.0%</td>
+            </tr>
+
+            <tr>
+                <td>运维管理</td>
+                <td>5</td>
+                <td>1.6%</td>
+            </tr>
+
+            <tr>
+                <td>信息技术治理</td>
+                <td>1</td>
+                <td>0.3%</td>
+            </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>制度要求明细 <span class="count-badge">共306条</span></h2>
+            <div class="filter-bar">
+                <label>类型筛选:</label>
+                <select id="typeFilter" onchange="filterRequirements()">
+                    <option value="">全部</option>
+                    <option value="建立制度">建立制度</option>
+                    <option value="建立组织">建立组织</option>
+                    <option value="人员配备">人员配备</option>
+                    <option value="定期执行">定期执行</option>
+                    <option value="岗位分离">岗位分离</option>
+                    <option value="文件保存">文件保存</option>
+                </select>
+                <label>置信度:</label>
+                <select id="confidenceFilter" onchange="filterRequirements()">
+                    <option value="">全部</option>
+                    <option value="high">高(≥0.8)</option>
+                    <option value="medium">中(0.5-0.8)</option>
+                    <option value="low">低(<0.5)</option>
+                </select>
+            </div>
+            <div class="scroll-container">
+                <table id="requirementsTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">编号</th>
+                            <th style="width: 100px;">类型</th>
+                            <th style="width: 200px;">要求内容</th>
+                            <th style="width: 150px;">来源审计项</th>
+                            <th style="width: 120px;">维度</th>
+                            <th style="width: 150px;">关键词</th>
+                            <th style="width: 80px;">置信度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+            <tr data-type="建立组织" data-confidence="high">
+                <td>REQ-001</td>
+                <td><span class="badge type-建立组织">建立组织</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M004</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立组织" data-confidence="high">
+                <td>REQ-002</td>
+                <td><span class="badge type-建立组织">建立组织</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M005</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-003</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M006</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-004</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M007</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-005</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M008</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-006</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M009</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-007</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M010</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-008</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M011</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-009</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M012</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立组织" data-confidence="high">
+                <td>REQ-010</td>
+                <td><span class="badge type-建立组织">建立组织</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M013</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-011</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M013</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-012</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M014</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立组织" data-confidence="high">
+                <td>REQ-013</td>
+                <td><span class="badge type-建立组织">建立组织</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M015</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-014</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M015</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-015</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M016</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="岗位分离" data-confidence="high">
+                <td>REQ-016</td>
+                <td><span class="badge type-岗位分离">岗位分离</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M017</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-017</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M018</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-018</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112113-M019</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-019</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M020</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-020</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M021</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-021</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M022</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-022</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M023</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-023</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M024</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-024</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M025</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-025</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M026</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-026</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M027</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-027</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M028</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-028</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M029</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-029</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M030</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-030</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M031</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-031</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M032</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-032</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M033</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-033</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M034</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-034</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M034</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-035</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M034</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-036</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M035</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-037</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M036</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-038</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M037</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-039</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M038</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-040</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M039</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-041</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M040</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-042</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M041</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-043</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M042</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-044</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M043</td>
+                <td>XC信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-045</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M044</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-046</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M045</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-047</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M046</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-048</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M047</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-049</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M047</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-050</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M048</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-051</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M049</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-052</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M050</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-053</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M051</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-054</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M051</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-055</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112114-M052</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-056</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M053</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-057</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M054</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-058</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M055</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-059</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M055</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-060</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M056</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-061</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M057</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-062</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M058</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-063</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M058</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-064</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M059</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-065</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M060</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-066</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M061</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-067</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M062</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-068</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M063</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立组织" data-confidence="high">
+                <td>REQ-069</td>
+                <td><span class="badge type-建立组织">建立组织</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M064</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-070</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M064</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-071</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M065</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-072</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M066</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-073</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M067</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-074</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M068</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-075</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M069</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-076</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M070</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-077</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M071</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-078</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M072</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-079</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M073</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-080</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M073</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-081</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M074</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-082</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M074</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-083</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M075</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-084</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M075</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-085</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M076</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-086</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M077</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-087</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M078</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-088</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M079</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-089</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M079</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-090</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M080</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-091</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M081</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-092</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M082</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-093</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M083</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-094</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M084</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-095</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M085</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-096</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M086</td>
+                <td>XC网络安全管理与防护</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-097</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M087</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-098</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M088</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-099</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M089</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-100</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M090</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-101</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M091</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-102</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112115-M092</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-103</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M093</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-104</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M093</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-105</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M094</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-106</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M095</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-107</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M096</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-108</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M097</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-109</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M098</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-110</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M099</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-111</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M100</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-112</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M101</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-113</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M102</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-114</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M103</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-115</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M104</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立组织" data-confidence="high">
+                <td>REQ-116</td>
+                <td><span class="badge type-建立组织">建立组织</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M104</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-117</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M105</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-118</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M106</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-119</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M107</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-120</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M108</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-121</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M109</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-122</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M109</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-123</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M109</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-124</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M110</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-125</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M110</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-126</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M111</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-127</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M112</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-128</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M113</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-129</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M113</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-130</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M114</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-131</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M114</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-132</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M115</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-133</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M117</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-134</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M118</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-135</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112116-M118</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-136</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M119</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-137</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M120</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-138</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M120</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-139</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M121</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-140</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M121</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-141</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M122</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-142</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M123</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-143</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M124</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-144</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M125</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-145</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M126</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-146</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M126</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-147</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M127</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-148</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M128</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-149</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M129</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-150</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M130</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-151</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M131</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.80</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-152</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M132</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.80</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-153</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M133</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.80</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-154</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M134</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-155</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M135</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-156</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M135</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-157</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M136</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-158</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M136</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-159</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M137</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-160</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M138</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="岗位分离" data-confidence="high">
+                <td>REQ-161</td>
+                <td><span class="badge type-岗位分离">岗位分离</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M139</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-162</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M140</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-163</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M141</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-164</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M142</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-165</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M143</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-166</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M144</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-167</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M145</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.80</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-168</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M146</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-169</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M147</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-170</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M147</td>
+                <td>XC重要信息系统管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-171</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M148</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-172</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M148</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-173</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M149</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-174</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M149</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-175</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M150</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-176</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M151</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-177</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M151</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-178</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M152</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-179</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M152</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-180</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M153</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-181</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112117-M154</td>
+                <td></td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立组织" data-confidence="high">
+                <td>REQ-182</td>
+                <td><span class="badge type-建立组织">建立组织</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M155</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-183</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M156</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-184</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M157</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-185</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M158</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-186</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M159</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-187</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M160</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-188</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M161</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-189</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M162</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-190</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M163</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-191</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M164</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-192</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M164</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-193</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M165</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-194</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M166</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-195</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M167</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-196</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M168</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-197</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M168</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-198</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M169</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-199</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M169</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-200</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M170</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-201</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M171</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-202</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M171</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-203</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M172</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-204</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M173</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-205</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M173</td>
+                <td>XC事件与应急管理情况</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-206</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M174</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-207</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M174</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-208</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M175</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-209</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M176</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-210</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M176</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-211</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M177</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-212</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M177</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-213</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M178</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-214</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M178</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-215</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M179</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-216</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M180</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-217</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M181</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-218</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M181</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-219</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M182</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-220</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M183</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-221</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M183</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-222</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M184</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-223</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M185</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-224</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M185</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-225</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112118-M186</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-226</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M187</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-227</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M187</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-228</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M188</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-229</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M189</td>
+                <td>XC信息技术风险评估与审计</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-230</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M190</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-231</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M191</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-232</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M192</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-233</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M193</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-234</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M194</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.85</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-235</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M195</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-236</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M196</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-237</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M197</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.80</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-238</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M198</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.80</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-239</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M199</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.80</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-240</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M200</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-241</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M201</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-242</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M203</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-243</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M204</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-244</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M204</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-245</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M205</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-246</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M205</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-247</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M205</td>
+                <td>XC业务连续性</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-248</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M211</td>
+                <td>XC外包管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-249</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M211</td>
+                <td>XC外包管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-250</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M212</td>
+                <td>XC外包管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-251</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M212</td>
+                <td>XC外包管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-252</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M213</td>
+                <td>XC外包管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-253</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M214</td>
+                <td>XC外包管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-254</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M216</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="人员配备" data-confidence="high">
+                <td>REQ-255</td>
+                <td><span class="badge type-人员配备">人员配备</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M217</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-256</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M219</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-257</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112119-M219</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-258</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112120-M220</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-259</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112120-M221</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-260</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112120-M223</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-261</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112120-M223</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-262</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112120-M224</td>
+                <td>XC软件正版化</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-263</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112151-M025</td>
+                <td>信息技术治理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-264</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112152-M039</td>
+                <td>机房管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-265</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112152-M051</td>
+                <td>机房管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-266</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112152-M052</td>
+                <td>机房管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="定期执行" data-confidence="high">
+                <td>REQ-267</td>
+                <td><span class="badge type-定期执行">定期执行</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112152-M053</td>
+                <td>机房管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-268</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112152-M053</td>
+                <td>机房管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-269</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112152-M054</td>
+                <td>机房管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-270</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112152-M055</td>
+                <td>机房管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-271</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M072</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-272</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M073</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-273</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M074</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-274</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M075</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-275</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M076</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-276</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M078</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-277</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M078</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-278</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112153-M080</td>
+                <td>网络管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-279</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112154-M086</td>
+                <td>运维管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-280</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112154-M090</td>
+                <td>运维管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-281</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112154-M091</td>
+                <td>运维管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-282</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112154-M092</td>
+                <td>运维管理</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-283</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112154-M101</td>
+                <td>运维管理</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-284</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M129</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-285</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M130</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-286</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M131</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-287</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M132</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-288</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M138</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-289</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M139</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-290</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M140</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-291</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M142</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-292</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M143</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-293</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112156-M150</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-294</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112157-M166</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="岗位分离" data-confidence="high">
+                <td>REQ-295</td>
+                <td><span class="badge type-岗位分离">岗位分离</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112157-M166</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-296</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112157-M166</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-297</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112157-M173</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.95</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-298</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112158-M175</td>
+                <td>信息系统</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="建立制度" data-confidence="high">
+                <td>REQ-299</td>
+                <td><span class="badge type-建立制度">建立制度</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112158-M190</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-300</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112158-M190</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-301</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112158-M191</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-302</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112158-M196</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-303</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112158-M199</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-304</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112158-M200</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-305</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112159-M206</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+
+            <tr data-type="文件保存" data-confidence="high">
+                <td>REQ-306</td>
+                <td><span class="badge type-文件保存">文件保存</span></td>
+                <td class="content-cell" title=""></td>
+                <td>NEW-20260227112159-M207</td>
+                <td>信息系统托管</td>
+                <td></td>
+                <td><span class="confidence high">0.90</span></td>
+            </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="timestamp">
+            报告生成时间: 2026-02-28 15:48:23
+        </div>
+    </div>
+
+    <script>
+
+        // 类型分布图表
+        const ctx = document.getElementById('typeChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ["建立制度", "建立组织", "人员配备", "定期执行", "岗位分离", "文件保存"],
+                datasets: [{
+                    data: [172, 7, 15, 40, 3, 69],
+                    backgroundColor: [
+                        '#3498db',
+                        '#2ecc71',
+                        '#f39c12',
+                        '#e74c3c',
+                        '#9b59b6',
+                        '#1abc9c'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+        
+
+        // 筛选功能
+        function filterRequirements() {
+            const typeFilter = document.getElementById('typeFilter').value;
+            const confidenceFilter = document.getElementById('confidenceFilter').value;
+            const rows = document.querySelectorAll('#requirementsTable tbody tr');
+
+            rows.forEach(row => {
+                const type = row.getAttribute('data-type');
+                const confidence = row.getAttribute('data-confidence');
+
+                let show = true;
+
+                if (typeFilter && type !== typeFilter) {
+                    show = false;
+                }
+
+                if (confidenceFilter && confidence !== confidenceFilter) {
+                    show = false;
+                }
+
+                row.style.display = show ? '' : 'none';
+            });
+        }
+        
+    </script>
+</body>
+</html>
